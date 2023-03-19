@@ -1,0 +1,22 @@
+name: Validate
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Git repository
+      uses: actions/checkout@v3
+    - name: Get build dependencies 
+      run: sudo apt-get update && sudo apt-get install plantuml texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+    - name: Validate LaTeX document
+      run: |
+          cd docs
+          make -B validate
