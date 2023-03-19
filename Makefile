@@ -8,4 +8,9 @@ uml:
 
 %.tex: uml
 	$(TEX) $@
+
+validate: 
+	$(UML) -checkonly uml/*.uml
+	$(TEX) -draftmode *.tex
+
 deploy: main.tex
