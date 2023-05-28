@@ -253,8 +253,8 @@
     BoldItalicFont=fonts/arialbi.ttf
 ]{fonts/arial.ttf}
 \usepackage{fontspec}
-\setmainfont{Arial}
-\setsansfont{Arial}
+\setmainfont{fonts/arial.ttf}
+%\setsansfont{fonts/arial.ttf}
 
 % Zablokowanie przeskakiwania figur (tabel, obrazków) między sekcjami
 \usepackage[section]{placeins} 
