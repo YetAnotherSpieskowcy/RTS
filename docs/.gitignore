@@ -1,0 +1,12 @@
+chapters/*.aux
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.lot
+*.lof
+*.pdf
+*.out
+*.run.xml
+*.toc
