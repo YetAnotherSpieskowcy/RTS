@@ -15,7 +15,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
       - name: Get build dependencies
-        run: sudo apt-get update && sudo apt-get install plantuml texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+        run: sudo apt-get update && sudo apt-get install plantuml texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra texlive-full
       - name: Compile LaTeX document
         run: |
           cd docs
