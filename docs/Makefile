@@ -1,12 +1,17 @@
 UML = plantuml
-TEX = pdflatex
+TEX = xelatex
+BIB = biber
 
 all:	deploy 
 
 uml:
 	$(UML) uml/*.uml
 
-%.tex: uml
+biber: validate
+	$(BIB) main
+
+%.tex: biber uml
+	$(TEX) $@
 	$(TEX) $@
 
 validate: 
@@ -14,3 +19,6 @@ validate:
 	$(TEX) -draftmode *.tex
 
 deploy: main.tex
+
+clean:
+	@-rm chapters/*.aux *.aux *.bbl *.bcf *.blg *.log *.lot *.lof *.pdf *.out *.run.xml *.toc 2> /dev/null
