@@ -1,10 +1,30 @@
-\documentclass[12pt]{article}
+% Wczytanie szablonu
+\documentclass[nostrict]{Szablon}
+
+% Definicja dokumentu
+\usepackage[unicode=true]{hyperref}
+\newcommand\PDFtitle{Tytuł pracy}
+\newcommand\PDFauthors{Imie Nazwisko}
+\hypersetup{
+  pdftitle={\PDFtitle},
+  pdfauthor={\PDFauthors},
+}
+
+% Zmiana czcionki dla symulacji maszynopisu (verbatim)
+\makeatletter
+\renewcommand{\verbatim@font}{\ttfamily\small}
+\makeatother
+
+% Część właściwa pracy
 \begin{document}
-
-\section*{Lorem Ipsum}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At augue eget arcu dictum varius duis at. Fermentum et sollicitudin ac orci phasellus. Purus faucibus ornare suspendisse sed nisi lacus. Dui vivamus arcu felis bibendum ut tristique et. Sem fringilla ut morbi tincidunt augue. Commodo odio aenean sed adipiscing. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Fermentum dui faucibus in ornare quam. Quam elementum pulvinar etiam non quam lacus suspendisse. Ut tellus elementum sagittis vitae et leo duis ut. Ultricies mi quis hendrerit dolor magna eget est lorem. Odio ut sem nulla pharetra diam. Vitae auctor eu augue ut lectus. Cursus turpis massa tincidunt dui ut ornare lectus sit. Donec adipiscing tristique risus nec. Fames ac turpis egestas integer. A lacus vestibulum sed arcu.
-Vel fringilla est ullamcorper eget nulla facilisi etiam. Vitae purus faucibus ornare suspendisse sed. Maecenas pharetra convallis posuere morbi leo urna molestie at elementum. Feugiat sed lectus vestibulum mattis. Scelerisque fermentum dui faucibus in ornare quam viverra orci. In pellentesque massa placerat duis ultricies lacus. Adipiscing elit pellentesque habitant morbi tristique. Maecenas accumsan lacus vel facilisis volutpat. Vulputate dignissim suspendisse in est ante. Volutpat diam ut venenatis tellus in metus vulputate eu scelerisque. Id diam vel quam elementum pulvinar etiam non quam lacus. Quis varius quam quisque id. Volutpat consequat mauris nunc congue nisi vitae. Aliquam malesuada bibendum arcu vitae.
-
-
-
+\include{chapters/0a_streszczenie}
+\include{chapters/0b_spis_tresci}
+\include{chapters/0c_wykaz_skrotow}
+\include{chapters/1_wstep}
+\include{chapters/2_wprowadzenie_do_dziedziny}
+\include{chapters/3_technologie_algorytmy_narzedzia}
+\include{chapters/4_projekt_systemu}
+\include{chapters/5_badania}
+\include{chapters/6_podsumowanie}
+\include{chapters/7_wykazy}
 \end{document}
