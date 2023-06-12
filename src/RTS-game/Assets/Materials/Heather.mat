@@ -58,5 +58,5 @@ Material:
     - _Smoothness: 0.3
     - _Speed: 2
     m_Colors:
-    - _Aldebo: {r: 0.9655585, g: 0.8915094, b: 1, a: 1}
+    - _Aldebo: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
