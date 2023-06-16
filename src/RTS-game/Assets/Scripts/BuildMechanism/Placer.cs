@@ -43,7 +43,7 @@ public class Placer : MonoBehaviour
                 lastPlace = raycastHit.point;
             }
 
-            if (toPlace.HasValid() && Input.GetMouseButtonDown(0))
+            if (toPlace.IsValid() && Input.GetMouseButtonDown(0))
             {
                 Place();
             }
@@ -66,7 +66,7 @@ public class Placer : MonoBehaviour
         }
 
         Building building = new Building(buildings.GetBuildingInfo(0));
-
+        building.GetTransform().GetComponent<Manager>().Initialize(building);
         toPlace = building;
         lastPlace = Vector3.zero;
     }
@@ -79,7 +79,9 @@ public class Placer : MonoBehaviour
 
     private void Place()
     {
-        toPlace.Place();
-        toPlace = null;
+        if (toPlace.IsValid()) { 
+            toPlace.Place();
+            toPlace = null;
+        }
     }
 }

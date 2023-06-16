@@ -9684,8 +9684,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   marker: {fileID: 136985563459607794, guid: 5e78ca5d048b8e19f805c44a853f5a47, type: 3}
   timeScale: 0.2
-  markers: []
-  targets: []
 --- !u!4 &1707578729
 Transform:
   m_ObjectHideFlags: 0
@@ -11858,8 +11856,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   marker: {fileID: 136985563459607794, guid: 5e78ca5d048b8e19f805c44a853f5a47, type: 3}
   timeScale: 0.2
-  markers: []
-  targets: []
 --- !u!114 &1952673053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12123,7 +12119,7 @@ GameObject:
   - component: {fileID: 2039835568}
   m_Layer: 0
   m_Name: Plane (29)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

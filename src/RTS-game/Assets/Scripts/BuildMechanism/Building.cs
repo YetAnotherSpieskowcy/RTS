@@ -51,9 +51,14 @@ public class Building
         return transform;
     }
 
-    public bool HasValid()
+    public bool IsValid()
     {
         return placement == Placement.VALID;
+    }
+
+    public bool IsPlaced()
+    {
+        return placement == Placement.PLACED;
     }
 
 
@@ -72,7 +77,7 @@ public class Building
         List<Material> mat;
         if (placement == Placement.VALID)
         {
-            Material refMaterial = Resources.Load("Materials/Valid") as Material;
+            Material refMaterial = Resources.Load("Prefabs/Materials/Valid") as Material;
             mat = new List<Material>();
             for (int i = 0; i < materials.Count; i++)
             {
@@ -81,7 +86,7 @@ public class Building
         }
         else if (placement == Placement.INVALID)
         {
-            Material refMaterial = Resources.Load("Materials/Invalid") as Material;
+            Material refMaterial = Resources.Load("Prefabs/Materials/Invalid") as Material;
             mat = new List<Material>();
             for (int i = 0; i < materials.Count; i++)
             {
@@ -96,7 +101,7 @@ public class Building
         {
             return;
         }
-        transform.Find("Mesh").GetComponent<Renderer>().materials = materials.ToArray();
+        transform.Find("Mesh").GetComponent<Renderer>().materials = mat.ToArray();
     }
 
 
