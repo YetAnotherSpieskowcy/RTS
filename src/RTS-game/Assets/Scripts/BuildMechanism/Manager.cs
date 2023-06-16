@@ -14,7 +14,7 @@ public class Manager : MonoBehaviour
     public void Initialize(Building building)
     {
         collider = GetComponent<BoxCollider>();
-        building = building;
+        this.building = building;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,10 +38,12 @@ public class Manager : MonoBehaviour
         bool valid = HasValidPlacement();
         if (!valid)
         {
+            building.SetState(Placement.INVALID);
             building.SetMaterials(Placement.INVALID);
         }
         else
         {
+            building.SetState(Placement.VALID);
             building.SetMaterials(Placement.VALID);
         }
         return valid;

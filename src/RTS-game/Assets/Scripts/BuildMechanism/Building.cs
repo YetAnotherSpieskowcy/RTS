@@ -21,6 +21,8 @@ public class Building
 
     public Building(BuildingInfo info) //int resourceA, int resourceB
     {
+        player = GameObject.FindWithTag("Player").transform;
+
         this.info = info;
 
         GameObject g = GameObject.Instantiate(
@@ -67,15 +69,20 @@ public class Building
         transform.position = position;
     }
 
+    public void SetState(Placement p)
+    {
+        placement = p;
+    }
+
     public void SetMaterials() 
     { 
         SetMaterials(placement); 
     }
 
-    public void SetMaterials(Placement placement)
+    public void SetMaterials(Placement p)
     {
         List<Material> mat;
-        if (placement == Placement.VALID)
+        if (p == Placement.VALID)
         {
             Material refMaterial = Resources.Load("Prefabs/Materials/Valid") as Material;
             mat = new List<Material>();
@@ -84,7 +91,7 @@ public class Building
                 mat.Add(refMaterial);
             }
         }
-        else if (placement == Placement.INVALID)
+        else if (p == Placement.INVALID)
         {
             Material refMaterial = Resources.Load("Prefabs/Materials/Invalid") as Material;
             mat = new List<Material>();
@@ -93,7 +100,7 @@ public class Building
                 mat.Add(refMaterial);
             }
         }
-        else if (placement == Placement.PLACED)
+        else if (p == Placement.PLACED)
         {
             mat = materials;
         }
@@ -120,9 +127,17 @@ public class Building
 
     public void UpdatePosition()
     {
-        player = GameObject.FindWithTag("Player").transform;
+        Vector3 centre = new Vector3(player.position.x, 0, player.position.z);
+
+        float y = Terrain.activeTerrain.SampleHeight(centre);
         transform.eulerAngles = new Vector3(0, player.eulerAngles.y, 0);
+
         float alpha = player.eulerAngles.y / 180 * (float)Math.PI;
-        transform.position = player.position + new Vector3(5 * (float)Math.Sin(alpha), 0, 5 * (float)Math.Cos(alpha));
+        int radius = 5;
+
+        centre.y = y + transform.Find("Mesh").localScale.y / 2;
+        Vector3 offset = new Vector3(radius * (float)Math.Sin(alpha), 0, radius * (float)Math.Cos(alpha));
+
+        transform.position = centre + offset;
     }
 }

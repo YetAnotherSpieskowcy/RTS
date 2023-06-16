@@ -7,7 +7,6 @@ public class Placer : MonoBehaviour
     private Building toPlace = null;
     private BuildingsList buildings = new BuildingsList();
 
-    private Ray ray;
     private RaycastHit raycastHit;
     private Vector3 lastPlace;
     private static int terrainLayer = 1 << 8;
@@ -15,7 +14,7 @@ public class Placer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -31,11 +30,9 @@ public class Placer : MonoBehaviour
 
             toPlace.UpdatePosition();
 
-            ray = Camera.main.ScreenPointToRay(toPlace.GetTransform().position);
 
-            if (Physics.Raycast(ray, out raycastHit, 1000f, terrainLayer))
+            if (Physics.Raycast(toPlace.GetTransform().position, toPlace.GetTransform().forward, out raycastHit, 1000f, terrainLayer))
             {
-                toPlace.SetPosition(raycastHit.point);
                 if (lastPlace != raycastHit.point)
                 {
                     toPlace.CheckValid();
@@ -58,9 +55,9 @@ public class Placer : MonoBehaviour
         }
     }
 
-    private void Prepare()      // TODO: 
+    private void Prepare()      // TODO: choose building
     {
-        if (toPlace != null)
+        if (toPlace != null && !toPlace.IsPlaced())
         {
             Destroy(toPlace.GetTransform().gameObject);
         }
@@ -79,9 +76,7 @@ public class Placer : MonoBehaviour
 
     private void Place()
     {
-        if (toPlace.IsValid()) { 
-            toPlace.Place();
-            toPlace = null;
-        }
+        toPlace.Place();
+        toPlace = null;
     }
 }
