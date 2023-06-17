@@ -21,6 +21,8 @@ jobs:
           cd docs
           make -B deploy
           cd ..
+      - name: Cleanup
+        run: cp ./docs/.gitignore.deploy .docs/.gitignore
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
