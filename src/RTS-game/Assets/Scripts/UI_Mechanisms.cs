@@ -99,7 +99,7 @@ public class UI_Mechanisms : MonoBehaviour
         }
         else if(angleRadians >= pi && angleRadians < 2 * pi)
         {
-            float position = (245 * (angleRadians - pi)) / pi;
+            float position = 15 + (245 * (angleRadians - pi)) / pi;
             compassArrow.rectTransform.anchoredPosition = new Vector2(position, 0);
         }
     }
