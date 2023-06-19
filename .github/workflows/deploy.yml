@@ -21,6 +21,14 @@ jobs:
           cd docs
           make -B deploy
           cd ..
+      - name: Cleanup
+        run: cp ./docs/.gitignore.deploy ./docs/.gitignore
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v3
+        with:
+          name: main.pdf
+          path: docs/main.pdf
+          retention-days: 5
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
