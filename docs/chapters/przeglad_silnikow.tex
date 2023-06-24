@@ -1,5 +1,4 @@
-
-\section{Przegląd silników}
+\section{Przegląd silników. Bogna Lew}
 Podstawą tworzenia gier jest silnik graficzny. Stanowi serce kodu, odpowiadając za interakcję poszczególnych elementów. Dostarcza podstawowe narzędzia dzięki którym łatwiej można dokonywać zmian w grze. Wybranie odpowiedniego silnika przed rozpoczęciem pracy ma kluczowy wpływ na proces wytwórczy i efekt końcowy.
 
 Obecnie dostępnych jest wiele silników, a każdy z nich posiada różne możliwości. W celu uproszczenia wyboru zdecydowaliśmy się zawęzić listę do trzech pozycji. Są to Godot, Unity oraz Unreal Engine.
@@ -10,10 +9,11 @@ Kolejny silnik, Unity jest określany jako przyjazny dla początkujących. Posia
 
 Ostatni z silników jest najbardziej kojarzony z grami AAA. Cechuje go zaawansowana grafika, która umożliwia wytwarzanie fotorealistycznych gier. Korzystanie z niego jest darmowe, a opłata w wysokości 5% jest naliczana jedynie gdy gra zarobi ponad milion USD.
 
-Poniższa tabela przedstawia porównanie wymienionych silników w istotnych, z punktu widzenia projektu, aspektach.
+Tabela 4.1 przedstawia porównanie wymienionych silników w istotnych, z punktu widzenia projektu, aspektach.
 
+\begin{table}[h]
 \begin{center}
-\begin{tabular}{ |c||c|c| }
+\begin{tabular}{ |c||c|c|c| }
  \hline
  Silnik & Unity & Unreal Engine & Godot \\
  \hline \hline
@@ -23,11 +23,13 @@ Poniższa tabela przedstawia porównanie wymienionych silników w istotnych, z p
  \hline
  Obsługa & dobra & dobra & dobra \\
  \hline
- Język & C# & C++ & C#, C++, GDScript \\
+ Język & C\# & C++ & C\#, C++, GDScript \\
  \hline
  Baza wiedzy & dokumentacja,  samouczki & dokumentacja, samouczki & samouczki, fora \\
  \hline
 \end{tabular}
 \end{center}
+\caption{Porównanie silników.}
+\end{table}
 
 Finalnie zdecydowaliśmy się na implementację gry w Unity, ponieważ jest to silnik, który najlepiej odpowiada wymaganiom projektu.
