@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:src/RTS-game/Assets/Materials/Vegetation.meta
+guid: d538ab0f32e4beb47804b19900d8e286
+========
+guid: d5f5cb28c2aec914abe40ee1ffa2c996
+>>>>>>>> main:src/RTS-game/Assets/Materials/Tent.meta
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

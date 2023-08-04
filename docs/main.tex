@@ -3,12 +3,15 @@
 
 % Definicja dokumentu
 \usepackage[unicode=true]{hyperref}
+\usepackage{listings}
 \newcommand\PDFtitle{Tytuł pracy}
 \newcommand\PDFauthors{Imie Nazwisko}
 \hypersetup{
   pdftitle={\PDFtitle},
   pdfauthor={\PDFauthors},
 }
+
+\addbibresource{bib.bib}
 
 % Zmiana czcionki dla symulacji maszynopisu (verbatim)
 \makeatletter
@@ -20,10 +23,28 @@
 \include{chapters/0a_streszczenie}
 \include{chapters/0b_spis_tresci}
 \include{chapters/0c_wykaz_skrotow}
+\include{chapters/organizacja}
 \include{chapters/1_wstep}
+\chapter{Wprowadzenie do dziedziny}
+\input{chapters/masseffect}
+\input{chapters/warcraft3}
+\input{chapters/warhammer}
+\input{chapters/kingdomCome}
+\input{chapters/mount_blade}
+\input{chapters/skyrim}
+\input{chapters/orcs_must_die}
 \include{chapters/2_wprowadzenie_do_dziedziny}
-\include{chapters/3_technologie_algorytmy_narzedzia}
-\include{chapters/4_projekt_systemu}
+\chapter{Technologie, algorytmy i narzędzia}
+\input{chapters/przeglad_silnikow}
+\chapter{Projekt systemu}
+\input{chapters/modelowanie_terenu}
+\input{chapters/ui}
+\input{chapters/mechanizm_budowania}
+\input{chapters/nawigacja}
+\input{chapters/sterowanie_jedno}
+\input{chapters/dialogi}
+\input{chapters/sztuczna_inteligencja}
+\input{chapters/widzenie_przez_sciany}
 \include{chapters/5_badania}
 \include{chapters/6_podsumowanie}
 \include{chapters/7_wykazy}
