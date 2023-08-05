@@ -31,8 +31,8 @@ public class RangeAttack : MonoBehaviour
         {
             GameObject go = Instantiate(arrow, hit.point, Quaternion.identity);
             go.transform.LookAt(transform.position, Vector3.up);
-            go.transform.parent = hit.transform.root; // FIXME will break in case of animations
-            hit.transform.localScale = new Vector3(1/go.transform.localScale.x,1/go.transform.localScale.y,1/go.transform.localScale.z);
+            go.transform.parent = hit.transform;
+            hit.transform.localScale = new Vector3(1 / go.transform.localScale.x, 1 / go.transform.localScale.y, 1 / go.transform.localScale.z);
             Unit unit = hit.transform.GetComponentInParent<Unit>();
             if (unit != null)
             {
