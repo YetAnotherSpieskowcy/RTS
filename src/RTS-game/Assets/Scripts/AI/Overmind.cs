@@ -8,7 +8,7 @@ public class Overmind : MonoBehaviour
     public float aggroRange;
     public float maxRange;
     [SerializeField] private List<EnemyAI> enemies = new();
-    [SerializeField][Range(0.0f, 1.0f)] private float idleMove = .5f;
+    [SerializeField] [Range(0.0f, 1.0f)] private float idleMove = .5f;
     private Transform target;
 
     void OnValidate()
