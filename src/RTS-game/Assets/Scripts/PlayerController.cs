@@ -18,33 +18,22 @@ public class PlayerController : MonoBehaviour
     // physics
     void FixedUpdate()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        float horizontal = Input.GetAxisRaw("Horizontal");      // if 'd' then +1, if 'a' then -1, if none then 0
+        float vertical = Input.GetAxisRaw("Vertical");          // if 'w' then +1, if 's' then -1, if none then 0
 
         float alpha = playersTransform.eulerAngles.y * Mathf.PI / 180;
         float vel_x = 0, vel_z = 0;
 
-        Debug.Log(alpha);
-
         if(horizontal != 0 && vertical != 0)
         {
-            vel_x = horizontal * speed * Mathf.Sin(alpha + Mathf.PI / 4) * Time.deltaTime;
-            vel_z = vertical * speed * Mathf.Cos(alpha + horizontal * Mathf.PI / 4) * Time.deltaTime;
+            vel_x = horizontal * speed * Mathf.Sin(alpha + horizontal * vertical * Mathf.PI / 4) * Time.deltaTime;
+            vel_z = vertical * speed * Mathf.Cos(alpha + horizontal * vertical * Mathf.PI / 4) * Time.deltaTime;
+            Debug.Log(Mathf.Cos(alpha + horizontal * Mathf.PI / 4));
+            Debug.Log(Mathf.Sin(alpha + horizontal * Mathf.PI / 4));
 
-            switch (alpha)
+            if((alpha > Mathf.PI / 2 && alpha <= Mathf.PI) || (alpha > 3 * Mathf.PI / 2 && alpha <= 2 * Mathf.PI))
             {
-                case < Mathf.PI / 2:
-                    break;
-                case < Mathf.PI:
-                    vel_z *= -1;
-                    break;
-                case < 3 * Mathf.PI / 2:
-                    vel_z *= -1;
-                    vel_x *= -1;
-                    break;
-                case < 2 * Mathf.PI:
-                    vel_x *= -1;
-                    break;
+                vel_x *= -1;
             }
         }
         else if (horizontal != 0)
@@ -56,7 +45,6 @@ public class PlayerController : MonoBehaviour
         {
             vel_x = vertical * speed * Mathf.Sin(alpha) * Time.deltaTime;
             vel_z = vertical * speed * Mathf.Cos(alpha) * Time.deltaTime;
-            Debug.Log(Mathf.Sin(alpha));
         }
 
         playersTransform.Rotate(new Vector3(0, Input.GetAxis("Mouse X") * sensitivity, 0));
