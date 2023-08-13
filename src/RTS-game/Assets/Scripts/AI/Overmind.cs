@@ -7,8 +7,10 @@ public class Overmind : MonoBehaviour
     public float idleRange;
     public float aggroRange;
     public float maxRange;
+    [SerializeField] private List<EnemyAI> enemies = new();
+    [SerializeField] [Range(0.0f, 1.0f)] private float idleMove = .5f;
+    private Transform target;
 
-    [Range(0, 1)] public float idleMove = .5f;
     void OnValidate()
     {
         idleRange = idleRange > 0 ? idleRange : 0;
@@ -16,55 +18,36 @@ public class Overmind : MonoBehaviour
         maxRange = maxRange > 0 ? maxRange : 0;
         idleRange = aggroRange < idleRange ? aggroRange : idleRange;
         aggroRange = maxRange < aggroRange ? maxRange : aggroRange;
+        idleMove = idleMove > 0 ? idleMove : 0;
+        idleMove = idleMove < 1.0f ? idleMove : 1.0f;
     }
 
-    void DrawCircle(float radious, Color color)
-    {
-        float corners = 30;
-        float size = radious;
-        Vector3 origin = transform.position;
-        Vector3 startRotation = transform.right * size;
-        Vector3 lastPosition = origin + startRotation;
-        float angle = 0;
-        Gizmos.color = color;
-        while (angle <= 360)
-        {
-            angle += 360 / corners;
-            Vector3 nextPosition = origin + (Quaternion.Euler(0, angle, 0) * startRotation);
-            Gizmos.DrawLine(lastPosition, nextPosition);
-
-            lastPosition = nextPosition;
-        }
-
-    }
 
     void OnDrawGizmos()
     {
-        DrawCircle(idleRange, Color.white);
-        DrawCircle(aggroRange, Color.red);
-        DrawCircle(maxRange, Color.yellow);
+        GizmosGeometry.DrawCircle(idleRange, Color.white, transform.position, Vector3.up);
+        GizmosGeometry.DrawCircle(aggroRange, Color.red, transform.position, Vector3.up);
+        GizmosGeometry.DrawCircle(maxRange, Color.yellow, transform.position, Vector3.up);
     }
-    Transform player;
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
+        target = GameObject.FindWithTag("Player").transform;
         foreach (var enemy in enemies)
         {
             enemy.SetCenterLock(transform, maxRange);
         }
     }
 
-    public List<EnemyAI> enemies = new();
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, player.position) < aggroRange)
+        if (target != null && Vector3.Distance(transform.position, target.position) < aggroRange)
         {
 
             foreach (var enemy in enemies)
             {
-                enemy.Target(player);
+                enemy.Target(target);
             }
 
         }

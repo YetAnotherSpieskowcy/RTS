@@ -7,10 +7,36 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     private NavMeshAgent agent;
-    public Transform target;
+    [HideInInspector] public Transform target;
 
-    Transform centerLock;
-    float lockValue;
+    private Transform centerLock;
+    private float lockValue;
+    public float StoppingDistance
+    {
+        get
+        {
+            return agent.stoppingDistance;
+        }
+        set
+        {
+            agent.stoppingDistance = value;
+        }
+    }
+    public float Radius
+    {
+        get
+        {
+            return 4 * agent.radius;
+        }
+    }
+
+    public bool IsStopped
+    {
+        get
+        {
+            return agent.desiredVelocity == Vector3.zero;
+        }
+    }
     public void SetCenterLock(Transform transform, float lockValue)
     {
         centerLock = transform;
@@ -32,9 +58,10 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(target.position);
     }
 
-    void Start()
+    void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        StoppingDistance = Radius;
     }
 
     void Update()
@@ -42,7 +69,7 @@ public class EnemyAI : MonoBehaviour
         if (target != null)
         {
             agent.SetDestination(target.position);
-            if (Vector3.Distance(target.position, centerLock.position) > lockValue)
+            if (centerLock != null && Vector3.Distance(target.position, centerLock.position) > lockValue)
             {
                 target = null;
             }
