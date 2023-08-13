@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotationController : MonoBehaviour
 {
-    public Transform playersTransform, cameraTransform;
+    public Transform playersTransform, cameraAnchorTransform;
     public float rotationSpeed = 10f;
 
     private float mouseX, mouseY;
@@ -21,8 +21,8 @@ public class RotationController : MonoBehaviour
         mouseX += Input.GetAxis("Mouse X");
         mouseY -= Input.GetAxis("Mouse Y");
         float rotateY = Mathf.Clamp(mouseY * rotationSpeed, -15, 60);        // prevent camera from making flips
-
+        
         playersTransform.rotation = Quaternion.Euler(0f, mouseX * rotationSpeed, 0f);
-        cameraTransform.rotation = Quaternion.Euler(rotateY, mouseX * rotationSpeed, 0f);
+        cameraAnchorTransform.rotation = Quaternion.Euler(rotateY, mouseX * rotationSpeed, 0f);
     }
 }

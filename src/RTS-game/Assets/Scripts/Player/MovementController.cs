@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    private const float jumpTime = 1f;
+    private const float jumpTime = .9f;
 
     public Transform playersTransform;
     public float walkSpeed = 5, runSpeed = 7;
@@ -20,7 +20,7 @@ public class MovementController : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");          // if 'w' then +1, if 's' then -1, if none then 0
         float jump = Input.GetAxisRaw("Jump");
 
-        if(jump == 1 && !jumping)
+        if (jump == 1 && !jumping)
         {
             jumping = true;
             jumpDuration = 0f;
