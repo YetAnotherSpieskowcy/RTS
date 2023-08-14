@@ -1499,7 +1499,7 @@ GameObject:
   - component: {fileID: 164706475}
   - component: {fileID: 164706474}
   m_Layer: 5
-  m_Name: textT
+  m_Name: textS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6789,7 +6789,7 @@ GameObject:
   - component: {fileID: 1410614901}
   - component: {fileID: 1410614900}
   m_Layer: 5
-  m_Name: textT
+  m_Name: textM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7321,7 +7321,7 @@ PrefabInstance:
     - target: {fileID: 224613882504462314, guid: 05db22e73067f47298102cd2a70e73b3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224613882504462314, guid: 05db22e73067f47298102cd2a70e73b3,
         type: 3}
@@ -9278,9 +9278,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMode: 0
-  textF: {fileID: 0}
-  textW: {fileID: 0}
-  textS: {fileID: 0}
+  textF: {fileID: 1410614900}
+  textW: {fileID: 1778992997}
+  textS: {fileID: 164706474}
   date: {fileID: 946740870}
   clockTrigger: 0
   compassArrow: {fileID: 0}
@@ -9828,7 +9828,7 @@ GameObject:
   - component: {fileID: 1778992998}
   - component: {fileID: 1778992997}
   m_Layer: 5
-  m_Name: textT
+  m_Name: textW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11334,7 +11334,7 @@ PrefabInstance:
     - target: {fileID: 224613882504462314, guid: 05db22e73067f47298102cd2a70e73b3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224613882504462314, guid: 05db22e73067f47298102cd2a70e73b3,
         type: 3}
