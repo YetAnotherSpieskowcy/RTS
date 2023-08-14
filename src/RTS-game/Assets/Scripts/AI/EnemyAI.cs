@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+// TODO rename
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyAI : MonoBehaviour
 {
@@ -55,7 +56,15 @@ public class EnemyAI : MonoBehaviour
     public void Target(Transform target)
     {
         this.target = target;
-        agent.SetDestination(target.position);
+        if (target != null)
+        {
+            agent.SetDestination(target.position);
+            agent.isStopped = false;
+        }
+        else
+        {
+            agent.isStopped = true;
+        }
     }
 
     void Awake()

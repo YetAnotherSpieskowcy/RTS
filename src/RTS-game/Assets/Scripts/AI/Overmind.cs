@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Overmind : MonoBehaviour
@@ -8,7 +9,7 @@ public class Overmind : MonoBehaviour
     public float aggroRange;
     public float maxRange;
     [SerializeField] private List<EnemyAI> enemies = new();
-    [SerializeField] [Range(0.0f, 1.0f)] private float idleMove = .5f;
+    [SerializeField][Range(0.0f, 1.0f)] private float idleMove = .5f;
     private Transform target;
 
     void OnValidate()
@@ -32,7 +33,7 @@ public class Overmind : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.FindWithTag("Player").transform;
+        BattleContext.Context.ReInit();
         foreach (var enemy in enemies)
         {
             enemy.SetCenterLock(transform, maxRange);
@@ -42,15 +43,26 @@ public class Overmind : MonoBehaviour
 
     void Update()
     {
-        if (target != null && Vector3.Distance(transform.position, target.position) < aggroRange)
+        List<Unit> possibleTargets = BattleContext.Context.GetTargetsOfAligment(Unit.Team.Friendly, (it => Vector3.Distance(transform.position, it.transform.position) < aggroRange)).ToList();
+        if (possibleTargets.Count > 0)
         {
-
             foreach (var enemy in enemies)
             {
-                enemy.Target(target);
+                // TODO resolve RangeAI targeting
+                var allocated = (from n in possibleTargets where !n.CompareTag("Player") && n.GetComponent<EnemyAI>().target == enemy.transform orderby Vector3.Distance(enemy.transform.position, n.transform.position) select n);
+                if (allocated.Count() == 0)
+                {
+                    enemy.Target((from n in possibleTargets orderby Vector3.Distance(enemy.transform.position, n.transform.position) select n).First().transform);
+
+                }
+                else
+                {
+                    enemy.Target(allocated.First().transform);
+                }
             }
 
         }
+
         foreach (var enemy in enemies)
         {
             if (!enemy.HasTarget() && Random.value < idleMove)

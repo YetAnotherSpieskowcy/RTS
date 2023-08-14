@@ -2,8 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Unit : MonoBehaviour
 {
+    // TODO Remake into more generic system
+    public enum Group
+    {
+        Melee = 1,
+        Ranged = 2
+    }
+    public enum Team
+    {
+        Friendly,
+        Enemy,
+        Neutral
+    }
+    public Group group;
+    public Team team;
+    public bool IsFriendly
+    {
+        get
+        {
+            return team == Team.Friendly;
+        }
+    }
     [SerializeField] private int health = 100;
     public void Hit(int damage)
     {
