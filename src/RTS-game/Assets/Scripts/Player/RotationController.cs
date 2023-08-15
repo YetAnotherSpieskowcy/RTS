@@ -20,8 +20,8 @@ public class RotationController : MonoBehaviour
     {
         mouseX += Input.GetAxis("Mouse X");
         mouseY -= Input.GetAxis("Mouse Y");
-        float rotateY = Mathf.Clamp(mouseY * rotationSpeed, -15, 60);        // prevent camera from making flips
-        
+        float rotateY = Mathf.Clamp(mouseY * rotationSpeed, -15, 60);   // prevent camera from making flips
+
         playersTransform.rotation = Quaternion.Euler(0f, mouseX * rotationSpeed, 0f);
         cameraAnchorTransform.rotation = Quaternion.Euler(rotateY, mouseX * rotationSpeed, 0f);
     }

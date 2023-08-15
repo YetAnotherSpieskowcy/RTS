@@ -5198,6 +5198,7 @@ MonoBehaviour:
   speed: 30
   minZoom: -10
   maxZoom: 0
+  autoZoomSensitivity: 0.2
 --- !u!1 &1123258003
 GameObject:
   m_ObjectHideFlags: 0

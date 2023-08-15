@@ -5,18 +5,32 @@ using UnityEngine;
 public class ZoomController : MonoBehaviour
 {
     public Transform cameraTransform, cameraAnchorTransform;
-    public float zoomLevel = -5, sensitivity = 1, speed = 30, minZoom = -10,  maxZoom = 0;
+    public float zoomLevel = -5, sensitivity = 1, speed = 30, minZoom = -10, maxZoom = 0, autoZoomSensitivity = .2f;
 
-    private float zoomPosition;
+    private float zoomPosition, prevZoomLevel;
+    private bool zoomed = false;
 
     void CheckInTheWay()
     {
         Ray ray = new Ray(cameraAnchorTransform.position, -cameraTransform.forward);
         if (Physics.SphereCast(ray, 1, out RaycastHit hit, -minZoom))
         {
-            if (hit.distance < Mathf.Abs(zoomLevel - 1))
+            if (hit.distance < Mathf.Abs(zoomLevel + autoZoomSensitivity))
             {
-                zoomLevel = - hit.distance + 1;
+                if (!zoomed)
+                {
+                    zoomed = true;
+                    prevZoomLevel = zoomLevel;
+                    Debug.Log(prevZoomLevel);
+                }
+                zoomLevel += autoZoomSensitivity;
+            }
+            else if (zoomed && hit.distance >= Mathf.Abs(zoomLevel - autoZoomSensitivity))
+            {
+                zoomLevel -= autoZoomSensitivity;
+                Debug.Log(zoomLevel);
+                if (zoomLevel <= prevZoomLevel)
+                    zoomed = false;
             }
         }
     }
