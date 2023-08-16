@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,7 +8,9 @@ public class Overmind : MonoBehaviour
     public float aggroRange;
     public float maxRange;
     [SerializeField] private List<EnemyAI> enemies = new();
-    [SerializeField][Range(0.0f, 1.0f)] private float idleMove = .5f;
+    [SerializeField]
+    [Range(0.0f, 1.0f)]
+    private float idleMove = .5f;
     private Transform target;
 
     void OnValidate()
@@ -43,6 +44,7 @@ public class Overmind : MonoBehaviour
 
     void Update()
     {
+        // TODO move this snipped to BattleContext
         List<Unit> possibleTargets = BattleContext.Context.GetTargetsOfAligment(Unit.Team.Friendly, (it => Vector3.Distance(transform.position, it.transform.position) < aggroRange)).ToList();
         if (possibleTargets.Count > 0)
         {
@@ -52,8 +54,9 @@ public class Overmind : MonoBehaviour
                 var allocated = (from n in possibleTargets where !n.CompareTag("Player") && n.GetComponent<EnemyAI>().target == enemy.transform orderby Vector3.Distance(enemy.transform.position, n.transform.position) select n);
                 if (allocated.Count() == 0)
                 {
-                    enemy.Target((from n in possibleTargets orderby Vector3.Distance(enemy.transform.position, n.transform.position) select n).First().transform);
-
+                    Unit target = (from n in possibleTargets orderby Vector3.Distance(enemy.transform.position, n.transform.position) select n).First();
+                    enemy.Target(target.transform);
+                    target.Notify(enemy.transform);
                 }
                 else
                 {

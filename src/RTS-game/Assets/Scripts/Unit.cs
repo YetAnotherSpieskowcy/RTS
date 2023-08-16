@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -31,5 +29,14 @@ public class Unit : MonoBehaviour
     {
         health -= damage;
         Debug.Log("Bonk!");
+    }
+    public void Notify(Transform transform)
+    {
+        EnemyAI ai = GetComponent<EnemyAI>();
+        if (ai != null && !ai.HasTarget())
+        {
+            ai.Target(transform);
+        }
+
     }
 }
