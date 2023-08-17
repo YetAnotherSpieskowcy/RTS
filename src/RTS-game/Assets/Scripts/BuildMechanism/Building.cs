@@ -22,6 +22,7 @@ public class Building
     public Building(BuildingInfo info) //int resourceA, int resourceB
     {
         player = GameObject.FindWithTag("Player").transform;
+        Debug.Log(player);
 
         this.info = info;
 
