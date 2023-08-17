@@ -5147,7 +5147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playersTransform: {fileID: 1092636044}
   walkSpeed: 5
-  runSpeed: 7
+  runSpeed: 10
 --- !u!136 &1092636047
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -20,7 +20,9 @@ public class AnimationController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-           
+            CheckKeyReleased("Run");
+            CheckKeyPressed("Run");
+            Debug.Log("Run");
         }
         else
         {
@@ -33,33 +35,21 @@ public class AnimationController : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
         {
-            if (Input.GetKey(KeyCode.D))
-            {
+            if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
                 SetAnimation(speed + "Right");
-            }
-            else if (Input.GetKey(KeyCode.A))
-            {
+            else if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
                 SetAnimation(speed + "Left");
-            }
             else
-            {
                 SetAnimation("Idle");
-            }
         }
         else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
-            if (Input.GetKey(KeyCode.W))
-            {
+            if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
                 SetAnimation(speed + "Forward");
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
+            else if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
                 SetAnimation(speed + "Backward");
-            }
             else
-            {
                 SetAnimation("Idle");
-            }
         }
     }
 
@@ -69,14 +59,22 @@ public class AnimationController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.D))
             {
-                SetAnimation(speed + "ForwardRight");
+                if (!Input.GetKey(KeyCode.A))
+                    SetAnimation(speed + "ForwardRight");
+                else
+                    SetAnimation(speed + "Forward");
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                SetAnimation(speed + "ForwardLeft");
+                if (!Input.GetKey(KeyCode.D))
+                    SetAnimation(speed + "ForwardLeft");
+                else
+                    SetAnimation(speed + "Forward");
             }
-            else
-            {
+            else if (Input.GetKey(KeyCode.S))
+                SetAnimation("Idle");
+            else {
+                Debug.Log(speed);
                 SetAnimation(speed + "Forward");
             }
         }
@@ -84,46 +82,65 @@ public class AnimationController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.D))
             {
-                SetAnimation(speed + "BackwardRight");
+                if (!Input.GetKey(KeyCode.A))
+                    SetAnimation(speed + "BackwardRight");
+                else
+                    SetAnimation(speed + "Backward");
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                SetAnimation(speed + "BackwardLeft");
+                if (!Input.GetKey(KeyCode.D))
+                    SetAnimation(speed + "BackwardLeft");
+                else
+                    SetAnimation(speed + "Backward");
             }
+            else if (Input.GetKey(KeyCode.W))
+                SetAnimation("Idle");
             else
-            {
                 SetAnimation(speed + "Backward");
-            }
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             if (Input.GetKey(KeyCode.W))
             {
-                SetAnimation(speed + "ForwardRight");
+                if (!Input.GetKey(KeyCode.S))
+                    SetAnimation(speed + "ForwardRight");
+                else
+                    SetAnimation(speed + "Forward");
             }
             else if (Input.GetKey(KeyCode.S))
             {
+                if (!Input.GetKey(KeyCode.W))
+                    SetAnimation(speed + "BackwardRight");
+                else
+                    SetAnimation(speed + "Backward");
                 SetAnimation(speed + "BackwardRight");
             }
+            else if (Input.GetKey(KeyCode.A))
+                SetAnimation("Idle");
             else
-            {
                 SetAnimation(speed + "Right");
-            }
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
             if (Input.GetKey(KeyCode.W))
             {
-                SetAnimation(speed + "ForwardLeft");
+                if (!Input.GetKey(KeyCode.S))
+                    SetAnimation(speed + "ForwardLeft");
+                else
+                    SetAnimation(speed + "Forward");
             }
             else if (Input.GetKey(KeyCode.S))
             {
-                SetAnimation(speed + "BackwardLeft");
+                if (!Input.GetKey(KeyCode.W))
+                    SetAnimation(speed + "BackwardLeft");
+                else
+                    SetAnimation(speed + "Backward");
             }
+            else if (Input.GetKey(KeyCode.D))
+                SetAnimation("Idle");
             else
-            {
                 SetAnimation(speed + "Left");
-            }
         }
     }
 
