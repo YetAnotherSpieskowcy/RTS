@@ -11583,10 +11583,13 @@ MonoBehaviour:
   clockTrigger: 0
   compassArrow: {fileID: 0}
   angleRadians: 0
-  dirN: {fileID: 0}
-  dirS: {fileID: 0}
-  dirE: {fileID: 0}
-  dirW: {fileID: 0}
+  dirN: {fileID: 952901944}
+  dirS: {fileID: 2012291366}
+  dirE: {fileID: 1506843898}
+  dirW: {fileID: 772957638}
+  compassBarTransform: {fileID: 747053122}
+  northMarkrerTransform: {fileID: 952901943}
+  southMarkrerTransform: {fileID: 2012291365}
   inputtexture2D: {fileID: 0}
   rawImage: {fileID: 0}
 --- !u!1 &1678870477

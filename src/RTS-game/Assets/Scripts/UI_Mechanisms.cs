@@ -45,6 +45,15 @@ public class UI_Mechanisms : MonoBehaviour
     public Image dirE;
     public Image dirW;
 
+    public RectTransform compassBarTransform;
+
+    // for future: public rectTransform objectiveMarkrerTransform;
+    public RectTransform northMarkrerTransform;
+    public RectTransform southMarkrerTransform;
+
+    //public Transform Camera.main.transform = Camera.main.transform; 
+    // for future: public Transform objectTransform; 
+
 
     //DONE clock
     //TODO compass
@@ -92,6 +101,7 @@ public class UI_Mechanisms : MonoBehaviour
         }
     }
     // ----- compass -----
+    /*
     float CalcLeftCorner(float centerOfSight, float fieldOfView)
     {
         float leftCornerOfView = centerOfSight - fieldOfView / 2;
@@ -135,19 +145,68 @@ public class UI_Mechanisms : MonoBehaviour
         }
         return isseen;
     }
+*/
+
+    void SetNorth()
+    {
+        Vector3 worldPosition = Vector3.forward * 1000;
+        RectTransform markerTransform = northMarkrerTransform;
+        Vector3 dirToTarget = worldPosition - Camera.main.transform.position;
+        float angle = Vector2.SignedAngle(new Vector2(dirToTarget.x, dirToTarget.z), new Vector2(Camera.main.transform.transform.forward.x, Camera.main.transform.transform.forward.z));
+        float compassPositionX = Mathf.Clamp(2 * angle / Camera.main.fieldOfView, -1, 1);
+        markerTransform.anchoredPosition = new Vector2(compassBarTransform.rect.width / 2 * compassPositionX, 0);
+        Vector2 v = Camera.main.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
+        Debug.Log("markerTransform.anchoredPosition" + markerTransform.anchoredPosition);
+    }
+
+    void SetSouth()
+    {
+        Vector3 worldPosition = Vector3.forward * (-18000);
+        RectTransform markerTransform = southMarkrerTransform;
+        Vector3 dirToTarget = worldPosition - Camera.main.transform.position;
+        float angle = Vector2.SignedAngle(new Vector2(dirToTarget.x, dirToTarget.z), new Vector2(Camera.main.transform.transform.forward.x, Camera.main.transform.transform.forward.z));
+        float compassPositionX = Mathf.Clamp(2 * angle / Camera.main.fieldOfView, -1, 1);
+        markerTransform.anchoredPosition = new Vector2(compassBarTransform.rect.width / 2 * compassPositionX, 0);
+        Vector2 v = Camera.main.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
+        Debug.Log("markerTransform.anchoredPosition" + markerTransform.anchoredPosition);
+    }
+
+    void SetMarkerPosition(RectTransform markerTransform, Vector3 worldPosition){
+        Vector3 dirToTarget = worldPosition - Camera.main.transform.position;
+        float angle = Vector2.SignedAngle(new Vector2(dirToTarget.x, dirToTarget.z), new Vector2(Camera.main.transform.transform.forward.x, Camera.main.transform.transform.forward.z));
+        float compassPositionX = Mathf.Clamp(2*angle/Camera.main.fieldOfView, -1, 1);
+        markerTransform.anchoredPosition = new Vector2(compassBarTransform.rect.width/2*compassPositionX, 0);
+        Vector2 v = Camera.main.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
+        Debug.Log("markerTransform.anchoredPosition" + markerTransform.anchoredPosition);
+    }
 
     void UpdateCompass()
     {
+        SetNorth();
+        SetSouth();
+        
+        /*
+        SetMarkerPosition(northMarkrerTransform, Vector3.forward*1000);
+        SetMarkerPosition(southMarkrerTransform, Vector3.back*1000);
+
+        Debug.Log("north:" + Vector3.forward * 1000 +", south:"+ Vector3.back * 1000);
+        /*
         //dirE.rectTransform.anchoredPosition = new Vector2(-40, 0);
-        float centerOfSight = Camera.main.transform.localEulerAngles.x;
+        float centerOfSight = Camera.main.transform.localEulerAngles.z;
         float fieldOfView = Camera.main.fieldOfView;
         float leftCornerOfView = CalcLeftCorner(centerOfSight, fieldOfView);
         float rightCornerOfView = CalcRightCorner(centerOfSight, fieldOfView);
 
         //-- N = 0 --
-        if(isSeen(0, leftCornerOfView, rightCornerOfView))
+        if (isSeen(0, leftCornerOfView, rightCornerOfView))
         {
-
+            Debug.Log("North is seen. leftCornerOfView = "+ leftCornerOfView+ ", rightCornerOfView = "+ rightCornerOfView + ", Camera.main.transform.position = " + Camera.main.transform.position);
+            dirN.rectTransform.anchoredPosition = new Vector2(0, 0);
+        }
+        else
+        {
+            Debug.Log("North is seen. leftCornerOfView = " + leftCornerOfView + ", rightCornerOfView = " + rightCornerOfView + ", Camera.main.transform.position = " + Camera.main.transform.position);
+            dirN.rectTransform.anchoredPosition = new Vector2(100, 0);
         }
         //-- E = 90 --
         //-- S = 180 --
@@ -165,6 +224,8 @@ public class UI_Mechanisms : MonoBehaviour
             float position = 15 + (245 * (angleRadians - pi)) / pi;
             compassArrow.rectTransform.anchoredPosition = new Vector2(position, 0);
         }
+
+        */
     }
 
     public Texture2D inputtexture2D;
@@ -207,7 +268,7 @@ public class UI_Mechanisms : MonoBehaviour
         isRunning = false;
         clockTrigger = false;
         angleRadians = 0;
-
+        
         CreateEnemy();
     }
 
