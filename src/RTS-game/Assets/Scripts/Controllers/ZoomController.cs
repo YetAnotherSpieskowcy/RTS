@@ -21,14 +21,12 @@ public class ZoomController : MonoBehaviour
                 {
                     zoomed = true;
                     prevZoomLevel = zoomLevel;
-                    Debug.Log(prevZoomLevel);
                 }
                 zoomLevel += autoZoomSensitivity;
             }
             else if (zoomed && hit.distance >= Mathf.Abs(zoomLevel - autoZoomSensitivity))
             {
                 zoomLevel -= autoZoomSensitivity;
-                Debug.Log(zoomLevel);
                 if (zoomLevel <= prevZoomLevel)
                     zoomed = false;
             }
