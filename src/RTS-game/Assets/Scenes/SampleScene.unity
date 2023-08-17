@@ -5092,7 +5092,6 @@ GameObject:
   - component: {fileID: 1092636046}
   - component: {fileID: 1092636048}
   - component: {fileID: 1092636049}
-  - component: {fileID: 1092636050}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5148,6 +5147,7 @@ MonoBehaviour:
   playersTransform: {fileID: 1092636044}
   walkSpeed: 5
   runSpeed: 10
+  playerAnimator: {fileID: 219041926}
 --- !u!136 &1092636047
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5197,19 +5197,6 @@ MonoBehaviour:
   minZoom: -10
   maxZoom: 0
   autoZoomSensitivity: 0.2
---- !u!114 &1092636050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092636043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ad45313ace98140b95d6022470128e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAnimator: {fileID: 219041926}
 --- !u!1 &1123258003
 GameObject:
   m_ObjectHideFlags: 0
