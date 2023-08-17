@@ -8,15 +8,11 @@ public class AnimationController
 
     private string runningAnimation;
 
-    public AnimationController(Animator animator)
+    public AnimationController(Animator animator, string startAnimation)
     {
         playerAnimator = animator;
-    }
-
-    public void InitializeAnimation(string animation)
-    {
-        playerAnimator.SetTrigger(animation);
-        runningAnimation = animation;
+        playerAnimator.SetTrigger(startAnimation);
+        runningAnimation = startAnimation;
     }
 
     public void ChooseAnimation(bool running, float vertical, float horizontal)

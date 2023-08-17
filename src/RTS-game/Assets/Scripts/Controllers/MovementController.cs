@@ -16,8 +16,7 @@ public class MovementController : MonoBehaviour
 
     void Start()
     {
-        animationController = new AnimationController(playerAnimator);
-        animationController.InitializeAnimation("Idle");
+        animationController = new AnimationController(playerAnimator, "Idle");
     }
 
     // physics
