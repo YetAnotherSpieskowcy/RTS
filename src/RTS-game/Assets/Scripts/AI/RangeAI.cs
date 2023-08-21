@@ -45,7 +45,7 @@ public class RangeAI : MonoBehaviour
                 delay += Time.deltaTime;
             }
         }
-        else
+        else //TODO if has MeleeAI else flee
         {
             ai.StoppingDistance = ai.Radius;
         }

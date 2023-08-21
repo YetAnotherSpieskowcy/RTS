@@ -52,7 +52,7 @@ public class ShowMarkers : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(InputSettings.ShowEnemyUnitMarker))
         {
             CollectTargets();
             ShowAllMarkers();
