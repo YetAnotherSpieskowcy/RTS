@@ -27,7 +27,6 @@ public enum Mode
 public class UI_Mechanisms : MonoBehaviour
 {
     public Mode gameMode = Mode.NORMAL;
-    //public Storage storage;
     public TMP_Text textF;
     public TMP_Text textW;
     public TMP_Text textS;
@@ -36,9 +35,8 @@ public class UI_Mechanisms : MonoBehaviour
     private DateTime startDate;
     private bool isRunning;
     public bool clockTrigger;
-
-    public Image compassArrow;
-    public float angleRadians;
+    
+    public Transform CameraTransform;
 
     public RectTransform compassBarTransform;
 
@@ -98,10 +96,8 @@ public class UI_Mechanisms : MonoBehaviour
             yield return new WaitForSeconds(5f);
         }
     }
-    // ----- compass -----
- 
 
-    public Transform CameraTransform;
+    // ----- compass -----
     void SetMarkerPosition(RectTransform markerTransform, Vector3 worldPosition){
         Vector3 dirToTarget = worldPosition - CameraTransform.position;
         float angle = Vector2.SignedAngle(new Vector2(dirToTarget.x, dirToTarget.z), new Vector2(CameraTransform.transform.forward.x, CameraTransform.transform.forward.z));
@@ -122,55 +118,18 @@ public class UI_Mechanisms : MonoBehaviour
         SetMarkerPosition(southMarkrerTransform, new Vector3(4041,0,-60000));
         SetMarkerPosition(eastMarkrerTransform, new Vector3(60000,0,2300));
         SetMarkerPosition(westMarkrerTransform, new Vector3(-60000,0,2300));
-        SetMarkerPosition(eastMarkrerTransform, new Vector3(60000,0,2300));
-        SetMarkerPosition(westMarkrerTransform, new Vector3(-60000,0,2300));
 
         SetMarkerPosition(enemyOneMarkrerTransform, enemyOneTransform.position);
         SetMarkerPosition(enemyTwoMarkrerTransform, enemyTwoTransform.position);
     }
 
-    public Texture2D inputtexture2D;
-    public RawImage rawImage;
-    
-    Texture2D Resize(Texture2D texture2D, int targetX, int targetY)
-    {
-        RenderTexture rt = new RenderTexture(targetX, targetY, 24);
-        RenderTexture.active = rt;
-        Graphics.Blit(texture2D, rt);
-        Texture2D result = new Texture2D(targetX, targetY);
-        result.ReadPixels(new Rect(0, 0, targetX, targetY), 0, 0);
-        result.Apply();
-        return result;
-    }
-
-
-
-    void CreateEnemy()
-    {
-        Texture2D t = Resources.Load<Texture2D>("Assets/Cainos/Pixel Art Icon Pack - RPG/Texture/Weapon & Tool/Iron Sword.png");
-
-        t = Resize(t, 100, 100);
-
-        Sprite s = Sprite.Create(t, new Rect(0.0f, 0.0f, 100.0f, 100.0f), new Vector2(0.0f, 0.0f));
-
-       // s.transform.localScale = new Vector3(20.0f, 20.0f, 1.0f);
-
-
-        //Camera.main.transform.localEulerAngles.y
-    }
     // ----- UI -----
     void Start()
     {
-        //rawImage.texture = Resize(inputtexture2D, 200, 100);
-
-
         startDate = new DateTime(1500, 1, 1, 8, 0, 0);
         date.text = startDate.ToString();
         isRunning = false;
         clockTrigger = false;
-        angleRadians = 0;
-        
-        CreateEnemy();
     }
 
     void Update()
