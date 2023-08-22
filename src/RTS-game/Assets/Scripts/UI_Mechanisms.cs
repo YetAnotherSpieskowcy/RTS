@@ -43,8 +43,8 @@ public class UI_Mechanisms : MonoBehaviour
     public RectTransform westMarkrerTransform;
     public RectTransform enemyOneMarkrerTransform;
     public RectTransform enemyTwoMarkrerTransform;
-    public Transform enemyOneTransform; 
-    public Transform enemyTwoTransform; 
+    public Transform enemyOneTransform;
+    public Transform enemyTwoTransform;
     /*
     DONE clock
     TODO compass
@@ -54,8 +54,7 @@ public class UI_Mechanisms : MonoBehaviour
     TODO key interrupts
     TODO comments
     TODO possible commands
-    */
-    // ----- storage -----
+    // ----- storage -----*/
     void IncreaseSource(TMP_Text sourceT, int value)
     {
         int newI = int.Parse(sourceT.text) + value;
