@@ -35,28 +35,26 @@ public class UI_Mechanisms : MonoBehaviour
     private DateTime startDate;
     private bool isRunning;
     public bool clockTrigger;
-    
     public Transform CameraTransform;
     public RectTransform compassBarTransform;
     public RectTransform northMarkrerTransform;
     public RectTransform southMarkrerTransform;
     public RectTransform eastMarkrerTransform;
     public RectTransform westMarkrerTransform;
-
     public RectTransform enemyOneMarkrerTransform;
     public RectTransform enemyTwoMarkrerTransform;
     public Transform enemyOneTransform; 
     public Transform enemyTwoTransform; 
-
-    //DONE clock
-    //TODO compass
-    //DONE storage
-    //TODO characters
-    //TODO buildings
-    //TODO key interrupts
-    //TODO comments
-    //TODO possible commands
-
+    /*
+    DONE clock
+    TODO compass
+    DONE storage
+    TODO characters
+    TODO buildings
+    TODO key interrupts
+    TODO comments
+    TODO possible commands
+    */
     // ----- storage -----
     void IncreaseSource(TMP_Text sourceT, int value)
     {
@@ -100,11 +98,11 @@ public class UI_Mechanisms : MonoBehaviour
         Vector3 dirToTarget = worldPosition - CameraTransform.position;
         float angle = Vector2.SignedAngle(new Vector2(dirToTarget.x, dirToTarget.z), new Vector2(CameraTransform.transform.forward.x, CameraTransform.transform.forward.z));
         float compassPositionX = Mathf.Clamp(2 * angle / Camera.main.fieldOfView, -1, 1);
-        if (compassPositionX == 1 || compassPositionX == (-1) )
+        if (compassPositionX == 1 || compassPositionX == (-1))
         {
             markerTransform.anchoredPosition = new Vector2(0, 100);
         }
-        else 
+        else
         {
             markerTransform.anchoredPosition = new Vector2(compassBarTransform.rect.width / 2 * compassPositionX, 0);
         }
