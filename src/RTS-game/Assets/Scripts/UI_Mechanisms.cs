@@ -27,7 +27,6 @@ public class UI_Mechanisms : MonoBehaviour
 
     public TMP_Text date;
     private DateTime startDate;
-    
     public Transform CameraTransform;
     public RectTransform compassBarTransform;
     public RectTransform northMarkrerTransform;
@@ -35,8 +34,8 @@ public class UI_Mechanisms : MonoBehaviour
     public RectTransform eastMarkrerTransform;
     public RectTransform westMarkrerTransform;
 
-    private GameObject[]  enemiesOnUI;
-    private GameObject[]  enemiesOnMap;
+    private GameObject[] enemiesOnUI;
+    private GameObject[] enemiesOnMap;
     public GameObject enemiesPrefab;
 
     /*
@@ -88,7 +87,7 @@ public class UI_Mechanisms : MonoBehaviour
     }
     void SetPositionOfEnemies()
     {
-        foreach(var e in enemiesOnMap.Zip(enemiesOnUI, (x, y) => new { enemyOnMap = x, enemyOnUI = y }))
+        foreach (var e in enemiesOnMap.Zip(enemiesOnUI, (x, y) => new { enemyOnMap = x, enemyOnUI = y }))
         {
             SetMarkerPosition(e.enemyOnUI.GetComponent<RectTransform>(), e.enemyOnMap.transform.position);
         }
@@ -104,7 +103,6 @@ public class UI_Mechanisms : MonoBehaviour
         SetMarkerPosition(southMarkrerTransform, new Vector3(halfOfMapLength, 0, -farFarAway));
         SetMarkerPosition(eastMarkrerTransform, new Vector3(farFarAway, 0, halfOfMapLength));
         SetMarkerPosition(westMarkrerTransform, new Vector3(-farFarAway, 0, halfOfMapLength));
-        
         SetPositionOfEnemies();
     }
 
@@ -116,7 +114,7 @@ public class UI_Mechanisms : MonoBehaviour
         StartCoroutine(UpdateClock());
 
         enemiesOnMap = GameObject.FindGameObjectsWithTag("Enemy");
-        List<GameObject> tmp =  new List<GameObject>();
+        List<GameObject> tmp = new List<GameObject>();
         foreach (GameObject enemy in enemiesOnMap)
         {
             GameObject e = Instantiate(enemiesPrefab, compassBarTransform);
