@@ -12,4 +12,9 @@ public static class InputSettings
     public static KeyCode UnitSelectionMenuItem5 = KeyCode.Alpha5;
     public static KeyCode UnitSelectionMenuCancel = KeyCode.Alpha0;
     public static KeyCode ShowEnemyUnitMarker = KeyCode.E;
+    /**/
+    public static KeyCode GameModeNormal = KeyCode.N;
+    public static KeyCode GameModeCombat = KeyCode.C;
+    public static KeyCode GameModeBuild = KeyCode.B;
+    /**/
 }
