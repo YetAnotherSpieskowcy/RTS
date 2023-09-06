@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.Linq;
 
 
 
@@ -15,36 +16,28 @@ public enum Mode
     BUILDING
 }
 
-// ----- structuress -----
-// public struct Storage
-// {
-//     public int funds;
-//     public int wood;
-//     public int stones;
-// }
-
 // ----- mechanisms -----
 public class UI_Mechanisms : MonoBehaviour
 {
     public Mode gameMode = Mode.NORMAL;
+
     public TMP_Text textF;
     public TMP_Text textW;
     public TMP_Text textS;
 
     public TMP_Text date;
     private DateTime startDate;
-    private bool isRunning;
-    public bool clockTrigger;
     public Transform CameraTransform;
     public RectTransform compassBarTransform;
     public RectTransform northMarkrerTransform;
     public RectTransform southMarkrerTransform;
     public RectTransform eastMarkrerTransform;
     public RectTransform westMarkrerTransform;
-    public RectTransform enemyOneMarkrerTransform;
-    public RectTransform enemyTwoMarkrerTransform;
-    public Transform enemyOneTransform;
-    public Transform enemyTwoTransform;
+
+    private GameObject[] enemiesOnUI;
+    private GameObject[] enemiesOnMap;
+    public GameObject enemiesPrefab;
+
     /*
     DONE clock
     TODO compass
@@ -60,29 +53,15 @@ public class UI_Mechanisms : MonoBehaviour
         int newI = int.Parse(sourceT.text) + value;
         sourceT.text = newI.ToString();
     }
-    void DectraseSource(TMP_Text sourceT, int value)
+    void DecreaseSource(TMP_Text sourceT, int value)
     {
         sourceT.text = (int.Parse(sourceT.text) + value).ToString();
     }
 
     // ----- date -----
-    public void StartClock()
-    {
-        isRunning = true;
-        clockTrigger = false;
-        StartCoroutine(UpdateClock());
-    }
-
-    public void StopClock()
-    {
-        isRunning = false;
-        clockTrigger = false;
-        StopCoroutine(UpdateClock());
-    }
-
     private System.Collections.IEnumerator UpdateClock()
     {
-        while (isRunning)
+        while (true)
         {
             startDate = startDate.Add(new System.TimeSpan(0, 0, 1, 0));
             date.text = startDate.ToString();
@@ -106,16 +85,25 @@ public class UI_Mechanisms : MonoBehaviour
             markerTransform.anchoredPosition = new Vector2(compassBarTransform.rect.width / 2 * compassPositionX, 0);
         }
     }
+    void SetPositionOfEnemies()
+    {
+        foreach (var e in enemiesOnMap.Zip(enemiesOnUI, (x, y) => new { enemyOnMap = x, enemyOnUI = y }))
+        {
+            SetMarkerPosition(e.enemyOnUI.GetComponent<RectTransform>(), e.enemyOnMap.transform.position);
+        }
+    }
 
     void UpdateCompass()
     {
-        SetMarkerPosition(northMarkrerTransform, new Vector3(4041, 0, 60000));
-        SetMarkerPosition(southMarkrerTransform, new Vector3(4041, 0, -60000));
-        SetMarkerPosition(eastMarkrerTransform, new Vector3(60000, 0, 2300));
-        SetMarkerPosition(westMarkrerTransform, new Vector3(-60000, 0, 2300));
+        int farFarAway = 60000;
+        int halfOfMapLength = 2300;
+        int halfOfMapWidth = 4041;
 
-        SetMarkerPosition(enemyOneMarkrerTransform, enemyOneTransform.position);
-        SetMarkerPosition(enemyTwoMarkrerTransform, enemyTwoTransform.position);
+        SetMarkerPosition(northMarkrerTransform, new Vector3(halfOfMapLength, 0, farFarAway));
+        SetMarkerPosition(southMarkrerTransform, new Vector3(halfOfMapLength, 0, -farFarAway));
+        SetMarkerPosition(eastMarkrerTransform, new Vector3(farFarAway, 0, halfOfMapLength));
+        SetMarkerPosition(westMarkrerTransform, new Vector3(-farFarAway, 0, halfOfMapLength));
+        SetPositionOfEnemies();
     }
 
     // ----- UI -----
@@ -123,27 +111,20 @@ public class UI_Mechanisms : MonoBehaviour
     {
         startDate = new DateTime(1500, 1, 1, 8, 0, 0);
         date.text = startDate.ToString();
-        isRunning = false;
-        clockTrigger = false;
+        StartCoroutine(UpdateClock());
+
+        enemiesOnMap = GameObject.FindGameObjectsWithTag("Enemy");
+        List<GameObject> tmp = new List<GameObject>();
+        foreach (GameObject enemy in enemiesOnMap)
+        {
+            GameObject e = Instantiate(enemiesPrefab, compassBarTransform);
+            tmp.Add(e);
+        }
+        enemiesOnUI = tmp.ToArray();
     }
 
     void Update()
     {
-        if (clockTrigger)
-        {
-            if (isRunning)
-            {
-                StopClock();
-                Debug.Log("Clock Stoped");
-            }
-            else
-            {
-                StartClock();
-                Debug.Log("Clock Started");
-            }
-        }
-
         UpdateCompass();
-
     }
 }
