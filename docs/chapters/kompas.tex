@@ -33,7 +33,7 @@ void SetMarkerPosition(RectTransform markerTransform, Vector3 worldPosition)
 }
 \end{lstlisting}
 
-Problem lokalizacji stron świata pojawił się, gdy nieprawidłowe położenie na kompasie nieprawidłowo wyświetlały się symbole po użyciu najprostszego rozwiązania. Było to pobranie wartości od Vector3.forward, co jest skrótowym zapisem Vector3(0, 0, 1). Lewy dolny róg mapy jest położony w punkcie (0, 0, 0), co oznacza, że wymagane jest przesunięcie, aby prawidłowo zasymulować strony świata. Płnoc i Południe przesunęliśmy do połowy szerokości, a Wschód i Zachód - długości mapy. Każde z nich odaliliśmy o 60000 jednostek, co pozwala na wiarygodą symulację stron świata na kompasie.
+Problem lokalizacji stron świata pojawił się, gdy nieprawidłowe położenie na kompasie nieprawidłowo wyświetlały się symbole po użyciu najprostszego rozwiązania. Było to pobranie wartości od Vector3.forward, co jest skrótowym zapisem Vector3(0, 0, 1). Lewy dolny róg mapy jest położony w punkcie (0, 0, 0), co oznacza, że wymagane jest przesunięcie, aby prawidłowo zasymulować strony świata. Północ i Południe przesunęliśmy do połowy szerokości, a Wschód i Zachód - długości mapy. Każde z nich oddaliliśmy o 60000 jednostek, co pozwala na wiarygodną symulację stron świata na kompasie.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/strony_swiata.png}
