@@ -1,4 +1,4 @@
-\section{System dialogów. Bartosz Strzelecki}
+\section{System dialogów (Bartosz Strzelecki)}
 
 System dialogów jest podstawową metodą, którą gracz będzie wykorzystywał, aby pozyskać informacje  o świecie oraz celach misji.
 Gracz może inicjować konwersacje z postaciami niezależnymi, po czym zostaną mu zaproponowane opcje sposobu prowadzenia rozmowy.
@@ -16,26 +16,3 @@ Zawiera zestaw elementów ułatwiających wdrożenie systemu do projektu oraz ud
 Podczas rozmowy z postaciami niezależnymi gracz będzie mógł pozyskać informację o geografii świata, możliwych zagrożeniach oraz zadaniach do wykonania. 
 Podobne systemy występują w grach takich jak Pillars of Eternity oraz w grach z serii Mass Effect.
 
-W powyższej implementacji konwersacje składają się z dwóch rodzajów węzłów. Jednego odpowiedzialnego za wypowiedzi postaci niezależnych oraz drugiego
-pozwalającego na podjęcie przez gracza decyzji.
-Dodanie nowej konwersacji odbywa się poprzez stworzenie obiektu z przypisanym komponentem NPC Conversation.
-Wywołanie dialogu można osiągnąć poprzez wykorzystanie metody
-
-
-\begin{verbatim}
-ConversationManager.Instance.StartConversation(/*NPCConversation*/);
-\end{verbatim}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.6\textwidth]{images/dial}
-\caption{Przykładowa konwersacja z wykorzystaniem Dialogue Editor}
-\end{figure}
-System pozwała na łatwe dostosowanie elementów interfejsu użytkownika odpowiedzialne za wyświetlenie dialogów, aby jak najlepiej wpasować się
-w styl graficzny gry.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.6\textwidth]{images/d}
-\caption{Przykładowe okno dialogowe widziane z perspektywy gracza.}
-\end{figure}
