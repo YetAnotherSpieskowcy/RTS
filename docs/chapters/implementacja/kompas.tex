@@ -11,6 +11,13 @@ Projekt kompasu jest na tyle prosty, aby nie przytłoczyć gracza nadmierną lic
 Ikony wyświetlane na kompasie będą przedstawiać najważniejsze informacje w polu widzenia gracza, czyli stronę świata, w kierunku której jest on zwrócony, oraz przeciwników.
 Poniżej przedstawiono kod odpowiedzialny za wyznaczenie pozycji symbolu na omawianym narzędziu. Wejściem jest komponent RectTransform symbolu przypisanemu danemu obiektowi oraz jego położenie. Po obliczeniu wektora prowadzącego do uzyskania np. pozycji wroga, wyznaczany jest kąt, o jaki musi się obrócić. To przeliczamy na pozycję na kompasie i jeśli obiekt jest w polu widzenia, wyświetlamy symbol.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/ui/compass.png}
+    \caption{Wizualizacja przypadku, w którym gracz patrzy centralnie na obozowisko wrogów. Na przeciwko oraz po lewej stronie znajdują się przeciwnicy, co jest zasygnalizowane na kompasie za pomocą symboli mieczy. Znajduje się na nim także informacja, że bohater jest lekko odchylony od Wschodu.
+    }\label{fig:compass}
+\end{figure}
+
 \begin{lstlisting}[caption=Fragment kodu odpowiedzialny za ustawienie symbolu na pasku kompasu]
 void SetMarkerPosition(RectTransform markerTransform, Vector3 worldPosition)
 {
