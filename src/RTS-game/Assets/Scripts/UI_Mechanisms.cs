@@ -38,16 +38,18 @@ public class UI_Mechanisms : MonoBehaviour
     private GameObject[] enemiesOnMap;
     public GameObject enemiesPrefab;
 
-    /*
-    DONE clock
-    TODO compass
-    DONE storage
-    TODO characters
-    TODO buildings
-    TODO key interrupts
-    TODO comments
-    TODO possible commands
-    // ----- storage -----*/
+    private int numOfBuildings;
+    private int selectedBuilding;
+    public RectTransform buildingBackgroundTransform;
+
+    private RectTransform[] buildingsOnUI;
+    private RectTransform[] buildingsSelectedOnUI;
+    public RectTransform building1SelectedTransform;
+    public RectTransform building1Transform;
+    public RectTransform building2SelectedTransform;
+    public RectTransform building2Transform;
+
+    // ----- storage -----
     void IncreaseSource(TMP_Text sourceT, int value)
     {
         int newI = int.Parse(sourceT.text) + value;
@@ -58,23 +60,23 @@ public class UI_Mechanisms : MonoBehaviour
         sourceT.text = (int.Parse(sourceT.text) + value).ToString();
     }
 
-    // ----- date -----
+    // ----- this.date -----
     private System.Collections.IEnumerator UpdateClock()
     {
         while (true)
         {
-            startDate = startDate.Add(new System.TimeSpan(0, 0, 1, 0));
-            date.text = startDate.ToString();
+            this.startDate = this.startDate.Add(new System.TimeSpan(0, 0, 1, 0));
+            this.date.text = this.startDate.ToString();
 
             yield return new WaitForSeconds(5f);
         }
     }
 
     // ----- compass -----
-    void SetMarkerPosition(RectTransform markerTransform, Vector3 worldPosition)
+    void SetMarkerPositionOnCompass(RectTransform markerTransform, Vector3 worldPosition)
     {
-        Vector3 dirToTarget = worldPosition - CameraTransform.position;
-        float angle = Vector2.SignedAngle(new Vector2(dirToTarget.x, dirToTarget.z), new Vector2(CameraTransform.transform.forward.x, CameraTransform.transform.forward.z));
+        Vector3 dirToTarget = worldPosition - this.CameraTransform.position;
+        float angle = Vector2.SignedAngle(new Vector2(dirToTarget.x, dirToTarget.z), new Vector2(this.CameraTransform.transform.forward.x, this.CameraTransform.transform.forward.z));
         float compassPositionX = Mathf.Clamp(2 * angle / Camera.main.fieldOfView, -1, 1);
         if (compassPositionX == 1 || compassPositionX == (-1))
         {
@@ -82,14 +84,14 @@ public class UI_Mechanisms : MonoBehaviour
         }
         else
         {
-            markerTransform.anchoredPosition = new Vector2(compassBarTransform.rect.width / 2 * compassPositionX, 0);
+            markerTransform.anchoredPosition = new Vector2 (this.compassBarTransform.rect.width / 2 * compassPositionX, 0);
         }
     }
     void SetPositionOfEnemies()
     {
-        foreach (var e in enemiesOnMap.Zip(enemiesOnUI, (x, y) => new { enemyOnMap = x, enemyOnUI = y }))
+        foreach (var e in this.enemiesOnMap.Zip(this.enemiesOnUI, (x, y) => new { enemyOnMap = x, enemyOnUI = y }))
         {
-            SetMarkerPosition(e.enemyOnUI.GetComponent<RectTransform>(), e.enemyOnMap.transform.position);
+            SetMarkerPositionOnCompass(e.enemyOnUI.GetComponent<RectTransform>(), e.enemyOnMap.transform.position);
         }
     }
 
@@ -99,32 +101,104 @@ public class UI_Mechanisms : MonoBehaviour
         int halfOfMapLength = 2300;
         int halfOfMapWidth = 4041;
 
-        SetMarkerPosition(northMarkrerTransform, new Vector3(halfOfMapLength, 0, farFarAway));
-        SetMarkerPosition(southMarkrerTransform, new Vector3(halfOfMapLength, 0, -farFarAway));
-        SetMarkerPosition(eastMarkrerTransform, new Vector3(farFarAway, 0, halfOfMapLength));
-        SetMarkerPosition(westMarkrerTransform, new Vector3(-farFarAway, 0, halfOfMapLength));
+        SetMarkerPositionOnCompass(this.northMarkrerTransform, new Vector3(halfOfMapLength, 0, farFarAway));
+        SetMarkerPositionOnCompass(this.southMarkrerTransform, new Vector3(halfOfMapLength, 0, -farFarAway));
+        SetMarkerPositionOnCompass(this.eastMarkrerTransform, new Vector3(farFarAway, 0, halfOfMapLength));
+        SetMarkerPositionOnCompass(this.westMarkrerTransform, new Vector3(-farFarAway, 0, halfOfMapLength));
         SetPositionOfEnemies();
+    }
+
+    // ----- building mode -----
+
+    void UpdateBuildingMode()
+    {
+        int startX = 40;
+        int spacing = 100;
+        Vector2 unvisible = new Vector2(0, 1000);
+        for(int i = 0; i < buildingsOnUI.Length; i++)
+        {
+            if(i == selectedBuilding - 1)
+            {
+                buildingsOnUI[i].anchoredPosition = unvisible;
+                buildingsSelectedOnUI[i].anchoredPosition = new Vector2(startX + i * spacing, 0);
+            }
+            else
+            {
+                buildingsOnUI[i].anchoredPosition = new Vector2(startX + i * spacing, 0);
+                buildingsSelectedOnUI[i].anchoredPosition = unvisible;
+            }
+        }
+    }
+
+    void ClearUIAfterBuildingMode()
+    {
+        Vector2 unvisible = new Vector2(0, 1000);
+        for(int i = 0; i < buildingsOnUI.Length; i++)
+        {
+        buildingsOnUI[i].anchoredPosition = unvisible;
+        buildingsSelectedOnUI[i].anchoredPosition = unvisible;
+        }
     }
 
     // ----- UI -----
     void Start()
     {
-        startDate = new DateTime(1500, 1, 1, 8, 0, 0);
-        date.text = startDate.ToString();
+        this.startDate = new DateTime(1500, 1, 1, 8, 0, 0);
+        this.date.text = this.startDate.ToString();
         StartCoroutine(UpdateClock());
 
-        enemiesOnMap = GameObject.FindGameObjectsWithTag("Enemy");
-        List<GameObject> tmp = new List<GameObject>();
-        foreach (GameObject enemy in enemiesOnMap)
+        this.enemiesOnMap = GameObject.FindGameObjectsWithTag("Enemy");
+        List<GameObject> tmpEnemy = new List<GameObject>();
+        foreach (GameObject enemy in this.enemiesOnMap)
         {
-            GameObject e = Instantiate(enemiesPrefab, compassBarTransform);
-            tmp.Add(e);
+            GameObject e = Instantiate(enemiesPrefab, this.compassBarTransform);
+            tmpEnemy.Add(e);
         }
-        enemiesOnUI = tmp.ToArray();
+        this.enemiesOnUI = tmpEnemy.ToArray();
+
+        List<RectTransform> tmpBuild = new List<RectTransform>();
+        tmpBuild.Add(building1Transform);
+        tmpBuild.Add(building2Transform);
+        this.buildingsOnUI = tmpBuild.ToArray();
+        tmpBuild.Clear();
+        tmpBuild.Add(building1SelectedTransform);
+        tmpBuild.Add(building2SelectedTransform);
+        this.buildingsSelectedOnUI = tmpBuild.ToArray();
+        numOfBuildings = buildingsSelectedOnUI.Length;
+        selectedBuilding = numOfBuildings;
     }
 
     void Update()
     {
         UpdateCompass();
+        
+        if (Input.GetKeyDown(InputSettings.SwitchToBuildingMode))
+        {
+            if(gameMode == Mode.NORMAL)
+            {
+                selectedBuilding = numOfBuildings;
+            }
+
+            selectedBuilding++;
+            if(selectedBuilding > numOfBuildings)
+            {
+                selectedBuilding = 1;
+            }
+
+            gameMode = Mode.BUILDING;
+        }
+        else if (Input.GetKeyDown(InputSettings.ExitBuildingMode))
+        {
+            if(gameMode == Mode.BUILDING)
+            {
+                ClearUIAfterBuildingMode();
+            }
+            gameMode = Mode.NORMAL;
+        }
+        
+        if(gameMode == Mode.BUILDING)
+        {
+            UpdateBuildingMode();
+        }
     }
 }
