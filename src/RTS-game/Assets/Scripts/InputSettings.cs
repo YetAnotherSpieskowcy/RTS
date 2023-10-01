@@ -12,9 +12,7 @@ public static class InputSettings
     public static KeyCode UnitSelectionMenuItem5 = KeyCode.Alpha5;
     public static KeyCode UnitSelectionMenuCancel = KeyCode.Alpha0;
     public static KeyCode ShowEnemyUnitMarker = KeyCode.E;
-    public static KeyCode SwitchToBuildingMode = KeyCode.Tab;
+    public static KeyCode BuildingModeController = KeyCode.Tab;
     public static KeyCode ExitBuildingMode = KeyCode.Escape;
-    public static KeyCode One = KeyCode.Keypad1;
-    public static KeyCode Two = KeyCode.Keypad2;
     
 }

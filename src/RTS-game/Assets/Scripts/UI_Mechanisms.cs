@@ -59,8 +59,7 @@ public class UI_Mechanisms : MonoBehaviour
     {
         sourceT.text = (int.Parse(sourceT.text) + value).ToString();
     }
-
-    // ----- this.date -----
+    // ----- date -----
     private System.Collections.IEnumerator UpdateClock()
     {
         while (true)
@@ -71,7 +70,12 @@ public class UI_Mechanisms : MonoBehaviour
             yield return new WaitForSeconds(5f);
         }
     }
-
+    void StartClock()
+    {
+        this.startDate = new DateTime(1500, 1, 1, 8, 0, 0);
+        this.date.text = this.startDate.ToString();
+        StartCoroutine(UpdateClock());
+    }
     // ----- compass -----
     void SetMarkerPositionOnCompass(RectTransform markerTransform, Vector3 worldPosition)
     {
@@ -94,7 +98,6 @@ public class UI_Mechanisms : MonoBehaviour
             SetMarkerPositionOnCompass(e.enemyOnUI.GetComponent<RectTransform>(), e.enemyOnMap.transform.position);
         }
     }
-
     void UpdateCompass()
     {
         int farFarAway = 60000;
@@ -106,10 +109,19 @@ public class UI_Mechanisms : MonoBehaviour
         SetMarkerPositionOnCompass(this.eastMarkrerTransform, new Vector3(farFarAway, 0, halfOfMapLength));
         SetMarkerPositionOnCompass(this.westMarkrerTransform, new Vector3(-farFarAway, 0, halfOfMapLength));
         SetPositionOfEnemies();
+    }  
+    void InstantiateEnemies()
+    {
+        this.enemiesOnMap = GameObject.FindGameObjectsWithTag("Enemy");
+        List<GameObject> tmpEnemy = new List<GameObject>();
+        foreach (GameObject enemy in this.enemiesOnMap)
+        {
+            GameObject e = Instantiate(enemiesPrefab, this.compassBarTransform);
+            tmpEnemy.Add(e);
+        }
+        this.enemiesOnUI = tmpEnemy.ToArray();
     }
-
     // ----- building mode -----
-
     void UpdateBuildingMode()
     {
         int startX = 40;
@@ -129,7 +141,19 @@ public class UI_Mechanisms : MonoBehaviour
             }
         }
     }
-
+    void PrepareBuildingsInfo()
+    {
+        List<RectTransform> tmpBuild = new List<RectTransform>();
+        tmpBuild.Add(building1Transform);
+        tmpBuild.Add(building2Transform);
+        this.buildingsOnUI = tmpBuild.ToArray();
+        tmpBuild.Clear();
+        tmpBuild.Add(building1SelectedTransform);
+        tmpBuild.Add(building2SelectedTransform);
+        this.buildingsSelectedOnUI = tmpBuild.ToArray();
+        this.numOfBuildings = buildingsSelectedOnUI.Length;
+        this.selectedBuilding = numOfBuildings;
+    }
     void ClearUIAfterBuildingMode()
     {
         Vector2 unvisible = new Vector2(0, 1000);
@@ -139,64 +163,45 @@ public class UI_Mechanisms : MonoBehaviour
         buildingsSelectedOnUI[i].anchoredPosition = unvisible;
         }
     }
-
-    // ----- UI -----
-    void Start()
+    // ----- modes -----
+    void UpdateMode()
     {
-        this.startDate = new DateTime(1500, 1, 1, 8, 0, 0);
-        this.date.text = this.startDate.ToString();
-        StartCoroutine(UpdateClock());
-
-        this.enemiesOnMap = GameObject.FindGameObjectsWithTag("Enemy");
-        List<GameObject> tmpEnemy = new List<GameObject>();
-        foreach (GameObject enemy in this.enemiesOnMap)
+        if (Input.GetKeyDown(InputSettings.BuildingModeController))
         {
-            GameObject e = Instantiate(enemiesPrefab, this.compassBarTransform);
-            tmpEnemy.Add(e);
-        }
-        this.enemiesOnUI = tmpEnemy.ToArray();
-
-        List<RectTransform> tmpBuild = new List<RectTransform>();
-        tmpBuild.Add(building1Transform);
-        tmpBuild.Add(building2Transform);
-        this.buildingsOnUI = tmpBuild.ToArray();
-        tmpBuild.Clear();
-        tmpBuild.Add(building1SelectedTransform);
-        tmpBuild.Add(building2SelectedTransform);
-        this.buildingsSelectedOnUI = tmpBuild.ToArray();
-        numOfBuildings = buildingsSelectedOnUI.Length;
-        selectedBuilding = numOfBuildings;
-    }
-
-    void Update()
-    {
-        UpdateCompass();
-        
-        if (Input.GetKeyDown(InputSettings.SwitchToBuildingMode))
-        {
-            if(gameMode == Mode.NORMAL)
+            if(this.gameMode == Mode.NORMAL)
             {
-                selectedBuilding = numOfBuildings;
+                this.selectedBuilding = numOfBuildings;
             }
 
-            selectedBuilding++;
-            if(selectedBuilding > numOfBuildings)
+            this.selectedBuilding++;
+            if(this.selectedBuilding > numOfBuildings)
             {
-                selectedBuilding = 1;
+                this.selectedBuilding = 1;
             }
 
-            gameMode = Mode.BUILDING;
+            this.gameMode = Mode.BUILDING;
         }
         else if (Input.GetKeyDown(InputSettings.ExitBuildingMode))
         {
-            if(gameMode == Mode.BUILDING)
+            if(this.gameMode == Mode.BUILDING)
             {
                 ClearUIAfterBuildingMode();
             }
-            gameMode = Mode.NORMAL;
+            this.gameMode = Mode.NORMAL;
         }
-        
-        if(gameMode == Mode.BUILDING)
+    }
+    // ----- UI -----
+    void Start()
+    {
+        StartClock()
+        InstantiateEnemies();
+        PrepareBuildingsInfo()
+    }
+    void Update()
+    {
+        UpdateCompass();
+        UpdateMode();
+        if(this.gameMode == Mode.BUILDING)
         {
             UpdateBuildingMode();
         }
