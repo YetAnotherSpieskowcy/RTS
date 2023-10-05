@@ -193,9 +193,9 @@ public class UI_Mechanisms : MonoBehaviour
     // ----- UI -----
     void Start()
     {
-        StartClock()
+        StartClock();
         InstantiateEnemies();
-        PrepareBuildingsInfo()
+        PrepareBuildingsInfo();
     }
     void Update()
     {
