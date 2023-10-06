@@ -50,14 +50,19 @@ public class UI_Mechanisms : MonoBehaviour
     public RectTransform building2Transform;
 
     // ----- storage -----
-    void IncreaseSource(TMP_Text sourceT, int value)
+    void IncreaseSource(TMP_Text sourceT, String value)
     {
-        int newI = int.Parse(sourceT.text) + value;
-        sourceT.text = newI.ToString();
+        sourceT.text = (int.Parse(sourceT.text) + int.Parse(value)).ToString();
     }
-    void DecreaseSource(TMP_Text sourceT, int value)
+    void DecreaseSource(TMP_Text sourceT, String value)
     {
-        sourceT.text = (int.Parse(sourceT.text) + value).ToString();
+        sourceT.text = (int.Parse(sourceT.text) - int.Parse(value)).ToString();
+    }
+    void PrepareStorage()
+    {
+        textF.text = "100";
+        textW.text = "100";
+        textS.text = "100";
     }
     // ----- date -----
     private System.Collections.IEnumerator UpdateClock()
@@ -122,25 +127,6 @@ public class UI_Mechanisms : MonoBehaviour
         this.enemiesOnUI = tmpEnemy.ToArray();
     }
     // ----- building mode -----
-    void UpdateBuildingMode()
-    {
-        int startX = 40;
-        int spacing = 100;
-        Vector2 unvisible = new Vector2(0, 1000);
-        for(int i = 0; i < buildingsOnUI.Length; i++)
-        {
-            if(i == selectedBuilding - 1)
-            {
-                buildingsOnUI[i].anchoredPosition = unvisible;
-                buildingsSelectedOnUI[i].anchoredPosition = new Vector2(startX + i * spacing, 0);
-            }
-            else
-            {
-                buildingsOnUI[i].anchoredPosition = new Vector2(startX + i * spacing, 0);
-                buildingsSelectedOnUI[i].anchoredPosition = unvisible;
-            }
-        }
-    }
     void PrepareBuildingsInfo()
     {
         List<RectTransform> tmpBuild = new List<RectTransform>();
@@ -161,6 +147,61 @@ public class UI_Mechanisms : MonoBehaviour
         {
         buildingsOnUI[i].anchoredPosition = unvisible;
         buildingsSelectedOnUI[i].anchoredPosition = unvisible;
+        }
+    }
+    bool EnoughSources(TMP_Text[] cost)
+    {
+        bool enough = true;
+        if(int.Parse(cost[0].text) > int.Parse(textF.text))
+        {
+            enough = false;
+        }
+        else if(int.Parse(cost[1].text) > int.Parse(textW.text))
+        {
+            enough = false;
+        }
+        else if(int.Parse(cost[2].text) > int.Parse(textS.text))
+        {
+            enough = false;
+        }
+        return enough;
+    }
+    void BuyBuilding()
+    {
+        TMP_Text[] cost = buildingsSelectedOnUI[selectedBuilding-1].GetComponentsInChildren<TMP_Text>();
+        if(EnoughSources(cost))
+        {
+            DecreaseSource(textF, cost[0].text);
+            DecreaseSource(textW, cost[1].text);
+            DecreaseSource(textS, cost[2].text);
+        }
+        else
+        {
+            Debug.Log("ur too poor sry");
+        }
+    }
+    void UpdateBuildingMode()
+    {
+        int startX = 150;
+        int spacing = 150;
+        Vector2 unvisible = new Vector2(0, 1000);
+        for(int i = 0; i < buildingsOnUI.Length; i++)
+        {
+            if(i == selectedBuilding - 1)
+            {
+                buildingsOnUI[i].anchoredPosition = unvisible;
+                buildingsSelectedOnUI[i].anchoredPosition = new Vector2(startX + i * spacing, 0);
+            }
+            else
+            {
+                buildingsOnUI[i].anchoredPosition = new Vector2(startX + i * spacing, 0);
+                buildingsSelectedOnUI[i].anchoredPosition = unvisible;
+            }
+        }
+
+        if (Input.GetKeyDown(InputSettings.Confirm))
+        {
+            BuyBuilding();
         }
     }
     // ----- modes -----
@@ -193,6 +234,7 @@ public class UI_Mechanisms : MonoBehaviour
     // ----- UI -----
     void Start()
     {
+        PrepareStorage();
         StartClock();
         InstantiateEnemies();
         PrepareBuildingsInfo();
