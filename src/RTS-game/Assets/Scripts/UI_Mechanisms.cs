@@ -48,6 +48,8 @@ public class UI_Mechanisms : MonoBehaviour
     public RectTransform building1Transform;
     public RectTransform building2SelectedTransform;
     public RectTransform building2Transform;
+    public RectTransform building3SelectedTransform;
+    public RectTransform building3Transform;
 
     // ----- storage -----
     void IncreaseSource(TMP_Text sourceT, String value)
@@ -132,10 +134,12 @@ public class UI_Mechanisms : MonoBehaviour
         List<RectTransform> tmpBuild = new List<RectTransform>();
         tmpBuild.Add(building1Transform);
         tmpBuild.Add(building2Transform);
+        tmpBuild.Add(building3Transform);
         this.buildingsOnUI = tmpBuild.ToArray();
         tmpBuild.Clear();
         tmpBuild.Add(building1SelectedTransform);
         tmpBuild.Add(building2SelectedTransform);
+        tmpBuild.Add(building3SelectedTransform);
         this.buildingsSelectedOnUI = tmpBuild.ToArray();
         this.numOfBuildings = buildingsSelectedOnUI.Length;
         this.selectedBuilding = numOfBuildings;
