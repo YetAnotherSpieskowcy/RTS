@@ -8,6 +8,16 @@ using System.Linq;
 
 
 
+// ----- structures -----
+public struct buildingOnUI
+{
+    public GameObject inactive;
+    public GameObject selected;
+    public String costM;
+    public String costW;
+    public String costS;
+}
+
 // ----- enums -----
 public enum Mode
 {
@@ -21,7 +31,7 @@ public class UI_Mechanisms : MonoBehaviour
 {
     public Mode gameMode = Mode.NORMAL;
 
-    public TMP_Text textF;
+    public TMP_Text textM;
     public TMP_Text textW;
     public TMP_Text textS;
 
@@ -41,8 +51,12 @@ public class UI_Mechanisms : MonoBehaviour
     private int numOfBuildings;
     private int selectedBuilding;
     public RectTransform buildingBackgroundTransform;
+    public List<Texture> buildingTextureSources;
+    public GameObject buildingPrefab;
+    public GameObject selectedBuildingPrefab;
+    private List<buildingOnUI> buildingsOnUI;
 
-    private RectTransform[] buildingsOnUI;
+    //private RectTransform[] buildingsOnUI;
     private RectTransform[] buildingsSelectedOnUI;
     public RectTransform building1SelectedTransform;
     public RectTransform building1Transform;
@@ -62,7 +76,7 @@ public class UI_Mechanisms : MonoBehaviour
     }
     void PrepareStorage()
     {
-        textF.text = "100";
+        textM.text = "100";
         textW.text = "100";
         textS.text = "100";
     }
@@ -131,40 +145,56 @@ public class UI_Mechanisms : MonoBehaviour
     // ----- building mode -----
     void PrepareBuildingsInfo()
     {
-        List<RectTransform> tmpBuild = new List<RectTransform>();
-        tmpBuild.Add(building1Transform);
-        tmpBuild.Add(building2Transform);
-        tmpBuild.Add(building3Transform);
-        this.buildingsOnUI = tmpBuild.ToArray();
-        tmpBuild.Clear();
-        tmpBuild.Add(building1SelectedTransform);
-        tmpBuild.Add(building2SelectedTransform);
-        tmpBuild.Add(building3SelectedTransform);
-        this.buildingsSelectedOnUI = tmpBuild.ToArray();
-        this.numOfBuildings = buildingsSelectedOnUI.Length;
+        this.buildingsOnUI = new List<buildingOnUI>();
+        //here i will probably change buildingTextureSources to list of ScriptableObjects for buildiings?
+        foreach(Texture bts in this.buildingTextureSources )
+        {
+            //here will probably be estracting texture from ScriptableObjects? Texture bts = scriptObj.texture
+            buildingOnUI new_bou = new buildingOnUI();
+            //here will probably be estracting info from ScriptableObject? new_bou.costX = scriptObj.costX
+            new_bou.costM = "30";
+            new_bou.costW = "20";
+            new_bou.costS = "10";
+
+            GameObject b = Instantiate(buildingPrefab, this.buildingBackgroundTransform);
+            b.GetComponentInChildren<RawImage>().texture = bts;
+            b.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 1000);
+            new_bou.inactive = b;
+
+            GameObject s = Instantiate(selectedBuildingPrefab, this.buildingBackgroundTransform);
+            s.GetComponentInChildren<RawImage>().texture = bts;
+            s.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 1000);
+            s.GetComponentsInChildren<TMP_Text>()[0].text = new_bou.costM;
+            s.GetComponentsInChildren<TMP_Text>()[1].text = new_bou.costW;
+            s.GetComponentsInChildren<TMP_Text>()[2].text = new_bou.costS;
+            new_bou.selected = s;
+
+            buildingsOnUI.Add(new_bou);
+        }
+        this.numOfBuildings = buildingsOnUI.Count;
         this.selectedBuilding = numOfBuildings;
     }
     void ClearUIAfterBuildingMode()
     {
         Vector2 unvisible = new Vector2(0, 1000);
-        for(int i = 0; i < buildingsOnUI.Length; i++)
+        for(int i = 0; i < buildingsOnUI.Count; i++)
         {
-        buildingsOnUI[i].anchoredPosition = unvisible;
-        buildingsSelectedOnUI[i].anchoredPosition = unvisible;
+            buildingsOnUI[i].inactive.GetComponent<RectTransform>().anchoredPosition = unvisible;
+            buildingsOnUI[i].selected.GetComponent<RectTransform>().anchoredPosition = unvisible;
         }
     }
-    bool EnoughSources(TMP_Text[] cost)
+    bool EnoughSources(buildingOnUI bou)
     {
         bool enough = true;
-        if(int.Parse(cost[0].text) > int.Parse(textF.text))
+        if(int.Parse(bou.costM) > int.Parse(textM.text))
         {
             enough = false;
         }
-        else if(int.Parse(cost[1].text) > int.Parse(textW.text))
+        else if(int.Parse(bou.costW) > int.Parse(textW.text))
         {
             enough = false;
         }
-        else if(int.Parse(cost[2].text) > int.Parse(textS.text))
+        else if(int.Parse(bou.costS) > int.Parse(textS.text))
         {
             enough = false;
         }
@@ -172,12 +202,12 @@ public class UI_Mechanisms : MonoBehaviour
     }
     void BuyBuilding()
     {
-        TMP_Text[] cost = buildingsSelectedOnUI[selectedBuilding-1].GetComponentsInChildren<TMP_Text>();
-        if(EnoughSources(cost))
+        buildingOnUI bou = buildingsOnUI[selectedBuilding-1];
+        if(EnoughSources(bou))
         {
-            DecreaseSource(textF, cost[0].text);
-            DecreaseSource(textW, cost[1].text);
-            DecreaseSource(textS, cost[2].text);
+            DecreaseSource(textM, bou.costM);
+            DecreaseSource(textW, bou.costW);
+            DecreaseSource(textS, bou.costS);
         }
         else
         {
@@ -189,20 +219,20 @@ public class UI_Mechanisms : MonoBehaviour
         int startX = 150;
         int spacing = 150;
         Vector2 unvisible = new Vector2(0, 1000);
-        for(int i = 0; i < buildingsOnUI.Length; i++)
+        for(int i = 0; i < buildingsOnUI.Count; i++)
         {
+            buildingOnUI bou = buildingsOnUI[i];
             if(i == selectedBuilding - 1)
             {
-                buildingsOnUI[i].anchoredPosition = unvisible;
-                buildingsSelectedOnUI[i].anchoredPosition = new Vector2(startX + i * spacing, 0);
+                bou.inactive.GetComponent<RectTransform>().anchoredPosition = unvisible;
+                bou.selected.GetComponent<RectTransform>().anchoredPosition = new Vector2(startX + i * spacing, 0);
             }
             else
             {
-                buildingsOnUI[i].anchoredPosition = new Vector2(startX + i * spacing, 0);
-                buildingsSelectedOnUI[i].anchoredPosition = unvisible;
+                bou.inactive.GetComponent<RectTransform>().anchoredPosition = new Vector2(startX + i * spacing, 0);
+                bou.selected.GetComponent<RectTransform>().anchoredPosition = unvisible;
             }
         }
-
         if (Input.GetKeyDown(InputSettings.Confirm))
         {
             BuyBuilding();
