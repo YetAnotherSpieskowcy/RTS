@@ -222,15 +222,26 @@ public class UI_Mechanisms : MonoBehaviour
         for(int i = 0; i < buildingsOnUI.Count; i++)
         {
             buildingOnUI bou = buildingsOnUI[i];
+            GameObject[] alerts = GameObject.FindGameObjectsWithTag("Alert");
             if(i == selectedBuilding - 1)
             {
                 bou.inactive.GetComponent<RectTransform>().anchoredPosition = unvisible;
                 bou.selected.GetComponent<RectTransform>().anchoredPosition = new Vector2(startX + i * spacing, 0);
+                
+                if(EnoughSources(bou))
+                {
+                    alerts[i].GetComponent<RectTransform>().anchoredPosition = unvisible;
+                }
+                else
+                {
+                    alerts[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -20);
+                }
             }
             else
             {
                 bou.inactive.GetComponent<RectTransform>().anchoredPosition = new Vector2(startX + i * spacing, 0);
                 bou.selected.GetComponent<RectTransform>().anchoredPosition = unvisible;
+                alerts[i].GetComponent<RectTransform>().anchoredPosition = unvisible;
             }
         }
         if (Input.GetKeyDown(InputSettings.Confirm))
