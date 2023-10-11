@@ -14,6 +14,5 @@ public static class InputSettings
     public static KeyCode ShowEnemyUnitMarker = KeyCode.E;
     public static KeyCode BuildingModeController = KeyCode.Tab;
     public static KeyCode ExitBuildingMode = KeyCode.Escape;
-    public static KeyCode Confirm = KeyCode.Return;
-    
+    public static KeyCode Confirm = KeyCode.Return;   
 }

@@ -147,7 +147,7 @@ public class UI_Mechanisms : MonoBehaviour
     {
         this.buildingsOnUI = new List<buildingOnUI>();
         //here i will probably change buildingTextureSources to list of ScriptableObjects for buildiings?
-        foreach(Texture bts in this.buildingTextureSources )
+        foreach (Texture bts in this.buildingTextureSources )
         {
             //here will probably be estracting texture from ScriptableObjects? Texture bts = scriptObj.texture
             buildingOnUI new_bou = new buildingOnUI();
@@ -177,7 +177,7 @@ public class UI_Mechanisms : MonoBehaviour
     void ClearUIAfterBuildingMode()
     {
         Vector2 unvisible = new Vector2(0, 1000);
-        for(int i = 0; i < buildingsOnUI.Count; i++)
+        for (int i = 0; i < buildingsOnUI.Count; i++)
         {
             buildingsOnUI[i].inactive.GetComponent<RectTransform>().anchoredPosition = unvisible;
             buildingsOnUI[i].selected.GetComponent<RectTransform>().anchoredPosition = unvisible;
@@ -186,15 +186,15 @@ public class UI_Mechanisms : MonoBehaviour
     bool EnoughSources(buildingOnUI bou)
     {
         bool enough = true;
-        if(int.Parse(bou.costM) > int.Parse(textM.text))
+        if (int.Parse(bou.costM) > int.Parse(textM.text))
         {
             enough = false;
         }
-        else if(int.Parse(bou.costW) > int.Parse(textW.text))
+        else if (int.Parse(bou.costW) > int.Parse(textW.text))
         {
             enough = false;
         }
-        else if(int.Parse(bou.costS) > int.Parse(textS.text))
+        else if (int.Parse(bou.costS) > int.Parse(textS.text))
         {
             enough = false;
         }
@@ -203,7 +203,7 @@ public class UI_Mechanisms : MonoBehaviour
     void BuyBuilding()
     {
         buildingOnUI bou = buildingsOnUI[selectedBuilding-1];
-        if(EnoughSources(bou))
+        if (EnoughSources(bou))
         {
             DecreaseSource(textM, bou.costM);
             DecreaseSource(textW, bou.costW);
@@ -219,16 +219,16 @@ public class UI_Mechanisms : MonoBehaviour
         int startX = 150;
         int spacing = 150;
         Vector2 unvisible = new Vector2(0, 1000);
-        for(int i = 0; i < buildingsOnUI.Count; i++)
+        for (int i = 0; i < buildingsOnUI.Count; i++)
         {
             buildingOnUI bou = buildingsOnUI[i];
             GameObject[] alerts = GameObject.FindGameObjectsWithTag("Alert");
-            if(i == selectedBuilding - 1)
+            if (i == selectedBuilding - 1)
             {
                 bou.inactive.GetComponent<RectTransform>().anchoredPosition = unvisible;
                 bou.selected.GetComponent<RectTransform>().anchoredPosition = new Vector2(startX + i * spacing, 0);
                 
-                if(EnoughSources(bou))
+                if (EnoughSources(bou))
                 {
                     alerts[i].GetComponent<RectTransform>().anchoredPosition = unvisible;
                 }
@@ -254,13 +254,13 @@ public class UI_Mechanisms : MonoBehaviour
     {
         if (Input.GetKeyDown(InputSettings.BuildingModeController))
         {
-            if(this.gameMode == Mode.NORMAL)
+            if (this.gameMode == Mode.NORMAL)
             {
                 this.selectedBuilding = numOfBuildings;
             }
 
             this.selectedBuilding++;
-            if(this.selectedBuilding > numOfBuildings)
+            if (this.selectedBuilding > numOfBuildings)
             {
                 this.selectedBuilding = 1;
             }
@@ -269,7 +269,7 @@ public class UI_Mechanisms : MonoBehaviour
         }
         else if (Input.GetKeyDown(InputSettings.ExitBuildingMode))
         {
-            if(this.gameMode == Mode.BUILDING)
+            if (this.gameMode == Mode.BUILDING)
             {
                 ClearUIAfterBuildingMode();
             }
@@ -288,7 +288,7 @@ public class UI_Mechanisms : MonoBehaviour
     {
         UpdateCompass();
         UpdateMode();
-        if(this.gameMode == Mode.BUILDING)
+        if (this.gameMode == Mode.BUILDING)
         {
             UpdateBuildingMode();
         }
