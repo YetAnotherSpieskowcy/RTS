@@ -109,7 +109,7 @@ public class UI_Mechanisms : MonoBehaviour
         }
         else
         {
-            markerTransform.anchoredPosition = new Vector2 (this.compassBarTransform.rect.width / 2 * compassPositionX, 0);
+            markerTransform.anchoredPosition = new Vector2(this.compassBarTransform.rect.width / 2 * compassPositionX, 0);
         }
     }
     void SetPositionOfEnemies()
@@ -130,7 +130,7 @@ public class UI_Mechanisms : MonoBehaviour
         SetMarkerPositionOnCompass(this.eastMarkrerTransform, new Vector3(farFarAway, 0, halfOfMapLength));
         SetMarkerPositionOnCompass(this.westMarkrerTransform, new Vector3(-farFarAway, 0, halfOfMapLength));
         SetPositionOfEnemies();
-    }  
+    }
     void InstantiateEnemies()
     {
         this.enemiesOnMap = GameObject.FindGameObjectsWithTag("Enemy");
@@ -147,7 +147,7 @@ public class UI_Mechanisms : MonoBehaviour
     {
         this.buildingsOnUI = new List<buildingOnUI>();
         //here i will probably change buildingTextureSources to list of ScriptableObjects for buildiings?
-        foreach (Texture bts in this.buildingTextureSources )
+        foreach (Texture bts in this.buildingTextureSources)
         {
             //here will probably be estracting texture from ScriptableObjects? Texture bts = scriptObj.texture
             buildingOnUI new_bou = new buildingOnUI();
@@ -202,7 +202,7 @@ public class UI_Mechanisms : MonoBehaviour
     }
     void BuyBuilding()
     {
-        buildingOnUI bou = buildingsOnUI[selectedBuilding-1];
+        buildingOnUI bou = buildingsOnUI[selectedBuilding - 1];
         if (EnoughSources(bou))
         {
             DecreaseSource(textM, bou.costM);
@@ -227,7 +227,6 @@ public class UI_Mechanisms : MonoBehaviour
             {
                 bou.inactive.GetComponent<RectTransform>().anchoredPosition = unvisible;
                 bou.selected.GetComponent<RectTransform>().anchoredPosition = new Vector2(startX + i * spacing, 0);
-                
                 if (EnoughSources(bou))
                 {
                     alerts[i].GetComponent<RectTransform>().anchoredPosition = unvisible;
