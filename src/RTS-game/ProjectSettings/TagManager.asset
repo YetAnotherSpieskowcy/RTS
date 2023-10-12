@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - buildingBackground
   - Alert
+  - Storage
   layers:
   - Default
   - TransparentFX
