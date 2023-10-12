@@ -59,7 +59,7 @@ public class UIBuildingMode : MonoBehaviour
             buildingsOnUI.Add(new_bou);
         }
         this.numOfBuildings = buildingsOnUI.Count;
-        this.selectedBuilding = numOfBuildings;
+        this.selectedBuilding = 1;
     }
     void ClearUIAfterBuildingMode()
     {
@@ -84,6 +84,8 @@ public class UIBuildingMode : MonoBehaviour
     }
     void UpdateBuildingMode()
     {
+        UpdateSelectedBuilding();
+
         int startX = 150;
         int spacing = 150;
         Vector2 invisible = new Vector2(0, 1000);
@@ -116,22 +118,31 @@ public class UIBuildingMode : MonoBehaviour
             BuyBuilding();
         }
     }
-    // ----- modes -----
-    void UpdateMode()
+    void UpdateSelectedBuilding()
     {
-        if (Input.GetKeyDown(InputSettings.BuildingModeController))
+        if (Input.GetKeyDown(InputSettings.Next))
         {
-            if (UIBasicMode.gameMode == Mode.NORMAL)
-            {
-                this.selectedBuilding = numOfBuildings;
-            }
-
             this.selectedBuilding++;
             if (this.selectedBuilding > numOfBuildings)
             {
                 this.selectedBuilding = 1;
             }
-
+        }
+        else if (Input.GetKeyDown(InputSettings.Previous))
+        {
+            this.selectedBuilding--;
+            if (this.selectedBuilding == 0)
+            {
+                this.selectedBuilding = numOfBuildings;
+            }
+        }
+    }
+    // ----- modes -----
+    void UpdateMode()
+    {
+        if (Input.GetKeyDown(InputSettings.ChangeToBUildingMode))
+        {
+            this.selectedBuilding = 1;
             UIBasicMode.gameMode = Mode.BUILDING;
         }
         else if (Input.GetKeyDown(InputSettings.ExitBuildingMode))
