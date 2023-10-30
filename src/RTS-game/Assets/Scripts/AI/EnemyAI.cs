@@ -51,6 +51,12 @@ public class EnemyAI : MonoBehaviour
         agent.destination = position;
     }
 
+    public void Target(Vector3 target)
+    {
+        agent.SetDestination(target);
+        agent.isStopped = false;
+    }
+
     public void Target(Transform target)
     {
         this.target = target;
