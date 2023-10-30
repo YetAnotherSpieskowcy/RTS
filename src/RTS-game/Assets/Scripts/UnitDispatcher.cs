@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -6,8 +5,13 @@ using System.Linq;
 public class UnitDispatcher : MonoBehaviour
 {
     bool selectionEnabled = false;
+    FormationDispatcher fdispatcher;
     List<Unit> selectedUnits = new();
     List<Unit> friendlyUnitCache = new();
+    void Awake()
+    {
+        fdispatcher = GetComponentInChildren<FormationDispatcher>();
+    }
     void CollectFriendlyUnits()
     {
 
@@ -22,6 +26,10 @@ public class UnitDispatcher : MonoBehaviour
     }
     void Update()
     {
+        if (fdispatcher.IsLocked())
+        {
+            return;
+        }
         if (Input.GetKeyDown(InputSettings.UnitSelectionMenu) && !selectionEnabled && selectedUnits.Count == 0)
         {
             CollectFriendlyUnits();
@@ -69,7 +77,7 @@ public class UnitDispatcher : MonoBehaviour
                     if (ai != null)
                     {
                         ai.Target(transform);
-                        ai.StoppingDistance = 10f; // TODO Randomize StoppingDistance
+                        ai.StoppingDistance = 3.0f + Random.Range(0.0f, 2.0f);
                     }
                 });
                 selectedUnits.Clear();
@@ -120,24 +128,21 @@ public class UnitDispatcher : MonoBehaviour
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem4))
             {
                 Debug.Log("Go here");
-                Debug.Log("Not implemented");
+                fdispatcher.StartDispatch(new List<Unit>(selectedUnits));
                 selectedUnits.Clear();
-
             }
-            if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem5))
-            {
-                Debug.Log("Retreat");
-                Debug.Log("Not implemented");
-                selectedUnits.Clear();
+        }
+        if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem5))
+        {
+            Debug.Log("Retreat");
+            Debug.Log("Not implemented");
+            selectedUnits.Clear();
 
-            }
-            if (Input.GetKeyDown(InputSettings.UnitSelectionMenuCancel))
-            {
-                Debug.Log("Cancel");
-                selectedUnits.Clear();
-
-            }
-
+        }
+        if (Input.GetKeyDown(InputSettings.UnitSelectionMenuCancel))
+        {
+            Debug.Log("Cancel");
+            selectedUnits.Clear();
 
         }
 
