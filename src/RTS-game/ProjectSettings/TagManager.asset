@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Mark
   - Terrain
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -16,6 +17,7 @@ TagManager:
   - Overlay
   - Wall
   - BuildMechanism
+  - Player
   - 
   - 
   - 

@@ -24,3 +24,4 @@ jobs:
           VALIDATE_LATEX: false
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILTER_REGEX_EXCLUDE: (src/RTS-game/Assets/Cainos)|(src/RTS-game/Assets/Free UI build package)|(src/RTS-game/Assets/TextMesh Pro)|(src/RTS-game/Assets/DialogueEditor)
