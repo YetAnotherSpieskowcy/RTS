@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class InputSettings
 {
-   public static KeyCode UnitSelectionMenu = KeyCode.Q;
+    public static KeyCode UnitSelectionMenu = KeyCode.Q;
     public static KeyCode UnitSelectionMenuItem1 = KeyCode.Alpha1;
     public static KeyCode UnitSelectionMenuItem2 = KeyCode.Alpha2;
     public static KeyCode UnitSelectionMenuItem3 = KeyCode.Alpha3;
