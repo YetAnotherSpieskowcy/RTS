@@ -6,7 +6,10 @@ TagManager:
   tags:
   - Mark
   - Enemy
-  - Terrain
+  - buildingBackground
+  - Alert
+  - Storage
+
   layers:
   - Default
   - TransparentFX
