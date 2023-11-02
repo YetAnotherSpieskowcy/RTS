@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     private NavMeshAgent agent;
+    private AIAnimation anim;
     [HideInInspector] public Transform target;
 
     private Transform centerLock;
@@ -48,7 +49,13 @@ public class EnemyAI : MonoBehaviour
 
     public void MoveTo(Vector3 position)
     {
-        agent.destination = position;
+        agent.SetDestination(position);
+    }
+
+    public void Target(Vector3 target)
+    {
+        agent.SetDestination(target);
+        agent.isStopped = false;
     }
 
     public void Target(Transform target)
@@ -68,11 +75,16 @@ public class EnemyAI : MonoBehaviour
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<AIAnimation>();
         StoppingDistance = Radius;
     }
 
     void Update()
     {
+        if (anim != null)
+        {
+            anim.Move(agent.desiredVelocity);
+        }
         if (target != null)
         {
             agent.SetDestination(target.position);

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public static class InputSettings
@@ -17,4 +15,5 @@ public static class InputSettings
     public static KeyCode Previous = KeyCode.LeftArrow;
     public static KeyCode ExitBuildingMode = KeyCode.Escape;
     public static KeyCode Confirm = KeyCode.Return;
+
 }
