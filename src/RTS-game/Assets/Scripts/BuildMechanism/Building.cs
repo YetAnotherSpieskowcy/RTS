@@ -12,41 +12,55 @@ public enum Placement
 
 public class Building
 {
-    private BuildingInfo info;
-    private Manager manager;
+    private BuildingData buildingData;
+    private GameObject obj;
     private Transform transform;
     private Placement placement;
-    private List<Material> materials;
+    private List<Transform> children;
+    private List<List<Material>> childrenMaterials;
     Transform player;
 
-    public Building(BuildingInfo info) //int resourceA, int resourceB
+    public Building(BuildingData buildingData)
     {
         player = GameObject.FindWithTag("Player").transform;
-        Debug.Log(player);
 
-        this.info = info;
+        this.buildingData = buildingData;
 
-        GameObject g = GameObject.Instantiate(
-            Resources.Load($"Prefabs/Buildings/{info.GetName()}")
-        ) as GameObject;
-        transform = g.transform;
+        this.obj = GameObject.Instantiate(buildingData.prefab) as GameObject;
+
+        this.obj.AddComponent(typeof(BoxCollider));
+        this.obj.GetComponent<BoxCollider>().isTrigger = true;
+
+        this.obj.AddComponent(typeof(Rigidbody));
+        this.obj.GetComponent<Rigidbody>().isKinematic = true;
+
+        this.obj.AddComponent(typeof(Manager));
+        this.obj.GetComponent<Manager>().SetBuilding(this);
+
+        transform = this.obj.transform;
         UpdatePosition();
 
-        materials = new List<Material>();
-        foreach (Material material in transform.Find("Mesh").GetComponent<Renderer>().materials)
+        children = new List<Transform>();
+        childrenMaterials = new List<List<Material>>();
+        foreach (Transform child in transform)
         {
-            materials.Add(new Material(material));
+            children.Add(child);
+            List<Material> childMat = new List<Material>();
+            foreach (Material material in child.GetComponent<Renderer>().materials)
+            {
+                childMat.Add(new Material(material));
+            }
+            childrenMaterials.Add(childMat);
         }
 
         placement = Placement.VALID;
         SetMaterials();
 
-        manager = g.GetComponent<Manager>();
     }
 
-    public string GetName()
+    public BoxCollider GetCollider()
     {
-        return info.GetName();
+        return obj.GetComponent<BoxCollider>();
     }
 
     public Transform GetTransform()
@@ -75,41 +89,52 @@ public class Building
         placement = p;
     }
 
-    public void SetMaterials() 
-    { 
-        SetMaterials(placement); 
-    }
-
-    public void SetMaterials(Placement p)
+    public void SetMaterials()
     {
-        List<Material> mat;
-        if (p == Placement.VALID)
+        List<List<Material>> mat;
+        if (placement == Placement.VALID)
         {
             Material refMaterial = Resources.Load("Prefabs/Materials/Valid") as Material;
-            mat = new List<Material>();
-            for (int i = 0; i < materials.Count; i++)
+            mat = new List<List<Material>>();
+            for (int i = 0; i < childrenMaterials.Count; i++)
             {
-                mat.Add(refMaterial);
+                List<Material> tmp = new List<Material>();
+                for(int j = 0; j < childrenMaterials[i].Count; j++)
+                {
+                    tmp.Add(refMaterial);
+                }
+                mat.Add(tmp);
             }
         }
-        else if (p == Placement.INVALID)
+        else if (placement == Placement.INVALID)
         {
             Material refMaterial = Resources.Load("Prefabs/Materials/Invalid") as Material;
-            mat = new List<Material>();
-            for (int i = 0; i < materials.Count; i++)
+            mat = new List<List<Material>>();
+            for (int i = 0; i < childrenMaterials.Count; i++)
             {
-                mat.Add(refMaterial);
+                List<Material> tmp = new List<Material>();
+                for (int j = 0; j < childrenMaterials[i].Count; j++)
+                {
+                    tmp.Add(refMaterial);
+                }
+                mat.Add(tmp);
             }
         }
-        else if (p == Placement.PLACED)
+        else if (placement == Placement.PLACED)
         {
-            mat = materials;
+            mat = childrenMaterials;
+            
         }
         else
         {
             return;
         }
-        transform.Find("Mesh").GetComponent<Renderer>().materials = mat.ToArray();
+        int idx = 0;
+        foreach (Transform child in children)
+        {
+            child.GetComponent<Renderer>().materials = mat[idx].ToArray();
+            idx++;
+        }
     }
 
 
@@ -122,21 +147,20 @@ public class Building
 
     public void CheckValid()
     {
+        bool valid = this.obj.GetComponent<Manager>().CheckPlacement();
         if (placement == Placement.PLACED) return;
-        placement = manager.CheckPlacement() ? Placement.VALID : Placement.INVALID;
+        placement = valid ? Placement.VALID : Placement.INVALID;
     }
 
     public void UpdatePosition()
     {
         Vector3 centre = new Vector3(player.position.x, 0, player.position.z);
 
-        float y = Terrain.activeTerrain.SampleHeight(centre);
         transform.eulerAngles = new Vector3(0, player.eulerAngles.y, 0);
 
         float alpha = player.eulerAngles.y / 180 * (float)Math.PI;
         int radius = 5;
-
-        centre.y = y + transform.Find("Mesh").localScale.y / 2;
+        centre.y = Terrain.activeTerrain.SampleHeight(new Vector3(transform.position.x, 0, transform.position.z));
         Vector3 offset = new Vector3(radius * (float)Math.Sin(alpha), 0, radius * (float)Math.Cos(alpha));
 
         transform.position = centre + offset;

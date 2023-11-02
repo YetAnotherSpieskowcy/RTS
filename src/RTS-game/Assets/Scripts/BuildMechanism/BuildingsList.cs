@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class BuildingsList
 {
-    private List<BuildingInfo> buildings;
+    private List<BuildingData> buildings = new List<BuildingData>();
 
-    public BuildingsList()
+    public void LoadBuildings()
     {
-        buildings = new List<BuildingInfo>();
-        buildings.Add(new BuildingInfo("Building"));
+        BuildingData[] data = Resources.LoadAll<BuildingData>("Prefabs/Buildings/");
+        buildings.AddRange(data);
+
     }
 
     public int GetBuildingId(string name)
     {
         for(int i = 0; i < buildings.Count; i++)
         {
-            if(buildings[i].GetName() == name)
+            if(buildings[i].name == name)
             {
                 return i;
             }
@@ -25,7 +26,7 @@ public class BuildingsList
         return -1;
     }
 
-    public BuildingInfo GetBuildingInfo(int id)
+    public BuildingData GetBuildingData(int id)
     {
         return buildings[id];
     }

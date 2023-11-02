@@ -10,11 +10,10 @@ public class Manager : MonoBehaviour
     private Building building = null;
     private int collides = 0;
 
-    // Start is called before the first frame update
-    public void Initialize(Building building)
+    public void SetBuilding(Building building)
     {
-        collider = GetComponent<BoxCollider>();
         this.building = building;
+        collider = building.GetCollider();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,13 +38,12 @@ public class Manager : MonoBehaviour
         if (!valid)
         {
             building.SetState(Placement.INVALID);
-            building.SetMaterials(Placement.INVALID);
         }
         else
         {
             building.SetState(Placement.VALID);
-            building.SetMaterials(Placement.VALID);
         }
+        building.SetMaterials();
         return valid;
     }
 

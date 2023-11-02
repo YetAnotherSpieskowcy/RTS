@@ -9,15 +9,13 @@ public class Placer : MonoBehaviour
 
     private RaycastHit raycastHit;
     private Vector3 lastPlace;
-    private static int terrainLayer = 1 << 8;
-
-    // Start is called before the first frame update
+    private static int terrainLayer = 1 << 9;
+    
     void Start()
     {
-        
+        buildings.LoadBuildings();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (toPlace != null)
@@ -62,8 +60,7 @@ public class Placer : MonoBehaviour
             Destroy(toPlace.GetTransform().gameObject);
         }
 
-        Building building = new Building(buildings.GetBuildingInfo(0));
-        building.GetTransform().GetComponent<Manager>().Initialize(building);
+        Building building = new Building(buildings.GetBuildingData(1));
         toPlace = building;
         lastPlace = Vector3.zero;
     }
