@@ -58,31 +58,29 @@ public class Manager : MonoBehaviour
     {
         Vector3 direction = new Vector3(0, -1, 0);
         RaycastHit hit;
-        if (Physics.Raycast(position, direction, out hit, 2f, terrainLayer))
-        {
-            return true;
-        }
-        return false;
+        return Physics.Raycast(position, direction, out hit, .1f, terrainLayer);
     }
 
     public bool ValidateGround()
     {
         Vector3 buildingPosition = building.GetTransform().position;
-        float y = buildingPosition.y;
-        Debug.Log(buildingPosition.x - (collider.size / 2f).x);
+        float y = buildingPosition.y + .01f;
+        Debug.Log(y);
+        Debug.Log("aaa");
+        Debug.Log(Terrain.activeTerrain.SampleHeight(new Vector3(buildingPosition.x, 0, buildingPosition.z)));
         List<Vector3> corners = new List<Vector3>();
-        corners.Add(new Vector3(buildingPosition.x - (collider.size / 2f).x, y, buildingPosition.z - (collider.size / 2f).z));
-        corners.Add(new Vector3(buildingPosition.x - (collider.size / 2f).x, y, buildingPosition.z + (collider.size / 2f).z));
-        corners.Add(new Vector3(buildingPosition.x + (collider.size / 2f).x, y, buildingPosition.z - (collider.size / 2f).z));
-        corners.Add(new Vector3(buildingPosition.x + (collider.size / 2f).x, y, buildingPosition.z + (collider.size / 2f).z));
+        corners.Add(new Vector3(buildingPosition.x - (collider.size.x / 2f), y, buildingPosition.z - (collider.size.z / 2f)));
+        corners.Add(new Vector3(buildingPosition.x - (collider.size.x / 2f), y, buildingPosition.z + (collider.size.z / 2f)));
+        corners.Add(new Vector3(buildingPosition.x + (collider.size.x / 2f), y, buildingPosition.z - (collider.size.z / 2f)));
+        corners.Add(new Vector3(buildingPosition.x + (collider.size.x / 2f), y, buildingPosition.z + (collider.size.z / 2f)));
 
-        int collisionCnt = 0;
+        int validCornerCnt = 0;
         
         foreach(Vector3 corner in corners)
         {
-            if (!ValidateCorner(corner)) collisionCnt++;
+            if (ValidateCorner(corner)) validCornerCnt++;
         }
 
-        return collisionCnt < 3;
+        return validCornerCnt > 2;
     }
 }
