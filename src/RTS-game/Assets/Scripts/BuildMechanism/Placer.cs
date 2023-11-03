@@ -60,7 +60,7 @@ public class Placer : MonoBehaviour
             Destroy(toPlace.GetTransform().gameObject);
         }
 
-        Building building = new Building(buildings.GetBuildingData(1));
+        Building building = new Building(buildings.GetBuildingData(0));
         toPlace = building;
         lastPlace = Vector3.zero;
     }
