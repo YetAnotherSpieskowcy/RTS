@@ -8702,12 +8702,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
@@ -8727,27 +8727,27 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6375177
+      value: 0.99995536
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.6560158
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.2895212
+      value: -0.009450919
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.28176588
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -91.625
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
@@ -8757,7 +8757,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -46.574005
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7697390535095838095, guid: 593e92752452137429b9957fb443e431,
         type: 3}
@@ -8843,7 +8843,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2678.97, y: 14.31, z: 2383.6}
-  m_LocalScale: {x: 1, y: 1.8, z: 1}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1952495007}
@@ -15039,7 +15039,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
@@ -15059,27 +15059,27 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.45644432
+      value: 0.64551103
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.4564444
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5400543
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5400542
+      value: 0.763751
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e92752452137429b9957fb443e431,
         type: 3}
