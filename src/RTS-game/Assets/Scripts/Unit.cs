@@ -24,6 +24,10 @@ public class Unit : MonoBehaviour
             return team == Team.Friendly;
         }
     }
+    public void SetFriendly()
+    {
+        this.team = Team.Friendly;
+    }
     [SerializeField] private int health = 100;
     public void Hit(int damage)
     {
