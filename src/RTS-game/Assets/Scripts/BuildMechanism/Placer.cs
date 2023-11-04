@@ -6,6 +6,7 @@ public class Placer : MonoBehaviour
 {
     private Building toPlace = null;
     private BuildingsList buildings = new BuildingsList();
+    private int buildingId = 0;
 
     private RaycastHit raycastHit;
     private Vector3 lastPlace;
@@ -24,6 +25,18 @@ public class Placer : MonoBehaviour
             {
                 Cancel();
                 return;
+            }
+
+            if (Input.GetKeyUp(KeyCode.RightArrow))
+            {
+                buildingId++;
+                if (buildingId == buildings.GetNumberOfBuildings()) buildingId = 0;
+                Prepare();
+            }else if (Input.GetKeyUp(KeyCode.LeftArrow))
+            {
+                buildingId--;
+                if (buildingId < 0) buildingId = buildings.GetNumberOfBuildings()-1;
+                Prepare();
             }
 
             toPlace.UpdatePosition();
@@ -46,21 +59,21 @@ public class Placer : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyUp(KeyCode.Tab))
+            if (Input.GetKeyUp(KeyCode.B))
             {
                 Prepare();
             }
         }
     }
 
-    private void Prepare()      // TODO: choose building
+    private void Prepare()
     {
         if (toPlace != null && !toPlace.IsPlaced())
         {
             Destroy(toPlace.GetTransform().gameObject);
         }
 
-        Building building = new Building(buildings.GetBuildingData(0));
+        Building building = new Building(buildings.GetBuildingData(buildingId));
         toPlace = building;
         lastPlace = Vector3.zero;
     }

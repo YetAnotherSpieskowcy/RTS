@@ -30,4 +30,9 @@ public class BuildingsList
     {
         return buildings[id];
     }
+
+    public int GetNumberOfBuildings()
+    {
+        return buildings.Count;
+    }
 }

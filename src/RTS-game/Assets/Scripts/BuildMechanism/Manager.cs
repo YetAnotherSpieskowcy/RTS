@@ -11,12 +11,27 @@ public class Manager : MonoBehaviour
     private Building building = null;
     private int collides = 0;
     private int terrainLayer = 1 << 9;
+    private List<Vector3> directions = new List<Vector3>();
+
 
     public void SetBuilding(Building building)
     {
         this.building = building;
         collider = building.GetCollider();
+        CalculateDirections();
+    }
 
+    private void CalculateDirections()
+    {
+        directions.Add(new Vector3(collider.size.x, 0, collider.size.z));
+        directions.Add(new Vector3(collider.size.x, 0, -collider.size.z));
+        directions.Add(new Vector3(-collider.size.x, 0, collider.size.z));
+        directions.Add(new Vector3(-collider.size.x, 0, -collider.size.z));
+
+        directions.Add(new Vector3(collider.size.x, 0, 0));
+        directions.Add(new Vector3(-collider.size.x, 0, 0));
+        directions.Add(new Vector3(0, 0, collider.size.z));
+        directions.Add(new Vector3(0, 0, -collider.size.z));
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,7 +52,7 @@ public class Manager : MonoBehaviour
     {
         if (building == null) return false;
         if (building.IsPlaced()) return false;
-        bool valid = HasValidPlacement() & ValidateGround() & ValidateTrees();
+        bool valid = ValidateTrees(); //HasValidPlacement() & ValidateGround() & 
         if (!valid)
         {
             building.SetState(Placement.INVALID);
@@ -59,19 +74,14 @@ public class Manager : MonoBehaviour
     {
         Vector3 position = building.GetTransform().position;
         position.y += (collider.size.y / 2f);
-        float raycastLength = Mathf.Sqrt(Mathf.Pow(collider.size.x, 2f) + Mathf.Pow(collider.size.z, 2f)) / 2f;
-        // TODO: add calculating rate of direction
-        List<Vector3> directions = new List<Vector3>();
-        directions.Add(new Vector3(1, 0, 1));
-        directions.Add(new Vector3(1, 0, -1));
-        directions.Add(new Vector3(-1, 0, 1));
-        directions.Add(new Vector3(-1, 0, -1));
+        float raycastLength = Mathf.Sqrt(Mathf.Pow(collider.size.x, 2f) + Mathf.Pow(collider.size.z, 2f)) / 2f + .2f;
 
         RaycastHit hit;
         foreach (Vector3 direction in directions)
         {
             if (Physics.Raycast(position, direction, out hit, raycastLength, terrainLayer)) return false;
         }
+        // TODO: add validation when tree is in the middle of phantom
         return true;
     }
 
