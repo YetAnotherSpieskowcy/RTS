@@ -133,7 +133,11 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+<<<<<<< HEAD
     - _Progress: 1.0041686
+=======
+    - _Progress: 0.97740275
+>>>>>>> 958c027 (created menu scene, added buttons and title)
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
