@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(BoxCollider))]
 public class Manager : MonoBehaviour
@@ -20,14 +21,14 @@ public class Manager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Terrain") return;
+        if (other.gameObject.layer == 9) return;
         collides++;
         CheckPlacement();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Terrain") return;
+        if (other.gameObject.layer == 9) return;
         collides--;
         CheckPlacement();
     }
@@ -36,7 +37,7 @@ public class Manager : MonoBehaviour
     {
         if (building == null) return false;
         if (building.IsPlaced()) return false;
-        bool valid = HasValidPlacement() & ValidateGround();
+        bool valid = HasValidPlacement() & ValidateGround() & ValidateTrees();
         if (!valid)
         {
             building.SetState(Placement.INVALID);
@@ -54,6 +55,26 @@ public class Manager : MonoBehaviour
         return collides == 0;
     }
 
+    public bool ValidateTrees()
+    {
+        Vector3 position = building.GetTransform().position;
+        position.y += (collider.size.y / 2f);
+        float raycastLength = Mathf.Sqrt(Mathf.Pow(collider.size.x, 2f) + Mathf.Pow(collider.size.z, 2f)) / 2f;
+        // TODO: add calculating rate of direction
+        List<Vector3> directions = new List<Vector3>();
+        directions.Add(new Vector3(1, 0, 1));
+        directions.Add(new Vector3(1, 0, -1));
+        directions.Add(new Vector3(-1, 0, 1));
+        directions.Add(new Vector3(-1, 0, -1));
+
+        RaycastHit hit;
+        foreach (Vector3 direction in directions)
+        {
+            if (Physics.Raycast(position, direction, out hit, raycastLength, terrainLayer)) return false;
+        }
+        return true;
+    }
+
     public bool ValidateCorner(Vector3 position)
     {
         Vector3 direction = new Vector3(0, -1, 0);
@@ -65,9 +86,6 @@ public class Manager : MonoBehaviour
     {
         Vector3 buildingPosition = building.GetTransform().position;
         float y = buildingPosition.y + .01f;
-        Debug.Log(y);
-        Debug.Log("aaa");
-        Debug.Log(Terrain.activeTerrain.SampleHeight(new Vector3(buildingPosition.x, 0, buildingPosition.z)));
         List<Vector3> corners = new List<Vector3>();
         corners.Add(new Vector3(buildingPosition.x - (collider.size.x / 2f), y, buildingPosition.z - (collider.size.z / 2f)));
         corners.Add(new Vector3(buildingPosition.x - (collider.size.x / 2f), y, buildingPosition.z + (collider.size.z / 2f)));
