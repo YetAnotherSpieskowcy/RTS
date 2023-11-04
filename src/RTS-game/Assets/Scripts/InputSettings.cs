@@ -16,5 +16,4 @@ public static class InputSettings
     public static KeyCode Confirm = KeyCode.Return;
     public static KeyCode ShowEnemyUnitMarker = KeyCode.F;
     public static KeyCode Interact = KeyCode.E;
-    
 }
