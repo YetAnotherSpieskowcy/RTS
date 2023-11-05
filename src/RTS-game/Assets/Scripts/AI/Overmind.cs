@@ -50,6 +50,7 @@ public class Overmind : MonoBehaviour
         {
             foreach (var enemy in enemies)
             {
+                if (!enemy.IsAlive()) continue;
                 // TODO resolve RangeAI targeting
                 var allocated = (from n in possibleTargets where !n.CompareTag("Player") && n.GetComponent<EnemyAI>().target == enemy.transform orderby Vector3.Distance(enemy.transform.position, n.transform.position) select n);
                 if (allocated.Count() == 0)

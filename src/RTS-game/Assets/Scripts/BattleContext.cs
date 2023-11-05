@@ -28,6 +28,6 @@ public class BattleContext
     }
     public Unit[] GetTargetsOfAligment(Unit.Team team, Predicate<Unit> predicate)
     {
-        return units.Where(it => it.team == team).Where(it => predicate(it)).ToArray();
+        return units.Where(it => it.team == team).Where(it => predicate(it)).Where(it => it.IsAlive()).ToArray();
     }
 }
