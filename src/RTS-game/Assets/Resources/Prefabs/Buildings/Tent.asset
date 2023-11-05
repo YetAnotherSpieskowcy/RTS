@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Tent
   m_EditorClassIdentifier: 
   name: Tent
+  width: 3.25
+  height: 2.6
+  length: 2.6
   money: 20
   wood: 10
   stone: 5

@@ -28,8 +28,7 @@ public class Building
 
         this.obj = GameObject.Instantiate(buildingData.prefab) as GameObject;
 
-        this.obj.AddComponent(typeof(BoxCollider));
-        this.obj.GetComponent<BoxCollider>().isTrigger = true;
+        CreateCollider();
 
         this.obj.AddComponent(typeof(Rigidbody));
         this.obj.GetComponent<Rigidbody>().isKinematic = true;
@@ -56,6 +55,14 @@ public class Building
         placement = Placement.VALID;
         SetMaterials();
 
+    }
+
+    private void CreateCollider()
+    {
+        obj.AddComponent(typeof(BoxCollider));
+        obj.GetComponent<BoxCollider>().isTrigger = true;
+        obj.GetComponent<BoxCollider>().center = new Vector3(obj.transform.position.x, obj.transform.position.y + buildingData.height / 2f, obj.transform.position.z);
+        obj.GetComponent<BoxCollider>().size = new Vector3(buildingData.width, buildingData.height, buildingData.length);
     }
 
     public BoxCollider GetCollider()
@@ -157,10 +164,11 @@ public class Building
         Vector3 centre = new Vector3(player.position.x, 0, player.position.z);
 
         transform.eulerAngles = new Vector3(0, player.eulerAngles.y, 0);
+        Vector3 buildingPosition = GetTransform().position + GetTransform().forward * (GetCollider().size.z / 2f);
 
         float alpha = player.eulerAngles.y / 180 * (float)Math.PI;
         int radius = 5;
-        centre.y = Terrain.activeTerrain.SampleHeight(new Vector3(transform.position.x, 0, transform.position.z));
+        centre.y = Terrain.activeTerrain.SampleHeight(new Vector3(buildingPosition.x, 0, buildingPosition.z));
         Vector3 offset = new Vector3(radius * (float)Math.Sin(alpha), 0, radius * (float)Math.Cos(alpha));
 
         transform.position = centre + offset;
