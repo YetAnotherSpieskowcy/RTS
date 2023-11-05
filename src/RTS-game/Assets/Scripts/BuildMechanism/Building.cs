@@ -126,7 +126,7 @@ public class Building
         }
         else if (placement == Placement.PLACED)
         {
-            mat = childrenMaterials;        
+            mat = childrenMaterials;
         }
         else
         {
