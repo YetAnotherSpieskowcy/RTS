@@ -15,9 +15,9 @@ public class BuildingsList
 
     public int GetBuildingId(string name)
     {
-        for(int i = 0; i < buildings.Count; i++)
+        for (int i = 0; i < buildings.Count; i++)
         {
-            if(buildings[i].name == name)
+            if (buildings[i].name == name)
             {
                 return i;
             }

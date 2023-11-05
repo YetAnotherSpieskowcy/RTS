@@ -96,41 +96,37 @@ public class Building
         placement = p;
     }
 
+    private List<List<Material>> LoadMaterials(String matName)
+    {
+        List<List<Material>> mat;
+        Material refMaterial = Resources.Load(matName) as Material;
+        mat = new List<List<Material>>();
+        for (int i = 0; i < childrenMaterials.Count; i++)
+        {
+            List<Material> tmp = new List<Material>();
+            for (int j = 0; j < childrenMaterials[i].Count; j++)
+            {
+                tmp.Add(refMaterial);
+            }
+            mat.Add(tmp);
+        }
+        return mat;
+    }
+
     public void SetMaterials()
     {
         List<List<Material>> mat;
         if (placement == Placement.VALID)
         {
-            Material refMaterial = Resources.Load("Prefabs/Materials/Valid") as Material;
-            mat = new List<List<Material>>();
-            for (int i = 0; i < childrenMaterials.Count; i++)
-            {
-                List<Material> tmp = new List<Material>();
-                for(int j = 0; j < childrenMaterials[i].Count; j++)
-                {
-                    tmp.Add(refMaterial);
-                }
-                mat.Add(tmp);
-            }
+            mat = LoadMaterials("Prefabs/Materials/Valid");
         }
         else if (placement == Placement.INVALID)
         {
-            Material refMaterial = Resources.Load("Prefabs/Materials/Invalid") as Material;
-            mat = new List<List<Material>>();
-            for (int i = 0; i < childrenMaterials.Count; i++)
-            {
-                List<Material> tmp = new List<Material>();
-                for (int j = 0; j < childrenMaterials[i].Count; j++)
-                {
-                    tmp.Add(refMaterial);
-                }
-                mat.Add(tmp);
-            }
+            mat = LoadMaterials("Prefabs/Materials/Invalid");
         }
         else if (placement == Placement.PLACED)
         {
-            mat = childrenMaterials;
-            
+            mat = childrenMaterials;        
         }
         else
         {

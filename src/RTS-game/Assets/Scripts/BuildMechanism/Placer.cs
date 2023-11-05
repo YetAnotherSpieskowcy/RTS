@@ -11,7 +11,7 @@ public class Placer : MonoBehaviour
     private RaycastHit raycastHit;
     private Vector3 lastPlace;
     private static int terrainLayer = 1 << 9;
-    
+
     void Start()
     {
         buildings.LoadBuildings();
@@ -32,10 +32,11 @@ public class Placer : MonoBehaviour
                 buildingId++;
                 if (buildingId == buildings.GetNumberOfBuildings()) buildingId = 0;
                 Prepare();
-            }else if (Input.GetKeyUp(KeyCode.LeftArrow))
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftArrow))
             {
                 buildingId--;
-                if (buildingId < 0) buildingId = buildings.GetNumberOfBuildings()-1;
+                if (buildingId < 0) buildingId = buildings.GetNumberOfBuildings() - 1;
                 Prepare();
             }
 

@@ -64,7 +64,7 @@ public class Manager : MonoBehaviour
 
         float raycastLength = collider.size.z;
         Debug.Log(raycastLength);
-        int maxI = (int) (collider.size.x / .1f);
+        int maxI = (int)(collider.size.x / .1f);
         RaycastHit hit;
         for (int i = 0; i < maxI; i++)
         {
