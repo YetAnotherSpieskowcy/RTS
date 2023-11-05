@@ -5,9 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Mark
-  - Terrain
   - Enemy
-  - Tree
+  - buildingBackground
+  - Alert
+  - Storage
+  - Terrain
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Overlay
   - Wall
   - Player
-  - BuildMechanism
+  - Terrain
   - 
   - 
   - 

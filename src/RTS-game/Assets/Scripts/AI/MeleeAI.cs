@@ -6,9 +6,11 @@ public class MeleeAI : MonoBehaviour
 {
     public float hitRate = 10.0f;
     private EnemyAI ai;
+    private AIAnimation anim;
     void Awake()
     {
         ai = GetComponent<EnemyAI>();
+        anim = GetComponent<AIAnimation>();
     }
     void Start()
     {
@@ -26,6 +28,7 @@ public class MeleeAI : MonoBehaviour
                 if (unit != null)
                 {
                     unit.Hit(1);
+                    anim.Attack();
                     Debug.Log("Hit");
                 }
                 delay = 0.0f;
