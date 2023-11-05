@@ -23,7 +23,7 @@ public class FormationDispatcher : MonoBehaviour
                 {
                     marker.position = hit.point;
 
-                    if (Input.GetKeyDown(InputSettings.Interact))
+                    if (Input.GetMouseButtonDown(0))
                     {
                         var pos = hit.point;
                         var formation = Formations.Radial(3, .5f);

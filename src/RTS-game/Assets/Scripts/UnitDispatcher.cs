@@ -18,7 +18,7 @@ public class UnitDispatcher : MonoBehaviour
         foreach (Unit unit in GameObject.FindObjectsOfType(typeof(Unit)))
         {
             // TODO Limit range of player commands
-            if (unit.IsFriendly)
+            if (unit.IsFriendly && unit.IsAlive())
             {
                 friendlyUnitCache.Add(unit);
             }
