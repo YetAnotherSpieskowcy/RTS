@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18029143, g: 0.22572419, b: 0.30693057, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3005,8 +3005,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   group: 1
-  team: 0
-  health: 100
+  team: 2
+  health: 10
 --- !u!114 &277420827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3032,7 +3032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed347b61df7b3853f85626dd2ca39298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitRate: 10
+  hitRate: 1
 --- !u!195 &277420829
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6418,6 +6418,7 @@ GameObject:
   - component: {fileID: 731163473}
   - component: {fileID: 731163472}
   - component: {fileID: 731163478}
+  - component: {fileID: 731163479}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Enemy
@@ -6560,6 +6561,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitRate: 10
+--- !u!114 &731163479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731163471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfcc6f08077ad73e881c1ea534854c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  group: 1
+  team: 1
+  health: 100
 --- !u!1 &747053121
 GameObject:
   m_ObjectHideFlags: 0
@@ -7277,8 +7293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   group: 1
-  team: 0
-  health: 100
+  team: 2
+  health: 10
 --- !u!114 &792618181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7304,7 +7320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed347b61df7b3853f85626dd2ca39298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitRate: 10
+  hitRate: 1
 --- !u!195 &792618183
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -7697,6 +7713,7 @@ GameObject:
   - component: {fileID: 878658403}
   - component: {fileID: 878658402}
   - component: {fileID: 878658408}
+  - component: {fileID: 878658409}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -7839,6 +7856,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitRate: 10
+--- !u!114 &878658409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878658401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfcc6f08077ad73e881c1ea534854c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  group: 1
+  team: 1
+  health: 100
 --- !u!1001 &917074295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13979,7 +14011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   group: 1
   team: 1
-  health: 100
+  health: 10
 --- !u!114 &1611901122
 MonoBehaviour:
   m_ObjectHideFlags: 0

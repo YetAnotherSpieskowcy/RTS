@@ -7,10 +7,11 @@ public class EnemyAI : MonoBehaviour
 {
     private NavMeshAgent agent;
     private AIAnimation anim;
-    [HideInInspector] public Transform target;
+    public Transform target;
 
     private Transform centerLock;
     private float lockValue;
+    private bool isDead = false;
     public float StoppingDistance
     {
         get
@@ -72,6 +73,21 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    public bool IsAlive()
+    {
+        return !isDead;
+    }
+
+    public void Die()
+    {
+        isDead = true;
+        Target(null);
+        if (anim != null)
+        {
+            anim.Die();
+        }
+    }
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -81,6 +97,10 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+        if (isDead)
+        {
+            return;
+        }
         if (anim != null)
         {
             anim.Move(agent.desiredVelocity);

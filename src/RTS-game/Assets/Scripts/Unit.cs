@@ -28,11 +28,25 @@ public class Unit : MonoBehaviour
     {
         this.team = Team.Friendly;
     }
+    private bool isDead = false;
+    public bool IsAlive()
+    {
+        return !isDead;
+    }
     [SerializeField] private int health = 100;
     public void Hit(int damage)
     {
         health -= damage;
         Debug.Log("Bonk!");
+        if (health <= 0)
+        {
+            EnemyAI ai = GetComponent<EnemyAI>();
+            if (ai != null)
+            {
+                isDead = true;
+                ai.Die();
+            }
+        }
     }
     public void Notify(Transform transform)
     {
