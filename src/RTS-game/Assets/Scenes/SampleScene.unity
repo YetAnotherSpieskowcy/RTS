@@ -3032,7 +3032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   group: 1
-  team: 0
+  team: 2
   health: 10
 --- !u!114 &277420827
 MonoBehaviour:
@@ -7320,7 +7320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   group: 1
-  team: 0
+  team: 2
   health: 10
 --- !u!114 &792618181
 MonoBehaviour:
