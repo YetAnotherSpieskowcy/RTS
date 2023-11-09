@@ -50,7 +50,7 @@ public class BuildMechanismController : MonoBehaviour
                 buildMediator.SetAction(Action.WAIT);
             }
         }
-        else if(buildMediator.GetAction() == Action.PREPARE)
+        else if (buildMediator.GetAction() == Action.PREPARE)
         {
             Prepare();
         }

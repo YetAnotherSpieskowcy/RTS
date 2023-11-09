@@ -102,7 +102,7 @@ public class UIBuildingMode : MonoBehaviour
                 GameObject alert = GetAlertObject(this.buildingsOnUI[i].selected.transform);
 
                 if (alert != null)
-                { 
+                {
                     if (buildMediator.GetStorage().EnoughResources(data.money, data.wood, data.stone))
                         alert.SetActive(false);
                     else
