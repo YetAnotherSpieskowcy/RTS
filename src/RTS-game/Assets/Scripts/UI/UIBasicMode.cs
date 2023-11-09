@@ -31,7 +31,6 @@ public class UIBasicMode : MonoBehaviour
     private GameObject[] enemiesOnUI;
     private GameObject[] enemiesOnMap;
     public GameObject enemiesPrefab;
-    
     // ----- date -----
     private System.Collections.IEnumerator UpdateClock()
     {

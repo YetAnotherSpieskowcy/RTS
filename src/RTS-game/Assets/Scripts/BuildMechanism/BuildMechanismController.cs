@@ -32,7 +32,6 @@ public class BuildMechanismController : MonoBehaviour
 
             toPlace.UpdatePosition();
 
-
             if (Physics.Raycast(toPlace.GetTransform().position, toPlace.GetTransform().forward, out raycastHit, 1000f, terrainLayer))
             {
                 if (lastPlace != raycastHit.point)
@@ -46,11 +45,10 @@ public class BuildMechanismController : MonoBehaviour
             {
                 Place();
             }
-            else if((!toPlace.IsValid()) && buildMediator.GetAction() == Action.PLACE)
+            else if ((!toPlace.IsValid()) && buildMediator.GetAction() == Action.PLACE)
             {
                 buildMediator.SetAction(Action.WAIT);
             }
-
         }
         else if(buildMediator.GetAction() == Action.PREPARE)
         {
