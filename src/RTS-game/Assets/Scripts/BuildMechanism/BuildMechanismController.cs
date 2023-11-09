@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Placer : MonoBehaviour
+public class BuildMechanismController : MonoBehaviour
 {
     private Building toPlace = null;
-    private BuildingsList buildings = new BuildingsList();
-    private int buildingId = 0;
+    private BuildMechanismMediator buildMediator = new BuildMechanismMediator();
 
     private RaycastHit raycastHit;
     private Vector3 lastPlace;
@@ -14,29 +13,20 @@ public class Placer : MonoBehaviour
 
     void Start()
     {
-        buildings.LoadBuildings();
+        buildMediator.LoadBuildings();
     }
 
     void Update()
     {
         if (toPlace != null)
         {
-            if (Input.GetKeyUp(KeyCode.Escape))
+            if (buildMediator.GetAction() == Action.CANCEL)
             {
                 Cancel();
                 return;
             }
-
-            if (Input.GetKeyUp(KeyCode.RightArrow))
+            else if (buildMediator.GetAction() == Action.PREPARE)
             {
-                buildingId++;
-                if (buildingId == buildings.GetNumberOfBuildings()) buildingId = 0;
-                Prepare();
-            }
-            else if (Input.GetKeyUp(KeyCode.LeftArrow))
-            {
-                buildingId--;
-                if (buildingId < 0) buildingId = buildings.GetNumberOfBuildings() - 1;
                 Prepare();
             }
 
@@ -47,24 +37,30 @@ public class Placer : MonoBehaviour
             {
                 if (lastPlace != raycastHit.point)
                 {
-                    toPlace.CheckValid();
+                    toPlace.CheckValid(buildMediator.CheckEnoughResources());
                 }
                 lastPlace = raycastHit.point;
             }
 
-            if (toPlace.IsValid() && Input.GetMouseButtonDown(0))
+            if (toPlace.IsValid() && buildMediator.GetAction() == Action.PLACE)
             {
                 Place();
             }
+            else if((!toPlace.IsValid()) && buildMediator.GetAction() == Action.PLACE)
+            {
+                buildMediator.SetAction(Action.WAIT);
+            }
 
         }
-        else
+        else if(buildMediator.GetAction() == Action.PREPARE)
         {
-            if (Input.GetKeyUp(KeyCode.B))
-            {
-                Prepare();
-            }
+            Prepare();
         }
+    }
+
+    public BuildMechanismMediator GetBuildMechanismMediator()
+    {
+        return buildMediator;
     }
 
     private void Prepare()
@@ -74,20 +70,23 @@ public class Placer : MonoBehaviour
             Destroy(toPlace.GetTransform().gameObject);
         }
 
-        Building building = new Building(buildings.GetBuildingData(buildingId));
+        Building building = new Building(buildMediator.GetBuildingData());
         toPlace = building;
         lastPlace = Vector3.zero;
+        buildMediator.SetAction(Action.WAIT);
     }
 
     private void Cancel()
     {
         Destroy(toPlace.GetTransform().gameObject);
         toPlace = null;
+        buildMediator.SetAction(Action.WAIT);
     }
 
     private void Place()
     {
         toPlace.Place();
         toPlace = null;
+        buildMediator.SetAction(Action.PLACED);
     }
 }
