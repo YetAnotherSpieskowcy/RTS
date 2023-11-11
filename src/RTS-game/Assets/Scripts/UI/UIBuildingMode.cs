@@ -29,7 +29,7 @@ public class UIBuildingMode : MonoBehaviour
     void PrepareBuildingsInfo()
     {
         int startX = 150;
-        int spacing = 150;
+        int spacing = 250;
 
         int numberOfBuildings = buildMediator.GetNumberOfBuildings();
 
