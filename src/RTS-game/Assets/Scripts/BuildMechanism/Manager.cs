@@ -37,16 +37,8 @@ public class Manager : MonoBehaviour
     {
         if (building == null) return false;
         if (building.IsPlaced()) return false;
-        bool valid = ValidateTrees() & ValidateGround() & HasValidPlacement();
-        if (!valid)
-        {
-            building.SetState(Placement.INVALID);
-        }
-        else
-        {
-            building.SetState(Placement.VALID);
-        }
-        building.SetMaterials();
+        bool valid = ValidateTrees() && ValidateGround() && HasValidPlacement();
+        Debug.Log(valid);
         return valid;
     }
 
@@ -96,7 +88,6 @@ public class Manager : MonoBehaviour
         Vector3 buildingPosition = building.GetTransform().position + building.GetTransform().forward * (collider.size.z / 2f);
 
         float y = buildingPosition.y + 0.01f;
-        Debug.Log(y);
         float deltaX1 = radius * Mathf.Sin(gamma1);
         float deltaZ1 = radius * Mathf.Cos(gamma1);
         float deltaX2 = radius * Mathf.Sin(gamma2);
@@ -114,7 +105,6 @@ public class Manager : MonoBehaviour
         {
             if (ValidateCorner(corner)) validCornerCnt++;
         }
-        Debug.Log(validCornerCnt);
         return validCornerCnt > 2;
     }
 }

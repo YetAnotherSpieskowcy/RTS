@@ -19,10 +19,6 @@ public class UIBasicMode : MonoBehaviour
 {
     public static Mode gameMode;
 
-    public static TMP_Text textM;
-    public static TMP_Text textW;
-    public static TMP_Text textS;
-
     public TMP_Text date;
     private DateTime startDate;
     public Transform CameraTransform;
@@ -35,48 +31,6 @@ public class UIBasicMode : MonoBehaviour
     private GameObject[] enemiesOnUI;
     private GameObject[] enemiesOnMap;
     public GameObject enemiesPrefab;
-
-    // ----- storage -----
-    public static void IncreaseSource(TMP_Text sourceT, String value)
-    {
-        sourceT.text = (int.Parse(sourceT.text) + int.Parse(value)).ToString();
-    }
-    public static void DecreaseSource(TMP_Text sourceT, String value)
-    {
-        sourceT.text = (int.Parse(sourceT.text) - int.Parse(value)).ToString();
-    }
-    public static void SubstractCost(String valueM, String valueW, String valueS)
-    {
-        DecreaseSource(textM, valueM);
-        DecreaseSource(textW, valueW);
-        DecreaseSource(textS, valueS);
-    }
-    public static bool EnoughSources(String valueM, String valueW, String valueS)
-    {
-        bool enough = true;
-        if (int.Parse(valueM) > int.Parse(textM.text))
-        {
-            enough = false;
-        }
-        else if (int.Parse(valueW) > int.Parse(textW.text))
-        {
-            enough = false;
-        }
-        else if (int.Parse(valueS) > int.Parse(textS.text))
-        {
-            enough = false;
-        }
-        return enough;
-    }
-    void PrepareStorage()
-    {
-        textM = GameObject.FindGameObjectsWithTag("Storage")[2].GetComponentInChildren<TMP_Text>();
-        textW = GameObject.FindGameObjectsWithTag("Storage")[1].GetComponentInChildren<TMP_Text>();
-        textS = GameObject.FindGameObjectsWithTag("Storage")[0].GetComponentInChildren<TMP_Text>();
-        textM.text = "101";
-        textW.text = "102";
-        textS.text = "103";
-    }
     // ----- date -----
     private System.Collections.IEnumerator UpdateClock()
     {
@@ -143,7 +97,6 @@ public class UIBasicMode : MonoBehaviour
     void Start()
     {
         gameMode = Mode.NORMAL;
-        PrepareStorage();
         StartClock();
         InstantiateEnemies();
     }

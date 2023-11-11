@@ -13,69 +13,68 @@ public struct buildingOnUI
 {
     public GameObject inactive;
     public GameObject selected;
-    public String costM;
-    public String costW;
-    public String costS;
 }
 
 // ----- mechanisms -----
 public class UIBuildingMode : MonoBehaviour
 {
-    private int numOfBuildings;
-    private int selectedBuilding;
     public RectTransform buildingBackgroundTransform;
-    public List<Texture> buildingTextureSources;
     public GameObject buildingPrefab;
     public GameObject selectedBuildingPrefab;
     private List<buildingOnUI> buildingsOnUI;
+    private BuildMechanismMediator buildMediator = new BuildMechanismMediator();
+    private bool isPlaced = false;
 
     // ----- building mode -----
     void PrepareBuildingsInfo()
     {
+        int startX = 150;
+        int spacing = 150;
+
+        int numberOfBuildings = buildMediator.GetNumberOfBuildings();
+
         this.buildingsOnUI = new List<buildingOnUI>();
-        //here i will probably change buildingTextureSources to list of ScriptableObjects for buildiings?
-        foreach (Texture bts in this.buildingTextureSources)
+
+        for (int i = 0; i < numberOfBuildings; i++)
         {
-            //here will probably be estracting texture from ScriptableObjects? Texture bts = scriptObj.texture
-            buildingOnUI new_bou = new buildingOnUI();
-            //here will probably be estracting info from ScriptableObject? new_bou.costX = scriptObj.costX
-            new_bou.costM = "30";
-            new_bou.costW = "20";
-            new_bou.costS = "10";
+            buildingOnUI newBuilding = new buildingOnUI();
+
+            BuildingData data = buildMediator.GetBuildingData(i);
+            GameObject s = Instantiate(selectedBuildingPrefab, this.buildingBackgroundTransform);
+            s.GetComponentInChildren<RawImage>().texture = data.bts;
+            s.GetComponent<RectTransform>().anchoredPosition = new Vector2(startX + i * spacing, 0);
+            s.GetComponentsInChildren<TMP_Text>()[0].text = data.money.ToString();
+            s.GetComponentsInChildren<TMP_Text>()[1].text = data.wood.ToString();
+            s.GetComponentsInChildren<TMP_Text>()[2].text = data.stone.ToString();
+            newBuilding.selected = s;
+            newBuilding.selected.SetActive(false);
 
             GameObject b = Instantiate(buildingPrefab, this.buildingBackgroundTransform);
-            b.GetComponentInChildren<RawImage>().texture = bts;
-            b.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 1000);
-            new_bou.inactive = b;
+            b.GetComponentInChildren<RawImage>().texture = data.bts;
+            b.GetComponent<RectTransform>().anchoredPosition = new Vector2(startX + i * spacing, 0);
+            newBuilding.inactive = b;
+            newBuilding.inactive.SetActive(false);
 
-            GameObject s = Instantiate(selectedBuildingPrefab, this.buildingBackgroundTransform);
-            s.GetComponentInChildren<RawImage>().texture = bts;
-            s.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 1000);
-            s.GetComponentsInChildren<TMP_Text>()[0].text = new_bou.costM;
-            s.GetComponentsInChildren<TMP_Text>()[1].text = new_bou.costW;
-            s.GetComponentsInChildren<TMP_Text>()[2].text = new_bou.costS;
-            new_bou.selected = s;
-
-            buildingsOnUI.Add(new_bou);
+            this.buildingsOnUI.Add(newBuilding);
         }
-        this.numOfBuildings = buildingsOnUI.Count;
-        this.selectedBuilding = 1;
     }
     void ClearUIAfterBuildingMode()
     {
-        Vector2 invisible = new Vector2(0, 1000);
-        for (int i = 0; i < buildingsOnUI.Count; i++)
+        for (int i = 0; i < buildMediator.GetNumberOfBuildings(); i++)
         {
-            buildingsOnUI[i].inactive.GetComponent<RectTransform>().anchoredPosition = invisible;
-            buildingsOnUI[i].selected.GetComponent<RectTransform>().anchoredPosition = invisible;
+            this.buildingsOnUI[i].selected.SetActive(false);
+            this.buildingsOnUI[i].inactive.SetActive(false);
+
+            GameObject alert = GetAlertObject(this.buildingsOnUI[i].selected.transform);
+            if (alert != null)
+                alert.SetActive(false);
         }
     }
     void BuyBuilding()
     {
-        buildingOnUI bou = buildingsOnUI[selectedBuilding - 1];
-        if (UIBasicMode.EnoughSources(bou.costM, bou.costS, bou.costW))
+        if (buildMediator.CheckEnoughResources())
         {
-            UIBasicMode.SubstractCost(bou.costM, bou.costW, bou.costS);
+            buildMediator.SetAction(Action.PLACE);
         }
         else
         {
@@ -89,75 +88,92 @@ public class UIBuildingMode : MonoBehaviour
         int startX = 150;
         int spacing = 150;
         Vector2 invisible = new Vector2(0, 1000);
-        for (int i = 0; i < buildingsOnUI.Count; i++)
+
+        int numberOfBuildings = buildMediator.GetNumberOfBuildings();
+
+        for (int i = 0; i < numberOfBuildings; i++)
         {
-            buildingOnUI bou = buildingsOnUI[i];
-            GameObject[] alerts = GameObject.FindGameObjectsWithTag("Alert");
-            if (i == selectedBuilding - 1)
+            if (i == buildMediator.GetBuildingId())
             {
-                bou.inactive.GetComponent<RectTransform>().anchoredPosition = invisible;
-                bou.selected.GetComponent<RectTransform>().anchoredPosition = new Vector2(startX + i * spacing, 0);
-                if (UIBasicMode.EnoughSources(bou.costM, bou.costS, bou.costW))
+                BuildingData data = buildMediator.GetBuildingData(i);
+                this.buildingsOnUI[i].selected.SetActive(true);
+                this.buildingsOnUI[i].inactive.SetActive(false);
+
+                GameObject alert = GetAlertObject(this.buildingsOnUI[i].selected.transform);
+
+                if (alert != null)
                 {
-                    alerts[i].GetComponent<RectTransform>().anchoredPosition = invisible;
-                }
-                else
-                {
-                    alerts[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -20);
+                    if (buildMediator.GetStorage().EnoughResources(data.money, data.wood, data.stone))
+                        alert.SetActive(false);
+                    else
+                        alert.SetActive(true);
                 }
             }
             else
             {
-                bou.inactive.GetComponent<RectTransform>().anchoredPosition = new Vector2(startX + i * spacing, 0);
-                bou.selected.GetComponent<RectTransform>().anchoredPosition = invisible;
-                alerts[i].GetComponent<RectTransform>().anchoredPosition = invisible;
+                this.buildingsOnUI[i].selected.SetActive(false);
+                this.buildingsOnUI[i].inactive.SetActive(true);
+
+                GameObject alert = GetAlertObject(this.buildingsOnUI[i].inactive.transform);
+                if (alert != null)
+                    alert.SetActive(false);
             }
-        }
-        if (Input.GetKeyDown(InputSettings.Confirm))
-        {
-            BuyBuilding();
         }
     }
     void UpdateSelectedBuilding()
     {
         if (Input.GetKeyDown(InputSettings.Next))
         {
-            this.selectedBuilding++;
-            if (this.selectedBuilding > numOfBuildings)
-            {
-                this.selectedBuilding = 1;
-            }
+            buildMediator.IncrementBuildingId();
+            buildMediator.SetAction(Action.PREPARE);
         }
         else if (Input.GetKeyDown(InputSettings.Previous))
         {
-            this.selectedBuilding--;
-            if (this.selectedBuilding == 0)
-            {
-                this.selectedBuilding = numOfBuildings;
-            }
+            buildMediator.DecrementBuildingId();
+            buildMediator.SetAction(Action.PREPARE);
+        }
+
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(InputSettings.Confirm))
+        {
+            BuyBuilding();
         }
     }
     // ----- modes -----
     void UpdateMode()
     {
-        if (Input.GetKeyDown(InputSettings.ChangeToBUildingMode))
+        if (Input.GetKeyDown(InputSettings.ChangeToBUildingMode) && !isPlaced)
         {
-            this.selectedBuilding = 1;
             UIBasicMode.gameMode = Mode.BUILDING;
+            buildMediator.InitializeBuildingId();
+            buildMediator.SetAction(Action.PREPARE);
         }
-        else if (Input.GetKeyDown(InputSettings.ExitBuildingMode))
+        else if (Input.GetKeyDown(InputSettings.ExitBuildingMode) || isPlaced)
         {
             if (UIBasicMode.gameMode == Mode.BUILDING)
             {
                 ClearUIAfterBuildingMode();
+                if (!isPlaced)
+                    buildMediator.SetAction(Action.CANCEL);
+                else
+                    buildMediator.SetAction(Action.WAIT);
             }
             UIBasicMode.gameMode = Mode.NORMAL;
+            isPlaced = false;
+        }
+        else if (buildMediator.GetAction() == Action.PLACED)
+        {
+            BuildingData data = buildMediator.GetBuildingData();
+            isPlaced = true;
+            buildMediator.GetStorage().SubstractCost(data.money, data.wood, data.stone);
+            buildMediator.SetAction(Action.WAIT);
         }
     }
     // ----- UI -----
     void Start()
     {
+        buildMediator = GameObject.Find("BuildMechanism").GetComponent<BuildMechanismController>().GetBuildMechanismMediator();
         PrepareBuildingsInfo();
+        buildMediator.GetStorage().UpdateStorage();
     }
     void Update()
     {
@@ -166,5 +182,14 @@ public class UIBuildingMode : MonoBehaviour
         {
             UpdateBuildingMode();
         }
+    }
+
+    private GameObject GetAlertObject(Transform b)
+    {
+        foreach (Transform child in b)
+        {
+            if (child.tag == "Alert") return child.gameObject;
+        }
+        return null;
     }
 }

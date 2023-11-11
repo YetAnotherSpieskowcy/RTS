@@ -148,11 +148,12 @@ public class Building
         transform.GetComponent<BoxCollider>().isTrigger = false;
     }
 
-    public void CheckValid()
+    public void CheckValid(bool enoughResources)
     {
         bool valid = this.obj.GetComponent<Manager>().CheckPlacement();
         if (placement == Placement.PLACED) return;
-        placement = valid ? Placement.VALID : Placement.INVALID;
+        placement = (valid && enoughResources) ? Placement.VALID : Placement.INVALID;
+        SetMaterials();
     }
 
     public void UpdatePosition()
