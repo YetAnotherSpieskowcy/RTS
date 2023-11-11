@@ -300,7 +300,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Not enough sources!
+  m_Text: Not enough resources!
 --- !u!1 &994387975807615334
 GameObject:
   m_ObjectHideFlags: 0

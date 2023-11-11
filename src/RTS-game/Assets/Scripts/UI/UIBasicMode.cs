@@ -27,7 +27,6 @@ public class UIBasicMode : MonoBehaviour
     public RectTransform southMarkrerTransform;
     public RectTransform eastMarkrerTransform;
     public RectTransform westMarkrerTransform;
-
     private GameObject[] enemiesOnUI;
     private GameObject[] enemiesOnMap;
     public GameObject enemiesPrefab;
@@ -42,6 +41,7 @@ public class UIBasicMode : MonoBehaviour
             yield return new WaitForSeconds(5f);
         }
     }
+
     void StartClock()
     {
         this.startDate = new DateTime(1500, 1, 1, 8, 0, 0);

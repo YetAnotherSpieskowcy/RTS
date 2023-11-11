@@ -3,6 +3,11 @@ using UnityEngine;
 public class InteractionResolver : MonoBehaviour
 {
     public float interactionDistance = 1.0f;
+    DialogInfoMediator dialogInfoMediator;
+    void Start()
+    {
+        dialogInfoMediator = new DialogInfoMediator();
+    }
     void Update()
     {
         RaycastHit hit;
@@ -19,10 +24,14 @@ public class InteractionResolver : MonoBehaviour
                 }
                 // TODO Draw tooltip
                 Debug.Log(inter.GetTooltipInfo());
+                dialogInfoMediator.SetDaialogInfoVisible();
             }
-
         }
+        else
+        {
 
+            dialogInfoMediator.SetDaialogInfoInVisible();
+        }
     }
     void OnDrawGizmos()
     {
