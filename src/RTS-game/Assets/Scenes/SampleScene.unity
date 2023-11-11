@@ -13566,7 +13566,7 @@ PrefabInstance:
     - target: {fileID: 809983058328623260, guid: 9b8acdbae4d620e44858bfb068decb65,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: -125
       objectReference: {fileID: 0}
     - target: {fileID: 809983058328623260, guid: 9b8acdbae4d620e44858bfb068decb65,
         type: 3}
@@ -13586,6 +13586,11 @@ PrefabInstance:
     - target: {fileID: 1602039076173470306, guid: 9b8acdbae4d620e44858bfb068decb65,
         type: 3}
       propertyPath: m_Name
+      value: DialogInfo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602039076173470306, guid: 9b8acdbae4d620e44858bfb068decb65,
+        type: 3}
+      propertyPath: m_TagString
       value: DialogInfo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
