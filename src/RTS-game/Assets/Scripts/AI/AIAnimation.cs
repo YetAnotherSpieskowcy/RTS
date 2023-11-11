@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
 public class AIAnimation : MonoBehaviour
 {
     private Animator anim;
@@ -12,6 +11,10 @@ public class AIAnimation : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
+        if (anim == null)
+        {
+            anim = GetComponentInChildren<Animator>();
+        }
     }
 
     public void Attack()
@@ -28,12 +31,28 @@ public class AIAnimation : MonoBehaviour
         currentAnim = "Death";
     }
 
+    public void Work()
+    {
+        anim.ResetTrigger(currentAnim);
+        anim.SetTrigger("Mine");
+        currentAnim = "Mine";
+    }
+
+    public void StopWork()
+    {
+        if (currentAnim != "Mine") return;
+        anim.ResetTrigger(currentAnim);
+        anim.SetTrigger("StopMine");
+        currentAnim = "Idle";
+    }
+
     public void Move(Vector3 direction)
     {
+        if (currentAnim == "Mine") return;
         if (currentAnim == "Death") return;
-        anim.ResetTrigger(currentAnim);
         if (direction == Vector3.zero)
         {
+            anim.ResetTrigger(currentAnim);
             anim.SetTrigger("Idle");
             currentAnim = "Idle";
         }
