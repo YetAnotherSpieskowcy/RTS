@@ -28,7 +28,7 @@ public class UIBuildingMode : MonoBehaviour
     // ----- building mode -----
     void PrepareBuildingsInfo()
     {
-        int startX = 150;
+        int startX = 250;
         int spacing = 250;
 
         int numberOfBuildings = buildMediator.GetNumberOfBuildings();
@@ -84,11 +84,6 @@ public class UIBuildingMode : MonoBehaviour
     void UpdateBuildingMode()
     {
         UpdateSelectedBuilding();
-
-        int startX = 150;
-        int spacing = 150;
-        Vector2 invisible = new Vector2(0, 1000);
-
         int numberOfBuildings = buildMediator.GetNumberOfBuildings();
 
         for (int i = 0; i < numberOfBuildings; i++)
