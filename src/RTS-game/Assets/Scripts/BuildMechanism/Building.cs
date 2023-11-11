@@ -146,6 +146,11 @@ public class Building
         placement = Placement.PLACED;
         SetMaterials();
         transform.GetComponent<BoxCollider>().isTrigger = false;
+        Buildable buildable = obj.GetComponent<Buildable>();
+        if (buildable != null)
+        {
+            buildable.OnPlaced();
+        }
     }
 
     public void CheckValid(bool enoughResources)

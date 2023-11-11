@@ -92,6 +92,10 @@ public class EnemyAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<AIAnimation>();
+        if (anim == null)
+        {
+            anim = GetComponentInChildren<AIAnimation>();
+        }
         StoppingDistance = Radius;
     }
 

@@ -39,6 +39,7 @@ public class Manager : MonoBehaviour
         if (building.IsPlaced()) return false;
         bool valid = ValidateTrees() && ValidateGround() && HasValidPlacement();
         Debug.Log("valid: " + valid);
+
         return valid;
     }
 
@@ -55,7 +56,6 @@ public class Manager : MonoBehaviour
         Vector3 position2 = position1 + building.GetTransform().forward * collider.size.z;
 
         float raycastLength = collider.size.z;
-        Debug.Log(raycastLength);
         int maxI = (int)(collider.size.x / .1f);
         RaycastHit hit;
         for (int i = 0; i < maxI; i++)
