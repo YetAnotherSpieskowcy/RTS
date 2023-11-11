@@ -38,7 +38,7 @@ public class Manager : MonoBehaviour
         if (building == null) return false;
         if (building.IsPlaced()) return false;
         bool valid = ValidateTrees() && ValidateGround() && HasValidPlacement();
-        Debug.Log(valid);
+        Debug.Log("valid: " + valid);
         return valid;
     }
 

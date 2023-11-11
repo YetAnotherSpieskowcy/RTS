@@ -8,7 +8,6 @@ public class DialogInfoMediator
     public DialogInfoMediator()
     {
         dialoginfo = GameObject.FindGameObjectsWithTag("DialogInfo")[0];
-        dialoginfo.SetActive(false);
     }
     public void SetDaialogInfoVisible()
     {

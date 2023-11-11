@@ -17,9 +17,9 @@ public class Storage
 
     public void UpdateStorage()
     {
-        TMP_Text textM = GameObject.FindGameObjectsWithTag("Storage")[2].GetComponentInChildren<TMP_Text>();
-        TMP_Text textW = GameObject.FindGameObjectsWithTag("Storage")[1].GetComponentInChildren<TMP_Text>();
-        TMP_Text textS = GameObject.FindGameObjectsWithTag("Storage")[0].GetComponentInChildren<TMP_Text>();
+        TMP_Text textM = GameObject.FindGameObjectsWithTag("StorageM")[0].GetComponentInChildren<TMP_Text>();
+        TMP_Text textW = GameObject.FindGameObjectsWithTag("StorageW")[0].GetComponentInChildren<TMP_Text>();
+        TMP_Text textS = GameObject.FindGameObjectsWithTag("StorageS")[0].GetComponentInChildren<TMP_Text>();
 
         textM.text = this.money.ToString();
         textW.text = this.wood.ToString();

@@ -12000,7 +12000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1515528649962624, guid: 05db22e73067f47298102cd2a70e73b3, type: 3}
       propertyPath: m_TagString
-      value: Storage
+      value: StorageW
       objectReference: {fileID: 0}
     - target: {fileID: 224251052912629854, guid: 05db22e73067f47298102cd2a70e73b3,
         type: 3}
@@ -13279,7 +13279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1515528649962624, guid: 05db22e73067f47298102cd2a70e73b3, type: 3}
       propertyPath: m_TagString
-      value: Storage
+      value: StorageM
       objectReference: {fileID: 0}
     - target: {fileID: 224251052912629854, guid: 05db22e73067f47298102cd2a70e73b3,
         type: 3}
@@ -17314,7 +17314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1515528649962624, guid: 05db22e73067f47298102cd2a70e73b3, type: 3}
       propertyPath: m_TagString
-      value: Storage
+      value: StorageS
       objectReference: {fileID: 0}
     - target: {fileID: 224251052912629854, guid: 05db22e73067f47298102cd2a70e73b3,
         type: 3}

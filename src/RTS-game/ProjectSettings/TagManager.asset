@@ -8,10 +8,12 @@ TagManager:
   - Enemy
   - buildingBackground
   - Alert
-  - Storage
   - Terrain
   - Tree
   - DialogInfo
+  - StorageM
+  - StorageW
+  - StorageS
   layers:
   - Default
   - TransparentFX
