@@ -18,7 +18,6 @@ public enum Mode
 public class UIBasicMode : MonoBehaviour
 {
     public static Mode gameMode;
-
     public TMP_Text date;
     private DateTime startDate;
     public Transform CameraTransform;
