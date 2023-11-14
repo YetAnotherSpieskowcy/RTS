@@ -32,13 +32,29 @@ public class Manager : MonoBehaviour
         collides--;
         CheckPlacement();
     }
-
-    public bool CheckPlacement()
+    private string PrepareComment(bool validTrees,bool validGround,bool validPlacement)
     {
-        if (building == null) return false;
-        if (building.IsPlaced()) return false;
-        bool valid = ValidateTrees() && ValidateGround() && HasValidPlacement();
-        return valid;
+        string comment = "";
+        if(!validTrees || !validPlacement)
+        {
+            comment += "Building cannot collide with another object.\n";
+        }
+        if(!validGround)
+        {
+            comment += "Building can be only placed on flat ground.\n";
+        }
+        return comment;
+    }
+    public (bool, string) CheckPlacement()
+    {
+        if (building == null) return (false, "");
+        if (building.IsPlaced()) return (false, "");
+        bool validTrees = ValidateTrees();
+        bool validGround = ValidateGround();
+        bool validPlacement = HasValidPlacement();
+        bool valid = validTrees && validGround && validPlacement;
+        string comment = PrepareComment(validTrees, validGround, validPlacement);
+        return (valid, comment);
     }
 
     public bool HasValidPlacement()
