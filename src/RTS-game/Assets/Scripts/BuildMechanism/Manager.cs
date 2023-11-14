@@ -32,14 +32,14 @@ public class Manager : MonoBehaviour
         collides--;
         CheckPlacement();
     }
-    private string PrepareComment(bool validTrees,bool validGround,bool validPlacement)
+    private string PrepareComment(bool validTrees, bool validGround, bool validPlacement)
     {
         string comment = "";
-        if(!validTrees || !validPlacement)
+        if (!validTrees || !validPlacement)
         {
             comment += "Building cannot collide with another object.\n";
         }
-        if(!validGround)
+        if (!validGround)
         {
             comment += "Building can be only placed on flat ground.\n";
         }

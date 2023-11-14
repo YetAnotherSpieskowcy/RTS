@@ -28,20 +28,18 @@ public class InteractionResolver : MonoBehaviour
                 dialogInfoController.SetDaialogInfoVisible();
                 activated = true;
             }
-            else if(activated)
+            else if (activated)
             {
                 dialogInfoController.SetDaialogInfoInVisible();
                 activated = false;
             }
 
         }
-        else if(activated)
+        else if (activated)
         {
             dialogInfoController.SetDaialogInfoInVisible();
             activated = false;
         }
-            Debug.Log("activated: " + activated);
-
     }
     void OnDrawGizmos()
     {

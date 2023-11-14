@@ -94,7 +94,7 @@ public class UIBuildingMode : MonoBehaviour
         {
             infoPlacement.SetActive(true);
             TMP_Text txt = infoPlacement.GetComponentInChildren<TMP_Text>();
-            txt.text= comment;
+            txt.text = comment;
         }
     }
     void UpdateBuildingMode()
