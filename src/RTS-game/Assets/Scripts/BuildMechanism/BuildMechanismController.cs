@@ -36,7 +36,8 @@ public class BuildMechanismController : MonoBehaviour
             {
                 if (lastPlace != raycastHit.point)
                 {
-                    toPlace.CheckValid(buildMediator.CheckEnoughResources());
+                    string comment = toPlace.CheckValid(buildMediator.CheckEnoughResources());
+                    buildMediator.SetComment(comment);
                 }
                 lastPlace = raycastHit.point;
             }

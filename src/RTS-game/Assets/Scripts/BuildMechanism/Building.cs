@@ -153,12 +153,13 @@ public class Building
         }
     }
 
-    public void CheckValid(bool enoughResources)
+    public string CheckValid(bool enoughResources)
     {
-        bool valid = this.obj.GetComponent<Manager>().CheckPlacement();
-        if (placement == Placement.PLACED) return;
+        (bool valid, string comment) = this.obj.GetComponent<Manager>().CheckPlacement();
+        if (placement == Placement.PLACED) return string.Empty;
         placement = (valid && enoughResources) ? Placement.VALID : Placement.INVALID;
         SetMaterials();
+        return comment;
     }
 
     public void UpdatePosition()

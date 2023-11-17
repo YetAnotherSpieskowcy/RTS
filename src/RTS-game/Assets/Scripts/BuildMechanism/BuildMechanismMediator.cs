@@ -17,6 +17,7 @@ public class BuildMechanismMediator
     private int buildingId;
     private Action action;
     private Storage storage;
+    private string comment;
 
     public BuildMechanismMediator()
     {
@@ -25,7 +26,14 @@ public class BuildMechanismMediator
         buildings = new BuildingsList();
         storage = new Storage(100, 101, 102);
     }
-
+    public void SetComment(string com)
+    {
+        this.comment = com;
+    }
+    public string GetComment()
+    {
+        return this.comment;
+    }
     public void IncrementBuildingId()
     {
         buildingId++;

@@ -12,6 +12,7 @@ TagManager:
   - Terrain
   - Tree
   - Overseer
+  - Dialog
   layers:
   - Default
   - TransparentFX

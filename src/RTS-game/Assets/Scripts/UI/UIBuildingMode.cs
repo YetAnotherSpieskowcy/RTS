@@ -24,6 +24,7 @@ public class UIBuildingMode : MonoBehaviour
     private List<buildingOnUI> buildingsOnUI;
     private BuildMechanismMediator buildMediator = new BuildMechanismMediator();
     private bool isPlaced = false;
+    public GameObject infoPlacement;
 
     // ----- building mode -----
     void PrepareBuildingsInfo()
@@ -69,6 +70,7 @@ public class UIBuildingMode : MonoBehaviour
             if (alert != null)
                 alert.SetActive(false);
         }
+        infoPlacement.SetActive(false);
     }
     void BuyBuilding()
     {
@@ -79,6 +81,20 @@ public class UIBuildingMode : MonoBehaviour
         else
         {
             Debug.Log("ur too poor sry");
+        }
+    }
+    void UpdateComment()
+    {
+        string comment = buildMediator.GetComment();
+        if (comment == string.Empty)
+        {
+            infoPlacement.SetActive(false);
+        }
+        else
+        {
+            infoPlacement.SetActive(true);
+            TMP_Text txt = infoPlacement.GetComponentInChildren<TMP_Text>();
+            txt.text = comment;
         }
     }
     void UpdateBuildingMode()
@@ -119,6 +135,7 @@ public class UIBuildingMode : MonoBehaviour
                     alert.SetActive(false);
             }
         }
+        UpdateComment();
     }
     void UpdateSelectedBuilding()
     {
@@ -172,6 +189,8 @@ public class UIBuildingMode : MonoBehaviour
     void Start()
     {
         buildMediator = GameObject.Find("BuildMechanism").GetComponent<BuildMechanismController>().GetBuildMechanismMediator();
+        infoPlacement = GameObject.Find("InfoPlacement");
+        infoPlacement.SetActive(false);
         PrepareBuildingsInfo();
         buildMediator.GetStorage().UpdateStorage();
     }
