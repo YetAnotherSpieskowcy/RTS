@@ -156,7 +156,7 @@ public class Building
     public string CheckValid(bool enoughResources)
     {
         (bool valid, string comment) = this.obj.GetComponent<Manager>().CheckPlacement();
-        if (placement == Placement.PLACED) return "";
+        if (placement == Placement.PLACED) return string.Empty;
         placement = (valid && enoughResources) ? Placement.VALID : Placement.INVALID;
         SetMaterials();
         return comment;

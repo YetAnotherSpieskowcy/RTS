@@ -34,7 +34,7 @@ public class Manager : MonoBehaviour
     }
     private string PrepareComment(bool validTrees, bool validGround, bool validPlacement)
     {
-        string comment = "";
+        string comment = string.Empty;
         if (!validTrees || !validPlacement)
         {
             comment += "Building cannot collide with another object.\n";
@@ -47,8 +47,8 @@ public class Manager : MonoBehaviour
     }
     public (bool, string) CheckPlacement()
     {
-        if (building == null) return (false, "");
-        if (building.IsPlaced()) return (false, "");
+        if (building == null) return (false, string.Empty);
+        if (building.IsPlaced()) return (false, string.Empty);
         bool validTrees = ValidateTrees();
         bool validGround = ValidateGround();
         bool validPlacement = HasValidPlacement();

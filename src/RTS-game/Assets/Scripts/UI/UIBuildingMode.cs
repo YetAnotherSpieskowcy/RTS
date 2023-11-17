@@ -86,7 +86,7 @@ public class UIBuildingMode : MonoBehaviour
     void UpdateComment()
     {
         string comment = buildMediator.GetComment();
-        if (comment == "")
+        if (comment == string.Empty)
         {
             infoPlacement.SetActive(false);
         }
