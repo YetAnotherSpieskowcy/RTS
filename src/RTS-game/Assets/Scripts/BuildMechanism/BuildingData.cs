@@ -14,7 +14,9 @@ public class BuildingData : ScriptableObject
     public float length = 1.0f;
     [Space(10)]
     [Header("Resources")]
-    public int money, wood, stone;     // needed amount of resources
+    public int money;
+    public int wood;
+    public int stone;
     [Space(10)]
     [Header("Construction")]
     public GameObject prefab;
