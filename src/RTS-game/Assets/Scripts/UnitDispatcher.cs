@@ -4,6 +4,10 @@ using System.Linq;
 
 public class UnitDispatcher : MonoBehaviour
 {
+    private CommandController commandController;
+    
+    public RectTransform commandsBackground;
+    public GameObject commandPrefab;
     bool selectionEnabled = false;
     FormationDispatcher fdispatcher;
     List<Unit> selectedUnits = new();
@@ -38,6 +42,7 @@ public class UnitDispatcher : MonoBehaviour
         }
         if (selectionEnabled)
         {
+            commandController.ActivateGroupChoice();
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem1))
             {
                 Debug.Log("All");
@@ -58,12 +63,15 @@ public class UnitDispatcher : MonoBehaviour
             }
             if (!selectionEnabled)
             {
+                commandController.ActivateCommandChoice();
                 Debug.Log("1. Follow\n2. Halt\n3. Attack\n4. Go here\n5. Retreat\n0. Cancel");
             }
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuCancel))
             {
+                commandController.SetAllUnvisible();
                 Debug.Log("Cancel");
                 selectionEnabled = false;
+                commandController.SetAllUnvisible();
             }
         }
         else if (selectedUnits.Count > 0)
@@ -137,15 +145,19 @@ public class UnitDispatcher : MonoBehaviour
             Debug.Log("Retreat");
             Debug.Log("Not implemented");
             selectedUnits.Clear();
-
+            commandController.SetAllUnvisible();
         }
         if (Input.GetKeyDown(InputSettings.UnitSelectionMenuCancel))
         {
             Debug.Log("Cancel");
             selectedUnits.Clear();
-
+                commandController.SetAllUnvisible();
         }
 
 
+    }
+    void Start()
+    {
+        this.commandController = new CommandController(commandsBackground, commandPrefab);
     }
 }
