@@ -1,19 +1,17 @@
 \section{Interfejs użytkownika (Zofia Sosińska)}\label{chap:ui}
 Interfejs użytkownika (ang. user interface, UI)jest to zbiór najważniejszych informacji przedstawiony graczowi w sposób czytelny. Może się to odbywać za pomocą na przykład obrazków, tekstów, czy wskaźników. Dzięki UI możliwy jest wgląd w aktualny stan wiedzy grywalnej postaci. 
+
 Projekt interfejsu użytkownika przewiduje trzy tryby: zwykły, budowania oraz walki. Zadaniem każdego z nich będzie odzwierciedlenie aktualnej wiedzy granej postaci z naciskiem na najpotrzebniejsze w danej chwili informacje.
 	
 \subsection{Interfejs podstawowy}
 Interfejs podstawowy przewiduje funkcje, takie jak pokazanie:
-surowców i funduszy,
-aktualnego czasu w grze, 
-kompasu,
+\begin{itemize}
+    \item surowców i funduszy,
+    \item aktualnego czasu w grze, 
+    \item kompasu,
+    \item informacji o możliwym  rozpoczęciu konwersacji z inną postacią;
+\end{itemize}
 Inspiracją dla górnego paska z informacjami jest ten użyty w grze Warcraft 3. Prostota i surowość stylu będą współgrać z klimatem gry.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=1.0\textwidth]{images/ui/warcraft3_gorny_pasek.png}
-    \caption{Pasek z informacjami w grze Warcraft 3.}\label{fig:Warcraft3}
-\end{figure}
 
 W naszej grze skupimy się jednak na tym, aby interfejs użytkownika zabierał jak najmniej miejsca. Dlatego też projekt zakłada, że poszczególne obiekty nie będą ze sobą połączone, a jedynie “dryfować” w przestrzeni.
 Jako ważny element tej części UI zawarty zostanie kompas, wzorowany na tym z gry The Elder Scrolls V: Skyrim.
