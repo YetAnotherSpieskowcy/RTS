@@ -15,6 +15,12 @@ edycji naciskając klawisz Escape. Jeżeli widok budowli znajduje się w poprawn
 podświetlany na zielono, w przeciwnym razie - na czerwono. Wybudowanie powoduje przywrócenie bazowych kolorów obiektu
 oraz włącza wykrywanie kolizji z nim, dzięki czemu budynek poprawnie oddziałuje z otaczającym go środowiskiem.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/implementacja/mechanizm_budowania/poprawne.png}
+    \caption{Przykład podglądu w poprawnym umiejscowieniu.}
+\end{figure}
+
 Do walidacji poprawności umiejscowienia budynku wykorzystano mechanizmy wyzwalacza (ang. trigger) oraz rzucania
 promienia (ang. Raycasting). Pierwszy z nich polega na wykrywaniu czy obiekt znalazł się w obszarze kolizji bez
 brutalnego zatrzymywania go. Oznacza to, że może on przeniknąć przez inny element bez widocznych konsekwencji, jedynie
@@ -33,9 +39,21 @@ Brak wykrycia kolizji można zinterpretować jako zapadanie się bądź zbyt moc
 powierzchnią ziemi. Z tego powodu przyjęto, że jeśli co najmniej trzy z nich zderzyły się z podłożem to umiejscowienie
 jest poprawne.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/implementacja/mechanizm_budowania/niepoprawne.png}
+    \caption{Przykład podglądu w niepoprawnym umiejscowieniu.}
+\end{figure}
+
 Dodatkowo metodę rzucania promienia wykorzystano do wykrycia kolizji z drzewami. Obiekty te są traktowane przez silnik
 jako część terenu przez co metoda wykorzystująca wyzwalacz pomija je. Dlatego w celu wykrywania kolizji z nimi
 zdecydowano się na rzucenie dwóch grup promieni biegnących w głąb obiektu z naprzeciwległych krawędzi prostopadłych do
 osi y. Każdy z promieni biegnie w połowie wysokości obiektu i sięga przeciwnej ściany. Tak skomplikowany układ ma na
 celu zepewnienie poprawności wykrywania kolizji w przypadku, gdy początki promieni znajdują się wewnątrz kolidującego
 obiektu. Jeśli którykolwiek z nich zderzy się z drzewem to wybrane miejsce jest uznawane za niepoprawne.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/implementacja/mechanizm_budowania/kolizja_drzewo.png}
+    \caption{Podgląd budynku kolidujący z drzewem.}
+\end{figure}
