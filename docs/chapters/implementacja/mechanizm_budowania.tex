@@ -28,15 +28,15 @@ wysyłając sygnał, że dana sytuacja nastąpiła. Druga metoda natomiast poleg
 w zadanym kierunku i sprawdzeniu, czy z czymś się zderzył.
 
 Wyzwalacz został zastosowany do wykrywania kolizji z innymi obiektami na mapie takimi jak postacie, czy elementy
-scenerii nie będące terenem. W tym celu wykorzystano metody OnTriggerEnter() i OnTriggerExit(), które są wywoływane
-odpowiednio gdy dany obiekt znalazł się w obszarze kolizji innego elementu, bądź go opuścił. Każda z nich odpowiednio
-zmienia poprzez inkrementację bądź dekrementację licznika kolizji obiektu. Jeżeli jego wartość jest różna od zera tzn.
-obiekt z czymś koliduje to umiejscowienie jest uznawane za niepoprawne.
+scenerii niebędące terenem. W tym celu wykorzystano metody OnTriggerEnter() i OnTriggerExit(), które są wywoływane
+odpowiednio gdy, dany obiekt znalazł się w obszarze kolizji innego elementu, bądź go opuścił. Każda z nich odpowiednio
+zmienia poprzez inkrementację bądź dekrementację licznika kolizji obiektu. Jeżeli jego wartość jest różna od zera, tzn.
+obiekt z czymś koliduje, to umiejscowienie jest uznawane za niepoprawne.
 
 Drugi z mechanizmów został wykorzystany do sprawdzenia nachylenia podłoża. Efekt został osiągnięty poprzez rzucenie
 promienia o niewielkiej długości z każdego z dolnych narożników obiektu i zliczeniu ile z nich wykryło kolizję z ziemią.
 Brak wykrycia kolizji można zinterpretować jako zapadanie się bądź zbyt mocne lewitowanie danego narożnika nad
-powierzchnią ziemi. Z tego powodu przyjęto, że jeśli co najmniej trzy z nich zderzyły się z podłożem to umiejscowienie
+powierzchnią ziemi. Z tego powodu przyjęto, że jeśli co najmniej trzy z nich zderzyły się z podłożem, to umiejscowienie
 jest poprawne.
 
 \begin{figure}[h!]
@@ -46,10 +46,10 @@ jest poprawne.
 \end{figure}
 
 Dodatkowo metodę rzucania promienia wykorzystano do wykrycia kolizji z drzewami. Obiekty te są traktowane przez silnik
-jako część terenu przez co metoda wykorzystująca wyzwalacz pomija je. Dlatego w celu wykrywania kolizji z nimi
+jako część terenu, przez co metoda wykorzystująca wyzwalacz pomija je. Dlatego w celu wykrywania kolizji z nimi
 zdecydowano się na rzucenie dwóch grup promieni biegnących w głąb obiektu z naprzeciwległych krawędzi prostopadłych do
 osi y. Każdy z promieni biegnie w połowie wysokości obiektu i sięga przeciwnej ściany. Tak skomplikowany układ ma na
-celu zepewnienie poprawności wykrywania kolizji w przypadku, gdy początki promieni znajdują się wewnątrz kolidującego
+celu zapewnienie poprawności wykrywania kolizji w przypadku, gdy początki promieni znajdują się wewnątrz kolidującego
 obiektu. Jeśli którykolwiek z nich zderzy się z drzewem to wybrane miejsce jest uznawane za niepoprawne.
 
 \begin{figure}[h!]
