@@ -18,27 +18,29 @@ Poniżej przedstawiono kod odpowiedzialny za wyznaczenie pozycji symbolu na omaw
     }\label{fig:compass}
 \end{figure}
 
-\begin{lstlisting}[caption=Fragment kodu odpowiedzialny za ustawienie symbolu na pasku kompasu]
-void SetMarkerPosition(RectTransform markerTransform, Vector3 worldPosition)
-{
-    Vector3 dirToTarget = worldPosition - CameraTransform.position;
-    float angle = Vector2.SignedAngle(
-        new Vector2(dirToTarget.x, dirToTarget.z), 
-        new Vector2(CameraTransform.transform.forward.x, 
-        CameraTransform.transform.forward.z));
-    float compassPositionX = Mathf.Clamp(
-        2 * angle / Camera.main.fieldOfView, -1, 1);
-    if (compassPositionX == 1 || compassPositionX == (-1))
+\begin{minipage}{\textwidth}
+    \begin{lstlisting}[caption=Fragment kodu odpowiedzialny za ustawienie symbolu na pasku kompasu]
+    void SetMarkerPosition(RectTransform markerTransform, Vector3 worldPosition)
     {
-        markerTransform.anchoredPosition = new Vector2(0, 100);
+        Vector3 dirToTarget = worldPosition - CameraTransform.position;
+        float angle = Vector2.SignedAngle(
+            new Vector2(dirToTarget.x, dirToTarget.z), 
+            new Vector2(CameraTransform.transform.forward.x, 
+            CameraTransform.transform.forward.z));
+        float compassPositionX = Mathf.Clamp(
+            2 * angle / Camera.main.fieldOfView, -1, 1);
+        if (compassPositionX == 1 || compassPositionX == (-1))
+        {
+            markerTransform.anchoredPosition = new Vector2(0, 100);
+        }
+        else
+        {
+            markerTransform.anchoredPosition = new Vector2(
+                compassBarTransform.rect.width / 2 * compassPositionX, 0);
+        }
     }
-    else
-    {
-        markerTransform.anchoredPosition = new Vector2(
-            compassBarTransform.rect.width / 2 * compassPositionX, 0);
-    }
-}
-\end{lstlisting}
+    \end{lstlisting}
+\end{minipage}
 
 Problem lokalizacji stron świata pojawił się, gdy nieprawidłowo wyświetlały się symbole po użyciu najprostszego rozwiązania. Na przykład dla Północy było to pobranie wartości od Vector3.forward, co jest skrótowym zapisem Vector3(0, 0, 1). Lewy dolny róg mapy jest położony w punkcie (0, 0, 0), co oznacza, że wymagane jest przesunięcie, aby prawidłowo zasymulować strony świata. Północ i Południe przesunęliśmy do połowy szerokości, a Wschód i Zachód - długości mapy. Każde z nich oddaliliśmy o 60000 jednostek, co pozwala na wiarygodną symulację stron świata na kompasie.
 \begin{figure}[htbp]
