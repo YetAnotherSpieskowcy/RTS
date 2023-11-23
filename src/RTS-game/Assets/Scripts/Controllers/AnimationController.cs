@@ -15,9 +15,23 @@ public class AnimationController
         runningAnimation = startAnimation;
     }
 
-    public void ChooseAnimation(bool running, float vertical, float horizontal)
+    public void ChooseAnimation(bool fightMode, bool running, float vertical, float horizontal)
     {
         string animation, speed, v, h;
+
+        if (runningAnimation == "Hit" && playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+        {
+            return;
+        }
+
+        if (fightMode)
+        {
+            animation = "Hit";
+            if (animation != runningAnimation)
+                SetAnimation(animation);
+            return;
+
+        }
 
         if (running)
             speed = "Run";
