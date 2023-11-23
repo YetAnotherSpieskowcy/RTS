@@ -1021,8 +1021,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1365324916}
-  - {fileID: 1887333927}
-  - {fileID: 1814100856}
   m_Father: {fileID: 1560907833}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1638,6 +1636,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 846347481}
+  - {fileID: 1814100856}
+  - {fileID: 1887333927}
   - {fileID: 988907116}
   m_Father: {fileID: 737852900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2090,7 +2090,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1584392753}
-  m_Father: {fileID: 988907116}
+  m_Father: {fileID: 1560907833}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2192,7 +2192,7 @@ GameObject:
   - component: {fileID: 1887333929}
   - component: {fileID: 1887333928}
   m_Layer: 5
-  m_Name: SavedGameButt
+  m_Name: LoadGameButt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2211,7 +2211,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1245382094}
-  m_Father: {fileID: 988907116}
+  m_Father: {fileID: 1560907833}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
