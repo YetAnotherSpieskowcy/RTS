@@ -4,10 +4,7 @@ using System.Linq;
 
 public class UnitDispatcher : MonoBehaviour
 {
-    private CommandController commandController;
-    
-    public RectTransform commandsBackground;
-    public GameObject commandPrefab;
+    private  CommandController commandController;
     bool selectionEnabled = false;
     FormationDispatcher fdispatcher;
     List<Unit> selectedUnits = new();
@@ -39,10 +36,10 @@ public class UnitDispatcher : MonoBehaviour
             CollectFriendlyUnits();
             selectionEnabled = true;
             Debug.Log("1. Everyone\n2. Melee\n3. Ranged\n0. Cancel");
+            commandController.ActivateGroupChoice();
         }
         if (selectionEnabled)
         {
-            commandController.ActivateGroupChoice();
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem1))
             {
                 Debug.Log("All");
@@ -68,7 +65,6 @@ public class UnitDispatcher : MonoBehaviour
             }
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuCancel))
             {
-                commandController.SetAllUnvisible();
                 Debug.Log("Cancel");
                 selectionEnabled = false;
                 commandController.SetAllUnvisible();
@@ -89,6 +85,7 @@ public class UnitDispatcher : MonoBehaviour
                     }
                 });
                 selectedUnits.Clear();
+                commandController.SetAllUnvisible();
             }
 
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem2))
@@ -103,6 +100,7 @@ public class UnitDispatcher : MonoBehaviour
                     }
                 });
                 selectedUnits.Clear();
+                commandController.SetAllUnvisible();
             }
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem3))
             {
@@ -132,12 +130,14 @@ public class UnitDispatcher : MonoBehaviour
                     }
                 }
                 selectedUnits.Clear();
+                commandController.SetAllUnvisible();
             }
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem4))
             {
                 Debug.Log("Go here");
                 fdispatcher.StartDispatch(new List<Unit>(selectedUnits));
                 selectedUnits.Clear();
+                commandController.SetAllUnvisible();
             }
         }
         if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem5))
@@ -151,13 +151,13 @@ public class UnitDispatcher : MonoBehaviour
         {
             Debug.Log("Cancel");
             selectedUnits.Clear();
-                commandController.SetAllUnvisible();
+            commandController.SetAllUnvisible();
         }
 
 
     }
     void Start()
     {
-        this.commandController = new CommandController(commandsBackground, commandPrefab);
+        this.commandController = GameObject.Find("UI").GetComponent<CommandController>();
     }
 }
