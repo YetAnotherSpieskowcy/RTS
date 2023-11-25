@@ -35,14 +35,13 @@ public class PlayerController : MonoBehaviour
                 //Debug.Log("building");
                 //characterData.UpdateMode(CharacterMode.BUILDING_MODE);
             }
-            else 
+            else
             {
                 //Debug.Log("normal");
                 characterData.UpdateMode(CharacterMode.NORMAL_MODE);
                 hitting = movementController.GetHit();
             }
 
-            
             animationController.ChooseAnimation(hitting, movementController.GetRunning(), movementController.GetVertical(), movementController.GetHorizontal());
         }
     }
@@ -66,7 +65,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("building");
             characterData.UpdateMode(CharacterMode.BUILDING_MODE);
         }
-        else if (buildMechanismMediator.GetAction() == Action.AVAILABLE && mode != CharacterMode.NORMAL_MODE) 
+        else if (buildMechanismMediator.GetAction() == Action.AVAILABLE && mode != CharacterMode.NORMAL_MODE)
         {
             //Debug.Log("normal");
             characterData.UpdateMode(CharacterMode.NORMAL_MODE);
