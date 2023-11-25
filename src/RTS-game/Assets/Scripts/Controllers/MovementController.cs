@@ -16,11 +16,24 @@ public class MovementController
     }
 
     // physics
-    public void UpdatePhysics()  //fixed update
+    public void UpdatePhysics(bool punchRunning)  //fixed update
     {
-        float h = Input.GetAxisRaw("Horizontal");      // if 'd' then +1, if 'a' then -1, if none then 0
-        float v = Input.GetAxisRaw("Vertical");          // if 'w' then +1, if 's' then -1, if none then 0
-
+        float h = 0f, v = 0f;
+        if (Input.GetMouseButtonDown(0) && !punchRunning)
+        {
+            hit = true;
+        }
+        else if (!punchRunning)
+        {
+            hit = false;
+            h = Input.GetAxisRaw("Horizontal");      // if 'd' then +1, if 'a' then -1, if none then 0
+            v = Input.GetAxisRaw("Vertical");          // if 'w' then +1, if 's' then -1, if none then 0
+            if (h != 0 && v != 0)
+            {
+                h /= Mathf.Sqrt(2);
+                v /= Mathf.Sqrt(2);
+            }
+        }
         Vector3 direction = new Vector3(h, 0f, v) * speed * Time.deltaTime;
         playersTransform.Translate(direction, Space.Self);
     }
@@ -28,11 +41,9 @@ public class MovementController
     // animations
     public void UpdateValues() //update
     {
-        hit = false;
         horizontal = Input.GetAxisRaw("Horizontal");      // if 'd' then +1, if 'a' then -1, if none then 0
         vertical = Input.GetAxisRaw("Vertical");          // if 'w' then +1, if 's' then -1, if none then 0
 
-        // TODO: fix this
         if (horizontal != 0 || vertical != 0)
         {
             walking = true;
@@ -40,10 +51,6 @@ public class MovementController
         else
         {
             walking = false;
-            if (Input.GetMouseButtonDown(0))
-            {
-                hit = true;
-            }
         }
 
         // run

@@ -8,7 +8,10 @@ public enum Action
     PREPARE,
     CANCEL,
     PLACE,
-    PLACED
+    PLACED,
+    AVAILABLE,
+    UNAVAILABLE,
+    CANCEL_UNAVAILABLE
 }
 
 public class BuildMechanismMediator
@@ -21,7 +24,7 @@ public class BuildMechanismMediator
 
     public BuildMechanismMediator()
     {
-        action = Action.WAIT;
+        action = Action.AVAILABLE;
         buildingId = 0;
         buildings = new BuildingsList();
         storage = new Storage(100, 101, 102);
