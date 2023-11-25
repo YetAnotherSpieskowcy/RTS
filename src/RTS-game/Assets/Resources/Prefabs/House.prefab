@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3483110033481747426}
   - component: {fileID: 2698714493670322949}
+  - component: {fileID: 5950135722907357068}
+  - component: {fileID: 8331079130006186933}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -78,6 +80,48 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5950135722907357068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5152871870021876931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb1c88ddd0d070cdab2bb8e542683b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preSaveHook:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5950135722907357068}
+        m_TargetAssemblyTypeName: Saveable, Assembly-CSharp
+        m_MethodName: SetPrefabName
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Prefabs/House
+          m_BoolArgument: 0
+        m_CallState: 2
+  postLoadHook:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8331079130006186933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5152871870021876931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726bf426f42ac8f1d87d9d791f220bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5636455976220037767
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,6 +27,7 @@ public class Building
         this.buildingData = buildingData;
 
         this.obj = GameObject.Instantiate(buildingData.prefab) as GameObject;
+        this.obj.name += System.Guid.NewGuid();
 
         CreateCollider();
 
