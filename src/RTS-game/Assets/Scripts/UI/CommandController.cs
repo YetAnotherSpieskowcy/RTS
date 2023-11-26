@@ -13,12 +13,11 @@ public class CommandController : MonoBehaviour
     {
         InstantiateGroup();
         InstantiateOption();
-       SetAllUnvisible();
+       SetAllInvisible();
     }
     void InstantiateGroup()
     {
         List<string> options= new List<string>{"1: Everyone","2: Melee","3: Ranged","0: Cancel"};
-        Debug.Log("Initialozed groups");
         int startY = 0;
         int spacing = -45;
         List<GameObject> tmpGroups = new List<GameObject>();
@@ -38,7 +37,6 @@ public class CommandController : MonoBehaviour
     void InstantiateOption()
     {
         List<string> options= new List<string>{"1: Follow","2: Halt","3: Attack","4: Go here","5: Retreat","0: Cancel"};
-        Debug.Log("Initialozed commands");
         int startY = 0;
         int spacing = -45;
         List<GameObject> tmpGroups = new List<GameObject>();
@@ -77,9 +75,8 @@ public class CommandController : MonoBehaviour
             group.SetActive(false);
         }
     }
-    public  void SetAllUnvisible()
+    public  void SetAllInvisible()
     {
-        
         foreach (var command in this.chooseCommand)
         {
             command.SetActive(false);
