@@ -4,6 +4,7 @@ using System.Linq;
 
 public class UnitDispatcher : MonoBehaviour
 {
+    private CommandController commandController;
     bool selectionEnabled = false;
     FormationDispatcher fdispatcher;
     List<Unit> selectedUnits = new();
@@ -35,6 +36,7 @@ public class UnitDispatcher : MonoBehaviour
             CollectFriendlyUnits();
             selectionEnabled = true;
             Debug.Log("1. Everyone\n2. Melee\n3. Ranged\n0. Cancel");
+            commandController.ActivateGroupChoice();
         }
         if (selectionEnabled)
         {
@@ -58,12 +60,14 @@ public class UnitDispatcher : MonoBehaviour
             }
             if (!selectionEnabled)
             {
+                commandController.ActivateCommandChoice();
                 Debug.Log("1. Follow\n2. Halt\n3. Attack\n4. Go here\n5. Retreat\n0. Cancel");
             }
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuCancel))
             {
                 Debug.Log("Cancel");
                 selectionEnabled = false;
+                commandController.SetAllInvisible();
             }
         }
         else if (selectedUnits.Count > 0)
@@ -81,6 +85,7 @@ public class UnitDispatcher : MonoBehaviour
                     }
                 });
                 selectedUnits.Clear();
+                commandController.SetAllInvisible();
             }
 
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem2))
@@ -95,6 +100,7 @@ public class UnitDispatcher : MonoBehaviour
                     }
                 });
                 selectedUnits.Clear();
+                commandController.SetAllInvisible();
             }
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem3))
             {
@@ -124,12 +130,14 @@ public class UnitDispatcher : MonoBehaviour
                     }
                 }
                 selectedUnits.Clear();
+                commandController.SetAllInvisible();
             }
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem4))
             {
                 Debug.Log("Go here");
                 fdispatcher.StartDispatch(new List<Unit>(selectedUnits));
                 selectedUnits.Clear();
+                commandController.SetAllInvisible();
             }
         }
         if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem5))
@@ -137,15 +145,19 @@ public class UnitDispatcher : MonoBehaviour
             Debug.Log("Retreat");
             Debug.Log("Not implemented");
             selectedUnits.Clear();
-
+            commandController.SetAllInvisible();
         }
         if (Input.GetKeyDown(InputSettings.UnitSelectionMenuCancel))
         {
             Debug.Log("Cancel");
             selectedUnits.Clear();
-
+            commandController.SetAllInvisible();
         }
 
 
+    }
+    void Start()
+    {
+        this.commandController = GameObject.Find("UI").GetComponent<CommandController>();
     }
 }
