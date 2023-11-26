@@ -10,9 +10,12 @@ public class MovementController
     private bool walking = false, runing = false, hit = false;
     private float speed, vertical, horizontal;
 
+    private CombatController combatController;
+
     public MovementController(Transform playersTransform)
     {
         this.playersTransform = playersTransform;
+        combatController = new CombatController();
     }
 
     // physics
@@ -22,6 +25,7 @@ public class MovementController
         if (Input.GetMouseButtonDown(0) && !punchRunning)
         {
             hit = true;
+            combatController.CheckAttack(playersTransform.position + new Vector3(0f, 1f, 0f), playersTransform.forward);
         }
         else if (!punchRunning)
         {

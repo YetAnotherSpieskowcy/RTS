@@ -7,7 +7,7 @@ public class AnimationController
     public Animator playerAnimator;
 
     private string runningAnimation;
-    private bool attackRunning;
+    private bool animationRunning;
     private int attackVariants = 3;
 
     public AnimationController(Animator animator, string startAnimation)
@@ -15,14 +15,29 @@ public class AnimationController
         playerAnimator = animator;
         playerAnimator.SetTrigger(startAnimation);
         runningAnimation = startAnimation;
-        attackRunning = false;
+        animationRunning = false;
+    }
+
+    public void Die()
+    {
+        SetAnimation("Death");
+    }
+
+    public void Hit()
+    {
+        if (AnimationRunning())
+        {
+            return;
+        }
+        SetAnimation("Hit");
+        animationRunning = true;
     }
 
     public void ChooseAnimation(bool fightMode, bool running, float vertical, float horizontal)
     {
         string animation = "", speed, v, h, p = "";
 
-        if (AttackAnimationRunning())
+        if (AnimationRunning())
         {
             return;
         }
@@ -30,7 +45,7 @@ public class AnimationController
         if (fightMode)
         {
             animation = "Attack" + Random.Range(1, attackVariants);
-            attackRunning = true;
+            animationRunning = true;
         }
         else
         {
@@ -66,9 +81,9 @@ public class AnimationController
             SetAnimation(animation);
     }
 
-    public bool AttackAnimationRunning()
+    public bool AnimationRunning()
     {
-        return attackRunning;
+        return animationRunning;
     }
 
     private void SetAnimation(string startAnim)
@@ -79,9 +94,8 @@ public class AnimationController
         runningAnimation = startAnim;
     }
 
-    public void MarkAttackEnded()
+    public void MarkAnimationEnded()
     {
-        //Debug.Log("stop running");
-        attackRunning = false;
+        animationRunning = false;
     }
 }

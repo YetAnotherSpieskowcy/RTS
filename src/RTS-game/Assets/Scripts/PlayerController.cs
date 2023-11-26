@@ -11,19 +11,21 @@ public class PlayerController : MonoBehaviour
     private AnimationController animationController;
     private BuildMechanismMediator buildMechanismMediator;
     private CharacterData characterData;
+    private Unit unit;
 
     // Start is called before the first frame update
     void Start()
     {
         movementController = new MovementController(playersTransform);
         animationController = new AnimationController(playerAnimator, "Idle");
-        buildMechanismMediator = GameObject.Find("Player").GetComponent<BuildMechanismController>().GetBuildMechanismMediator();
+        buildMechanismMediator = GetComponent<BuildMechanismController>().GetBuildMechanismMediator(); //GameObject.Find("Player").
         characterData = new CharacterData();
+        unit = GetComponent<Unit>();
     }
 
     void Update()
     {
-        if (characterData.CheckIfAlive())
+        if (unit.IsAlive())
         {
             UpdateMode();
             CharacterMode mode = characterData.GetMode();
@@ -48,12 +50,25 @@ public class PlayerController : MonoBehaviour
 
     void LateUpdate()
     {
-        movementController.UpdatePhysics(animationController.AttackAnimationRunning());
+        if (unit.IsAlive())
+        {
+            movementController.UpdatePhysics(animationController.AnimationRunning());
+        }
     }
 
-    public void MarkAttackAnimationEnded()
+    public void MarkAnimationEnded()
     {
-        animationController.MarkAttackEnded();
+        animationController.MarkAnimationEnded();
+    }
+
+    public void Die()
+    {
+        animationController.Die();
+    }
+
+    public void Hit()
+    {
+        animationController.Hit();
     }
 
     private void UpdateMode()

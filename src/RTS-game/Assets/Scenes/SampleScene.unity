@@ -6488,6 +6488,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1611901124}
+    - targetCorrespondingSourceObject: {fileID: 7962199819078159310, guid: f5b41ba4c79702547a89de7544b80656,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1611901127}
   m_SourcePrefab: {fileID: 100100000, guid: f5b41ba4c79702547a89de7544b80656, type: 3}
 --- !u!1 &609778789
 GameObject:
@@ -10280,7 +10284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   group: 1
   team: 0
-  health: 100
+  health: 20
 --- !u!114 &1092636054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16190,6 +16194,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningSpeed: 1
   attackVariants: 5
+--- !u!136 &1611901127
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611901117}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.75
+  m_Height: 3
+  m_Direction: 2
+  m_Center: {x: 0, y: 1, z: 0.1}
 --- !u!1 &1619745195
 GameObject:
   m_ObjectHideFlags: 0
