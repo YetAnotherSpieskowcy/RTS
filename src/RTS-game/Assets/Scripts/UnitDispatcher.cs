@@ -4,7 +4,7 @@ using System.Linq;
 
 public class UnitDispatcher : MonoBehaviour
 {
-    private  CommandController commandController;
+    private CommandController commandController;
     bool selectionEnabled = false;
     FormationDispatcher fdispatcher;
     List<Unit> selectedUnits = new();

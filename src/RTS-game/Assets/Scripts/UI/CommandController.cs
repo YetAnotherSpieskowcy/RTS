@@ -20,16 +20,16 @@ public class CommandController : MonoBehaviour
         List<string> options = new List<string> { "1: Everyone", "2: Melee", "3: Ranged", "0: Cancel" };
         int startY = 0;
         int spacing = -45;
-        List<GameObject> tmpGroups = new List<GameObject>();
+        List<GameObject> tmpCommands = new List<GameObject>();
         foreach (string option in options)
         {
             GameObject o = Instantiate(commandPrefab, commandsBackground);
             o.GetComponentsInChildren<TMP_Text>()[0].text = option;
             o.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, startY + spacing);
             startY += spacing;
-            tmpGroups.Add(o);
+            tmpCommands.Add(o);
         }
-        this.chooseGroup = tmpGroups.ToArray();
+        this.chooseGroup = tmpCommands.ToArray();
         foreach (var a in chooseGroup)
         {
             Debug.Log(a.ToString());
