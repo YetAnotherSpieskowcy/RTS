@@ -1699,6 +1699,7 @@ GameObject:
   - component: {fileID: 135239215}
   - component: {fileID: 135239214}
   - component: {fileID: 135239213}
+  - component: {fileID: 135239218}
   m_Layer: 0
   m_Name: Worker (2)
   m_TagString: Untagged
@@ -1784,6 +1785,21 @@ Transform:
   - {fileID: 1861490387}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &135239218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135239212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb1c88ddd0d070cdab2bb8e542683b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preSaveHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &140460905
 GameObject:
   m_ObjectHideFlags: 0
@@ -3134,6 +3150,7 @@ GameObject:
   - component: {fileID: 277420828}
   - component: {fileID: 277420827}
   - component: {fileID: 277420826}
+  - component: {fileID: 277420834}
   m_Layer: 0
   m_Name: Friendly cube
   m_TagString: Untagged
@@ -3290,6 +3307,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &277420834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277420825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb1c88ddd0d070cdab2bb8e542683b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preSaveHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &288629721
 GameObject:
   m_ObjectHideFlags: 0
@@ -3429,6 +3461,7 @@ GameObject:
   - component: {fileID: 289218221}
   - component: {fileID: 289218220}
   - component: {fileID: 289218219}
+  - component: {fileID: 289218224}
   m_Layer: 0
   m_Name: Worker (3)
   m_TagString: Untagged
@@ -3514,6 +3547,21 @@ Transform:
   - {fileID: 1166894896}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &289218224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289218218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb1c88ddd0d070cdab2bb8e542683b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preSaveHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &359285516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4425,6 +4473,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1981179270}
+    - targetCorrespondingSourceObject: {fileID: 1588090451174212, guid: c737dd230724d61469e1c672cf47ed9e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1981179271}
   m_SourcePrefab: {fileID: 100100000, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
 --- !u!1001 &374587807
 PrefabInstance:
@@ -6492,6 +6544,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1611901127}
+    - targetCorrespondingSourceObject: {fileID: 7962199819078159310, guid: f5b41ba4c79702547a89de7544b80656,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1611901128}
   m_SourcePrefab: {fileID: 100100000, guid: f5b41ba4c79702547a89de7544b80656, type: 3}
 --- !u!1 &609778789
 GameObject:
@@ -7478,6 +7534,7 @@ GameObject:
   - component: {fileID: 731163472}
   - component: {fileID: 731163478}
   - component: {fileID: 731163479}
+  - component: {fileID: 731163480}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Enemy
@@ -7635,6 +7692,21 @@ MonoBehaviour:
   group: 1
   team: 1
   health: 100
+--- !u!114 &731163480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731163471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb1c88ddd0d070cdab2bb8e542683b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preSaveHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &747053121
 GameObject:
   m_ObjectHideFlags: 0
@@ -8332,6 +8404,7 @@ GameObject:
   - component: {fileID: 792618182}
   - component: {fileID: 792618181}
   - component: {fileID: 792618180}
+  - component: {fileID: 792618188}
   m_Layer: 0
   m_Name: Friendly cube (1)
   m_TagString: Untagged
@@ -8488,6 +8561,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &792618188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792618179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb1c88ddd0d070cdab2bb8e542683b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preSaveHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &819967144
 GameObject:
   m_ObjectHideFlags: 0
@@ -8773,6 +8861,7 @@ GameObject:
   - component: {fileID: 878658402}
   - component: {fileID: 878658408}
   - component: {fileID: 878658409}
+  - component: {fileID: 878658410}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -8930,6 +9019,21 @@ MonoBehaviour:
   group: 1
   team: 1
   health: 100
+--- !u!114 &878658410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878658401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb1c88ddd0d070cdab2bb8e542683b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preSaveHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &917074295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10120,6 +10224,7 @@ GameObject:
   - component: {fileID: 1092636052}
   - component: {fileID: 1092636054}
   - component: {fileID: 1092636055}
+  - component: {fileID: 1092636056}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -10311,6 +10416,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35741b04547fe6498a37daf44ca84ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1092636056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092636043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb1c88ddd0d070cdab2bb8e542683b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preSaveHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1123258003
 GameObject:
   m_ObjectHideFlags: 0
@@ -12928,6 +13048,7 @@ GameObject:
   - component: {fileID: 1395399241}
   - component: {fileID: 1395399240}
   - component: {fileID: 1395399239}
+  - component: {fileID: 1395399244}
   m_Layer: 0
   m_Name: Worker
   m_TagString: Untagged
@@ -13013,6 +13134,21 @@ Transform:
   - {fileID: 575311093}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1395399244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395399238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb1c88ddd0d070cdab2bb8e542683b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preSaveHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1410614898
 GameObject:
   m_ObjectHideFlags: 0
@@ -16217,6 +16353,21 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 2
   m_Center: {x: 0, y: 1, z: 0.1}
+--- !u!114 &1611901128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611901117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb1c88ddd0d070cdab2bb8e542683b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preSaveHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1619745195
 GameObject:
   m_ObjectHideFlags: 0
@@ -17012,6 +17163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1707578729}
   - component: {fileID: 1707578728}
+  - component: {fileID: 1707578730}
   m_Layer: 0
   m_Name: 
   m_TagString: Untagged
@@ -17048,6 +17200,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1707578730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707578722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06af84e30c2452ff4baaf8ff66ad7b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1721762216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19817,6 +19981,7 @@ GameObject:
   - component: {fileID: 1944402789}
   - component: {fileID: 1944402788}
   - component: {fileID: 1944402787}
+  - component: {fileID: 1944402792}
   m_Layer: 0
   m_Name: Worker (1)
   m_TagString: Untagged
@@ -19902,6 +20067,21 @@ Transform:
   - {fileID: 231434219}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1944402792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944402786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb1c88ddd0d070cdab2bb8e542683b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preSaveHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1947399460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20466,6 +20646,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningSpeed: 1
   attackVariants: 1
+--- !u!114 &1981179271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981179264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb1c88ddd0d070cdab2bb8e542683b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preSaveHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1985614037
 PrefabInstance:
   m_ObjectHideFlags: 0
