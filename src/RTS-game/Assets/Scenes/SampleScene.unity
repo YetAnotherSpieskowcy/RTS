@@ -10284,7 +10284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   group: 1
   team: 0
-  health: 20
+  health: 50
 --- !u!114 &1092636054
 MonoBehaviour:
   m_ObjectHideFlags: 0

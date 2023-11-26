@@ -5,7 +5,7 @@ using UnityEngine;
 public class CombatController
 {
     private float distance;
-    
+
     public CombatController()
     {
         distance = 2f;
