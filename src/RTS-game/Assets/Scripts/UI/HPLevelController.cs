@@ -21,23 +21,18 @@ public class HPLevelController : MonoBehaviour
         hpImage.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, newSize);
         float currentWidth = hpImage.GetComponent<RectTransform>().sizeDelta.x *
                              hpImage.GetComponent<RectTransform>().localScale.x;
-        UnityEngine.Debug.Log("currentWidth = " + currentWidth);
         float offset = this.hpImageWidth - currentWidth;
-        UnityEngine.Debug.Log("this.HPStartImagePosition.x = " + this.HPStartImagePosition.x);
         hpImage.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.HPStartImagePosition.x - offset/2, 0);
-        UnityEngine.Debug.Log("newSize = " + newSize);
-        UnityEngine.Debug.Log("anchoredPosition = " + hpImage.GetComponent<RectTransform>().anchoredPosition);
-        UnityEngine.Debug.Log("offset = " + offset);
     }
     void Start()
     {
         this.playerUnitComponent = GameObject.Find("Player").GetComponent<Unit>();
-        this.HPStartLevel = playerUnitComponent.Health;
+        this.HPStartLevel = playerUnitComponent.GetHealth();
         this.hpImageWidth = 0;
     }
     void Update()
     {
-        this.HPLevel = playerUnitComponent.Health;
+        this.HPLevel = playerUnitComponent.GetHealth();
         this.hpText.text = HPLevel.ToString() + "/" + HPStartLevel.ToString();
         if(hpImageWidth == 0)
         {
