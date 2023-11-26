@@ -17,12 +17,12 @@ public class HPLevelController : MonoBehaviour
     void SetImageWidth()
     {
         float percentage = HPLevel / HPStartLevel;
-        float newSize = percentage * this.hpImageWidth ;
+        float newSize = percentage * this.hpImageWidth;
         hpImage.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, newSize);
         float currentWidth = hpImage.GetComponent<RectTransform>().sizeDelta.x *
                              hpImage.GetComponent<RectTransform>().localScale.x;
         float offset = this.hpImageWidth - currentWidth;
-        hpImage.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.HPStartImagePosition.x - offset/2, 0);
+        hpImage.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.HPStartImagePosition.x - offset / 2, 0);
     }
     void Start()
     {
@@ -34,7 +34,7 @@ public class HPLevelController : MonoBehaviour
     {
         this.HPLevel = playerUnitComponent.GetHealth();
         this.hpText.text = HPLevel.ToString() + "/" + HPStartLevel.ToString();
-        if(hpImageWidth == 0)
+        if (hpImageWidth == 0)
         {
             this.hpImageWidth = hpImage.GetComponent<RectTransform>().sizeDelta.x * hpImage.GetComponent<RectTransform>().localScale.x;
             this.HPStartImagePosition = hpImage.GetComponent<RectTransform>().anchoredPosition;

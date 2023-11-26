@@ -13,11 +13,11 @@ public class CommandController : MonoBehaviour
     {
         InstantiateGroup();
         InstantiateOption();
-       SetAllInvisible();
+        SetAllInvisible();
     }
     void InstantiateGroup()
     {
-        List<string> options= new List<string>{"1: Everyone","2: Melee","3: Ranged","0: Cancel"};
+        List<string> options = new List<string>{"1: Everyone", "2: Melee", "3: Ranged", "0: Cancel"};
         int startY = 0;
         int spacing = -45;
         List<GameObject> tmpGroups = new List<GameObject>();
@@ -25,18 +25,19 @@ public class CommandController : MonoBehaviour
         {
             GameObject o = Instantiate(commandPrefab, commandsBackground);
             o.GetComponentsInChildren<TMP_Text>()[0].text = option;
-            o.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, startY +  spacing);
+            o.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, startY + spacing);
             startY += spacing;
             tmpGroups.Add(o);
         }
         this.chooseGroup = tmpGroups.ToArray();
-        foreach(var a in chooseGroup){
+        foreach(var a in chooseGroup)
+        {
             Debug.Log(a.ToString());
         }
     }
     void InstantiateOption()
     {
-        List<string> options= new List<string>{"1: Follow","2: Halt","3: Attack","4: Go here","5: Retreat","0: Cancel"};
+        List<string> options = new List<string>{"1: Follow", "2: Halt", "3: Attack", "4: Go here", "5: Retreat", "0: Cancel"};
         int startY = 0;
         int spacing = -45;
         List<GameObject> tmpGroups = new List<GameObject>();
@@ -44,16 +45,17 @@ public class CommandController : MonoBehaviour
         {
             GameObject o = Instantiate(commandPrefab, commandsBackground);
             o.GetComponentsInChildren<TMP_Text>()[0].text = option;
-            o.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, startY +  spacing);
+            o.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, startY + spacing);
             startY += spacing;
             tmpGroups.Add(o);
         }
         this.chooseCommand = tmpGroups.ToArray();
-        foreach(var a in chooseCommand){
+        foreach (var a in chooseCommand)
+        {
             Debug.Log(a.ToString());
         }
     }
-    public  void ActivateGroupChoice()
+    public void ActivateGroupChoice()
     {
         foreach (var command in this.chooseCommand)
         {
@@ -75,7 +77,7 @@ public class CommandController : MonoBehaviour
             group.SetActive(false);
         }
     }
-    public  void SetAllInvisible()
+    public void SetAllInvisible()
     {
         foreach (var command in this.chooseCommand)
         {
