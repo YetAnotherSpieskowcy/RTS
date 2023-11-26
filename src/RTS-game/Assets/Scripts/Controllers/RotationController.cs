@@ -18,6 +18,8 @@ public class RotationController : MonoBehaviour
 
     void LateUpdate()
     {
+        if (!GetComponent<Unit>().IsAlive())
+            return;
         mouseX += Input.GetAxis("Mouse X");
         mouseY -= Input.GetAxis("Mouse Y");
         mouseY = Mathf.Clamp(mouseY, -15, 60);   // prevent camera from making flips

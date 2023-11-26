@@ -40,44 +40,13 @@ public class CharacterData
         }
     }
 
-/*    if (needsHealing && mode != CharacterMode.COMBAT_MODE)      // if player isn't in a fight then regenerate
-            {
-                Heal(healingStep);
-}*/
-
-public CharacterMode GetMode()
+    public CharacterMode GetMode()
     {
         return mode;
-    }
-
-    public void SetAlive(bool alive)
-    {
-        this.alive = alive;
     }
 
     public bool CheckIfAlive()
     {
         return alive;
-    }
-
-    public void Wound(float healthPoints)
-    {
-        health -= healthPoints;
-        if (health <= 0)
-        {
-            health = 0;
-            SetAlive(false);
-            needsHealing = false;
-        }
-    }
-
-    public void Heal(float healthPoints)
-    {
-        health += healthPoints;
-        if (health > maxHealth)
-        {
-            health = maxHealth;
-            needsHealing = false;
-        }
     }
 }

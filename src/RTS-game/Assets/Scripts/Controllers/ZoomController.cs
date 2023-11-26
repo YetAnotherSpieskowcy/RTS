@@ -35,6 +35,8 @@ public class ZoomController : MonoBehaviour
 
     void Update()
     {
+        if (!GetComponent<Unit>().IsAlive())
+            return;
         zoomLevel += Input.GetAxis("Mouse ScrollWheel") * sensitivity;
         CheckInTheWay();
         zoomLevel = Mathf.Clamp(zoomLevel, minZoom, maxZoom);
