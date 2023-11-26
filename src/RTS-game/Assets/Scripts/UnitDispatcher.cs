@@ -67,7 +67,7 @@ public class UnitDispatcher : MonoBehaviour
             {
                 Debug.Log("Cancel");
                 selectionEnabled = false;
-                commandController.SetAllUnvisible();
+                commandController.SetAllInvisible();
             }
         }
         else if (selectedUnits.Count > 0)
@@ -85,7 +85,7 @@ public class UnitDispatcher : MonoBehaviour
                     }
                 });
                 selectedUnits.Clear();
-                commandController.SetAllUnvisible();
+                commandController.SetAllInvisible();
             }
 
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem2))
@@ -100,7 +100,7 @@ public class UnitDispatcher : MonoBehaviour
                     }
                 });
                 selectedUnits.Clear();
-                commandController.SetAllUnvisible();
+                commandController.SetAllInvisible();
             }
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem3))
             {
@@ -130,14 +130,14 @@ public class UnitDispatcher : MonoBehaviour
                     }
                 }
                 selectedUnits.Clear();
-                commandController.SetAllUnvisible();
+                commandController.SetAllInvisible();
             }
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem4))
             {
                 Debug.Log("Go here");
                 fdispatcher.StartDispatch(new List<Unit>(selectedUnits));
                 selectedUnits.Clear();
-                commandController.SetAllUnvisible();
+                commandController.SetAllInvisible();
             }
         }
         if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem5))
@@ -145,13 +145,13 @@ public class UnitDispatcher : MonoBehaviour
             Debug.Log("Retreat");
             Debug.Log("Not implemented");
             selectedUnits.Clear();
-            commandController.SetAllUnvisible();
+            commandController.SetAllInvisible();
         }
         if (Input.GetKeyDown(InputSettings.UnitSelectionMenuCancel))
         {
             Debug.Log("Cancel");
             selectedUnits.Clear();
-            commandController.SetAllUnvisible();
+            commandController.SetAllInvisible();
         }
 
 
