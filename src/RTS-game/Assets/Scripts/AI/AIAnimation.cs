@@ -60,13 +60,19 @@ public class AIAnimation : MonoBehaviour
         {
             if (direction.magnitude > runningSpeed)
             {
-                anim.SetTrigger("Run Forward");
-                currentAnim = "Run Forward";
+                if (currentAnim != "Run Forward")
+                {
+                    anim.SetTrigger("Run Forward");
+                    currentAnim = "Run Forward";
+                }
             }
             else
             {
-                anim.SetTrigger("Walk Forward");
-                currentAnim = "Walk Forward";
+                if (currentAnim != "Walk Forward")
+                {
+                    anim.SetTrigger("Walk Forward");
+                    currentAnim = "Walk Forward";
+                }
             }
         }
     }

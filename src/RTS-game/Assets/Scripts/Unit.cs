@@ -51,6 +51,18 @@ public class Unit : MonoBehaviour
                 isDead = true;
                 ai.Die();
             }
+            else
+            {
+                isDead = true;
+                GetComponent<PlayerController>().Die();
+            }
+        }
+        else
+        {
+            if (GetComponent<EnemyAI>() == null)
+            {
+                GetComponent<PlayerController>().Hit();
+            }
         }
     }
     public void Notify(Transform transform)

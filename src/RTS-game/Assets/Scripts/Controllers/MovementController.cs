@@ -2,55 +2,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementController : MonoBehaviour
+public class MovementController
 {
-    private const float jumpTime = .9f;
-
     public Transform playersTransform;
-    public Animator playerAnimator;
-    public float walkSpeed = 5, runSpeed = 7;
 
-    private AnimationController animationController;
-    private bool walking = false, jumping = false;
-    private float speed, jumpDuration;
+    private float walkSpeed = 5, runSpeed = 10;
+    private bool walking = false, runing = false, hit = false;
+    private float speed, vertical, horizontal;
 
-    void Start()
+    private CombatController combatController;
+
+    public MovementController(Transform playersTransform)
     {
-        animationController = new AnimationController(playerAnimator, "Idle");
+        this.playersTransform = playersTransform;
+        combatController = new CombatController();
     }
 
     // physics
-    void FixedUpdate()
+    public void UpdatePhysics(bool punchRunning)  //fixed update
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");      // if 'd' then +1, if 'a' then -1, if none then 0
-        float vertical = Input.GetAxisRaw("Vertical");          // if 'w' then +1, if 's' then -1, if none then 0
-        float jump = Input.GetAxisRaw("Jump");
-
-        /*if (jump == 1 && !jumping)
+        float h = 0f, v = 0f;
+        if (Input.GetMouseButtonDown(0) && !punchRunning)
         {
-            jumping = true;
-            jumpDuration = 0f;
+            hit = true;
+            combatController.CheckAttack(playersTransform.position + new Vector3(0f, 1f, 0f), playersTransform.forward);
         }
-        else if (jumping && jumpDuration < jumpTime)
+        else if (!punchRunning)
         {
-            jumpDuration += Time.deltaTime;
+            hit = false;
+            h = Input.GetAxisRaw("Horizontal");      // if 'd' then +1, if 'a' then -1, if none then 0
+            v = Input.GetAxisRaw("Vertical");          // if 'w' then +1, if 's' then -1, if none then 0
+            if (h != 0 && v != 0)
+            {
+                h /= Mathf.Sqrt(2);
+                v /= Mathf.Sqrt(2);
+            }
         }
-        else
-        {
-            jumping = false;
-        }*/
-
-        Vector3 direction = new Vector3(horizontal, (jumping ? 1f : 0f), vertical) * speed * Time.deltaTime;
+        Vector3 direction = new Vector3(h, 0f, v) * speed * Time.deltaTime;
         playersTransform.Translate(direction, Space.Self);
     }
 
     // animations
-    void Update()
+    public void UpdateValues() //update
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");      // if 'd' then +1, if 'a' then -1, if none then 0
-        float vertical = Input.GetAxisRaw("Vertical");          // if 'w' then +1, if 's' then -1, if none then 0
+        horizontal = Input.GetAxisRaw("Horizontal");      // if 'd' then +1, if 'a' then -1, if none then 0
+        vertical = Input.GetAxisRaw("Vertical");          // if 'w' then +1, if 's' then -1, if none then 0
 
-        // TODO: fix this
         if (horizontal != 0 || vertical != 0)
         {
             walking = true;
@@ -64,12 +61,32 @@ public class MovementController : MonoBehaviour
         if (walking && Input.GetKey(KeyCode.LeftShift))
         {
             speed = runSpeed;
+            runing = true;
         }
         else if (walking)
         {
             speed = walkSpeed;
+            runing = false;
         }
+    }
 
-        animationController.ChooseAnimation((speed == runSpeed), vertical, horizontal);
+    public bool GetRunning()
+    {
+        return runing;
+    }
+
+    public float GetHorizontal()
+    {
+        return horizontal;
+    }
+
+    public float GetVertical()
+    {
+        return vertical;
+    }
+
+    public bool GetHit()
+    {
+        return hit;
     }
 }
