@@ -17,7 +17,7 @@ public class CommandController : MonoBehaviour
     }
     void InstantiateGroup()
     {
-        List<string> options = new List<string>{"1: Everyone", "2: Melee", "3: Ranged", "0: Cancel"};
+        List<string> options = new List<string> { "1: Everyone", "2: Melee", "3: Ranged", "0: Cancel" };
         int startY = 0;
         int spacing = -45;
         List<GameObject> tmpGroups = new List<GameObject>();
@@ -30,14 +30,14 @@ public class CommandController : MonoBehaviour
             tmpGroups.Add(o);
         }
         this.chooseGroup = tmpGroups.ToArray();
-        foreach(var a in chooseGroup)
+        foreach (var a in chooseGroup)
         {
             Debug.Log(a.ToString());
         }
     }
     void InstantiateOption()
     {
-        List<string> options = new List<string>{"1: Follow", "2: Halt", "3: Attack", "4: Go here", "5: Retreat", "0: Cancel"};
+        List<string> options = new List<string> { "1: Follow", "2: Halt", "3: Attack", "4: Go here", "5: Retreat", "0: Cancel" };
         int startY = 0;
         int spacing = -45;
         List<GameObject> tmpGroups = new List<GameObject>();
