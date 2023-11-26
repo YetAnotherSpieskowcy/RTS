@@ -15,9 +15,9 @@ public class CommandController : MonoBehaviour
         InstantiateOption();
         SetAllInvisible();
     }
-    void InstantiateGroup()
+
+    GameObject[] CreateObjects(List<string> options)
     {
-        List<string> options = new List<string> { "1: Everyone", "2: Melee", "3: Ranged", "0: Cancel" };
         int startY = 0;
         int spacing = -45;
         List<GameObject> tmpCommands = new List<GameObject>();
@@ -29,31 +29,17 @@ public class CommandController : MonoBehaviour
             startY += spacing;
             tmpCommands.Add(o);
         }
-        this.chooseGroup = tmpCommands.ToArray();
-        foreach (var a in chooseGroup)
-        {
-            Debug.Log(a.ToString());
-        }
+        return tmpCommands.ToArray();
+    }
+    void InstantiateGroup()
+    {
+        List<string> options = new List<string> { "1: Everyone", "2: Melee", "3: Ranged", "0: Cancel" };
+        this.chooseGroup = CreateObjects(options);
     }
     void InstantiateOption()
     {
         List<string> options = new List<string> { "1: Follow", "2: Halt", "3: Attack", "4: Go here", "5: Retreat", "0: Cancel" };
-        int startY = 0;
-        int spacing = -45;
-        List<GameObject> tmpGroups = new List<GameObject>();
-        foreach (string option in options)
-        {
-            GameObject o = Instantiate(commandPrefab, commandsBackground);
-            o.GetComponentsInChildren<TMP_Text>()[0].text = option;
-            o.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, startY + spacing);
-            startY += spacing;
-            tmpGroups.Add(o);
-        }
-        this.chooseCommand = tmpGroups.ToArray();
-        foreach (var a in chooseCommand)
-        {
-            Debug.Log(a.ToString());
-        }
+        this.chooseCommand = CreateObjects(options);
     }
     public void ActivateGroupChoice()
     {
