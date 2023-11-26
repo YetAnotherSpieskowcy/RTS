@@ -34,8 +34,11 @@ public class Unit : MonoBehaviour
         return !isDead;
     }
     [SerializeField] private int health = 100;
-    public int Health { get => health; }
 
+    public int GetHealth()
+    {
+        return health;
+    }
     public void Hit(int damage)
     {
         health -= damage;

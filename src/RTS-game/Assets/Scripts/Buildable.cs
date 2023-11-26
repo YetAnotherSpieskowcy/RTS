@@ -44,6 +44,11 @@ public class Buildable : MonoBehaviour
     public void DoWork(float work)
     {
         workRequired -= work;
+        CheckCompleted();
+    }
+
+    public void CheckCompleted()
+    {
         if (workRequired <= 0)
         {
             onBuildingCompleted.Invoke();
@@ -52,5 +57,6 @@ public class Buildable : MonoBehaviour
                 overseer.NotifyCompleted(this);
             }
         }
+
     }
 }
