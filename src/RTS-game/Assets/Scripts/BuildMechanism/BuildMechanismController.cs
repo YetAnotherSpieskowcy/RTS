@@ -18,14 +18,15 @@ public class BuildMechanismController : MonoBehaviour
 
     void Update()
     {
+        Action a = buildMediator.GetAction();
         if (toPlace != null)
         {
-            if (buildMediator.GetAction() == Action.CANCEL)
+            if (a == Action.CANCEL || a == Action.CANCEL_UNAVAILABLE)
             {
-                Cancel();
+                Cancel(a);
                 return;
             }
-            else if (buildMediator.GetAction() == Action.PREPARE)
+            else if (a == Action.PREPARE)
             {
                 Prepare();
             }
@@ -42,16 +43,16 @@ public class BuildMechanismController : MonoBehaviour
                 lastPlace = raycastHit.point;
             }
 
-            if (toPlace.IsValid() && buildMediator.GetAction() == Action.PLACE)
+            if (toPlace.IsValid() && a == Action.PLACE)
             {
                 Place();
             }
-            else if ((!toPlace.IsValid()) && buildMediator.GetAction() == Action.PLACE)
+            else if ((!toPlace.IsValid()) && a == Action.PLACE)
             {
                 buildMediator.SetAction(Action.WAIT);
             }
         }
-        else if (buildMediator.GetAction() == Action.PREPARE)
+        else if (a == Action.PREPARE)
         {
             Prepare();
         }
@@ -75,11 +76,11 @@ public class BuildMechanismController : MonoBehaviour
         buildMediator.SetAction(Action.WAIT);
     }
 
-    private void Cancel()
+    private void Cancel(Action a)
     {
         Destroy(toPlace.GetTransform().gameObject);
         toPlace = null;
-        buildMediator.SetAction(Action.WAIT);
+        buildMediator.SetAction(a == Action.CANCEL ? Action.AVAILABLE : Action.UNAVAILABLE);
     }
 
     private void Place()

@@ -158,7 +158,7 @@ public class UIBuildingMode : MonoBehaviour
     // ----- modes -----
     void UpdateMode()
     {
-        if (Input.GetKeyDown(InputSettings.ChangeToBUildingMode) && !isPlaced)
+        if (Input.GetKeyDown(InputSettings.ChangeToBUildingMode) && !isPlaced && buildMediator.GetAction() == Action.AVAILABLE)
         {
             UIBasicMode.gameMode = Mode.BUILDING;
             buildMediator.InitializeBuildingId();
@@ -172,7 +172,20 @@ public class UIBuildingMode : MonoBehaviour
                 if (!isPlaced)
                     buildMediator.SetAction(Action.CANCEL);
                 else
-                    buildMediator.SetAction(Action.WAIT);
+                    buildMediator.SetAction(Action.AVAILABLE);
+            }
+            UIBasicMode.gameMode = Mode.NORMAL;
+            isPlaced = false;
+        }
+        else if (buildMediator.GetAction() == Action.UNAVAILABLE)
+        {
+            if (UIBasicMode.gameMode == Mode.BUILDING)
+            {
+                ClearUIAfterBuildingMode();
+                if (!isPlaced)
+                    buildMediator.SetAction(Action.CANCEL_UNAVAILABLE);
+                else
+                    buildMediator.SetAction(Action.AVAILABLE);
             }
             UIBasicMode.gameMode = Mode.NORMAL;
             isPlaced = false;
@@ -182,13 +195,13 @@ public class UIBuildingMode : MonoBehaviour
             BuildingData data = buildMediator.GetBuildingData();
             isPlaced = true;
             buildMediator.GetStorage().SubstractCost(data.money, data.wood, data.stone);
-            buildMediator.SetAction(Action.WAIT);
+            buildMediator.SetAction(Action.AVAILABLE);
         }
     }
     // ----- UI -----
     void Start()
     {
-        buildMediator = GameObject.Find("BuildMechanism").GetComponent<BuildMechanismController>().GetBuildMechanismMediator();
+        buildMediator = GameObject.Find("Player").GetComponent<BuildMechanismController>().GetBuildMechanismMediator();
         infoPlacement = GameObject.Find("InfoPlacement");
         infoPlacement.SetActive(false);
         PrepareBuildingsInfo();
