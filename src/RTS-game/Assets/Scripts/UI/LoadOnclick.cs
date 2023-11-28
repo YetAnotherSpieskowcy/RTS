@@ -12,7 +12,7 @@ public class LoadOnclick : MonoBehaviour
     public TMP_Text txt;
     public void LoadGame()
     {
-        string saveName = txt.text; 
+        string saveName = txt.text;
         string basePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         string dir = "SuwakGame";
         SceneManager.LoadScene(1);

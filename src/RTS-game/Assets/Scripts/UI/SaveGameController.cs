@@ -28,7 +28,7 @@ public class SaveGameController : MonoBehaviour
             if (saveEnabled)
             {
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                string dir = "SuwakGame"; 
+                string dir = "SuwakGame";
                 bool exists = System.IO.Directory.Exists(Path.Combine(path, dir));
                 if (!exists)
                 {
