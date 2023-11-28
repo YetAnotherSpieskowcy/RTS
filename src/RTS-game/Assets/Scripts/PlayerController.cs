@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour
 
             if (mode == CharacterMode.NORMAL_MODE)
             {
-                //Debug.Log("normal");
                 hitting = movementController.GetHit();
             }
 
@@ -74,7 +73,6 @@ public class PlayerController : MonoBehaviour
         {
             buildMechanismMediator.SetAction(Action.UNAVAILABLE);
             characterData.UpdateMode(CharacterMode.COMBAT_MODE);
-            Debug.Log("combat");
         }
         else if (combatMediator.GetState() == CombatModeState.ENDING)
         {
@@ -86,18 +84,15 @@ public class PlayerController : MonoBehaviour
             Action action = buildMechanismMediator.GetAction();
             if (action != Action.AVAILABLE && action != Action.UNAVAILABLE && mode != CharacterMode.COMBAT_MODE && mode != CharacterMode.BUILDING_MODE)
             {
-                //Debug.Log("building");
                 characterData.UpdateMode(CharacterMode.BUILDING_MODE);
             }
             else if (buildMechanismMediator.GetAction() == Action.AVAILABLE && mode != CharacterMode.NORMAL_MODE)
             {
-                Debug.Log("normal");
                 characterData.UpdateMode(CharacterMode.NORMAL_MODE);
             }
         }
         else if (combatMediator.GetState() == CombatModeState.ENDED)
         {
-            Debug.Log("ending");
             combatMediator.SetState(CombatModeState.INACTIVE);
         }
     }

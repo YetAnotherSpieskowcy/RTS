@@ -10,7 +10,6 @@ public class AnimationMarker : MonoBehaviour
 
     public void MarkAnimationEnded()
     {
-        Debug.Log("reseting");
         PlayerController c = GameObject.Find("Player").GetComponent<PlayerController>();
         c.MarkAnimationEnded();
     }
