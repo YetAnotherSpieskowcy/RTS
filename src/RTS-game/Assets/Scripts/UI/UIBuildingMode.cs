@@ -78,10 +78,6 @@ public class UIBuildingMode : MonoBehaviour
         {
             buildMediator.SetAction(Action.PLACE);
         }
-        else
-        {
-            Debug.Log("ur too poor sry");
-        }
     }
     void UpdateComment()
     {

@@ -20,10 +20,8 @@ public class SaveManager
                 {
                     Object ob = Resources.Load(entity.Prefab);
                     go = (GameObject)GameObject.Instantiate(ob);
-                    UnityEngine.Debug.Log("init: " + entity.Name);
                 }
                 go.GetComponent<Saveable>().Load(entity);
-                UnityEngine.Debug.Log("restore: " + entity.Name);
             }
         }
     }

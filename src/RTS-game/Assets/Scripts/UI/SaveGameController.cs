@@ -45,7 +45,6 @@ public class SaveGameController : MonoBehaviour
                 newName = newName.Replace(":", "_");
                 newName = newName.Replace(" ", "_");
                 newName = newName.Replace(".", "_");
-                UnityEngine.Debug.Log("newName " + newName);
                 saveName.text = newName;
                 saveEnabled = true;
             }

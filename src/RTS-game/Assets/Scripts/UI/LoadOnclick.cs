@@ -26,7 +26,6 @@ public class LoadOnclick : MonoBehaviour
             saveName = txt.text; saveName = txt.text; saveName = txt.text; saveName = txt.text; saveName = txt.text;
             SaveManager.Load(Path.Combine(basePath, dir, saveName).ToString());
             canLoad = false;
-            UnityEngine.Debug.Log("spos");
         }
     }
 }
