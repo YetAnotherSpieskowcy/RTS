@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using System.IO;
 using System;
+using UnityEngine.SceneManagement;
+using System.Diagnostics;
 
 public class LoadOnclick : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class LoadOnclick : MonoBehaviour
         string saveName = txt.text; 
         string basePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         string dir = "SuwakGame";
-        SaveManager.Load(Path.Combine(basePath, dir, saveName));
+        SceneManager.LoadScene(1);
+        SaveManager.Load(Path.Combine(basePath, dir, saveName).ToString());
     }
 }
