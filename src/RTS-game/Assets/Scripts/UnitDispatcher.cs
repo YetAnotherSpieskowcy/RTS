@@ -6,6 +6,7 @@ public class UnitDispatcher : MonoBehaviour
 {
     private CommandController commandController;
     bool selectionEnabled = false;
+    public CombatMediator combatMediator;
     FormationDispatcher fdispatcher;
     List<Unit> selectedUnits = new();
     List<Unit> friendlyUnitCache = new();
@@ -37,6 +38,7 @@ public class UnitDispatcher : MonoBehaviour
             selectionEnabled = true;
             Debug.Log("1. Everyone\n2. Melee\n3. Ranged\n0. Cancel");
             commandController.ActivateGroupChoice();
+            combatMediator.SetState(CombatModeState.ACTIVE);
         }
         if (selectionEnabled)
         {
@@ -68,6 +70,7 @@ public class UnitDispatcher : MonoBehaviour
                 Debug.Log("Cancel");
                 selectionEnabled = false;
                 commandController.SetAllInvisible();
+                combatMediator.SetState(CombatModeState.ENDING);
             }
         }
         else if (selectedUnits.Count > 0)
@@ -86,6 +89,7 @@ public class UnitDispatcher : MonoBehaviour
                 });
                 selectedUnits.Clear();
                 commandController.SetAllInvisible();
+                combatMediator.SetState(CombatModeState.ENDING);
             }
 
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem2))
@@ -101,6 +105,7 @@ public class UnitDispatcher : MonoBehaviour
                 });
                 selectedUnits.Clear();
                 commandController.SetAllInvisible();
+                combatMediator.SetState(CombatModeState.ENDING);
             }
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem3))
             {
@@ -131,11 +136,12 @@ public class UnitDispatcher : MonoBehaviour
                 }
                 selectedUnits.Clear();
                 commandController.SetAllInvisible();
+                combatMediator.SetState(CombatModeState.ENDING);
             }
             if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem4))
             {
                 Debug.Log("Go here");
-                fdispatcher.StartDispatch(new List<Unit>(selectedUnits));
+                fdispatcher.StartDispatch(new List<Unit>(selectedUnits), combatMediator);
                 selectedUnits.Clear();
                 commandController.SetAllInvisible();
             }
@@ -146,12 +152,14 @@ public class UnitDispatcher : MonoBehaviour
             Debug.Log("Not implemented");
             selectedUnits.Clear();
             commandController.SetAllInvisible();
+            combatMediator.SetState(CombatModeState.ENDING);
         }
         if (Input.GetKeyDown(InputSettings.UnitSelectionMenuCancel))
         {
             Debug.Log("Cancel");
             selectedUnits.Clear();
             commandController.SetAllInvisible();
+            combatMediator.SetState(CombatModeState.ENDING);
         }
 
 
@@ -159,5 +167,6 @@ public class UnitDispatcher : MonoBehaviour
     void Start()
     {
         this.commandController = GameObject.Find("UI").GetComponent<CommandController>();
+        combatMediator = new CombatMediator();
     }
 }

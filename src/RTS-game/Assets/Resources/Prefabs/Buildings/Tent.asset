@@ -16,7 +16,7 @@ MonoBehaviour:
   width: 3.25
   height: 2.6
   length: 2.6
-  money: 200
+  money: 50
   wood: 10
   stone: 5
   prefab: {fileID: 3827930591578184202, guid: b67f4ab461d520740be88a277dec540f, type: 3}

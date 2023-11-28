@@ -88,7 +88,6 @@ public class AnimationController
 
     private void SetAnimation(string startAnim)
     {
-        Debug.Log(startAnim);
         playerAnimator.ResetTrigger(runningAnimation);
         playerAnimator.SetTrigger(startAnim);
         runningAnimation = startAnim;
