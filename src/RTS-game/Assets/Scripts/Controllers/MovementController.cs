@@ -19,10 +19,10 @@ public class MovementController
     }
 
     // physics
-    public void UpdatePhysics(bool punchRunning)  //fixed update
+    public void UpdatePhysics(bool punchRunning, bool commandRunning)  //fixed update
     {
         float h = 0f, v = 0f;
-        if (Input.GetMouseButtonDown(0) && !punchRunning)
+        if (Input.GetMouseButtonDown(0) && !punchRunning && !commandRunning)
         {
             hit = true;
             combatController.CheckAttack(playersTransform.position + new Vector3(0f, 1f, 0f), playersTransform.forward);

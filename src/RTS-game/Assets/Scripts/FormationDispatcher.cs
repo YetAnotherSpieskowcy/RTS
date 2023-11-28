@@ -6,9 +6,11 @@ public class FormationDispatcher : MonoBehaviour
 {
     [SerializeField] Transform marker;
     List<Unit> selectedUnits = null;
-    public void StartDispatch(List<Unit> selectedUnits)
+    private CombatMediator combatMediator;
+    public void StartDispatch(List<Unit> selectedUnits, CombatMediator mediator)
     {
         this.selectedUnits = selectedUnits;
+        this.combatMediator = mediator;
     }
     void Update()
     {
@@ -38,6 +40,7 @@ public class FormationDispatcher : MonoBehaviour
                             }
                         }
                         selectedUnits = null;
+                        combatMediator.SetState(CombatModeState.ENDING);
                     }
                 }
             }
