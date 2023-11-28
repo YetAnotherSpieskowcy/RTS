@@ -12,6 +12,7 @@ public class Quicksave : MonoBehaviour
         }
         if (Input.GetKeyDown(InputSettings.Quickload))
         {
+            UnityEngine.Debug.Log("quickload");
             SaveManager.Load("quicksave.pb");
         }
     }
