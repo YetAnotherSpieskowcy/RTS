@@ -34,7 +34,6 @@ public class SaveGameController : MonoBehaviour
                 {
                     System.IO.Directory.CreateDirectory(Path.Combine(path, dir));
                 }
-
                 SaveManager.Save(Path.Combine(path, dir, saveName.text));
                 saveAmeObject.SetActive(false);
                 saveEnabled = false;
