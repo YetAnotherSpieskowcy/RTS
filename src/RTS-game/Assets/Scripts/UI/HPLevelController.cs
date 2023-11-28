@@ -6,6 +6,7 @@ using System.Diagnostics;
 
 public class HPLevelController : MonoBehaviour
 {
+    public GameObject gameOver;
     public TMP_Text hpText;
     public GameObject hpImage;
     private float hpImageWidth;
@@ -33,7 +34,14 @@ public class HPLevelController : MonoBehaviour
     void Update()
     {
         this.HPLevel = playerUnitComponent.GetHealth();
-        this.hpText.text = HPLevel.ToString() + "/" + HPStartLevel.ToString();
+        if (this.HPLevel > 0)
+        {
+            this.hpText.text = HPLevel.ToString() + "/" + HPStartLevel.ToString();
+        }
+        else
+        {
+            this.hpText.text = "0/" + HPStartLevel.ToString();
+        }
         if (hpImageWidth == 0)
         {
             this.hpImageWidth = hpImage.GetComponent<RectTransform>().sizeDelta.x * hpImage.GetComponent<RectTransform>().localScale.x;
