@@ -33,7 +33,35 @@ public class AnimationController
         animationRunning = true;
     }
 
-    public void ChooseAnimation(bool fightMode, bool running, float vertical, float horizontal)
+    public void Gather()
+    {
+        if (runningAnimation == "Gather")
+            return;
+        SetAnimation("Gather");
+    }
+
+    public void Attack()
+    {
+        if (runningAnimation.Contains("Attack"))
+            return;
+        SetAnimation("Attack" + Random.Range(1, attackVariants));
+        animationRunning = true;
+    }
+
+    public bool CheckIfAttackRunning()
+    {
+        for (int i = 1; i <= attackVariants; i++)
+        {
+            if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack" + i))
+            {
+                return true;
+            }
+        }
+        animationRunning = false;
+        return false;
+    }
+
+    public void ChooseAnimation(bool running, float vertical, float horizontal)
     {
         string animation = "", speed, v, h, p = "";
 
@@ -41,40 +69,31 @@ public class AnimationController
         {
             return;
         }
-
-        if (fightMode)
+        if (running)
+            speed = "Run";
+        else
+            speed = "Walk";
+        if (vertical != 0 || horizontal != 0)
         {
-            animation = "Attack" + Random.Range(1, attackVariants);
-            animationRunning = true;
+            if (vertical == 1)
+                v = "Forward";
+            else if (vertical == -1)
+                v = "Backward";
+            else
+                v = "";
+
+            if (horizontal == 1)
+                h = "Right";
+            else if (horizontal == -1)
+                h = "Left";
+            else
+                h = "";
+
+            animation = speed + v + h;
         }
         else
         {
-            if (running)
-                speed = "Run";
-            else
-                speed = "Walk";
-            if (vertical != 0 || horizontal != 0)
-            {
-                if (vertical == 1)
-                    v = "Forward";
-                else if (vertical == -1)
-                    v = "Backward";
-                else
-                    v = "";
-
-                if (horizontal == 1)
-                    h = "Right";
-                else if (horizontal == -1)
-                    h = "Left";
-                else
-                    h = "";
-
-                animation = speed + v + h;
-            }
-            else
-            {
-                animation = "Idle";
-            }
+            animation = "Idle";
         }
 
         if (animation != runningAnimation)
@@ -91,10 +110,5 @@ public class AnimationController
         playerAnimator.ResetTrigger(runningAnimation);
         playerAnimator.SetTrigger(startAnim);
         runningAnimation = startAnim;
-    }
-
-    public void MarkAnimationEnded()
-    {
-        animationRunning = false;
     }
 }

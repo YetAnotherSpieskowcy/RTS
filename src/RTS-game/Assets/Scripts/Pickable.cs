@@ -10,6 +10,7 @@ public class Pickable : MonoBehaviour
     public void Pick()
     {
         storage.AddIncome(0, wood, stone);
+        GameObject.Find("Player").GetComponent<PlayerController>().SetMode(CharacterMode.GATHER_MODE);
         Destroy(GetComponent<Transform>().gameObject);
     }
 

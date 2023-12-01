@@ -25,8 +25,8 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: Event MarkPunchEnded has a time (1.443163) outside the
-      clip's valid range (0.000000..1.366667). It will never be fired
+    animationImportWarnings: Event MarkAnimationEnded has a time (1.443163) outside
+      the clip's valid range (0.000000..1.366667). It will never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -92,15 +92,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 1.0559726
-        functionName: MarkAnimationEnded
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: a10b10baf2ee92b45b993733b84f60f9,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

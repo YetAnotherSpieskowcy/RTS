@@ -91,15 +91,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 1
-        functionName: MarkAnimationEnded
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: a10b10baf2ee92b45b993733b84f60f9,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
