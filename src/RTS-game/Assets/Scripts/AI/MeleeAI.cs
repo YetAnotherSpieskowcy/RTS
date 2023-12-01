@@ -8,6 +8,7 @@ public class MeleeAI : MonoBehaviour
     private EnemyAI ai;
     private AIAnimation anim;
     private Unit unit;
+    private bool attackAnimRunning;
     void Awake()
     {
         ai = GetComponent<EnemyAI>();
@@ -17,6 +18,7 @@ public class MeleeAI : MonoBehaviour
     void Start()
     {
         ai.StoppingDistance = ai.Radius;
+        attackAnimRunning = false;
     }
     private float delay = 0;
     void Update()
@@ -24,7 +26,7 @@ public class MeleeAI : MonoBehaviour
         if (!unit.IsAlive()) return;
         if (ai.target != null && ai.IsStopped && Vector3.Distance(ai.target.position, transform.position) <= ai.Radius)
         {
-            if (delay > hitRate)
+            if (!attackAnimRunning && delay > hitRate)
             {
                 Unit unit = ai.target.GetComponentInParent<Unit>();
                 if (unit != null)
@@ -50,5 +52,13 @@ public class MeleeAI : MonoBehaviour
             }
 
         }
+    }
+    public void SetAttackAnimRunning(bool running)
+    {
+        attackAnimRunning = running;
+    }
+    public bool GetAttackAnimRunning()
+    {
+        return attackAnimRunning;
     }
 }

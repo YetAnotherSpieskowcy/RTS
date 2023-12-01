@@ -24,6 +24,13 @@ public class AIAnimation : MonoBehaviour
         anim.SetTrigger("Attack" + Random.Range(1, attackVariants));
     }
 
+    public void Shoot()
+    {
+        if (currentAnim == "Death") return;
+        anim.ResetTrigger(currentAnim);
+        anim.SetTrigger("Shoot");
+    }
+
     public void Die()
     {
         anim.ResetTrigger(currentAnim);
@@ -50,28 +57,35 @@ public class AIAnimation : MonoBehaviour
     {
         if (currentAnim == "Mine") return;
         if (currentAnim == "Death") return;
-        if (direction == Vector3.zero)
+        TryGetComponent<MeleeAI>(out MeleeAI meleeAI);
+        TryGetComponent<RangeAI>(out RangeAI rangeAI);
+        bool attackRunning = meleeAI != null ? meleeAI.GetAttackAnimRunning() : false;
+        bool shootRunning = rangeAI != null ? rangeAI.GetShootAnimRunning() : false;
+        if (!attackRunning && !shootRunning)
         {
-            anim.ResetTrigger(currentAnim);
-            anim.SetTrigger("Idle");
-            currentAnim = "Idle";
-        }
-        else
-        {
-            if (direction.magnitude > runningSpeed)
+            if (direction == Vector3.zero)
             {
-                if (currentAnim != "Run Forward")
-                {
-                    anim.SetTrigger("Run Forward");
-                    currentAnim = "Run Forward";
-                }
+                anim.ResetTrigger(currentAnim);
+                anim.SetTrigger("Idle");
+                currentAnim = "Idle";
             }
             else
             {
-                if (currentAnim != "Walk Forward")
+                if (direction.magnitude > runningSpeed)
                 {
-                    anim.SetTrigger("Walk Forward");
-                    currentAnim = "Walk Forward";
+                    if (currentAnim != "Run Forward")
+                    {
+                        anim.SetTrigger("Run Forward");
+                        currentAnim = "Run Forward";
+                    }
+                }
+                else
+                {
+                    if (currentAnim != "Walk Forward")
+                    {
+                        anim.SetTrigger("Walk Forward");
+                        currentAnim = "Walk Forward";
+                    }
                 }
             }
         }
