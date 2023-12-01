@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18029143, g: 0.22572419, b: 0.30693057, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3157,6 +3157,7 @@ GameObject:
   - component: {fileID: 277420828}
   - component: {fileID: 277420827}
   - component: {fileID: 277420826}
+  - component: {fileID: 277420835}
   - component: {fileID: 277420834}
   m_Layer: 0
   m_Name: Friendly cube
@@ -3330,6 +3331,18 @@ MonoBehaviour:
   preSaveHook:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &277420835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277420825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532ace62ea187b931909563920d072a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &288629721
 GameObject:
   m_ObjectHideFlags: 0
@@ -6888,6 +6901,7 @@ GameObject:
   - component: {fileID: 731163478}
   - component: {fileID: 731163479}
   - component: {fileID: 731163480}
+  - component: {fileID: 731163481}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Enemy
@@ -7045,7 +7059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   group: 1
   team: 1
-  health: 100
+  health: 5
 --- !u!114 &731163480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7061,6 +7075,18 @@ MonoBehaviour:
   preSaveHook:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &731163481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731163471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0abb0fe5d912fa14c8383079265fdf49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &747053121
 GameObject:
   m_ObjectHideFlags: 0
@@ -7759,6 +7785,7 @@ GameObject:
   - component: {fileID: 792618181}
   - component: {fileID: 792618180}
   - component: {fileID: 792618188}
+  - component: {fileID: 792618189}
   m_Layer: 0
   m_Name: Friendly cube (1)
   m_TagString: Untagged
@@ -7931,6 +7958,18 @@ MonoBehaviour:
   preSaveHook:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &792618189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792618179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532ace62ea187b931909563920d072a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &819967144
 GameObject:
   m_ObjectHideFlags: 0
@@ -8217,6 +8256,7 @@ GameObject:
   - component: {fileID: 878658408}
   - component: {fileID: 878658409}
   - component: {fileID: 878658410}
+  - component: {fileID: 878658411}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -8374,7 +8414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   group: 1
   team: 1
-  health: 100
+  health: 5
 --- !u!114 &878658410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8390,6 +8430,18 @@ MonoBehaviour:
   preSaveHook:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &878658411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878658401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0abb0fe5d912fa14c8383079265fdf49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &917074295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8753,6 +8805,13 @@ GameObject:
   - component: {fileID: 991469211}
   - component: {fileID: 991469223}
   - component: {fileID: 991469222}
+  - component: {fileID: 991469227}
+  - component: {fileID: 991469226}
+  - component: {fileID: 991469225}
+  - component: {fileID: 991469224}
+  - component: {fileID: 991469230}
+  - component: {fileID: 991469229}
+  - component: {fileID: 991469228}
   m_Layer: 0
   m_Name: ConversationEventInfo
   m_TagString: Untagged
@@ -8792,7 +8851,7 @@ MonoBehaviour:
       m_Calls: []
   NodeID: 0
   TMPFont: {fileID: 0}
-  Icon: {fileID: 21300000, guid: 1801dbd869acf3f48a00cda4aa595722, type: 3}
+  Icon: {fileID: 0}
   Audio: {fileID: 0}
 --- !u!114 &991469211
 MonoBehaviour:
@@ -8831,6 +8890,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1425040339}
+        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+        m_MethodName: SetPersistantFlag
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CombatCubesTaken
           m_BoolArgument: 0
         m_CallState: 2
   NodeID: 12
@@ -8946,7 +9017,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1425040346}
+        m_TargetAssemblyTypeName: Quest, Assembly-CSharp
+        m_MethodName: StartQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   NodeID: 6
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: a1cdc21c340f7ce489b1d7a60982aa14, type: 3}
@@ -9044,7 +9127,7 @@ MonoBehaviour:
       m_Calls: []
   NodeID: 14
   TMPFont: {fileID: 0}
-  Icon: {fileID: 21300000, guid: a1cdc21c340f7ce489b1d7a60982aa14, type: 3}
+  Icon: {fileID: 21300000, guid: 1801dbd869acf3f48a00cda4aa595722, type: 3}
   Audio: {fileID: 0}
 --- !u!114 &991469223
 MonoBehaviour:
@@ -9062,6 +9145,139 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   NodeID: 13
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: a1cdc21c340f7ce489b1d7a60982aa14, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &991469224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991469207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 19
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 1801dbd869acf3f48a00cda4aa595722, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &991469225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991469207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 18
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: a1cdc21c340f7ce489b1d7a60982aa14, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &991469226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991469207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 17
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 1801dbd869acf3f48a00cda4aa595722, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &991469227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991469207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 16
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 1801dbd869acf3f48a00cda4aa595722, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &991469228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991469207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 22
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: a1cdc21c340f7ce489b1d7a60982aa14, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &991469229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991469207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 21
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 1801dbd869acf3f48a00cda4aa595722, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &991469230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991469207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 20
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: a1cdc21c340f7ce489b1d7a60982aa14, type: 3}
   Audio: {fileID: 0}
@@ -12668,6 +12884,9 @@ GameObject:
   - component: {fileID: 1425040339}
   - component: {fileID: 1425040345}
   - component: {fileID: 1425040344}
+  - component: {fileID: 1425040346}
+  - component: {fileID: 1425040347}
+  - component: {fileID: 1425040348}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -12815,34 +13034,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentIDCounter: 15
-  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":false,"xPos":-151.349091,"yPos":356.078064},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Evil
-    Spheres, huh? They sound troublesome, but I''m up for the challenge.","parentUIDs":[2],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":174.440948,"yPos":355.030823},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"I''m
-    not interested in fighting Evil Spheres","parentUIDs":[2],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":9}],"EditorInfo":{"isRoot":false,"xPos":-345.9946,"yPos":687.1395},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"However,
-    I might need some assistance or tools to tackle them effectively.","parentUIDs":[6],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":-77.10666,"yPos":682.5281},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"I
-    will be on my way","parentUIDs":[6],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":12}],"EditorInfo":{"isRoot":false,"xPos":-530.481445,"yPos":951.4464},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"That
-    sounds fantastic! I''ll gladly take those combat cubes.","parentUIDs":[9],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":-183.049774,"yPos":932.3479},"ID":11,"ParamActions":[],"TMPFontGUID":null,"Text":"I
-    would rather fight alone","parentUIDs":[9],"SpeechUID":-1}],"Parameters":[{"__type":"EditableBoolParameter:#DialogueEditor","ParameterName":"QuestActive","BoolValue":false}],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"QuestActive","CheckType":0,"RequiredValue":false}],"NodeUID":2},{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"QuestActive","CheckType":0,"RequiredValue":true}],"NodeUID":13}],"EditorInfo":{"isRoot":true,"xPos":261.199982,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Hey
-    there, Mighty Capsule! I''ve been hearing about the trouble. Is there anything
-    I can do to help?","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Player","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":0},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":3},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":17.7141418,"yPos":170.117},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Ah,
+  CurrentIDCounter: 23
+  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":false,"xPos":-209.908936,"yPos":638.1284},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Evil
+    Spheres, huh? They sound troublesome, but I''m up for the challenge.","parentUIDs":[2],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":114.6626,"yPos":637.1465},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"I''m
+    not interested in fighting Evil Spheres","parentUIDs":[2],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":9}],"EditorInfo":{"isRoot":false,"xPos":-456.533447,"yPos":915.7926},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"However,
+    I might need some assistance or tools to tackle them effectively.","parentUIDs":[6],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":-135.6665,"yPos":964.5785},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    will be on my way","parentUIDs":[6],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":12}],"EditorInfo":{"isRoot":false,"xPos":-589.04126,"yPos":1233.49683},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"That
+    sounds fantastic! I''ll gladly take those combat cubes.","parentUIDs":[9],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":-241.609619,"yPos":1214.39832},"ID":11,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    would rather fight alone","parentUIDs":[9],"SpeechUID":-1}],"Parameters":[{"__type":"EditableBoolParameter:#DialogueEditor","ParameterName":"QuestActive","BoolValue":false},{"__type":"EditableBoolParameter:#DialogueEditor","ParameterName":"CombatCubesTaken","BoolValue":false},{"__type":"EditableBoolParameter:#DialogueEditor","ParameterName":"QuestCompleted","BoolValue":false}],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"QuestActive","CheckType":0,"RequiredValue":true},{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"QuestCompleted","CheckType":0,"RequiredValue":false}],"NodeUID":13},{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"QuestActive","CheckType":0,"RequiredValue":false}],"NodeUID":16},{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"QuestCompleted","CheckType":0,"RequiredValue":true}],"NodeUID":17}],"EditorInfo":{"isRoot":true,"xPos":196.571533,"yPos":86.50952},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Player
+    approaches the Mighty Capsule","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":0},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":3},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":-40.8457031,"yPos":452.167358},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Ah,
     it''s good to see a willing soul. Yes, there is something you can do to help.
     The camp on the west is occupied by those pesky Evil Spheres. If you could deal
-    with them, that would be a great aid.","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Mighty
-    Capsule","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":294.30838,"yPos":620.2455},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"Goodbye
+    with them, that would be a great aid.","parentUIDs":[16],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Mighty
+    Capsule","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":235.748535,"yPos":902.2959},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"Goodbye
     then","parentUIDs":[14,4,8,11],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Mighty
-    Capsule","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":7},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":-212.951874,"yPos":488.42215},"ID":6,"ParamActions":[{"__type":"EditableSetBoolParamAction:#DialogueEditor","ParameterName":"QuestActive","Value":true}],"TMPFontGUID":null,"Text":"Wonderful,
+    Capsule","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":7},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":-273.295166,"yPos":770.589355},"ID":6,"ParamActions":[{"__type":"EditableSetBoolParamAction:#DialogueEditor","ParameterName":"QuestActive","Value":true}],"TMPFontGUID":null,"Text":"Wonderful,
     as for the camp''s location, head west from here through the dense forest until
     you reach a clearing.","parentUIDs":[3],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Mighty
-    Capsule","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":10},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":11}],"EditorInfo":{"isRoot":false,"xPos":-356.512665,"yPos":834.2666},"ID":9,"ParamActions":[],"TMPFontGUID":null,"Text":"To
+    Capsule","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":10},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":11}],"EditorInfo":{"isRoot":false,"xPos":-414.165283,"yPos":1114.7677},"ID":9,"ParamActions":[],"TMPFontGUID":null,"Text":"To
     aid you in this endeavor, I can offer you a few combat cubes. They''ll give you
     a boost in combat and make the task easier. What do you say?","parentUIDs":[7],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Mighty
-    Capsule","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":-527.460449,"yPos":1057.73877},"ID":12,"ParamActions":[],"TMPFontGUID":null,"Text":"Excellent!
+    Capsule","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":-585.142334,"yPos":1338.29907},"ID":12,"ParamActions":[],"TMPFontGUID":null,"Text":"Excellent!
     With your bravery and determination, those Evil Spheres won''t stand a chance.
     Good luck, adventurer, and may your journey to the camp on the west be successful.","parentUIDs":[10],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Mighty
-    Capsule","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":14}],"EditorInfo":{"isRoot":false,"xPos":449.592,"yPos":192.10437},"ID":13,"ParamActions":[],"TMPFontGUID":null,"Text":"Have
+    Capsule","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":14}],"EditorInfo":{"isRoot":false,"xPos":391.863037,"yPos":473.011353},"ID":13,"ParamActions":[],"TMPFontGUID":null,"Text":"Have
     you finished your quest?","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Mighty
-    Capsule","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":475.1816,"yPos":393.931458},"ID":14,"ParamActions":[],"TMPFontGUID":null,"Text":"Not
-    yet","parentUIDs":[13],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Player","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":0}]}'
+    Capsule","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":416.647461,"yPos":662.155762},"ID":14,"ParamActions":[],"TMPFontGUID":null,"Text":"Not
+    yet","parentUIDs":[13],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Player","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":-5.241455,"yPos":281.391235},"ID":16,"ParamActions":[],"TMPFontGUID":null,"Text":"Hey
+    there, Mighty Capsule! I''ve been hearing about the trouble. Is there anything
+    I can do to help?","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Player","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":18}],"EditorInfo":{"isRoot":false,"xPos":587.0017,"yPos":157.237061},"ID":17,"ParamActions":[],"TMPFontGUID":null,"Text":"Mighty
+    Capsule, I''ve managed to clear out those Evil Spheres from the camp on the west!","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Player","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"CombatCubesTaken","CheckType":0,"RequiredValue":true}],"NodeUID":19},{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"CombatCubesTaken","CheckType":0,"RequiredValue":false}],"NodeUID":21}],"EditorInfo":{"isRoot":false,"xPos":796.8159,"yPos":337.254517},"ID":18,"ParamActions":[],"TMPFontGUID":null,"Text":"Well
+    done, brave soul! Your valor and skill have prevailed. The camp is safe once
+    again thanks to your efforts.","parentUIDs":[17],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Might
+    Capsule","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":20}],"EditorInfo":{"isRoot":false,"xPos":638.2717,"yPos":542.4823},"ID":19,"ParamActions":[],"TMPFontGUID":null,"Text":"It
+    was a tough fight, but your aid and guidance made all the difference. Those combat
+    cubes you provided really packed a punch!","parentUIDs":[18],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Player","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":21}],"EditorInfo":{"isRoot":false,"xPos":691.051758,"yPos":705.352539},"ID":20,"ParamActions":[],"TMPFontGUID":null,"Text":"I''m
+    glad they proved useful. Your courage and resourcefulness were the key factors
+    in this victory. The world is safer with heroes like you.","parentUIDs":[19],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Might
+    Capsule","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":22}],"EditorInfo":{"isRoot":false,"xPos":900.430664,"yPos":872.551},"ID":21,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    couldn''t have done it without your support. Thanks for entrusting me with this
+    task!","parentUIDs":[18,20],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Player","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":822.2505,"yPos":1029.11218},"ID":22,"ParamActions":[],"TMPFontGUID":null,"Text":"The
+    honor is mine. Remember, in times of need, your bravery will always be a beacon
+    of hope. Rest now, hero, and may your future adventures be as victorious as this
+    one.","parentUIDs":[21],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Might
+    Capsule","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -12862,9 +13097,58 @@ MonoBehaviour:
   - {fileID: 991469211}
   - {fileID: 991469223}
   - {fileID: 991469222}
+  - {fileID: 991469227}
+  - {fileID: 991469226}
+  - {fileID: 991469225}
+  - {fileID: 991469224}
+  - {fileID: 991469230}
+  - {fileID: 991469229}
+  - {fileID: 991469228}
   ContinueFont: {fileID: 0}
   EndConversationFont: {fileID: 0}
   Event:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1425040346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425040338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2c99bab5cdf99d8b85eb11194793df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectives:
+  - {fileID: 878658411}
+  - {fileID: 731163481}
+--- !u!114 &1425040347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425040338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0008106091af3ac149b9a9929b36ad3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1425040348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425040338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb1c88ddd0d070cdab2bb8e542683b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preSaveHook:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1430938552
