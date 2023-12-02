@@ -956,6 +956,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6956737058391354454}
+    - targetCorrespondingSourceObject: {fileID: 4957605393579145644, guid: 4f46098734d87e24490aef9267915ad2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2394075445257491144}
   m_SourcePrefab: {fileID: 100100000, guid: 4f46098734d87e24490aef9267915ad2, type: 3}
 --- !u!4 &6420527732318062574 stripped
 Transform:
@@ -1017,7 +1021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   group: 2
-  team: 0
+  team: 2
   health: 30
 --- !u!114 &8271288432267920705
 MonoBehaviour:
@@ -1048,6 +1052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningSpeed: 1
   attackVariants: 3
+  swordAttackVariants: 0
 --- !u!114 &-4092866474983874333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1076,6 +1081,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitRate: 10
+  hasSword: 0
+--- !u!136 &2394075445257491144
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420527732339907077}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!4 &6420527732339907079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4957605393579145646, guid: 4f46098734d87e24490aef9267915ad2,
