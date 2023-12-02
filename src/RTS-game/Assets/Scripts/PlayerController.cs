@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
         else if (movementController.GetHit() && mode == CharacterMode.NORMAL_MODE)
         {
             SetMode(CharacterMode.COMBAT_MODE);
-            combatController.CheckAttack(playersTransform.position,playersTransform.forward);
+            combatController.CheckAttack(playersTransform.position, playersTransform.forward);
 
         }
         else if (combatMediator.GetState() == CombatModeState.ACTIVE && mode != CharacterMode.ORDER_MODE)

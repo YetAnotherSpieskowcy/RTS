@@ -30,7 +30,7 @@ public class AttackState : StateMachineBehaviour
             Debug.Log("abc");
             rangeAI.SetShootAnimRunning(false);
             animator.gameObject.TryGetComponent<MeleeAI>(out meleeAI);
-            if (meleeAI != null) 
+            if (meleeAI != null)
                 meleeAI.SetAttackAnimRunning(false);
         }
         else if (animator.gameObject.TryGetComponent<MeleeAI>(out meleeAI))
