@@ -1734,6 +1734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningSpeed: 1
   attackVariants: 1
+  swordAttackVariants: 0
 --- !u!114 &135239215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3205,6 +3206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitRate: 1
+  hasSword: 0
 --- !u!195 &277420829
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3502,6 +3504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningSpeed: 1
   attackVariants: 1
+  swordAttackVariants: 0
 --- !u!114 &289218221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7680,6 +7683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitRate: 10
+  hasSword: 0
 --- !u!114 &731163479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8456,6 +8460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitRate: 1
+  hasSword: 0
 --- !u!195 &792618183
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9007,6 +9012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitRate: 10
+  hasSword: 0
 --- !u!114 &878658409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13246,6 +13252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningSpeed: 1
   attackVariants: 1
+  swordAttackVariants: 0
 --- !u!114 &1395399241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16648,6 +16655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitRate: 1
+  hasSword: 0
 --- !u!195 &1611901123
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -16684,6 +16692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningSpeed: 1
   attackVariants: 5
+  swordAttackVariants: 0
 --- !u!136 &1611901127
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20243,6 +20252,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902993013}
   m_CullTransparentMesh: 1
+--- !u!1001 &1904975876
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6420527732339907077, guid: 6875793b9ad7d7a43939f7ca344227a5,
+        type: 3}
+      propertyPath: m_Name
+      value: MeleeWithSword
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 6875793b9ad7d7a43939f7ca344227a5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2706.9146
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 6875793b9ad7d7a43939f7ca344227a5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.668434
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 6875793b9ad7d7a43939f7ca344227a5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2401.9521
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 6875793b9ad7d7a43939f7ca344227a5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.31497976
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 6875793b9ad7d7a43939f7ca344227a5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 6875793b9ad7d7a43939f7ca344227a5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9490984
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 6875793b9ad7d7a43939f7ca344227a5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 6875793b9ad7d7a43939f7ca344227a5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 6875793b9ad7d7a43939f7ca344227a5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -143.281
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 6875793b9ad7d7a43939f7ca344227a5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6875793b9ad7d7a43939f7ca344227a5, type: 3}
 --- !u!1 &1927022880
 GameObject:
   m_ObjectHideFlags: 0
@@ -20543,6 +20620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningSpeed: 1
   attackVariants: 1
+  swordAttackVariants: 0
 --- !u!114 &1944402789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21173,6 +21251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningSpeed: 1
   attackVariants: 1
+  swordAttackVariants: 0
 --- !u!114 &1981179271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29056,3 +29135,4 @@ SceneRoots:
   - {fileID: 135239217}
   - {fileID: 906603580}
   - {fileID: 904002641}
+  - {fileID: 1904975876}

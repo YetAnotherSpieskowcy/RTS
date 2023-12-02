@@ -6,6 +6,7 @@ public class AIAnimation : MonoBehaviour
     public float runningSpeed = 1.0f;
     private string currentAnim = "";
     public int attackVariants = 1;
+    public int swordAttackVariants = 0;
 
 
     void Awake()
@@ -21,7 +22,11 @@ public class AIAnimation : MonoBehaviour
     {
         if (currentAnim == "Death") return;
         anim.ResetTrigger(currentAnim);
-        anim.SetTrigger("Attack" + Random.Range(1, attackVariants));
+        bool attackWithSword = TryGetComponent<MeleeAI>(out MeleeAI meleeAI) ? meleeAI.hasSword : false;
+        if (!attackWithSword)
+            anim.SetTrigger("Attack" + Random.Range(1, attackVariants));
+        else
+            anim.SetTrigger("Attack" + Random.Range(attackVariants + 1, attackVariants + swordAttackVariants));
     }
 
     public void Shoot()

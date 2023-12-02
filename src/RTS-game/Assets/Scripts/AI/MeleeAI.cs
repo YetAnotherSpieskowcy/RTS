@@ -5,6 +5,7 @@ using UnityEngine;
 public class MeleeAI : MonoBehaviour
 {
     public float hitRate = 10.0f;
+    public bool hasSword = false;
     private EnemyAI ai;
     private AIAnimation anim;
     private Unit unit;
