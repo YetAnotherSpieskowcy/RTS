@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private MovementController movementController;
     private AnimationController animationController;
     private BuildMechanismMediator buildMechanismMediator;
+    private CombatController combatController;
     private CombatMediator combatMediator;
     private CharacterData characterData;
     private Unit unit;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
         movementController = new MovementController(playersTransform);
         animationController = new AnimationController(playerAnimator, "Idle");
         buildMechanismMediator = GetComponent<BuildMechanismController>().GetBuildMechanismMediator();
+        combatController = new CombatController();
         combatMediator = GetComponent<UnitDispatcher>().combatMediator;
         characterData = new CharacterData();
         unit = GetComponent<Unit>();
@@ -34,12 +36,23 @@ public class PlayerController : MonoBehaviour
             movementController.UpdateValues();
             bool hitting = false;
 
-            if (mode == CharacterMode.NORMAL_MODE)
+            if (mode == CharacterMode.GATHER_MODE)
             {
-                hitting = movementController.GetHit();
+                animationController.Gather();
+                return;
+            }
+            else if (mode == CharacterMode.COMBAT_MODE)
+            {
+                animationController.Attack();
+                return;
+            }
+            else if (mode == CharacterMode.GATHER_MODE)
+            {
+                animationController.Gather();
+                return;
             }
 
-            animationController.ChooseAnimation(hitting, movementController.GetRunning(), movementController.GetVertical(), movementController.GetHorizontal());
+            animationController.ChooseAnimation(movementController.GetRunning(), movementController.GetVertical(), movementController.GetHorizontal());
         }
     }
 
@@ -47,13 +60,8 @@ public class PlayerController : MonoBehaviour
     {
         if (unit.IsAlive())
         {
-            movementController.UpdatePhysics(animationController.AnimationRunning(), combatMediator.GetState() != CombatModeState.INACTIVE);
+            movementController.UpdatePhysics(characterData.GetMode() == CharacterMode.COMBAT_MODE, combatMediator.GetState() != CombatModeState.INACTIVE);
         }
-    }
-
-    public void MarkAnimationEnded()
-    {
-        animationController.MarkAnimationEnded();
     }
 
     public void Die()
@@ -69,10 +77,20 @@ public class PlayerController : MonoBehaviour
     private void UpdateMode()
     {
         CharacterMode mode = characterData.GetMode();
-        if (combatMediator.GetState() == CombatModeState.ACTIVE && mode != CharacterMode.COMBAT_MODE)
+        if (mode == CharacterMode.COMBAT_MODE || mode == CharacterMode.GATHER_MODE)
+        {
+            return;
+        }
+        else if (movementController.GetHit() && mode == CharacterMode.NORMAL_MODE)
+        {
+            SetMode(CharacterMode.COMBAT_MODE);
+            combatController.CheckAttack(playersTransform.position, playersTransform.forward);
+
+        }
+        else if (combatMediator.GetState() == CombatModeState.ACTIVE && mode != CharacterMode.ORDER_MODE)
         {
             buildMechanismMediator.SetAction(Action.UNAVAILABLE);
-            characterData.UpdateMode(CharacterMode.COMBAT_MODE);
+            SetMode(CharacterMode.ORDER_MODE);
         }
         else if (combatMediator.GetState() == CombatModeState.ENDING)
         {
@@ -82,18 +100,23 @@ public class PlayerController : MonoBehaviour
         else if (combatMediator.GetState() == CombatModeState.INACTIVE)
         {
             Action action = buildMechanismMediator.GetAction();
-            if (action != Action.AVAILABLE && action != Action.UNAVAILABLE && mode != CharacterMode.COMBAT_MODE && mode != CharacterMode.BUILDING_MODE)
+            if (action != Action.AVAILABLE && action != Action.UNAVAILABLE && mode != CharacterMode.BUILDING_MODE)
             {
-                characterData.UpdateMode(CharacterMode.BUILDING_MODE);
+                SetMode(CharacterMode.BUILDING_MODE);
             }
-            else if (buildMechanismMediator.GetAction() == Action.AVAILABLE && mode != CharacterMode.NORMAL_MODE)
+            else if (!animationController.CheckIfAttackRunning() && buildMechanismMediator.GetAction() == Action.AVAILABLE && mode != CharacterMode.NORMAL_MODE)
             {
-                characterData.UpdateMode(CharacterMode.NORMAL_MODE);
+                SetMode(CharacterMode.NORMAL_MODE);
             }
         }
         else if (combatMediator.GetState() == CombatModeState.ENDED)
         {
             combatMediator.SetState(CombatModeState.INACTIVE);
         }
+    }
+
+    public void SetMode(CharacterMode mode)
+    {
+        characterData.UpdateMode(mode);
     }
 }

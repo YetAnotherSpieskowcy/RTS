@@ -8,8 +8,10 @@ public class RangeAI : MonoBehaviour
     public float rangeDistance = 25.0f;
     public float meleeDistance = 10.0f;
     public float fireRate = 10.0f;
+    private AIAnimation anim;
     private EnemyAI ai;
     private RangeAttack ra;
+    private bool shootAnimRunning;
     void OnValidate()
     {
         rangeDistance = rangeDistance > 0 ? rangeDistance : 0;
@@ -24,8 +26,13 @@ public class RangeAI : MonoBehaviour
     }
     void Awake()
     {
+        anim = GetComponent<AIAnimation>();
         ai = GetComponent<EnemyAI>();
         ra = GetComponentInChildren<RangeAttack>();
+    }
+    void Start()
+    {
+        shootAnimRunning = false;
     }
 
     private float delay = 0.0f;
@@ -34,10 +41,15 @@ public class RangeAI : MonoBehaviour
         if (ai.target != null && Vector3.Distance(transform.position, ai.target.position) > meleeDistance)
         {
             ai.StoppingDistance = rangeDistance;
-            if (ai.IsStopped && delay > fireRate)
+            if (!shootAnimRunning && ai.IsStopped && delay > fireRate)
             {
                 ra.transform.LookAt(ai.target);
                 ra.Shoot();
+                if (anim != null)
+                {
+                    Debug.Log("shooting");
+                    anim.Shoot();
+                }
                 delay = 0.0f;
             }
             else
@@ -50,5 +62,13 @@ public class RangeAI : MonoBehaviour
             ai.StoppingDistance = ai.Radius;
         }
 
+    }
+    public void SetShootAnimRunning(bool running)
+    {
+        shootAnimRunning = running;
+    }
+    public bool GetShootAnimRunning()
+    {
+        return shootAnimRunning;
     }
 }

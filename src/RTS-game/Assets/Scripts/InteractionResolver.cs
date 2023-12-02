@@ -25,7 +25,8 @@ public class InteractionResolver : MonoBehaviour
                 }
                 // TODO Draw tooltip
                 Debug.Log(inter.GetTooltipInfo());
-                dialogInfoController.SetDaialogInfoVisible();
+                NPC outNPC;
+                dialogInfoController.SetDaialogInfoVisible(hit.collider.TryGetComponent<NPC>(out outNPC));
                 activated = true;
             }
             else if (activated)
