@@ -65,9 +65,12 @@ public class AIAnimation : MonoBehaviour
         {
             if (direction == Vector3.zero)
             {
-                anim.ResetTrigger(currentAnim);
-                anim.SetTrigger("Idle");
-                currentAnim = "Idle";
+                if (currentAnim != "Idle")
+                {
+                    anim.ResetTrigger(currentAnim);
+                    anim.SetTrigger("Idle");
+                    currentAnim = "Idle";
+                }
             }
             else
             {

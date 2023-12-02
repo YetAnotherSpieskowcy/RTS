@@ -11,6 +11,9 @@ public class AttackState : StateMachineBehaviour
         if (animator.gameObject.TryGetComponent<RangeAI>(out rangeAI))
         {
             rangeAI.SetShootAnimRunning(true);
+            animator.gameObject.TryGetComponent<MeleeAI>(out meleeAI);
+            if (meleeAI != null)
+                meleeAI.SetAttackAnimRunning(true);
         }
         else if (animator.gameObject.TryGetComponent<MeleeAI>(out meleeAI))
         {
@@ -24,7 +27,11 @@ public class AttackState : StateMachineBehaviour
         RangeAI rangeAI;
         if (animator.gameObject.TryGetComponent<RangeAI>(out rangeAI))
         {
+            Debug.Log("abc");
             rangeAI.SetShootAnimRunning(false);
+            animator.gameObject.TryGetComponent<MeleeAI>(out meleeAI);
+            if (meleeAI != null) 
+                meleeAI.SetAttackAnimRunning(false);
         }
         else if (animator.gameObject.TryGetComponent<MeleeAI>(out meleeAI))
         {
