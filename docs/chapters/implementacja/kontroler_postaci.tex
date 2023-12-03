@@ -5,7 +5,7 @@ bezpośredni kontakt, ponieważ to właśnie za jej pomocą może eksplorować �
 
 Do implementacji tego mechanizmu zainspirowaliśmy się grą Skyrim. Postać jest sterowana za pomocą klawiszy “w”, “a”, “s”
 oraz “d”, natomiast jej rotacja oraz obrót kamery jest kontrolowany przez mysz. Dodatkowo, gracz może wykonywać ataki
-poprzez naciśnięcie prawego przycisku myszy.
+poprzez naciśnięcie lewego przycisku myszy.
 
 Pierwszy element kontrolera odpowiada za przemieszczanie się postaci. Do tego wykorzystuje Input Manager, w którym zostały
 zmapowane odpowiednie klawisze dla każdej z osi, wzdłuż której gracz może się przemieszczać. W rezultacie powstały dwa
@@ -16,12 +16,12 @@ wyznaczenie prędkości, z jaką gracz się porusza. Domyślnie postać przemies
 przytrzyma lewy klawisz Shift, to zacznie się poruszać biegiem.
 
 Ten element dodatkowo odpowiada za wykrywanie, czy gracz chce wykonać atak. Przekazuje on następnie tę informację do
-komponentu odpowiedzialnego za określenie powodzenia ataku oraz wywołanie odpowiedniego mechanizmu imformowania
+komponentu odpowiedzialnego za określenie powodzenia ataku oraz wywołanie odpowiedniego mechanizmu informowania
 przeciwnika o odniesionych obrażeniach.
 
-Druga część kontrolera odpowiada za ustawienie odpowiedniej animacji. Udostępnia metody umożliwiające uruchomienia
+Druga część kontrolera odpowiada za ustawienie odpowiedniej animacji. Udostępnia metody umożliwiające uruchomienie
 animacji ataków, odniesienia obrażeń, śmierci lub przemieszczania się. Ostatnia z nich wykorzystuje wartości zwrotu wzdłuż
-obu osi oraz prędkość, które są wyznaczane w poprzednim komponencie. Na ich podstawie wyznacza kolejne części nazwy
+obu osi oraz prędkość, które są wyznaczane w poprzednim komponencie. Na ich podstawie definiuje kolejne części nazwy
 animacji, po czym, jeśli jest inna niż aktualnie wyświetlana, uruchamia ją.
 
 Kolejny komponent nadzoruje rotację postaci oraz co za tym idzie - kamery. Analogicznie wykorzystywany jest Input
