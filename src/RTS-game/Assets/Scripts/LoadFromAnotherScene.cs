@@ -28,6 +28,7 @@ public class LoadFromAnotherScene : MonoBehaviour
                 string dir = "SuwakGame";
                 SaveManager.Load(Path.Combine(basePath, dir, NameOfSaveFile_S).ToString());
                 canLoad = false;
+                NameOfSaveFile_S = null;
             }
         }
     }
