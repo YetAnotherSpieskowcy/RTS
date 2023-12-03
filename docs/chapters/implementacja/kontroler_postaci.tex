@@ -4,10 +4,10 @@ W trakcie rozgrywki istotnym aspektem wpływającym na jakość jest mechanizm s
 bezpośredni kontakt, ponieważ to właśnie za jej pomocą może eksplorować świat.
 
 Do implementacji tego mechanizmu zainspirowaliśmy się grą Skyrim. Postać jest sterowana za pomocą klawiszy “w”, “a”, “s”
-oraz “d”, natomiast jej rotacja oraz obrót kamery jest kontrolowany przez mysz. Całość została podzielona na cztery
-części.
+oraz “d”, natomiast jej rotacja oraz obrót kamery jest kontrolowany przez mysz. Dodatkowo, gracz może wykonywać ataki
+poprzez naciśnięcie prawego przycisku myszy.
 
-Pierwsza z nich odpowiada za przemieszczanie się postaci. Do tego wykorzystuje Input Manager, w którym zostały
+Pierwszy element kontrolera odpowiada za przemieszczanie się postaci. Do tego wykorzystuje Input Manager, w którym zostały
 zmapowane odpowiednie klawisze dla każdej z osi, wzdłuż której gracz może się przemieszczać. W rezultacie powstały dwa
 kierunki - przód/tył oraz prawo/lewo. Naciśnięcie odpowiedniego przycisku skutkuje zwróceniem wartości 1 bądź -1, które
 symbolizują zwrot wektora przemieszczenia wzdłuż osi. Na tej podstawie wyznaczane jest faktyczne przesunięcie postaci
@@ -15,7 +15,12 @@ względem kierunku, w którym jest zwrócona oraz modyfikowane jest jej położe
 wyznaczenie prędkości, z jaką gracz się porusza. Domyślnie postać przemieszcza się tempem chodu, jednakże jeśli gracz
 przytrzyma lewy klawisz Shift, to zacznie się poruszać biegiem.
 
-Druga część kontrolera odpowiada za ustawienie odpowiedniej animacji. Do tego wykorzystuje ona wartości zwrotu wzdłuż
+Ten element dodatkowo odpowiada za wykrywanie, czy gracz chce wykonać atak. Przekazuje on następnie tę informację do
+komponentu odpowiedzialnego za określenie powodzenia ataku oraz wywołanie odpowiedniego mechanizmu imformowania
+przeciwnika o odniesionych obrażeniach.
+
+Druga część kontrolera odpowiada za ustawienie odpowiedniej animacji. Udostępnia metody umożliwiające uruchomienia
+animacji ataków, odniesienia obrażeń, śmierci lub przemieszczania się. Ostatnia z nich wykorzystuje wartości zwrotu wzdłuż
 obu osi oraz prędkość, które są wyznaczane w poprzednim komponencie. Na ich podstawie wyznacza kolejne części nazwy
 animacji, po czym, jeśli jest inna niż aktualnie wyświetlana, uruchamia ją.
 
