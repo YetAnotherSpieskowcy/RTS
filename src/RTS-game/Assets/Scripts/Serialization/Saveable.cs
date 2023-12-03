@@ -19,6 +19,8 @@ public class Saveable : MonoBehaviour
         entity.Name = gameObject.name;
         Unit unit = GetComponent<Unit>();
         entity.Hp = unit != null ? unit.GetHealth() : 0;
+        if(unit != null)
+        UnityEngine.Debug.Log(gameObject.name + " health: " + unit.GetHealth());
         Location location = new();
         location.Position = new();
         location.Position.X = transform.position.x;
@@ -42,7 +44,7 @@ public class Saveable : MonoBehaviour
     {
         Unit unit = GetComponent<Unit>();
         if (unit != null)
-            entity.Hp = entity.Hp;
+            unit.SetHealth(entity.Hp);
         prefabName = entity.Prefab;
         Vector3 position = new();
         Vector3 rotation = new();
