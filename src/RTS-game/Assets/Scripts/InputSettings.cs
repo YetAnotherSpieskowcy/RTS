@@ -20,4 +20,5 @@ public static class InputSettings
     public static KeyCode Quickload = KeyCode.F9;
     public static KeyCode GoToMenu = KeyCode.M;
     public static KeyCode Save = KeyCode.Z;
+    public static KeyCode Journal = KeyCode.J;
 }
