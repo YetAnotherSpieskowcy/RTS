@@ -790,6 +790,9 @@ MonoBehaviour:
           m_StringArgument: Prefabs/AI/Worker
           m_BoolArgument: 0
         m_CallState: 2
+  postLoadHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3429809493059067262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -817,7 +820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf68f3385ddd8dd76b4df84904f50009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workRate: 10
+  workRate: 1
 --- !u!136 &8706002647841623547
 CapsuleCollider:
   m_ObjectHideFlags: 0

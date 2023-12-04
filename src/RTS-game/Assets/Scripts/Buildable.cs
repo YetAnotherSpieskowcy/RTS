@@ -11,6 +11,7 @@ public class Buildable : MonoBehaviour
     public float buildingRadious = 1.0f;
     public UnityEvent onBuildingCompleted;
     public UnityEvent onBuildingPlaced;
+    public string typeName;
     private IEnumerable<VillageOverseer> overseers;
 
     void OnValidate()

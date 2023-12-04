@@ -5,6 +5,7 @@ using UnityEngine;
 public class VillageOverseer : MonoBehaviour
 {
     private Dictionary<Buildable, List<EnemyAI>> buildables = new();
+    private Dictionary<string, int> buildingsCount = new();
     public float buildingRadious = 10.0f;
     public List<EnemyAI> workers;
     void OnValidate()
@@ -46,12 +47,22 @@ public class VillageOverseer : MonoBehaviour
 
     public void NotifyCompleted(Buildable buildable)
     {
+        if (!buildables.ContainsKey(buildable))
+            return;
         List<EnemyAI> assigned = new();
         buildables[buildable].ForEach(it =>
         {
             it.Target(null);
             assigned.Add(it);
         });
+        if (buildingsCount.ContainsKey(buildable.typeName))
+        {
+            buildingsCount[buildable.typeName]++;
+        }
+        else
+        {
+            buildingsCount.Add(buildable.typeName, 1);
+        }
         buildables.Remove(buildable);
         if (buildables.Count > 0)
         {
@@ -62,6 +73,17 @@ public class VillageOverseer : MonoBehaviour
                 b.Value.Add(assigned.First());
                 assigned.RemoveAt(0);
             }
+        }
+    }
+    public int GetNumberOfBuildingType(string type)
+    {
+        if (buildingsCount.ContainsKey(type))
+        {
+            return buildingsCount[type];
+        }
+        else
+        {
+            return 0;
         }
     }
 }
