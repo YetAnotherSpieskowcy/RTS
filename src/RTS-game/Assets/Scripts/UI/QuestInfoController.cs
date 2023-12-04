@@ -17,7 +17,7 @@ public class QuestInfoController : MonoBehaviour
         questsList = ((Quest[])GameObject.FindObjectsOfType(typeof(Quest))).ToList();
         questActive = GameObject.Find("QuestActive");
         questActive.SetActive(false);
-        HideAtStart();
+        HideObjects();
         isVisible = true;
     }
     void Update()
@@ -66,7 +66,7 @@ public class QuestInfoController : MonoBehaviour
 
     }
 
-    private void HideAtStart()
+    private void HideObjects()
     {
         foreach (var q in questsList)
         {
@@ -82,15 +82,7 @@ public class QuestInfoController : MonoBehaviour
 
     private void HideQuestJournal()
     {
-        foreach (var q in questsList)
-        {
-            GameObject qJournalObject = q.GetQuestJournalObject();
-            GameObject notCompleted = GetAlertObject(qJournalObject.transform);
-
-            qJournalObject.transform.parent = null;
-            notCompleted.SetActive(false);
-            qJournalObject.SetActive(false);
-        }
+        HideObjects();
         questJournal.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
 
