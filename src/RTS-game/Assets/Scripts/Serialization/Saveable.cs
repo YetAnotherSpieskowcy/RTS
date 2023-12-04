@@ -42,7 +42,7 @@ public class Saveable : MonoBehaviour
     {
         Unit unit = GetComponent<Unit>();
         if (unit != null)
-            entity.Hp = entity.Hp;
+            unit.SetHealth(entity.Hp);
         prefabName = entity.Prefab;
         Vector3 position = new();
         Vector3 rotation = new();

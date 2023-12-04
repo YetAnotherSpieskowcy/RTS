@@ -39,6 +39,11 @@ public class Unit : MonoBehaviour
     {
         return health;
     }
+
+    public void SetHealth(int h)
+    {
+        health = h;
+    }
     public void Hit(int damage)
     {
         health -= damage;

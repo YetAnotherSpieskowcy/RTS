@@ -12,7 +12,6 @@ public class Storage
         this.money = money;
         this.wood = wood;
         this.stone = stone;
-        Debug.Log(money);
     }
 
     public void UpdateStorage()
