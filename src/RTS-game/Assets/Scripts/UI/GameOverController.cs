@@ -18,7 +18,7 @@ public class GameOverController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerUnitComponent.GetHealth() <= 0)
+        if (!playerUnitComponent.IsAlive())
         {
             this.gameOver.SetActive(true);
             if (Input.GetKeyDown(InputSettings.GoToMenu))
