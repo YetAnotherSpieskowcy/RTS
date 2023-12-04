@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1990,6 +1990,9 @@ MonoBehaviour:
   preSaveHook:
     m_PersistentCalls:
       m_Calls: []
+  postLoadHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &140460905
 GameObject:
   m_ObjectHideFlags: 0
@@ -3781,6 +3784,9 @@ MonoBehaviour:
   preSaveHook:
     m_PersistentCalls:
       m_Calls: []
+  postLoadHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &277420835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4032,6 +4038,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preSaveHook:
+    m_PersistentCalls:
+      m_Calls: []
+  postLoadHook:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &299398985
@@ -8354,6 +8363,9 @@ MonoBehaviour:
   preSaveHook:
     m_PersistentCalls:
       m_Calls: []
+  postLoadHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &731163481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9294,6 +9306,9 @@ MonoBehaviour:
   preSaveHook:
     m_PersistentCalls:
       m_Calls: []
+  postLoadHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &792618189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9892,6 +9907,9 @@ MonoBehaviour:
   preSaveHook:
     m_PersistentCalls:
       m_Calls: []
+  postLoadHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &878658411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10357,6 +10375,269 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1f15608e3cebd147bdd7b0ccb0e89d5, type: 3}
+--- !u!1 &943344664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 943344666}
+  - component: {fileID: 943344676}
+  - component: {fileID: 943344675}
+  - component: {fileID: 943344674}
+  - component: {fileID: 943344673}
+  - component: {fileID: 943344672}
+  - component: {fileID: 943344671}
+  - component: {fileID: 943344670}
+  - component: {fileID: 943344669}
+  - component: {fileID: 943344668}
+  - component: {fileID: 943344667}
+  - component: {fileID: 943344665}
+  m_Layer: 0
+  m_Name: ConversationEventInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &943344665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943344664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 11
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!4 &943344666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943344664}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7366141, z: -0, w: -0.6763134}
+  m_LocalPosition: {x: 2381.9, y: -13.958497, z: -3042.6042}
+  m_LocalScale: {x: 0.99999964, y: 0.7692308, z: 0.99999964}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 955548233}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &943344667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943344664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 10
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &943344668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943344664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 9
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &943344669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943344664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 8
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &943344670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943344664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 7
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &943344671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943344664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 955548236}
+        m_TargetAssemblyTypeName: Mercenary, Assembly-CSharp
+        m_MethodName: Hire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  NodeID: 6
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &943344672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943344664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 5
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &943344673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943344664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 4
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &943344674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943344664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 3
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &943344675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943344664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 2
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &943344676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943344664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 0
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
 --- !u!1 &946740869
 GameObject:
   m_ObjectHideFlags: 0
@@ -10569,6 +10850,286 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952901942}
   m_CullTransparentMesh: 1
+--- !u!1001 &955548231
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6420527732339907077, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: m_Name
+      value: MeleeWithSword
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3234.4792
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18.146046
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2114.0066
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.6763134
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7366141
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -265.112
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271288432267920705, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: postLoadHook.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271288432267920705, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: postLoadHook.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271288432267920705, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: postLoadHook.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 955548236}
+    - target: {fileID: 8271288432267920705, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: postLoadHook.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271288432267920705, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: postLoadHook.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateInteractability
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271288432267920705, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: postLoadHook.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Mercenary, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271288432267920705, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: postLoadHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6420527732339907079, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 943344666}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6420527732339907077, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 955548237}
+    - targetCorrespondingSourceObject: {fileID: 6420527732339907077, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 955548236}
+    - targetCorrespondingSourceObject: {fileID: 6420527732339907077, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 955548235}
+    - targetCorrespondingSourceObject: {fileID: 6420527732339907077, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 955548234}
+  m_SourcePrefab: {fileID: 100100000, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59, type: 3}
+--- !u!1 &955548232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6420527732339907077, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+    type: 3}
+  m_PrefabInstance: {fileID: 955548231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &955548233 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6420527732339907079, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+    type: 3}
+  m_PrefabInstance: {fileID: 955548231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &955548234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955548232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentIDCounter: 12
+  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":398.057617,\"yPos\":945.514648},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
+    propose an upfront payment of 10 gold pieces. Your renown precedes you, and I
+    seek to compensate you justly for your valor.\",\"parentUIDs\":[4],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":10}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":738.5918,\"yPos\":930.2499},\"ID\":9,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"To
+    be perfectly honest, noble swordsman, my financial state is a bit... 'empty',
+    so to speak. I'm currently in a state of 'we haven\u2019t got a budget for this
+    quest'.\",\"parentUIDs\":[4],\"SpeechUID\":-1}],\"Parameters\":[{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"CanHire\",\"BoolValue\":false}],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":2}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":706.327148,\"yPos\":-2.58595276},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Oh
+    valiant swordsman, tales of your illustrious feats precede thee! I find myself
+    entangled in a dire conundrum and do earnestly seek the noble prowess of a gallant
+    warrior.\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Player\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":3}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":722.729,\"yPos\":253.0627},\"ID\":2,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ah,
+    a seeker of noble valor and gallantry. I've traversed the realms, danced amidst
+    clashes, and emerged triumphant from many a perilous fray. Yet, the services
+    I render come not without a princely tribute. Pray, what quest dost thou beseech?\",\"parentUIDs\":[0],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Mercenary
+    Swordsman\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":672.464355,\"yPos\":580.9171},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Deep
+    within the forest lies a den of vile creatures, causing chaos and endangering
+    the peace. Their numbers overwhelm me, and I require a skilled hand to help bring
+    an end to their havoc.\",\"parentUIDs\":[2],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Player\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"CanHire\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":5},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":9}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":640.2993,\"yPos\":754.5492},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Creatures,
+    you say? Pray, what compensation would you offer for my services?\",\"parentUIDs\":[3],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Mercenary
+    Swordsman\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":7}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":384.944336,\"yPos\":1154.90552},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Aye,
+    10 gold pieces is a reasonable arrangement.\",\"parentUIDs\":[5],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Mercenary
+    Swordsman\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":8}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":397.405762,\"yPos\":1346.33228},\"ID\":7,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
+    respect your principles and assure you of my honesty. Your presence and skill
+    will be invaluable as we confront these creatures. Your renowned skill deserves
+    fair compensation, and I'm willing to ensure that.\",\"parentUIDs\":[6],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Player\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":370.569824,\"yPos\":1522.77075},\"ID\":8,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Very
+    well. Know this, noble soul, I have crossed blades with the darkest of foes and
+    emerged victorious. From the daunting mountains of the north to the treacherous
+    swamps of the south, my honor remains unblemished. Lead the way, and together,
+    we shall triumph over these malevolent creatures.\",\"parentUIDs\":[7],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Mercenary
+    Swordsman\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":11}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":747.5918,\"yPos\":1165.24976},\"ID\":10,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
+    understand thy plight, noble soul. However, my craft demands due compensation.
+    Mayhaps fortune will favor thee, and when thy coffers are flush, our paths shall
+    meet again.\",\"parentUIDs\":[9],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Mercenary
+    Swordsman\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":730.5918,\"yPos\":1384.24976},\"ID\":11,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Your
+    understanding is appreciated. Should I encounter better fortune, I shall seek
+    your aid with the proper recompense. Until then, I bid you farewell, esteemed
+    swordman.\",\"parentUIDs\":[10],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Player\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
+  saveVersion: 110
+  DefaultName: 
+  DefaultSprite: {fileID: 0}
+  DefaultFont: {fileID: 0}
+  NodeSerializedDataList:
+  - {fileID: 943344676}
+  - {fileID: 943344675}
+  - {fileID: 943344674}
+  - {fileID: 943344673}
+  - {fileID: 943344672}
+  - {fileID: 943344671}
+  - {fileID: 943344670}
+  - {fileID: 943344669}
+  - {fileID: 943344668}
+  - {fileID: 943344667}
+  - {fileID: 943344665}
+  ContinueFont: {fileID: 0}
+  EndConversationFont: {fileID: 0}
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 955548236}
+        m_TargetAssemblyTypeName: Mercenary, Assembly-CSharp
+        m_MethodName: Hire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &955548235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955548232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e09ce95e69ee217bbf650d1ab64cc7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 955548236}
+        m_TargetAssemblyTypeName: Mercenary, Assembly-CSharp
+        m_MethodName: UpdateHireFlag
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 955548237}
+        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+        m_MethodName: StartConversation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &955548236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955548232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf219cab969efe3ad9445c3027aee21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 10
+--- !u!114 &955548237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955548232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a169fd9cc0ec873d8a280419ddcc78d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &988710256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11993,6 +12554,9 @@ MonoBehaviour:
   preSaveHook:
     m_PersistentCalls:
       m_Calls: []
+  postLoadHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1092636057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12257,6 +12821,12 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1143726436}
   m_Enabled: 1
+--- !u!4 &1150205000 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6420527732339907079, guid: 37e02184e4d90c842b380e2214da1919,
+    type: 3}
+  m_PrefabInstance: {fileID: 1628121224}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1163883107
 GameObject:
   m_ObjectHideFlags: 0
@@ -15169,6 +15739,9 @@ MonoBehaviour:
   preSaveHook:
     m_PersistentCalls:
       m_Calls: []
+  postLoadHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1397160706
 GameObject:
   m_ObjectHideFlags: 0
@@ -15812,6 +16385,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preSaveHook:
+    m_PersistentCalls:
+      m_Calls: []
+  postLoadHook:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1430938552
@@ -18949,6 +19525,9 @@ MonoBehaviour:
   preSaveHook:
     m_PersistentCalls:
       m_Calls: []
+  postLoadHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1611901129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19415,6 +19994,269 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1627209755}
   m_Enabled: 1
+--- !u!1001 &1628121224
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6420527732339907077, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: m_Name
+      value: Archer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3234.0334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.365437
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2131.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.31497976
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9490984
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -143.281
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420527732339907079, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271288432267920705, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: postLoadHook.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271288432267920705, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: postLoadHook.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271288432267920705, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: postLoadHook.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1628121228}
+    - target: {fileID: 8271288432267920705, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: postLoadHook.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271288432267920705, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: postLoadHook.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateInteractability
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271288432267920705, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: postLoadHook.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Mercenary, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271288432267920705, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: postLoadHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6420527732339907079, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1894896069}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6420527732339907077, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1628121229}
+    - targetCorrespondingSourceObject: {fileID: 6420527732339907077, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1628121228}
+    - targetCorrespondingSourceObject: {fileID: 6420527732339907077, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1628121227}
+    - targetCorrespondingSourceObject: {fileID: 6420527732339907077, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1628121226}
+  m_SourcePrefab: {fileID: 100100000, guid: 37e02184e4d90c842b380e2214da1919, type: 3}
+--- !u!1 &1628121225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6420527732339907077, guid: 37e02184e4d90c842b380e2214da1919,
+    type: 3}
+  m_PrefabInstance: {fileID: 1628121224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1628121226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628121225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentIDCounter: 12
+  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":162.086914,"yPos":1485.93787},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    propose an upfront offering of 10 glistening gold coins. Thy reputation precedes
+    thee, and I am eager to compensate thee fittingly for thy peerless skill.","parentUIDs":[3],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":9}],"EditorInfo":{"isRoot":false,"xPos":559.1113,"yPos":1478.9729},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    must admit, noble archer, my purse bears meager offerings at present. I lack
+    the means to present a fitting tribute for your skills.","parentUIDs":[3],"SpeechUID":-1}],"Parameters":[{"__type":"EditableBoolParameter:#DialogueEditor","ParameterName":"CanHire","BoolValue":false}],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":734.551758,"yPos":654.5748},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Greetings,
+    esteemed archer. I''ve heard tales of your remarkable precision with a bow. I
+    find myself in a predicament and could greatly benefit from your expertise.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Player","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":559.055664,"yPos":881.007446},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Ah,
+    a seeker of archery finesse and skill. I''ve plucked arrows in distant realms,
+    faced foes of various ilk. But expertise such as mine demands proper recompense.
+    What challenge dost thou bring forth?","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Mercenary
+    Archer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":518.875,"yPos":1052.80042},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Deep
+    within the forest, there resides a den of loathsome creatures, disrupting the
+    harmony of nature. Their vile presence exceeds my capacity to handle alone. I
+    implore the aid of an archer to rid us of their menace","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Player","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"CanHire","CheckType":0,"RequiredValue":true}],"NodeUID":4},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":456.338379,"yPos":1225.73694},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Creatures,
+    thou sayest? What offering dost thou have for my services?","parentUIDs":[2],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Mercenary
+    Archer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":false,"xPos":163.915527,"yPos":1645.77722},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"Aye,
+    10 gold coins a fitting agreement. But mark this, noble soul: I am steadfast
+    in the sanctity of fairness.","parentUIDs":[4],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Mercenary
+    Archer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":7}],"EditorInfo":{"isRoot":false,"xPos":161.380859,"yPos":1829.70178},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"Thy
+    principles, noble sir, art resplendent and venerated.","parentUIDs":[5],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Player","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":177.431641,"yPos":1964.47546},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"So
+    be it. Know this, gallant soul, I have loosed my arrows at the most formidable
+    of adversaries and emerged victorious. From the towering canopies of the east
+    to the barren deserts of the west, my honor remains untarnished. Lead on, and
+    together we shall orchestrate a symphony of triumph over these malevolent creatures.","parentUIDs":[6],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Mercenary
+    Archer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":false,"xPos":544.8911,"yPos":1660.79163},"ID":9,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    understand thy plight, noble soul. However, my craft demands due compensation.
+    Mayhaps fortune will favor thee, and when your coffers are full, our paths shall
+    meet again.","parentUIDs":[8],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Mercenary
+    Archer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":11}],"EditorInfo":{"isRoot":false,"xPos":568.776855,"yPos":1777.316},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"Your
+    understanding is appreciated. Should I encounter better fortune, I shall seek
+    your aid with the proper recompense. Until then, I bid you farewell, esteemed
+    archer.","parentUIDs":[9],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Player","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":538.431641,"yPos":1952.47546},"ID":11,"ParamActions":[],"TMPFontGUID":null,"Text":"Fare
+    thee well, noble soul. May prosperity find thee on thy ventures, and our paths
+    cross again under more propitious circumstances.","parentUIDs":[10],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Mercenary
+    Archer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+  saveVersion: 110
+  DefaultName: 
+  DefaultSprite: {fileID: 0}
+  DefaultFont: {fileID: 0}
+  NodeSerializedDataList:
+  - {fileID: 1894896080}
+  - {fileID: 1894896079}
+  - {fileID: 1894896078}
+  - {fileID: 1894896077}
+  - {fileID: 1894896076}
+  - {fileID: 1894896075}
+  - {fileID: 1894896074}
+  - {fileID: 1894896073}
+  - {fileID: 1894896072}
+  - {fileID: 1894896071}
+  - {fileID: 1894896070}
+  - {fileID: 1894896068}
+  ContinueFont: {fileID: 0}
+  EndConversationFont: {fileID: 0}
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1628121227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628121225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e09ce95e69ee217bbf650d1ab64cc7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1628121228}
+        m_TargetAssemblyTypeName: Mercenary, Assembly-CSharp
+        m_MethodName: UpdateHireFlag
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1628121229}
+        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+        m_MethodName: StartConversation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1628121228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628121225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf219cab969efe3ad9445c3027aee21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 10
+--- !u!114 &1628121229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628121225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a169fd9cc0ec873d8a280419ddcc78d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1662343650
 GameObject:
   m_ObjectHideFlags: 0
@@ -22373,6 +23215,289 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884544690}
   m_CullTransparentMesh: 1
+--- !u!1 &1894896067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1894896069}
+  - component: {fileID: 1894896080}
+  - component: {fileID: 1894896079}
+  - component: {fileID: 1894896078}
+  - component: {fileID: 1894896077}
+  - component: {fileID: 1894896076}
+  - component: {fileID: 1894896075}
+  - component: {fileID: 1894896074}
+  - component: {fileID: 1894896073}
+  - component: {fileID: 1894896072}
+  - component: {fileID: 1894896071}
+  - component: {fileID: 1894896070}
+  - component: {fileID: 1894896068}
+  m_Layer: 0
+  m_Name: ConversationEventInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1894896068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894896067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 11
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!4 &1894896069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894896067}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.9490984, z: -0, w: 0.31497976}
+  m_LocalPosition: {x: 1317.7384, y: -14.89649, z: 3642.3987}
+  m_LocalScale: {x: 0.9999999, y: 0.7692308, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1150205000}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1894896070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894896067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 10
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1894896071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894896067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 9
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1894896072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894896067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 8
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1894896073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894896067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 7
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1894896074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894896067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 6
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1894896075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894896067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1628121228}
+        m_TargetAssemblyTypeName: Mercenary, Assembly-CSharp
+        m_MethodName: Hire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  NodeID: 5
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1894896076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894896067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 4
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1894896077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894896067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 3
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1894896078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894896067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 2
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1894896079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894896067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 1
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1894896080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894896067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 0
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
 --- !u!1 &1902026228
 GameObject:
   m_ObjectHideFlags: 0
@@ -22939,6 +24064,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preSaveHook:
+    m_PersistentCalls:
+      m_Calls: []
+  postLoadHook:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &1947399460
@@ -23519,6 +24647,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preSaveHook:
+    m_PersistentCalls:
+      m_Calls: []
+  postLoadHook:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &1985614037
@@ -31658,3 +32789,5 @@ SceneRoots:
   - {fileID: 1777957920}
   - {fileID: 2138734232}
   - {fileID: 1231741892}
+  - {fileID: 955548231}
+  - {fileID: 1628121224}
