@@ -11,10 +11,11 @@ jak najmniej miejsca, jednocześnie podając jak najwięcej przydatnych informac
 Interfejs podstawowy towarzyszy graczowi podczas całej rozgrywki. Skupia się on w górnej części ekranu. Jego zadaniem jest pomoc 
 użytkownikowi w ogólnym odnalezieniu się w świecie. W tym celu są mu ukazane następujące informacje:
 \begin{itemize}
-    \item aktualny stan surowców i funduszy, aby nie był obarczony kalkulacjami przy każdym zakupie lub przypływie zasobów,
-    \item aktualna godzina w grze, aby stworzyć iluzję upływającego czasu w świecie gry,
-    \item aktualne położenie gracza względem stron świata oraz wrogów ukazane na kompasie, aby ułatwić nawigację,
-    \item zaistnienie możliwości rozpoczęciu konwersacji z inną postacią, aby zwrócić graczowi uwagę na potencjalnie ważne lub użyteczne postacie;
+    \item stan surowców i funduszy, aby nie był obarczony kalkulacjami przy każdym zakupie lub przypływie zasobów;
+    \item godzina w grze, aby stworzyć iluzję upływającego czasu w świecie gry;
+    \item położenie gracza względem stron świata oraz wrogów ukazane na kompasie, aby ułatwić nawigację;
+    \item etap, na którym są przypisane graczowi zadania, aby przypomnieć mu, że na takowe się zgodził;
+    \item stan zdrowia gracza, aby zasygnalizować mu, czy przypadkiem nie rozsądniejsze będzie wycofanie się z potyczki.
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -41,13 +42,16 @@ surowców, pojawi się stosowny komunikat.
 \end{figure}
 
 \subsection{Menu wydawania komend}
+
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/ui/opis_ekementow_budowanie.png}
-    \caption{Implementacja pierwszej części menu wydawania komend}\label{fig:cmd}
+    \includegraphics[width=0.9\textwidth]{images/ui/opis_ekementow_mwnu_wyboru_komendy.png}
+    \caption{Implementacja menu wydawania komend}\label{fig:c}
 \end{figure}
 \subsection{Menu zapisu}
 
 \subsection{Notatnik z zadaniami}
+
+\subsection{Informacja o możliwej czynności}
 
 \subsection{Menu końca gry}
