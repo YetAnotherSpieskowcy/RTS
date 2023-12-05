@@ -11,11 +11,11 @@ jak najmniej miejsca, jednocześnie podając jak najwięcej przydatnych informac
 Interfejs podstawowy towarzyszy graczowi podczas całej rozgrywki. Skupia się on w górnej części ekranu. Jego zadaniem jest pomoc 
 użytkownikowi w ogólnym odnalezieniu się w świecie. W tym celu są mu ukazane następujące informacje:
 \begin{itemize}
-    \item stan surowców i funduszy, aby nie był obarczony kalkulacjami przy każdym zakupie lub przypływie zasobów;
     \item godzina w grze, aby stworzyć iluzję upływającego czasu w świecie gry;
     \item położenie gracza względem stron świata oraz wrogów ukazane na kompasie, aby ułatwić nawigację;
-    \item etap, na którym są przypisane graczowi zadania, aby przypomnieć mu, że na takowe się zgodził;
-    \item stan zdrowia gracza, aby zasygnalizować mu, czy przypadkiem nie rozsądniejsze będzie wycofanie się z potyczki.
+    \item stan surowców i funduszy, aby nie był obarczony kalkulacjami przy każdym zakupie lub przypływie zasobów;
+    \item stan zdrowia gracza, aby zasygnalizować mu, czy przypadkiem nie rozsądniejsze będzie wycofanie się z potyczki;
+    \item etap, na którym są przypisane graczowi zadania, aby przypomnieć mu, że na takowe się zgodził.
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -26,6 +26,18 @@ użytkownikowi w ogólnym odnalezieniu się w świecie. W tym celu są mu ukazan
     }\label{fig:compass}
 \end{figure}
 
+W tych statycznie umiejscowionych elementach interfejsu dynamicznie zmienia się ich treść. Na zegarze czas zmienia się w ustalony sposób,
+dodając minutę w grze co 5 sekund upływające w realnym świecie. Na kompasie umiejscowienie zmieniają symbole stron świata i wskaźniki przeciwników,
+zależnie od ich pozycji, położenia gracza i strony, w którą patrzy. Fundusze rosną po wykonaniu zadania i otrzymaniu zapłaty oraz maleją, gdy opłacam
+najemników, czy płacimy za budowle. Liczba posiadanych surowców i zwiększa się, po zebraniu ich z ziemi, za to zmniejsza, gdy za ich pomocą budujemy budynek.  
+Pasek zdrowia zmienia swoją treść, gdy dostaniemy obrażenia, jednocześnie ukazując początkową, maksymalną wartość. Ikona zadania do wykonania ukazuje symbol 
+czerwonego wykrzyknika, gdy gracz ma jakieś aktywne, nieskończone zadanie, co ukazano na rysunku \ref{fig:wyq}.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/ui/wykrzyknik_quest.png}
+    \caption{
+    }\label{fig:wyq}
+\end{figure}
 
 \subsection{Menu stawiania budynków}
 Typowa mechanika gier typu RTS, czyli budowanie budynków ma specjalnie przygotowany interfejs, wyświetlany po wciśnięciu klawisza "B". 
