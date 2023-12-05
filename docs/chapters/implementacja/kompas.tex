@@ -23,7 +23,6 @@ Poniżej przedstawiono kod odpowiedzialny za wyznaczenie pozycji symbolu na omaw
     }\label{fig:compass}
 \end{figure}
 
- \begin{minipage}{\textwidth}
     \begin{lstlisting}[language=C++, caption=Fragment kodu odpowiedzialny za ustawienie symbolu na pasku kompasu]
     void SetMarkerPosition(RectTransform markerTransform, Vector3 worldPosition)
     {
@@ -43,7 +42,6 @@ Poniżej przedstawiono kod odpowiedzialny za wyznaczenie pozycji symbolu na omaw
         }
     }
     \end{lstlisting}
- \end{minipage}
 
 Problem lokalizacji stron świata pojawił się, gdy nieprawidłowo wyświetlały się symbole po użyciu najprostszego rozwiązania. Na przykład dla Północy było to
 pobranie wartości od \texttt{Vector3.forward}, co jest skrótowym zapisem \texttt{Vector3(0, 0, 1)}. Lewy dolny róg mapy jest położony w punkcie (0, 0, 0), co oznacza, że wymagane
