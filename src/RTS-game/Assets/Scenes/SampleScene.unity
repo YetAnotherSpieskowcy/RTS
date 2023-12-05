@@ -8748,7 +8748,7 @@ PrefabInstance:
     - target: {fileID: 3376329282563853954, guid: 3c3178a70a32c7a46a6e01fe29ab813e,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 250
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3376329282563853954, guid: 3c3178a70a32c7a46a6e01fe29ab813e,
         type: 3}
@@ -14903,7 +14903,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 55287079}
   m_HandleRect: {fileID: 55287078}
-  m_Direction: 3
+  m_Direction: 2
   m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
@@ -21856,8 +21856,8 @@ MonoBehaviour:
   m_Vertical: 1
   m_MovementType: 2
   m_Elasticity: 0.1
-  m_Inertia: 0
-  m_DecelerationRate: 0.0135
+  m_Inertia: 1
+  m_DecelerationRate: 0
   m_ScrollSensitivity: 1
   m_Viewport: {fileID: 1797884205}
   m_HorizontalScrollbar: {fileID: 0}
@@ -25714,7 +25714,7 @@ PrefabInstance:
     - target: {fileID: 3376329282563853954, guid: 3c3178a70a32c7a46a6e01fe29ab813e,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 250
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3376329282563853954, guid: 3c3178a70a32c7a46a6e01fe29ab813e,
         type: 3}
@@ -26029,7 +26029,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questJournal: {fileID: 834813231}
-  questJournalContent: {fileID: 0}
+  questJournalContent: {fileID: 1253217238}
 --- !u!1 &1678870477
 GameObject:
   m_ObjectHideFlags: 0
@@ -35757,7 +35757,7 @@ PrefabInstance:
     - target: {fileID: 3376329282563853954, guid: 3c3178a70a32c7a46a6e01fe29ab813e,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 250
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3376329282563853954, guid: 3c3178a70a32c7a46a6e01fe29ab813e,
         type: 3}
