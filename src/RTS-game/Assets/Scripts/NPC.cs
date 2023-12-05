@@ -20,6 +20,10 @@ public class NPC : MonoBehaviour
         }
         flags.ForEach(it => mgr.SetBool(it, true));
     }
+    public void SetPersistantFlag(string flag, bool value)
+    {
+        flags.Add(flag);
+    }
     public void SetPersistantFlag(string flag)
     {
         flags.Add(flag);

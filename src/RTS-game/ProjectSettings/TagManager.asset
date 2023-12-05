@@ -13,6 +13,7 @@ TagManager:
   - Tree
   - Overseer
   - Dialog
+  - Gather
   layers:
   - Default
   - TransparentFX
