@@ -19,12 +19,10 @@ Interfejs podstawowy przewiduje funkcje, takie jak pokazanie:
     \item stan zdrowia gracza, aby zasygnalizować mu, czy przypadkiem nie rozsądniejsze będzie wycofanie się z potyczki;
     \item etap, na którym są przypisane graczowi zadania, aby przypomnieć mu, że na takowe się zgodził.
 \end{itemize}
-Inspiracją dla górnego paska z informacjami jest ten użyty w grze Warcraft 3, opisany w rozdziale \ref{c:pasek_war3}. Prostota i surowość stylu będą współgrać z klimatem gry.
+Inspiracją dla górnego paska z informacjami jest ten użyty w grze Warcraft 3 (por.\ref{c:pasek_war3}). Prostota i surowość stylu będą współgrać z klimatem gry.
 
 W naszej grze skupimy się jednak na tym, aby interfejs użytkownika zabierał jak najmniej miejsca. Dlatego też projekt zakłada, że poszczególne obiekty nie będą ze sobą połączone, a jedynie “dryfować” w przestrzeni.
-Jako ważny element tej części UI zawarty zostanie kompas, wzorowany na tym z gry The Elder Scrolls V: Skyrim, o którym wspomniano w rozdziale \ref{chap:skrm}.
-
-Szacowany projekt interfejsu podstawowego UI wyświetlono na rysunku \ref{fig:ui_main} .
+Jako ważny element tej części UI zawarty zostanie kompas, wzorowany na tym z gry The Elder Scrolls V: Skyrim (por.\ref{chap:skrm}).
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/ui_proj_ogolne.jpg}
@@ -34,30 +32,30 @@ Szacowany projekt interfejsu podstawowego UI wyświetlono na rysunku \ref{fig:ui
  
 \subsection{Menu stawiania budynków}
  W menu stawiania budynków informacje wcześniej przedstawione zostaną na ekranie. Dodatkowo pokażą nam się dostępne do zbudowania budynki, a po wybraniu pojawią się przed nami. Po zatwierdzeniu budynek zostanie wybudowany.
-	Inspiracją do przedstawienia dostępnych budowli jest rozwiązanie gry Orcs must die!, przedstawione w rozdziale \ref{chap:omd}
-
-Szacowany projekt trybu budowania UI wyświetlono na rysunku \ref{fig:ui_bud}.
+	Inspiracją do przedstawienia dostępnych budowli jest rozwiązanie gry Orcs must die! (por. \ref{chap:omd}).
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/ui_proj_budowanie.jpg}
-    \caption{Projekt menu stawiania budynków UI.
+    \caption{Projekt menu stawiania budynków.
     }\label{fig:ui_bud}
 \end{figure}
 
 \subsection{Menu wydawania komend}
-
+Po zdobyciu towarzyszów walki kluczowe jest udostępnienie mechaniki sterowania nimi. Będzie to zrealizowane za pomocą menu wydawania komend.
+Projekt przewiduje zrobić to za pomocą wyświtlenia listy dostępnych komend i klawiszy, po których naciśnięciu zostanie konkretna wybrana.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/ui_proj_walka.jpg}
-    \caption{Implementacja menu wydawania komend.}\label{fig:cmd_menu}
+    \caption{Projekt menu wydawania komend.}\label{fig:cmd_menu}
 \end{figure}
 
 \subsection{Menu zapisu}
-
+Aby umożliwić zapis gry przygotowane zostanie specjalne dla tego zadania menu, wyświetlane na środku ekranu. Najważniejszą informacją 
+wyświetlaną na nim będzie nazwa pliku, aby gracz mógł później go odnaleźć.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/ui_proj_zapis.jpg}
-    \caption{Implementacja menu zapisu.}\label{fig:men_zap}
+    \caption{Projekt menu zapisu.}\label{fig:men_zap}
 \end{figure}
 
 \subsection{Informacja o możliwej interakcji}
@@ -65,7 +63,7 @@ Szacowany projekt trybu budowania UI wyświetlono na rysunku \ref{fig:ui_bud}.
     \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/ui_prooj_interakcja.jpg}
-    \caption{Implementacja grafiki informującej o możliwym zaczęciu rozmowy.}\label{fig:rozmow}
+    \caption{Projekt grafiki informującej o możliwym zaczęciu rozmowy.}\label{fig:rozmow}
 \end{figure}
 
 \subsection{Dziennik z zadaniami}
@@ -73,7 +71,7 @@ Szacowany projekt trybu budowania UI wyświetlono na rysunku \ref{fig:ui_bud}.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/ui_proj_dziennik_zadan.jpg}
-    \caption{Implementacja dziennika z aktualnie zaczętym i nieukończonym zadaniem.}\label{fig:end_sc}
+    \caption{Projekt dziennika z aktualnie zaczętym i nieukończonym zadaniem.}\label{fig:end_sc}
 \end{figure}
 
 \subsection{Ekran końca gry}
@@ -81,5 +79,5 @@ Szacowany projekt trybu budowania UI wyświetlono na rysunku \ref{fig:ui_bud}.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/ui_prooj_koniec_gry.jpg}
-    \caption{Implementacja menu zapisu.}\label{fig:end_sc}
+    \caption{Projekt menu zapisu.}\label{fig:end_sc}
 \end{figure}
