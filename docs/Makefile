@@ -6,10 +6,13 @@ BIB = biber
 
 all:	deploy 
 
+uml:
+	$(UML) uml/*.uml
+
 biber: validate
 	$(BIB) main
 
-%.tex: uml biber
+%.tex: biber
 	$(TEX) $@
 	$(TEX) $@
 
