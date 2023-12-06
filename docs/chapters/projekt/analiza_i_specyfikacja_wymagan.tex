@@ -1,34 +1,70 @@
 \section{Analiza i specyfikacja wymagań (Bogna Lew)}
-Z punktu widzenia projektu kluczowe jest jak najdokładniejsze oddanie realiów przy jednoczesnym uwzględnieniu jakości
-rozgrywki gracza oraz cech charakterystycznych dla gier typu RTS. Co więcej, użytkownik będzie sterował
-wybraną przez siebie postacią, wydając polecenia zaprzyjaźnionym jednostkom oraz stawiając czoła swoim przeciwnikom. Z
-tego powodu kluczowe jest dobranie odpowiednich mechanik, które umożliwią osiągnięcie wymienionych założeń.
+W niniejszej sekcji przedstawiono specyfikę wymagań funkcjonalnych, pozafunkcjonalnych oraz tych, wynikających z
+głównych założeń projektu. Dodatkowo zawiera on diagramy przypadków użycia, maszyny stanów oraz klas prototypowej gry.
 
-Podstawową funkcjonalnością, jaką gra musi oferować, jest sterowanie jednostkami. Gracz musi być w stanie poruszać się
-wybraną przez siebie postacią oraz dowodzić swoją drużyną przy zachowaniu realiów średniowiecznej komunikacji. Dlatego
-gra powinna udostępnić mechanizm przekazywania informacji zarówno pomiędzy jednostkami znajdującymi się obok siebie, jak
-i znacząco od siebie oddalonymi. Konieczne będzie wprowadzenie systemu dialogów, dzięki któremu gracz będzie mógł wchodzić
-w interakcję z innymi postaciami, pozyskiwać informację oraz wpływać na dynamikę świata.
+/subsection{Specyfika wymagań wynikających z założeń projektu (Bogna Lew)}
+Z punktu widzenia projektu kluczowe jest jak najdokładniejsze oddanie realiów historycznych przy jednoczesnym
+uwzględnieniu jakości rozgrywki gracza oraz cech charakterystycznych dla gier typu RTS. Z założeń wynika, że fabuła
+gry powinna zostać osadzona w czasach sprzed wielkich odkryć geograficznych. Na tej podstawie zostały zdefniowane
+dodatkowe wymagania, które powinien spełniać prototyp:
+\begin{itemize}
+  \item Sposób nawigacji powinien jak najdokładniej odpowiadać temu stosowanemu w wybranej epoce
+  \item Postacie w grze powinny stylistycznie pasować do realiów historycznych
+  \item Postacie powinny posługiwać się słownictwem adekwatnym do czasów, w których osadzona jest gra
+  \item Postacie powinny jak najlepiej oddawać światopogląd w danych czasach
+  \item Oręż stosowany w grze powinien odpowiadać realiom historycznym
+  \item Budowle w grze powinny stylistycznie odpowiadać wybranej epoce
+  \item Sposób komunikacji z postaciami powinien imitować ten stosowany w danych czasach
+\end{itemize}
 
-Mechaniką, która ma najistotniejszy wpływ na postrzeganie świata w grze, jest sposób nawigacji. Musi ona jednocześnie
-umożliwiać graczowi bez problemu zorientować się w terenie oraz nie odbiegać przy tym od realiów tamtych czasów. Z tego
-powodu, niemożliwe jest wykorzystanie najpopularniejszego rozwiązania stosowanego w większości gier, jakim jest minimapa.
+\subsection{Wymagania funkcjonalne (Bogna Lew)}\label{ss:fun}
+W liście \ref{list:fun} zostały wymienione wymagania funkcjonalne, które powinien spełniać prototyp gry.
+\begin{itemize}\label{list:fun}
+  \item Zapis oraz odczyt wybranego stanu gry lokalnie na komputerze użytkownika
+  \item Uruchomienie nowej gry
+  \item Możliwość sterowania postacią gracza
+  \item Możliwość nawigacji w świecie gry
+  \item Możliwość wchodzenia w interakjcę z postaciami niezależnymi
+  \item Możliwość przyjmowania zleceń od postaci niezależnych
+  \item Możliwość najmowania postaci wojowników
+  \item Możliwość wydawania komend wynajętym postaciom
+  \item Możliwość zlecania budowy
+  \item Możliwość zdobywania zasobów
+\end{itemize}
 
-Kolejną mechaniką typową dla gier RTS, którą gra powinna posiadać, jest budowanie budynków. Jest to charakterystyczna
-funkcjonalność, która dodatkowo urozmaica rozgrywkę. Istotną kwestią jest, aby obiekty były tworzone poprawnie oraz oddawały
-realia wybranej epoki. Dzięki tej mechanice gracz będzie w stanie tworzyć bazy o znaczeniu strategicznym, które dodatkowo
-pomogą mu we wzmacnianiu swoich postaci.
+\subsection{Wymagania niefunkcjonalne (Bogna Lew)}\label{ss:nonfun}
+Lista \ref{list:nonfun} przedstawia wymagania niefunkcjonalne projektu.
+\begin{itemize}\label{list:nonfun}
+  \item Rozgrywka w trybie offline
+  \item Działanie na urządzeniach z systemem Windows lub linux
+  \item Dostosowywanie rozmiaru do wielkości ekranu komputera użytkownika
+  \item Obsługa klawiatury oraz myszy
+  \item Działanie w czasie rzeczywistym
+\end{itemize}
 
-Dodatkowo gra musi udostępniać podstawową funkcjonalność swojego gatunku, czyli sterowanych przez sztuczną inteligencję
-przeciwników. Powinni oni wykonywać ataki typowe dla realiów epoki oraz potrafić poprawnie określić swój cel. Co więcej,
-powinni oni inicjować walkę z graczem, gdy go napotkają. Z tego powodu konieczne będzie utworzenie mechanizmu walki, który
-obsłuży zachowanie postaci biorących w udział w starciu, jego przebieg oraz umożliwi użytkownikowi wykonywanie akcji
-swoją postacią.
+\subsection{Diagram przypadków użycia (Bogna Lew)}\label{ss:usecase}
+Niniejsza sekcja przedstawia diagram przypadków użycia dla głównych funkcjonalności, które będzie zawierać prototypowa gra.
+Opisuje on przewidywane usługi oferowane przez poszczególne mechaniki programu.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/diagrams/usecase.png}
+    \caption{Diagram przypadków głównych mechanik gry.}\label{fig:usecases}
+\end{figure}
 
-Konieczne będzie utworzenie interfejsu graficznego, który w czytelny sposób wyświetli graczowi aktualny stan gry, pomoże
-mu w nawigacji i poznawaniu świata oraz przedstawi możliwe do podjęcia akcje. Najważniejszymi jego cechami będą prostota
-i intuicyjność, aby nie przytłoczyć użytkownika ogromem i skomplikowaniem informacji. Jego celem ma być pogłębienie immersji
-i przedstawienie świata z punktu widzenia granej postaci. Niezbędne będą informacje o posiadanych surowcach, czasie oraz
-położeniu. Interfejs użytkownika musi też jednak dostosowywać się do sytuacji i zmieniać się tak, aby gracz miał przedstawione
-możliwe opcje podczas dowodzenia walką, budowania budynków oraz prowadzenia dialogów. Kluczowe w przedstawieniu informacji
-będzie stylistyczne wpasowanie się w realia gry, aby umożliwić graczowi wczucie się w epokę, w której jest osadzona fabuła.
+\subsection{Diagram stanów (Bogna Lew)}\label{ss:state}
+W tym podpunkcie został przedstawiony diagram stanów prototypowej gry, który ukazuje jej przewidywany sposób działania.
+Prezentuje on podstawowe stany, w których może się znaleźć system gry.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/diagrams/state.png}
+    \caption{Diagram stanów gry.}\label{fig:states}
+\end{figure}
+
+\subsection{Diagram klas (Bogna Lew)}\label{ss:class}
+W tej sekcji został pokazany uproszczony diagram klas, przedstawiający główne elementy gry. Obrazuje podstawową
+strukturę tworzonego systemu oraz zależności pomiędzy poszczególnymi komponentami.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/diagrams/class.png}
+    \caption{Diagram klas gry.}\label{fig:classes}
+\end{figure}
