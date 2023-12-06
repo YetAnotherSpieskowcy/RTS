@@ -6,6 +6,7 @@ using System.Linq;
 public class Saveable : MonoBehaviour
 {
     public UnityEvent preSaveHook;
+    public UnityEvent postLoadHook;
     public void SetPrefabName(string name)
     {
         prefabName = name;
@@ -59,5 +60,6 @@ public class Saveable : MonoBehaviour
         {
             specifier.Load(entity.Params.ToList());
         }
+        postLoadHook.Invoke();
     }
 }

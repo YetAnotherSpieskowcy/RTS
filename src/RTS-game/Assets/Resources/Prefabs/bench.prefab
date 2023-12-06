@@ -250,6 +250,9 @@ MonoBehaviour:
           m_StringArgument: Prefabs/Bench
           m_BoolArgument: 0
         m_CallState: 2
+  postLoadHook:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &881687134561702470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,6 +453,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  typeName: Bench
 --- !u!114 &4217265970092397635
 MonoBehaviour:
   m_ObjectHideFlags: 0
