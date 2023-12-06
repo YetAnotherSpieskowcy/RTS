@@ -5,9 +5,9 @@ za pomocą skrótu klawiszowego F8. Powoduje to zapisanie na dysk danych wszystk
 komponent "Saveable". Strukturę serlializowanych danych reprezentuje plik proto \ref{proto}.
 \lstinputlisting[caption=Plik .proto reprezentujący strukturę zapisu stanu gry, label=proto]{../src/RTS-game/Assets/Resources/game_save.proto}
 
-Powstały po zapisie plik jest przechowywanie na dysku w lokalizacji zdefiniowanej przez stałą \verb|Environment.SpecialFolder.MyDocuments| w formie binarnej\ref{save}.
+Powstały po zapisie plik jest przechowywany na dysku w lokalizacji zdefiniowanej przez stałą \verb|Environment.SpecialFolder.MyDocuments| w formie binarnej\ref{save}.
 W tym przypadku zapamiętywane są jedynie dane, które zmieniają się w trakcie rozgrywki, takie jak położenie gracza, przeciwników, itd. 
-Zawartość statyczna tak jak krzywizna terenu i flora występująca na mapie nie jest zapisywana, a jej wczytywanie jest rozwiązywane
+Zawartość statyczna taka jak krzywizna terenu i flora występująca na mapie nie jest zapisywana, a jej wczytywanie jest rozwiązywane
 w trackie ładowania sceny przez Unity Runtime.
 
 \begin{figure}[h]
