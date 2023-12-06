@@ -13,10 +13,15 @@ możliwe jest uzyskanie efektu widzenia postaci gracza przez horyzont.
 
 Po naciśnięciu przycisku E następuje zagranie animacji opisanej wzorami 
 
-$ w(t, offset) = 1.1 \times 2.1^{-\left(\frac{{\left(\sin(t) + 1 - 0.4 - \text{{offset}}\right)^2}}{{0.02}}\right)} $
+\begin{equation}
+w(t, offset) = 1.1 \times 2.1^{-\left(\frac{{\left(\sin(t) + 1 - 0.4 - \text{{offset}}\right)^2}}{{0.02}}\right)}
+\end{equation}
 
 oraz
-$ w(t, 0) - w(t, -0.2) + w(t, -1) - w(t, -1.2) $
+
+\begin{equation}
+w(t, 0) - w(t, -0.2) + w(t, -1) - w(t, -1.2)
+\end{equation}
 
 Od podanych funkcji zależy przeźroczystość, jak i natężenie efektu Fresnela. 
 
