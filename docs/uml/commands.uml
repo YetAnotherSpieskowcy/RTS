@@ -1,0 +1,31 @@
+@startuml
+start
+switch (Wybór grupy jednostek)
+case ( 1 )
+:Wszystkie jednostki;
+case ( 2 )
+:Jednostki walczące w zwarciu;
+case ( 3 )
+:Jednostki walczące na dystans;
+case ( 0 )
+:Anulowanie wydania rozkazu;
+detach
+endswitch
+
+switch (Wybór rozkazu)
+case ( 1 )
+:Podąrzanie za graczem;
+case ( 2 )
+:Zatrzymanie;
+case ( 3 )
+:Podejście do wskazanego przez gracza miejsca;
+-> (Wciśnięcie lewego przycisku myszy);
+:Wybranie przez gracza miejsca do którego jednostki mają się udać;
+case ( 4 )
+:Ucieczka;
+case ( 0 )
+:Anulowanie wydania rozkazu;
+detach
+endswitch
+stop
+@enduml
