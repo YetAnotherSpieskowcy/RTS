@@ -1,19 +1,20 @@
 \section{Interfejs użytkownika (Zofia Sosińska)}\label{chap:ui}
-Projekt interfejsu użytkownika przewiduje trzy tryby: zwykły, budowania oraz walki. Zadaniem każdego z nich będzie odzwierciedlenie aktualnej wiedzy granej postaci z naciskiem na najpotrzebniejsze w danej chwili informacje.
+Projekt interfejsu użytkownika przewiduje tryb podstawowy z zawsze widocznymi elementami oraz dynamicznie pojawiające okna, wywoływane za pomocą konkretnych klawiszy. 
+ Zadaniem każdej składowej nich będzie odzwierciedlenie pewnego skrawka aktualnego stanu wiedzy granej postaci z naciskiem na najpotrzebniejsze w danej chwili informacje.
 	
 \subsection{Interfejs podstawowy}
 Interfejs podstawowy przewiduje funkcje, takie jak pokazanie:
 \begin{itemize}
-    \item surowców i funduszy,
-    \item aktualnego czasu w grze, 
-    \item kompasu,
-    \item informacji o możliwym  rozpoczęciu konwersacji z inną postacią;
+    \item aktualnego czasu w grze, aby stworzyć iluzję upływającego czasu w świecie gry; 
+    \item surowców i funduszy, aby nie był obarczony kalkulacjami przy każdym zakupie lub przypływie zasobów
+    \item kompasu, aby ułatwić nawigację;
+    \item stan zdrowia gracza, aby zasygnalizować mu, czy przypadkiem nie rozsądniejsze będzie wycofanie się z potyczki;
+    \item etap, na którym są przypisane graczowi zadania, aby przypomnieć mu, że na takowe się zgodził.
 \end{itemize}
 Inspiracją dla górnego paska z informacjami jest ten użyty w grze Warcraft 3, opisany w rozdziale \ref{c:pasek_war3}. Prostota i surowość stylu będą współgrać z klimatem gry.
 
 W naszej grze skupimy się jednak na tym, aby interfejs użytkownika zabierał jak najmniej miejsca. Dlatego też projekt zakłada, że poszczególne obiekty nie będą ze sobą połączone, a jedynie “dryfować” w przestrzeni.
-Jako ważny element tej części UI zawarty zostanie kompas, wzorowany na tym z gry The Elder Scrolls V: Skyrim.
-
+Jako ważny element tej części UI zawarty zostanie kompas, wzorowany na tym z gry The Elder Scrolls V: Skyrim, o którym wspomniano w rozdziale \ref{chap:skrm}.
 
 Szacowany projekt interfejsu podstawowego UI wyświetlono na rysunku \ref{fig:ui_main} .
 \begin{figure}[htbp]
@@ -28,22 +29,55 @@ Szacowany projekt interfejsu podstawowego UI wyświetlono na rysunku \ref{fig:ui
 	Inspiracją do przedstawienia dostępnych budowli jest rozwiązanie gry Orcs must die!, przedstawione w rozdziale \ref{chap:omd}
 
 
-    Szacowany projekt trybu budowania UI wyświetlono na rysunku \ref{fig:ui_bud} .
+Szacowany projekt trybu budowania UI wyświetlono na rysunku \ref{fig:ui_bud} .
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/ui/ui_proj_budowanie.jpg}
+    \caption{Projekt menu stawiania budynków UI.
+    }\label{fig:ui_bud}
+\end{figure}
+
+\subsection{Menu wydawania komend}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/ui/opis_ekementow_mwnu_wyboru_komendy.png}
+    \caption{Implementacja menu wydawania komend.}\label{fig:cmd_menu}
+\end{figure}
+
+\subsection{Menu zapisu}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/ui/menu_zapisu.png}
+    \caption{Implementacja menu zapisu.}\label{fig:men_zap}
+\end{figure}
+
+\subsection{Informacja o możliwej interakcji}
+
     \begin{figure}[htbp]
-        \centering
-        \includegraphics[width=0.9\textwidth]{images/ui/ui_proj_budowanie.jpg}
-        \caption{Projekt menu stawiania budynków UI.
-        }\label{fig:ui_bud}
-    \end{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/ui/interakcja_rozmowa.png}
+    \caption{Implementacja grafiki informującej o możliwym zaczęciu rozmowy.}\label{fig:rozmow}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/ui/interakcja_podnieś.png}
+    \caption{Implementacja grafiki informującej o możliwym podniesieniu przedmiotu.}\label{fig:przedmio}
+\end{figure}
 
+\subsection{Dziennik z zadaniami}
 
-\subsection{Tryb walki}
-Bliźniaczo do trybu budowania, gdy rozpocznie się walka, podstawowe informacje zostają na ekranie, a dodatkowo gracz dostaje informacje o dostępnych rozkazach do wydania. Nasze rozwiązanie będzie podobne do pomysłu z gry Mount\&Blade.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/ui/journal_quest.png}
+    \caption{Implementacja dziennika z aktualnie zaczętym i nieukończonym zadaniem.}\label{fig:end_sc}
+\end{figure}
 
-Szacowany projekt trybu budowania UI wyświetlono na rysunku \ref{fig:ui_wal} .
-    \begin{figure}[htbp]
-        \centering
-        \includegraphics[width=0.9\textwidth]{images/ui/ui_proj_walka.jpg}
-        \caption{Projekt trybu walki UI.
-        }\label{fig:ui_wal}
-    \end{figure}
+\subsection{Ekran końca gry}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/ui/endgame_screen.png}
+    \caption{Implementacja menu zapisu.}\label{fig:end_sc}
+\end{figure}
