@@ -1,16 +1,21 @@
 \section{Mechanizm budowania (Bogna Lew)}
 
-Opracowany mechanizm umożliwia graczowi na przełączenie się w tryb budowania poprzez naciśnięcie klawisza "b", który od razu
+Opracowany mechanizm umożliwia graczowi na przełączenie się w tryb budowania poprzez naciśnięcie klawisza "B", który od razu
 wyświetli podgląd bazowego obiektu. Widok budynku przemieszcza się przed postacią oraz odpowiednio obraca się razem z
 nią. Efekt poruszania się podglądu został uzyskany za pomocą poniższych wzorów:
+\begin{equation}
+x = r \times sin(\alpha)
+\end{equation}
+\begin{equation}
+y = 0
+\end{equation}
+\begin{equation}
+z = r \times cos(\alpha)
+\end{equation}
 
-$$ x = r \times sin(\alpha) $$
-$$ y = 0 $$
-$$ z = r \times cos(\alpha) $$
+gdzie $r$ to odległość środka obiektu od postaci gracza, natomiast $\alpha$ to kąt o jaki jest on obrócony względem osi y.
 
-gdzie r to odległość środka obiektu od postaci gracza, natomiast $\alpha$ to kąt o jaki jest on obrócony względem osi y.
-
-Podgląd budynku będzie widoczny do czasu, aż gracz go umieści naciskając prawy przycisk myszy, bądź wychodząc z trybu
+Podgląd budynku będzie widoczny do czasu, aż gracz go umieści naciskając prawy przycisk myszy bądź wychodząc z trybu
 edycji naciskając klawisz Escape. Jeżeli widok budowli znajduje się w poprawnym do umieszczenia miejscu to jest on
 podświetlany na zielono, w przeciwnym razie - na czerwono. Wybudowanie powoduje przywrócenie bazowych kolorów obiektu
 oraz włącza wykrywanie kolizji z nim, dzięki czemu budynek poprawnie oddziałuje z otaczającym go środowiskiem.
