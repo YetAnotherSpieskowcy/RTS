@@ -1,6 +1,14 @@
 \section{Interfejs użytkownika (Zofia Sosińska)}\label{chap:ui}
 Projekt interfejsu użytkownika przewiduje tryb podstawowy z zawsze widocznymi elementami oraz dynamicznie pojawiające okna, wywoływane za pomocą konkretnych klawiszy. 
- Zadaniem każdej składowej nich będzie odzwierciedlenie pewnego skrawka aktualnego stanu wiedzy granej postaci z naciskiem na najpotrzebniejsze w danej chwili informacje.
+ Zadaniem każdej składowej nich będzie odzwierciedlenie pewnego skrawka aktualnego stanu wiedzy granej postaci z naciskiem na najpotrzebniejsze w danej chwili informacje. Przewidziane są:
+ \begin{itemize}
+    \item menu stawiania budynków; 
+    \item menu wydawania komend;
+    \item menu zapisu;
+    \item informacja o możliwej interakcji;
+    \item dziennik z zadaniami;
+    \item ekran końca gry.
+\end{itemize}
 	
 \subsection{Interfejs podstawowy}
 Interfejs podstawowy przewiduje funkcje, takie jak pokazanie:
@@ -28,8 +36,7 @@ Szacowany projekt interfejsu podstawowego UI wyświetlono na rysunku \ref{fig:ui
  W menu stawiania budynków informacje wcześniej przedstawione zostaną na ekranie. Dodatkowo pokażą nam się dostępne do zbudowania budynki, a po wybraniu pojawią się przed nami. Po zatwierdzeniu budynek zostanie wybudowany.
 	Inspiracją do przedstawienia dostępnych budowli jest rozwiązanie gry Orcs must die!, przedstawione w rozdziale \ref{chap:omd}
 
-
-Szacowany projekt trybu budowania UI wyświetlono na rysunku \ref{fig:ui_bud} .
+Szacowany projekt trybu budowania UI wyświetlono na rysunku \ref{fig:ui_bud}.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/ui_proj_budowanie.jpg}
@@ -41,7 +48,7 @@ Szacowany projekt trybu budowania UI wyświetlono na rysunku \ref{fig:ui_bud} .
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/ui/opis_ekementow_mwnu_wyboru_komendy.png}
+    \includegraphics[width=0.9\textwidth]{images/ui/ui_proj_walka.jpg}
     \caption{Implementacja menu wydawania komend.}\label{fig:cmd_menu}
 \end{figure}
 
@@ -49,7 +56,7 @@ Szacowany projekt trybu budowania UI wyświetlono na rysunku \ref{fig:ui_bud} .
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/ui/menu_zapisu.png}
+    \includegraphics[width=0.9\textwidth]{images/ui/ui_proj_zapis.jpg}
     \caption{Implementacja menu zapisu.}\label{fig:men_zap}
 \end{figure}
 
@@ -57,20 +64,15 @@ Szacowany projekt trybu budowania UI wyświetlono na rysunku \ref{fig:ui_bud} .
 
     \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/ui/interakcja_rozmowa.png}
+    \includegraphics[width=0.9\textwidth]{images/ui/ui_prooj_interakcja.jpg}
     \caption{Implementacja grafiki informującej o możliwym zaczęciu rozmowy.}\label{fig:rozmow}
-\end{figure}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.9\textwidth]{images/ui/interakcja_podnieś.png}
-    \caption{Implementacja grafiki informującej o możliwym podniesieniu przedmiotu.}\label{fig:przedmio}
 \end{figure}
 
 \subsection{Dziennik z zadaniami}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/ui/journal_quest.png}
+    \includegraphics[width=0.9\textwidth]{images/ui/ui_proj_dziennik_zadan.jpg}
     \caption{Implementacja dziennika z aktualnie zaczętym i nieukończonym zadaniem.}\label{fig:end_sc}
 \end{figure}
 
@@ -78,6 +80,6 @@ Szacowany projekt trybu budowania UI wyświetlono na rysunku \ref{fig:ui_bud} .
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/ui/endgame_screen.png}
+    \includegraphics[width=0.9\textwidth]{images/ui/ui_prooj_koniec_gry.jpg}
     \caption{Implementacja menu zapisu.}\label{fig:end_sc}
 \end{figure}
