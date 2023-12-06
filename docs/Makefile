@@ -2,6 +2,8 @@ UML = plantuml
 TEX = xelatex
 BIB = biber
 
+.PHONY: uml biber
+
 all:	deploy 
 
 uml:
@@ -10,7 +12,7 @@ uml:
 biber: validate
 	$(BIB) main
 
-%.tex: biber uml
+%.tex: uml biber
 	$(TEX) $@
 	$(TEX) $@
 

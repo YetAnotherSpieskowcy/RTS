@@ -1,0 +1,14 @@
+@startuml
+[*] --> Neutralny
+Neutralny --> Agresywny : Gracz wszedł w obszar zdefiniowany przez cvzerwony okręg
+Neutralny : Jednostka porusza się w losowy sposób w obrębie białego okręgu
+state Agresywny {
+  range --> melee : Gracz zbliżył się do jednostki
+  melee --> range : Gracz oddaliś się od jednostki
+  state melee as "Walka w zwarciu" : Jednostka zbliża się do kracza po czym próbuje wykonać cois.
+  state range as "walka na dystans" : Jednostka okresowo wystrzeliwuje pocisk w stronę celu
+}
+Agresywny -> Neutralny : Gracz opuścił region zdefiniowany przez żółty okręg
+Agresywny -> Agresywny : Gracz opuścił obszar zdefiniowany przez czerwony okręg
+ 
+@enduml

@@ -11,13 +11,19 @@ o nazwach Background, Geometry, AlphaTest, Transparent i Overlay nie zostały st
 pisania shaderów i interakcji z rendererem czasu rzeczywistego."\cite{shaderscookbook}. Wykorzystując ten mechanizm
 możliwe jest uzyskanie efektu widzenia postaci gracza przez horyzont.
 
-Po naciśnięciu przycisku E następuje zagranie animacji opisanej wzorami $ w(t, offset) = 1.1 \times 2.1^{-\left(\frac{{\left(\sin(t) + 1 - 0.4 - \text{{offset}}\right)^2}}{{0.02}}\right)} $
-oraz $ w(t, 0) - w(t, -0.2) + w(t, -1) - w(t, -1.2) $. Od podanych funkcji zależy przeźroczystość, jak i natężenie efektu Fresnela. 
+Po naciśnięciu przycisku E następuje zagranie animacji opisanej wzorami 
+
+$ w(t, offset) = 1.1 \times 2.1^{-\left(\frac{{\left(\sin(t) + 1 - 0.4 - \text{{offset}}\right)^2}}{{0.02}}\right)} $
+
+oraz
+$ w(t, 0) - w(t, -0.2) + w(t, -1) - w(t, -1.2) $
+
+Od podanych funkcji zależy przeźroczystość, jak i natężenie efektu Fresnela. 
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.25\textwidth]{images/g}
-    \caption{Wykres przedstawiający funkcję opisującą zachowanie efektu Fresnela w animacji markera}
+    \caption{Wykres przedstawiający funkcję opisującą natężenie efektu w animacji markera}
 \end{figure}
 
 
