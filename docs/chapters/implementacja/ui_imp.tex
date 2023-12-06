@@ -73,9 +73,6 @@ poprzez ponowne naciśnięcie klawisza "Z" potwierdzi on zapis.
     \caption{Implementacja menu zapisu.}\label{fig:men_zap}
 \end{figure}
 
-\subsection{Notatnik z zadaniami}
-
-
 \subsection{Informacja o możliwej interakcji}
 W świecie gry postać gracza nie jest odosobniona, co więcej może spotkać wiele różnorodnych osób, z którymi można porozmaiwać. Interaktywni
 jednak nie są tylko ludzie, ale i surowce, które można zbierać. Jeśli możliwa jest interakcja,  wyświetlana jest informacja o takim stanie
@@ -89,6 +86,17 @@ jednak nie są tylko ludzie, ale i surowce, które można zbierać. Jeśli możl
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/interakcja_podnieś.png}
     \caption{Implementacja grafiki informującej o możliwym podniesieniu przedmiotu.}\label{fig:przedmio}
+\end{figure}
+
+\subsection{Dziennik z zadaniami}
+Niektóre postacie interaktywne mogą zlecić głównemu bohaterowi zadanie. Jeśli gracz się zgodzi, notatka o nim zostaje zapisana w dzienniku. Można do niego zajrzeć
+wciskając klawisz "J". Graczowi ukaże się tytuł sygnalizyjący główny cel zadania, streszczenie najważniejszych informacji oraz porada dotycząca mechanik gry np. 
+"Wciśnij jakiś klawisz, żeby stało się coś". To, że zadanienie zostało jeszcze wykonane sygnallizuje czerwony wykrzyknik w przwym, górnym rogu notatki. Gracz może 
+zamknąć dziennik poprzez ponowne naciśnięcie klawisza "J".
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/ui/journal_quest.png}
+    \caption{Implementacja dziennika z aktualnie zaczętym i nieukończonym zadaniem.}\label{fig:end_sc}
 \end{figure}
 
 \subsection{Ekran końca gry}
