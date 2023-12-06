@@ -6,9 +6,6 @@ BIB = biber
 
 all:	deploy 
 
-uml:
-	$(UML) uml/*.uml
-
 biber: validate
 	$(BIB) main
 
@@ -17,7 +14,6 @@ biber: validate
 	$(TEX) $@
 
 validate: 
-	$(UML) -checkonly uml/*.uml
 	$(TEX) -draftmode *.tex
 
 deploy: main.tex
