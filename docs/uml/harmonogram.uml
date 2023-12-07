@@ -1,0 +1,20 @@
+@startgantt
+projectscale weekly
+[Wybór i analiza konkretnego kontekstu historycznego.] requires 30 days
+[Syntetyczny opis modelu postrzegania przestrzeni.] requires 60 days
+[Przegląd rozwiązań stosowanych w grach.] requires 24 weeks
+[Opracowanie fabuły, selekcja postaci i wydarzeń.] requires 30 days
+[Opracowanie szczegółowej koncepcji i projektu gry.] requires 30 days
+[Implementacja poszczególnych funkcjonalności gry.] requires 12 weeks
+[Testowanie i weryfikacja założeń.] requires 8 weeks
+[Stworzenie dokumentacji przeprowadzonych prac.] requires 28 weeks
+Project starts the 1st of April 2023
+[Wybór i analiza konkretnego kontekstu historycznego.] starts 2023-04-01
+[Syntetyczny opis modelu postrzegania przestrzeni.] starts 2023-04-01
+[Implementacja poszczególnych funkcjonalności gry.] starts 2023-09-01
+[Przegląd rozwiązań stosowanych w grach.] starts 2023-04-01
+[Testowanie, weryfikacja założeń i walidacja.] starts at [Implementacja poszczególnych funkcjonalności gry.]'s end
+[Opracowanie fabuły, selekcja postaci i wydarzeń.] starts at [Syntetyczny opis modelu postrzegania przestrzeni.]'s end
+[Opracowanie szczegółowej koncepcji i projektu gry.] starts at [Opracowanie fabuły, selekcja postaci i wydarzeń.]'s end
+[Stworzenie dokumentacji przeprowadzonych prac.] starts 2023-06-01
+@endgantt
