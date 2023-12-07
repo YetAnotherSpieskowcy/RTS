@@ -74,7 +74,7 @@ public class Manager : MonoBehaviour
         RaycastHit hit;
         for (int i = 0; i < maxI; i++)
         {
-            //Debug.DrawRay(position2, -building.GetTransform().forward, Color.white, 5.0f, true);
+            //Debug.DrawRay(position1, building.GetTransform().forward * raycastLength, Color.white, 5.0f, true);
             if (Physics.Raycast(position1, building.GetTransform().forward, out hit, raycastLength, terrainLayer)) return false;
             if (Physics.Raycast(position2, -building.GetTransform().forward, out hit, raycastLength, terrainLayer)) return false;
             position1 -= right * .1f;
