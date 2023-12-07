@@ -14,7 +14,7 @@ Projekt kompasu jest na tyle prosty, aby nie przytłoczyć gracza nadmierną lic
 Ikony wyświetlane na kompasie przedstawiają najważniejsze informacje w polu widzenia gracza, czyli stronę świata, w kierunku której jest on zwrócony, oraz przeciwników.
 Poniżej przedstawiono kod odpowiedzialny za wyznaczenie pozycji symbolu na omawianym narzędziu. Wejściem jest komponent \texttt{RectTransform} symbolu przypisanemu
  danemu obiektowi oraz jego położenie. Po obliczeniu wektora prowadzącego do uzyskania np. pozycji wroga, wyznaczany jest kąt, o jaki musi się obrócić.
-  To przeliczamy na pozycję na kompasie i jeśli obiekt jest w polu widzenia, wyświetlamy symbol.
+  To jest przeliczane na pozycję na kompasie i jeśli obiekt znajduje się w polu widzenia postaci gracza to jest wyświetlany odpowiedni symbol.
 
 \begin{figure}[htbp]
     \centering
