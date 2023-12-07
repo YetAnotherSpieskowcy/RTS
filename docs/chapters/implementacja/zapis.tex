@@ -3,7 +3,7 @@
 Gracz w dowolnym momencie rozgrywki może przerwać grę i dokonać zapisu. Wykonuje to
 za pomocą skrótu klawiszowego F8. Powoduje to zapisanie na dysk danych wszystkich obiektów posiadających
 komponent "Saveable". Strukturę serlializowanych danych reprezentuje plik proto \ref{proto}.
-\lstinputlisting[caption=Plik .proto reprezentujący strukturę zapisu stanu gry, label=proto]{../src/RTS-game/Assets/Resources/game_save.proto}
+\lstinputlisting[caption=Plik .proto reprezentujący strukturę zapisu stanu gry, label=proto]{images/game_save.proto}
 
 Powstały po zapisie plik jest przechowywany na dysku w lokalizacji zdefiniowanej przez stałą \verb|Environment.SpecialFolder.MyDocuments| w formie binarnej\ref{save}.
 W tym przypadku zapamiętywane są jedynie dane, które zmieniają się w trakcie rozgrywki, takie jak położenie gracza, przeciwników, itd. 
