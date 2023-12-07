@@ -1,7 +1,7 @@
 \section{Interfejs Użytkownika (Zofia Sosińska)}\label{chap:ui_imp}
 Interfejs użytkownika, jako uporządkowany i przejrzysty obraz wiedzy i możliwych opcji granej postaci odciąża użytkownika
 aplikacji, zdejmując z niego przymus pamiętania dokładnie każdej pojawiającej się informacji. Umililiśmy i uprościliśmy 
-rozgrywkę, przedstawiając suche dane w postaci przyjemnych dla oka obrazów, wyszczególniając najważniejsze informacje.
+rozgrywkę, przedstawiając suche dane w postaci przyjemnych dla oka obrazów, wyszczególniając to, co jest najważniejsze.
 
 Tak jak przewidywano, UI udostępnia interfes podstawowy z zawsze widocznymi elementami oraz dynamicznie pojawiające okna, wywoływane za pomocą konkretnych klawiszy.
 Wszystkie łączy surowy i prosty przewodni motyw graficzny, wykorzystujący także różnorodne obrazy dla urozmaicenia. Przy implementacji ważne także było, aby UI zabierał
@@ -11,10 +11,10 @@ jak najmniej miejsca, jednocześnie podając jak najwięcej przydatnych informac
 Interfejs podstawowy towarzyszy graczowi podczas całej rozgrywki. Skupia się on w górnej części ekranu. Jego zadaniem jest pomoc 
 użytkownikowi w ogólnym odnalezieniu się w świecie. W tym celu są mu ukazane następujące informacje:
 \begin{itemize}
-    \item godzina w grze;
+    \item aktualny czasS w grze;
     \item położenie gracza względem stron świata oraz wrogów ukazane na kompasie;
     \item stan surowców i funduszy;
-    \item stan zdrowia gracza, aby zasygnalizować mu;
+    \item stan zdrowia gracza;
     \item etap, na którym są przypisane graczowi zadania.
 \end{itemize}
 
@@ -22,29 +22,29 @@ użytkownikowi w ogólnym odnalezieniu się w świecie. W tym celu są mu ukazan
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/naszpasek.png}
     \caption{Implementacja paska z najważniejszymi informacjami o stanie gry: aktualnym czasie, posiadanych surowcach 
-    i funduszach, położeniu i otoczeniu gracza oraz o możliwości rozpoczęciu konwersacji z inną postacią.
-    }\label{fig:compass}
+    i funduszach, położeniu i otoczeniu gracza, zdrowiu postaci oraz ikona sygnalizująca, czy użytkownik ma do wykonania jakieś zadanie.
+    }\label{fig:naszpasek}
 \end{figure}
 
 W tych statycznie umiejscowionych elementach interfejsu dynamicznie zmienia się ich treść. Na zegarze czas zmienia się w ustalony sposób,
 dodając minutę w grze co 5 sekund upływające w realnym świecie. Na kompasie umiejscowienie zmieniają symbole stron świata i wskaźniki przeciwników,
-zależnie od ich pozycji, położenia gracza i strony, w którą patrzy. Fundusze rosną po wykonaniu zadania i otrzymaniu zapłaty oraz maleją, gdy opłacam
-najemników, czy płacimy za budowle. Liczba posiadanych surowców i zwiększa się, po zebraniu ich z ziemi, za to zmniejsza, gdy za ich pomocą budujemy budynek.  
+zależnie od ich pozycji, położenia gracza i strony, w którą główna posatć patrzy. Fundusze rosną po wykonaniu zadania i otrzymaniu zapłaty oraz maleją, gdy opłacamy
+najemników, czy płacimy za budowle. Liczba posiadanych surowców zwiększa się, po zebraniu ich z ziemi, za to zmniejsza, gdy za ich pomocą budujemy budynek.  
 Pasek zdrowia zmienia swoją treść, gdy dostaniemy obrażenia, jednocześnie ukazując początkową, maksymalną wartość. Ikona zadania do wykonania ukazuje symbol 
 czerwonego wykrzyknika, gdy gracz ma jakieś aktywne, nieskończone zadanie, co ukazano na rysunku \ref{fig:wyq}.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{images/ui/wykrzyknik_quest.png}
-    \caption{Implementacja ikony zadania do wykonania
+    \caption{Implementacja ikony zadania do wykonania, gdy użytkownik ma do wykonania jakieś zadanie.
     }\label{fig:wyq}
 \end{figure}
 
 \subsection{Menu stawiania budynków}
-Typowa mechanika gier typu RTS, czyli budowanie budynków ma specjalnie przygotowany interfejs, wyświetlany po wciśnięciu klawisza "B". 
+Typowa mechanika gier typu RTS, czyli budowanie budynków, ma specjalnie przygotowany interfejs, wyświetlany po wciśnięciu klawisza "B". 
 Ulokowany on został w dolnej części ekranu. Najważniejszym elementem menu stawiania budynków jest lista dostępnych budowli. Widnieją tam 
-obrazy ukazujące każdą z nich, a gracz ma wgląd w ich szczegóły poprzez zmianę aktywnej prawą i lewą strzałką. Wtedy wokół niej pokażą się także informacje dotyczące jej kupna,
+obrazy ukazujące każdą z nich, a gracz ma wgląd w ich szczegóły poprzez zmianę aktywnej prawą i lewą strzałką. Wtedy wokół niej pokazują się także informacje dotyczące jej kupna,
 a po lewej stronie ekranu - informacja o ewentualnym nieprawidłowym umiejscowieniu. W wypadku, gdy zakup jest niemożliwy z powodu niewystarczającej liczby 
-surowców, pojawi się stosowny komunikat. Wychodzi się z menu za pomocą klawisza "Escape".
+surowców, pojawi się stosowny komunikat. Menu zamyka się za pomocą klawisza "Escape".
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/opis_ekementow_budowanie.png}
@@ -54,7 +54,7 @@ surowców, pojawi się stosowny komunikat. Wychodzi się z menu za pomocą klawi
 \end{figure}
 
 \subsection{Menu wydawania komend}
-Gra umożliwia graczowi wykupienie usług najemników, jeśli dysponuje odpowiednimi funduszami. Gdy ma on już ich pod swoim dowództwem, może im rozkazywać za pomocą 
+Gra umożliwia graczowi wykupienie usług najemników, jeśli dysponuje odpowiednimi funduszami. Gdy są oni już pod dowództwem użytkownika, może on im rozkazywać za pomocą 
 menu wydawania komend. Po naciśnięciu klawisza "Q" pokazuje się lista dostępnych grup podwładnych, podzielonych według ich specjalizacji. Po wybraniu jednej z nich 
 wylistowane zostaną możliwe do rozkazania czynności. W obu przypadkach gracz ma także możliwość anulowania. 
 \begin{figure}[htbp]
@@ -91,7 +91,7 @@ jednak nie są tylko ludzie, ale i surowce, które można zbierać. Jeśli możl
 \subsection{Dziennik z zadaniami}
 Niektóre postacie interaktywne mogą zlecić głównemu bohaterowi zadanie. Jeśli gracz się zgodzi, notatka o nim zostaje zapisana w dzienniku. Można do niego zajrzeć
 wciskając klawisz "J". Graczowi ukaże się tytuł sygnalizyjący główny cel zadania, streszczenie najważniejszych informacji oraz porada dotycząca mechanik gry np. 
-"Wciśnij jakiś klawisz, żeby stało się coś". To, że zadanienie zostało jeszcze wykonane sygnalizuje czerwony wykrzyknik w przwym, górnym rogu notatki. Gracz może 
+"Wciśnij jakiś klawisz, żeby stało się coś". To, że zadanienie nie zostało jeszcze wykonane sygnalizuje czerwony wykrzyknik w prawym, górnym rogu notatki. Gracz może 
 zamknąć dziennik poprzez ponowne naciśnięcie klawisza "J".
 \begin{figure}[htbp]
     \centering
