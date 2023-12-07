@@ -26,14 +26,14 @@ oraz włącza wykrywanie kolizji z nim, dzięki czemu budynek poprawnie oddział
     \caption{Przykład podglądu w poprawnym umiejscowieniu.}
 \end{figure}
 
-Do walidacji poprawności umiejscowienia budynku wykorzystano mechanizmy wyzwalacza (ang. trigger) oraz rzucania
-promienia (ang. Raycasting). Pierwszy z nich polega na wykrywaniu czy obiekt znalazł się w obszarze kolizji bez
+Do weryfikacji poprawności umiejscowienia budynku wykorzystano mechanizmy wyzwalacza (ang. \textit{trigger}) oraz rzucania
+promienia (ang. \textit{Raycasting}). Pierwszy z nich polega na wykrywaniu czy obiekt znalazł się w obszarze kolizji bez
 brutalnego zatrzymywania go. Oznacza to, że może on przeniknąć przez inny element bez widocznych konsekwencji, jedynie
 wysyłając sygnał, że dana sytuacja nastąpiła. Druga metoda natomiast polega na wypuszczeniu promienia o pewnej długości
 w zadanym kierunku i sprawdzeniu, czy z czymś się zderzył.
 
 Wyzwalacz został zastosowany do wykrywania kolizji z innymi obiektami na mapie takimi jak postacie, czy elementy
-scenerii niebędące terenem. W tym celu wykorzystano metody OnTriggerEnter() i OnTriggerExit(), które są wywoływane
+scenerii niebędące terenem. W tym celu wykorzystano metody \textit{OnTriggerEnter()} i \textit{OnTriggerExit()}, które są wywoływane
 odpowiednio gdy, dany obiekt znalazł się w obszarze kolizji innego elementu, bądź go opuścił. Każda z nich odpowiednio
 zmienia poprzez inkrementację bądź dekrementację licznika kolizji obiektu. Jeżeli jego wartość jest różna od zera, tzn.
 obiekt z czymś koliduje, to umiejscowienie jest uznawane za niepoprawne.
@@ -58,7 +58,13 @@ celu zapewnienie poprawności wykrywania kolizji w przypadku, gdy początki prom
 obiektu. Jeśli którykolwiek z nich zderzy się z drzewem, to wybrane miejsce jest uznawane za niepoprawne.
 
 \begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.9\textwidth]{images/implementacja/mechanizm_budowania/kolizja_drzewo.png}
-    \caption{Podgląd budynku kolidujący z drzewem.}
+   \centering
+   \includegraphics[width=.8\textwidth]{images/implementacja/mechanizm_budowania/gizmos_drzewo_2.png}
+   \caption{Widok z góry na siatkę promieni służących do wykrywania kolizji z drzewami.}
 \end{figure}
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=.8\textwidth]{images/implementacja/mechanizm_budowania/gizmos_drzewo_1.png}
+   \caption{Widok z boku na siatkę promieni służących do wykrywania kolizji z drzewami.}
+\end{figure}
+\FloatBarrier
