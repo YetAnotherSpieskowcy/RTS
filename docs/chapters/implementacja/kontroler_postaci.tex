@@ -2,11 +2,11 @@
 W trakcie rozgrywki istotnym aspektem wpływającym na jakość jest mechanizm sterowania postacią. Z tą mechaniką gracz ma
 bezpośredni kontakt, ponieważ to właśnie za jej pomocą może eksplorować świat.
 
-Do implementacji tego mechanizmu zainspirowaliśmy się grą Skyrim por{s:walka}. Postać jest sterowana za pomocą klawiszy “W”, “A”, “S”
-oraz “D”, natomiast jej rotacja oraz obrót kamery jest kontrolowany przez mysz. Dodatkowo, gracz może wykonywać ataki
+Do implementacji tego mechanizmu zainspirowaliśmy się grą Skyrim (por. \ref{s:walka}). Postać jest sterowana za pomocą klawiszy “W”, “A”, “S”
+oraz “D”, natomiast jej rotacja oraz obrót kamery jest kontrolowany przez mysz. Dodatkowo gracz może wykonywać ataki
 poprzez naciśnięcie lewego przycisku myszy.
 
-Pierwszy element kontrolera odpowiada za przemieszczanie się postaci. Do tego wykorzystuje komponent Input Manager, w
+Pierwszy element kontrolera odpowiada za przemieszczanie się postaci. Do tego wykorzystuje komponent \texttt{Input Manager}, w
 którym zostały odwzorowane odpowiednie klawisze dla każdej z osi, wzdłuż której gracz może się przemieszczać. Na tej
 podstawie wyznaczane jest faktyczne przesunięcie postaci względem kierunku, w którym jest zwrócona oraz modyfikowane
 jest jej położenie. Dodatkowo ten komponent odpowiada za wyznaczenie prędkości, z jaką gracz się porusza. Domyślnie
@@ -28,7 +28,7 @@ następuje dostosowanie położenia kamery tak, aby zawsze patrzyła w tym samym
 komponent umożliwia przesunięcie kamery po łuku do góry bądź do dołu. Dzięki temu gracz może dokładniej zobaczyć,
 co znajduje się nad oraz tuż przed nim.
 
-Ostatni komponent odpowiada za kontrolowanie przybliżania kamery. W tym celu w Input Managerze zostało odwzorowane kółko
+Ostatni komponent odpowiada za kontrolowanie przybliżania kamery. W tym celu w \texttt{Input Managerze} zostało odwzorowane kółko
 myszy. Zwrócona przez system wartość jest wykorzystywana do obliczenia odległości kamery od postaci przy zachowaniu
 ustalonych przez grę ograniczeń. Dodatkowo komponent dokonuje również automatycznego przybliżania, jeśli wskutek
 przemieszczania się postaci, pomiędzy nią a kamerą miałaby się znaleźć przeszkoda. Dzięki temu nie zostanie zasłonięty
