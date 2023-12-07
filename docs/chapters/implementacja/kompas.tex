@@ -2,7 +2,7 @@
 \section{Zasady działania kompasu (Zofia Sosińska)}\label{chap:naw}
 
 Projekt kompasu jest na tyle prosty, aby nie przytłoczyć gracza nadmierną liczbą bodźców. Składa się z horyzontalnego, jednolitego paska,
- na którym wyświetlane będą najważniejsze informacje o otoczeniu, symbol ośmiokąta, wskazujący na przestrzeń znajdującą się centralnie przed bohaterem
+ na którym wyświetlane są najważniejsze informacje o otoczeniu, symbol ośmiokąta, wskazujący na przestrzeń znajdującą się centralnie przed bohaterem
   oraz z bocznych pasków, wyróżniających końce narzędzia.
 
 \begin{figure}[htbp]
@@ -14,7 +14,7 @@ Projekt kompasu jest na tyle prosty, aby nie przytłoczyć gracza nadmierną lic
 Ikony wyświetlane na kompasie przedstawiają najważniejsze informacje w polu widzenia gracza, czyli stronę świata, w kierunku której jest on zwrócony, oraz przeciwników.
 Poniżej przedstawiono kod odpowiedzialny za wyznaczenie pozycji symbolu na omawianym narzędziu. Wejściem jest komponent \texttt{RectTransform} symbolu przypisanemu
  danemu obiektowi oraz jego położenie. Po obliczeniu wektora prowadzącego do uzyskania np. pozycji wroga, wyznaczany jest kąt, o jaki musi się obrócić.
-  To przeliczamy na pozycję na kompasie i jeśli obiekt jest w polu widzenia, wyświetlamy symbol.
+  To jest przeliczane na pozycję na kompasie i jeśli obiekt znajduje się w polu widzenia postaci gracza to jest wyświetlany odpowiedni symbol.
 
 \begin{figure}[htbp]
     \centering
@@ -45,8 +45,8 @@ Poniżej przedstawiono kod odpowiedzialny za wyznaczenie pozycji symbolu na omaw
 
 Problem lokalizacji stron świata pojawił się, gdy nieprawidłowo wyświetlały się symbole po użyciu najprostszego rozwiązania. Na przykład dla Północy było to
 pobranie wartości od \texttt{Vector3.forward}, co jest skrótowym zapisem \texttt{Vector3(0, 0, 1)}. Lewy dolny róg mapy jest położony w punkcie (0, 0, 0), co oznacza, że wymagane
- jest przesunięcie, aby prawidłowo zasymulować strony świata. Północ i Południe przesunęliśmy do połowy szerokości, a Wschód i Zachód - długości mapy. Każde z nich
-  oddaliliśmy o 60000 jednostek, co pozwala na wiarygodną symulację stron świata na kompasie.
+ jest przesunięcie, aby prawidłowo zasymulować strony świata. Północ i Południe  zostały przesunięte do połowy szerokości, a Wschód i Zachód - długości mapy. Każde z nich
+  zostało oddalone o 60000 jednostek, co pozwala na wiarygodną symulację stron świata na kompasie.
 
 \begin{figure}[htbp]
     \centering

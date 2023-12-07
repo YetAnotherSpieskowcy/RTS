@@ -3,7 +3,7 @@ Interfejs użytkownika, jako uporządkowany i przejrzysty obraz wiedzy i możliw
 aplikacji, zdejmując z niego przymus pamiętania dokładnie każdej pojawiającej się informacji. Umililiśmy i uprościliśmy 
 rozgrywkę, przedstawiając suche dane w postaci przyjemnych dla oka obrazów, wyszczególniając to, co jest najważniejsze.
 
-Tak jak przewidywano, UI udostępnia interfes podstawowy z zawsze widocznymi elementami oraz dynamicznie pojawiające okna, wywoływane za pomocą konkretnych klawiszy.
+Tak jak przewidywano, UI udostępnia interfejs podstawowy z zawsze widocznymi elementami oraz dynamicznie pojawiające okna, wywoływane za pomocą konkretnych klawiszy.
 Wszystkie łączy surowy i prosty przewodni motyw graficzny, wykorzystujący także różnorodne obrazy dla urozmaicenia. Przy implementacji ważne także było, aby UI zabierał
 jak najmniej miejsca, jednocześnie podając jak najwięcej przydatnych informacji.
 
@@ -11,7 +11,7 @@ jak najmniej miejsca, jednocześnie podając jak najwięcej przydatnych informac
 Interfejs podstawowy towarzyszy graczowi podczas całej rozgrywki. Skupia się on w górnej części ekranu. Jego zadaniem jest pomoc 
 użytkownikowi w ogólnym odnalezieniu się w świecie. W tym celu są mu ukazane następujące informacje:
 \begin{itemize}
-    \item aktualny czasS w grze;
+    \item aktualny czas w grze;
     \item położenie gracza względem stron świata oraz wrogów ukazane na kompasie;
     \item stan surowców i funduszy;
     \item stan zdrowia gracza;
@@ -30,7 +30,7 @@ W tych statycznie umiejscowionych elementach interfejsu dynamicznie zmienia się
 dodając minutę w grze co 5 sekund upływające w realnym świecie. Na kompasie umiejscowienie zmieniają symbole stron świata i wskaźniki przeciwników,
 zależnie od ich pozycji, położenia gracza i strony, w którą główna posatć patrzy. Fundusze rosną po wykonaniu zadania i otrzymaniu zapłaty oraz maleją, gdy opłacamy
 najemników, czy płacimy za budowle. Liczba posiadanych surowców zwiększa się, po zebraniu ich z ziemi, za to zmniejsza, gdy za ich pomocą budujemy budynek.  
-Pasek zdrowia zmienia swoją treść, gdy dostaniemy obrażenia, jednocześnie ukazując początkową, maksymalną wartość. Ikona zadania do wykonania ukazuje symbol 
+Pasek zdrowia zmienia swoją wartość, gdy dostaniemy obrażenia, jednocześnie ukazując początkową, maksymalną wartość. Ikona zadania do wykonania ukazuje symbol 
 czerwonego wykrzyknika, gdy gracz ma jakieś aktywne, nieskończone zadanie, co ukazano na rysunku \ref{fig:wyq}.
 \begin{figure}[htbp]
     \centering
@@ -80,18 +80,18 @@ jednak nie są tylko ludzie, ale i surowce, które można zbierać. Jeśli możl
  \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/interakcja_rozmowa.png}
-    \caption{Implementacja grafiki informującej o możliwym zaczęciu rozmowy.}\label{fig:rozmow}
+    \caption{Implementacja grafiki informującej o możliwości rozpoczęcia rozmowy.}\label{fig:rozmow}
 \end{figure}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/interakcja_podnieś.png}
-    \caption{Implementacja grafiki informującej o możliwym podniesieniu przedmiotu.}\label{fig:przedmio}
+    \caption{Implementacja grafiki informującej o możliwości podniesienia przedmiotu.}\label{fig:przedmio}
 \end{figure}
 
 \subsection{Dziennik z zadaniami}
 Niektóre postacie interaktywne mogą zlecić głównemu bohaterowi zadanie. Jeśli gracz się zgodzi, notatka o nim zostaje zapisana w dzienniku. Można do niego zajrzeć
-wciskając klawisz "J". Graczowi ukaże się tytuł sygnalizyjący główny cel zadania, streszczenie najważniejszych informacji oraz porada dotycząca mechanik gry np. 
-"Wciśnij jakiś klawisz, żeby stało się coś". To, że zadanienie nie zostało jeszcze wykonane sygnalizuje czerwony wykrzyknik w prawym, górnym rogu notatki. Gracz może 
+wciskając klawisz "J". Graczowi ukaże się tytuł sygnalizujący główny cel zadania, streszczenie najważniejszych informacji oraz porada dotycząca mechanik gry np. 
+"Wciśnij klawisz X, żeby stało się Y". To, że zadanie nie zostało jeszcze wykonane, sygnalizuje czerwony wykrzyknik w prawym, górnym rogu notatki. Gracz może 
 zamknąć dziennik poprzez ponowne naciśnięcie klawisza "J".
 \begin{figure}[htbp]
     \centering
