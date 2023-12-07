@@ -20,4 +20,4 @@ MonoBehaviour:
   wood: 100
   stone: 100
   prefab: {fileID: 1016665575689383219, guid: 65a3e3f056a51954dbeda8d1598b500b, type: 3}
-  bts: {fileID: 2800000, guid: 1a58749f555f75e48baa41893215b26e, type: 3}
+  bts: {fileID: 2800000, guid: 68cfcdc18cd1b1d47ae54fdc2cfe8ed3, type: 3}
