@@ -25,6 +25,7 @@ użytkownikowi w ogólnym odnalezieniu się w świecie. W tym celu są mu ukazan
     i funduszach, położeniu i otoczeniu gracza, zdrowiu postaci oraz ikona sygnalizująca, czy użytkownik ma do wykonania jakieś zadanie.
     }\label{fig:naszpasek}
 \end{figure}
+\FloatBarrier
 
 W tych statycznie umiejscowionych elementach interfejsu dynamicznie zmienia się ich treść. Na zegarze czas zmienia się w ustalony sposób,
 dodając minutę w grze co 5 sekund upływające w realnym świecie. Na kompasie umiejscowienie zmieniają symbole stron świata i wskaźniki przeciwników,
@@ -38,6 +39,7 @@ czerwonego wykrzyknika, gdy gracz ma jakieś aktywne, nieskończone zadanie, co 
     \caption{Implementacja ikony zadania do wykonania, gdy użytkownik ma jakieś nieskończone zlecenia.
     }\label{fig:wyq}
 \end{figure}
+\FloatBarrier
 
 \subsection{Menu stawiania budynków}
 Typowa mechanika gier typu RTS, czyli budowanie budynków, ma specjalnie przygotowany interfejs, wyświetlany po wciśnięciu klawisza "B". 
@@ -52,6 +54,7 @@ surowców, pojawi się stosowny komunikat. Menu zamyka się za pomocą klawisza 
     i szczegółowe informacje o ich dostępności.
     }\label{fig:compass}
 \end{figure}
+\FloatBarrier
 
 \subsection{Menu wydawania komend}
 Gra umożliwia graczowi wykupienie usług najemników, jeśli dysponuje odpowiednimi funduszami. Gdy są oni już pod dowództwem użytkownika, może on im rozkazywać za pomocą 
@@ -62,6 +65,7 @@ wylistowane zostaną możliwe do rozkazania czynności. W obu przypadkach gracz 
     \includegraphics[width=0.9\textwidth]{images/ui/opis_ekementow_mwnu_wyboru_komendy.png}
     \caption{Implementacja menu wydawania komend.}\label{fig:cmd_menu}
 \end{figure}
+\FloatBarrier
 
 \subsection{Menu zapisu}
 Po uznaniu przez gracza, że nie chce stracić aktualnego stanu gry, może go permanentnie zapisać w pamięci urządzenia, na którym włączony jest program. Po naciśnięciu 
@@ -72,6 +76,7 @@ poprzez ponowne naciśnięcie klawisza "Z" potwierdzi on zapis.
     \includegraphics[width=0.9\textwidth]{images/ui/menu_zapisu.png}
     \caption{Implementacja menu zapisu.}\label{fig:men_zap}
 \end{figure}
+\FloatBarrier
 
 \subsection{Informacja o możliwej interakcji}
 W świecie gry postać gracza nie jest odosobniona, co więcej może spotkać wiele różnorodnych osób, z którymi można porozmawiać. Interaktywni
@@ -87,6 +92,7 @@ jednak nie są tylko ludzie, ale i surowce, które można zbierać. Jeśli możl
     \includegraphics[width=0.9\textwidth]{images/ui/interakcja_podnieś.png}
     \caption{Implementacja grafiki informującej o możliwości podniesienia przedmiotu.}\label{fig:przedmio}
 \end{figure}
+\FloatBarrier
 
 \subsection{Dziennik z zadaniami}
 Niektóre postacie interaktywne mogą zlecić głównemu bohaterowi zadanie. Jeśli gracz się zgodzi, notatka o zadaniu zostaje zapisana w dzienniku. Można do niego zajrzeć
@@ -98,6 +104,7 @@ zamknąć dziennik poprzez ponowne naciśnięcie klawisza "J".
     \includegraphics[width=0.9\textwidth]{images/ui/journal_quest.png}
     \caption{Implementacja dziennika z aktualnie zaczętym i nieukończonym zadaniem.}\label{fig:end_sc}
 \end{figure}
+\FloatBarrier
 
 \subsection{Ekran końca gry}
 Postać gracza ma określoną liczbę punktów życia, które może stracić podczas potyczek z przeciwnikami. Gdy spadną one do zera gra kończy się, a główny bohater umiera.
@@ -108,3 +115,4 @@ rozgrywki, cały ekran zostaje przyciemniony.
     \includegraphics[width=0.9\textwidth]{images/ui/endgame_screen.png}
     \caption{Implementacja menu zapisu.}\label{fig:end_sc}
 \end{figure}
+\FloatBarrier
