@@ -60,11 +60,11 @@ Poniższa lista przedstawia wymagania niefunkcjonalne projektu.
 Niniejsza sekcja przedstawia diagram przypadków użycia dla głównych funkcjonalności, które będzie zawierać prototypowa gra.
 Opisuje on przewidywane usługi oferowane przez poszczególne mechaniki programu.
 
-Jedną z głównych akcji, które gra udostępnu jest wydanie rozkazów przyjaznym jednostkom. Polega ona na poinformowaniu
-wojowników przez gracza jaką czynność powinni w danym momencie wykonać. Kolejną możliwością jest zlecenie budowy, czyli
-poelceniu postaci budowniczego wybudowania wybranego obiektu w określonym przez gracza miejscu. Ponadto użytkownik
+Jedną z głównych akcji, które gra udostępni będzie wydanie rozkazów przyjaznym jednostkom. Polegać będzie ona na poinformowaniu
+wojowników przez gracza jaką czynność powinni w danym momencie wykonać. Kolejną możliwością będzie zlecenie budowy, czyli
+zlecenie budowniczemu wybudowania wybranego obiektu w określonym przez gracza miejscu. Ponadto użytkownik
 będzie mógł przeprowadzać rozmowy z postaciami niezależnymi. Oznacza to, że będzie mógł zainicjować z nimi dialog i
-następnie kształtować jego przebeig poprzez wybieranie swoje odpowiedzi z opcji proponowanych przez grę.
+następnie kształtować jego przebieg poprzez wybieranie swojej odpowiedzi z opcji proponowanych przez grę.
 
 \begin{figure}[!htbp]
     \centering
@@ -82,7 +82,7 @@ gracz wyświetla panel główny. Z tego stanu możliwe jest przejście do stanó
 nowej gry", które to powodują rozpoczęcie gry z zapisu lub od początku.
 
 Stan "Rozgrywka" jest stanem złożonym i określa, że gra została rozpoczęta. W jego skład wchodzą przede wszytskim takie
-stany jak "Interakcja z postacią niezależną", w którym program się znajdzie gdy gracz rozpocznie dialog z postacią w grze,
+stany, jak "Interakcja z postacią niezależną", w którym program się znajdzie, gdy gracz rozpocznie dialog z postacią w grze,
 czy "Zarządzanie jednostkami", który to oznacza, że użytkownik wydaje rozkazy swoim wojownikom.
 
 Diagram stanów został przedstawiony na rysunku \ref{fig:states}.
@@ -101,7 +101,7 @@ Obrazuje podstawową strukturę tworzonego systemu oraz zależności pomiędzy p
 Do najważniejszych klas należą "Interfejs użytkownika", "Mechanizm interakcji z postaciami", "Mechanizm zarządzania
 jednostkami" oraz "Mechanizm budowania". Obrazują one podstawowe komponenty gry, których głównym zadaniem jest zarządzanie
 poszczególnymi mechanikami. "Interfejs użytkownika" jest odpowiedzialny za interakcję z graczem oraz pomaganie mu w
-trakcie rozgrywki. Pozostałe trzy odpowiadają kolejno za umożliwienie graczowi na prowadzenie dialogów z postaciami
+trakcie rozgrywki. Pozostałe trzy kolejno pozwalają graczowi na prowadzenie dialogów z postaciami
 niezależnymi, wydawanie komend jego zaprzyjaźnionym jednostkom oraz budowanie obiektów.
 \begin{figure}[!htbp]
     \centering
