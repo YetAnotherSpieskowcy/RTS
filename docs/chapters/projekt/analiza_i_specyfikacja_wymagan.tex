@@ -3,6 +3,18 @@ W niniejszej sekcji przedstawiono specyfikę wymagań funkcjonalnych, pozafunkcj
 głównych założeń projektu. Dodatkowo zawiera ona diagramy przypadków użycia, maszyny stanów oraz klas prototypowej gry.
 
 \subsection{Specyfika wymagań wynikających z założeń projektu}
+“Starożytni świat widzieli inaczej, mniej płasko”\cite{gbobrektvgry}. Dobrze obrazującym ówczesne postrzeganie
+przestrzeni przykładem jest mapa Imperium Rzymskiego, pokazana na \ref{fig:mapaIR}. Czytanie jej dosłownie mija się z
+celem. Nie są na niej zachowane ani proporcje, ani strony świata. Mimo tego, że basen Morza Śródziemnego został
+ówcześnie dosyć dokładnie oddany, “nie wydaje się, aby Rzymianom współczesna kartograficzna wierność była potrzebna”\cite{gbobrektvgry}.
+“Dowódcy opierali się na swojej wiedzy, wiedzy wynajętych przewodników oraz informacjach zwiadowców i tubylców”\cite{gbobrektvgry}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/mapaIR.png}
+    \caption{Mapa basenu Morza Śródziemnego z czasów Imperium Rzymskiego}\label{fig:mapaIR}
+\end{figure}
+
 Z punktu widzenia projektu kluczowe jest jak najdokładniejsze oddanie realiów historycznych przy jednoczesnym
 uwzględnieniu jakości rozgrywki gracza oraz cech charakterystycznych dla gier typu RTS. Z założeń wynika, że fabuła
 gry powinna zostać osadzona w czasach sprzed wielkich odkryć geograficznych. Na tej podstawie zostały zdefniowane
@@ -33,7 +45,7 @@ W przedstawionej liście zostały wymienione wymagania funkcjonalne, które powi
   \item Możliwość zdobywania zasobów
 \end{itemize}
 
-\subsection{Wymagania niefunkcjonalne}\label{ss:nonfun}
+\subsection{Wymagania pozafunkcjonalne}\label{ss:nonfun}
 Poniższa lista przedstawia wymagania niefunkcjonalne projektu.
 
 \begin{itemize}\label{list:nonfun}
@@ -47,9 +59,13 @@ Poniższa lista przedstawia wymagania niefunkcjonalne projektu.
 \subsection{Diagram przypadków użycia}\label{ss:usecase}
 Niniejsza sekcja przedstawia diagram przypadków użycia dla głównych funkcjonalności, które będzie zawierać prototypowa gra.
 Opisuje on przewidywane usługi oferowane przez poszczególne mechaniki programu.
+
+Gra udostępni użytkownikowi przede wszystkim możliwość uruchomienia nowej gry, wczytania oraz zapisanie stanu gry.
+Dodatkowo gracz będzie mógł poruszać i obracać postacią, wykonywać ataki
+
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1.0\textwidth]{images/diagrams/usecase.png}
+    \includegraphics[width=1.0\textwidth]{images/diagrams/usecase.jpg}
     \caption{Diagram przypadków głównych mechanik gry.}\label{fig:usecases}
 \end{figure}
 \FloatBarrier
@@ -57,9 +73,20 @@ Opisuje on przewidywane usługi oferowane przez poszczególne mechaniki programu
 \subsection{Diagram stanów}\label{ss:state}
 W tym podpunkcie został przedstawiony diagram stanów prototypowej gry, który ukazuje jej przewidywany sposób działania.
 Prezentuje on podstawowe stany, w których może się znaleźć system gry.
+
+Do podstawowych stanów należą "Menu główne" oraz "Rozgrywka". Pierwszy z nich oznacza, że program został uruchomiony, a
+gracz wyświetla panel główny. Z tego stanu możliwe jest przejście do stanów "Odczytanie stanu gry" bądź "Utworzenie
+nowej gry", które to powodują rozpoczęcie gry z zapisu lub od początku.
+
+Stan "Rozgrywka" jest stanem złożonym i określa, że gra została rozpoczęta. W jego skład wchodzą przede wszytskim takie
+stany jak "Interakcja z postacią niezależną", w którym program się znajdzie gdy gracz rozpocznie dialog z postacią w grze,
+czy "Zarządzanie jednostkami", który to oznacza, że użytkownik wydaje rozkazy swoim wojownikom.
+
+Diagram stanów został przedstawiony na rysunku \ref{fig:states}.
+
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1.0\textwidth]{images/diagrams/state.png}
+    \includegraphics[width=1.0\textwidth]{images/diagrams/state.jpg}
     \caption{Diagram stanów gry.}\label{fig:states}
 \end{figure}
 \FloatBarrier
@@ -69,6 +96,6 @@ W tej sekcji został pokazany uproszczony diagram klas, przedstawiający główn
 strukturę tworzonego systemu oraz zależności pomiędzy poszczególnymi komponentami.
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1.0\textwidth]{images/diagrams/class.png}
+    \includegraphics[width=1.0\textwidth]{images/diagrams/class.jpg}
     \caption{Diagram klas gry.}\label{fig:classes}
 \end{figure}
