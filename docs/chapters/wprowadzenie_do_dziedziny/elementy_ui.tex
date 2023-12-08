@@ -1,0 +1,41 @@
+\section{Interfejs użytkownika (Zofia Sosińska)}\label{c:pasek_war3}
+
+Dopuszczalnym założeniem przy tworzeniu gry komputerowej jest, że postać gracza ma jakąś wiedzę o świecie, w którym się znajduje oraz
+poziom inteligencji i umiejętności, które pozwalają jej przeanalizować konkretną sytuacje i wyciągnąć wnioski. Obrazującym to przykładem 
+może byc sytuacjca stawiania budynku. Postać wie, że dana budowla kosztuje pewną sumę i ilość surowców oraz że ją na to stać. Może 
+wyciągnąć takie wnioski, ponieważ zakładamy, że wciągu jej życia zdażyło jej się taki budynek zakupić oraz pamięta stan swoich funduszy 
+i surowców. Skoro więc te informacje są w zasięgu możliwości wnioskowania postaci, gra ma prawo wyświetlić je użytkownikowi. 
+Takie graficzne przedstawienie najważniejszych danych z otoczenia gracza nazywamy interfejsem użytkownika UI (ang. \textit{user interface}). Narzędziami odzwierciedlania informacji
+w czytelny i przystępny sposób mogą być takie elementy jak obrazki, teksty, czy wskaźniki. Dzięki UI możliwy jest wgląd w aktualny stan wiedzy grywalnej postaci, a tym samym lepsze
+zrozumienie otoczenia. Wymagające podkreślenia jest, że “[...] na stopień zaangażowania gracza na poziomie świata gry duży wpływ ma interfejs, którym się posługuje. Mówiąc najprościej:
+gracz, który rozpoczyna grę, zanim dozna poczucia integracji ze sterowaną przez siebie postacią, musi - używając stwierdzenia Aarsetha - spełnić oczekiwania interfejsu.”\cite{olbrzymwcieniu}
+
+Jednym z kluczowych problemów przy projektowaniu elementów interfejsu użytkownika jest odpowiednie wybranie miejsca na ekranie. Konieczne jest zwrócenie uwawgi na takie 
+problemy, jak od wielkość, rola, priorytet dostarczenia informacji, częstość i długość występowania oraz częstotliwość zmiany zawartości.
+
+Inną ważną cechą dobrze zaprojektowanego interfejsu użytkownika jest zbalansowanie między pokazaniem jak największej liczby kluczowych informacji, 
+jednocześnie okrawając je tak, aby nie przytłaczały gracza i nie zaciemniały przekazu. Użytkownik może cały czas widzieć na ekranie migające statystyki
+oraz dodtawać informacje o poczynaniach każdej swojej jednostki, ale jest szansa, że te dane go przeciąża i będą przeszkadzać w cieszeniu się rozgrywką. 
+
+Często dane segreguje się według ich tematyki, ale czasem właściwsze może okazać się zgrupowanie ich 
+względem tego, jak często gracz będzie ich potrzebował. Jeśli są to informacje bardzo podstawowe do zrozumienia aktualnego 
+stanu świata gry, wartościowe może być pokazanie ich obok siebie.
+
+Przykładem zaprojektowania zbalansowanego elementu interfejsu użytkownika jest rozwiązanie gry Warcraft III: Reign of Chaos studia Blizzard Entertainment.
+Zgrupowała ona najbardziej podstawowe informacje o świecie gry i skupiła te dane w cienkim pasku na samej górze ekranu. 
+Skład elementów tej części interfjsu użytkownika jest niezmienny: pola otwierające zakładki, pora dnia oraz trzy wskaźniki zasobów. Pasek jest widoczny
+podczas całej rozgrywki, niezależnie od wykonywanych czynności. W tym statycznie zakotwiczonym na górze ekranu elemencie, dynamicznie
+zmieniają się jedynie ciągle aktualizowane informacje. Odpowiednio podmieniana jest tekstura pory dnia, zmieniająca się ze Słońca
+na Księżyc oraz stan zasobów, zależnie od wydania, czy pozyskania.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{images/ui/warcraft3_gorny_pasek_lewy.png}
+    \caption{Lewa część paska z informacjami w grze Warcraft 3.}\label{fig:Warcraft3}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{images/ui/warcraft3_gorny_pasek_prawy.png}
+    \caption{Prawa część paska z informacjami w grze Warcraft 3.}\label{fig:Warcraft3}
+\end{figure}
