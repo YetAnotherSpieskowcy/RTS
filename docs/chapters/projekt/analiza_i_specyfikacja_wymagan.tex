@@ -1,4 +1,4 @@
-\section{Analiza i specyfikacja wymagań (Bogna Lew)}
+\section{Analiza i specyfikacja wymagań (Bogna Lew)}\label{s:wymagania}
 W niniejszej sekcji przedstawiono specyfikę wymagań funkcjonalnych, pozafunkcjonalnych oraz tych, wynikających z
 głównych założeń projektu. Dodatkowo zawiera ona diagramy przypadków użycia, maszyny stanów oraz klas prototypowej gry.
 
@@ -60,8 +60,11 @@ Poniższa lista przedstawia wymagania niefunkcjonalne projektu.
 Niniejsza sekcja przedstawia diagram przypadków użycia dla głównych funkcjonalności, które będzie zawierać prototypowa gra.
 Opisuje on przewidywane usługi oferowane przez poszczególne mechaniki programu.
 
-Gra udostępni użytkownikowi przede wszystkim możliwość uruchomienia nowej gry, wczytania oraz zapisanie stanu gry.
-Dodatkowo gracz będzie mógł poruszać i obracać postacią, wykonywać ataki
+Jedną z głównych akcji, które gra udostępnu jest wydanie rozkazów przyjaznym jednostkom. Polega ona na poinformowaniu
+wojowników przez gracza jaką czynność powinni w danym momencie wykonać. Kolejną możliwością jest zlecenie budowy, czyli
+poelceniu postaci budowniczego wybudowania wybranego obiektu w określonym przez gracza miejscu. Ponadto użytkownik
+będzie mógł przeprowadzać rozmowy z postaciami niezależnymi. Oznacza to, że będzie mógł zainicjować z nimi dialog i
+następnie kształtować jego przebeig poprzez wybieranie swoje odpowiedzi z opcji proponowanych przez grę.
 
 \begin{figure}[!htbp]
     \centering
@@ -92,8 +95,14 @@ Diagram stanów został przedstawiony na rysunku \ref{fig:states}.
 \FloatBarrier
 
 \subsection{Diagram klas}\label{ss:class}
-W tej sekcji został pokazany uproszczony diagram klas, przedstawiający główne elementy gry. Obrazuje podstawową
-strukturę tworzonego systemu oraz zależności pomiędzy poszczególnymi komponentami.
+W tej sekcji został pokazany uproszczony diagram klas (rys. \ref{fig:classes}), przedstawiający główne elementy gry.
+Obrazuje podstawową strukturę tworzonego systemu oraz zależności pomiędzy poszczególnymi komponentami.
+
+Do najważniejszych klas należą "Interfejs użytkownika", "Mechanizm interakcji z postaciami", "Mechanizm zarządzania
+jednostkami" oraz "Mechanizm budowania". Obrazują one podstawowe komponenty gry, których głównym zadaniem jest zarządzanie
+poszczególnymi mechanikami. "Interfejs użytkownika" jest odpowiedzialny za interakcję z graczem oraz pomaganie mu w
+trakcie rozgrywki. Pozostałe trzy odpowiadają kolejno za umożliwienie graczowi na prowadzenie dialogów z postaciami
+niezależnymi, wydawanie komend jego zaprzyjaźnionym jednostkom oraz budowanie obiektów.
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{images/diagrams/class.jpg}
