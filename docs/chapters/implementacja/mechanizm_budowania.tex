@@ -4,12 +4,11 @@ Opracowany mechanizm umożliwia graczowi na przełączenie się w tryb budowania
 wyświetli podgląd bazowego obiektu. Widok budynku przemieszcza się przed postacią oraz odpowiednio obraca się razem z
 nią. Efekt poruszania się podglądu został uzyskany za pomocą poniższych wzorów:
 \begin{equation*}
-\left\{
-\begin{array}{l}
+\begin{cases}
 x = r \times sin(\alpha) \\
 y = 0 \\
 z = r \times cos(\alpha)
-\end{array}
+\end{cases}
 \end{equation*}
 
 gdzie $r$ to odległość środka obiektu od postaci gracza, natomiast $\alpha$ to kąt o jaki jest on obrócony względem osi y.
