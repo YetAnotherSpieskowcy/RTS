@@ -1,4 +1,4 @@
-\section{Kontroler postaci (Bogna Lew)}
+\section{Kontroler postaci (Bogna Lew)}\label{s:por_impl}
 W trakcie rozgrywki istotnym aspektem wpływającym na jakość jest mechanizm sterowania postacią. Z tą mechaniką gracz ma
 bezpośredni kontakt, ponieważ to właśnie za jej pomocą może eksplorować świat.
 
@@ -25,8 +25,20 @@ Kolejny komponent nadzoruje rotację postaci oraz co za tym idzie - kamery. Anal
 Manager, jednak w tym przypadku przechwytywane jest przesunięcie myszy. Komponent udostępnia graczowi możliwość
 sterowania kierunkiem, w którym postać patrzy, a co za tym idzie - względem którego się przemieszcza. Jednocześnie
 następuje dostosowanie położenia kamery tak, aby zawsze patrzyła w tym samym kierunku co postać gracza. Ponadto
-komponent umożliwia przesunięcie kamery po łuku do góry bądź do dołu. Dzięki temu gracz może dokładniej zobaczyć,
-co znajduje się nad oraz tuż przed nim.
+komponent umożliwia zmianę wysokości oraz kąta patrzenia kamery. Dzięki temu gracz może dokładniej zobaczyć,
+co znajduje się nad oraz tuż przed nim. Obrazują to rysunki \ref{fig:gora} oraz \ref{fig:dol}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/implementacja/poruszanie_postacią/widok_z_gory.jpg}
+    \caption{Widok po przesunięciu kamery w górę.}\label{fig:gora}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/implementacja/poruszanie_postacią/widok_z_dolu.jpg}
+    \caption{Widok po przesunięciu kamery w dół.}\label{fig:dol}
+\end{figure}
 
 Ostatni komponent odpowiada za kontrolowanie przybliżania kamery. W tym celu w \texttt{Input Managerze} zostało odwzorowane kółko
 myszy. Zwrócona przez system wartość jest wykorzystywana do obliczenia odległości kamery od postaci przy zachowaniu
