@@ -1,16 +1,25 @@
-\section{Model celowania w grze Phoenix Point (Bartosz Strzelecki)}
+\section{Modele celowania w grach (Bartosz Strzelecki)}
+Celowanie w grach taktycznych jest podstawowym elementem programu, który ma
+olbrzymi wpływ na przebieg rozgrywki. Ten mechanizm jest przede wszystkim wykorzystywany
+do wzbogacenia gry o kolejną warstwę decyzji taktycznych i zarządzania podejmowanym ryzykiem.
+Gracz, przed oddaniem strzału, podejmuje decyzję czy ryzykuje podjęcie strzału o niskiej szansie
+na trafienie, czy zdecyduje się na niezawodny atak, lecz wtedy może być wystawiony na ataki przeciwników.
 
-W Phoenix Point modelowanie dokładności to wieloaspektowy system, który w zawiły sposób definiuje wynik interakcji bojowych. 
+W Phoenix Point modelowanie celności to wieloaspektowy system, który w zawiły sposób definiuje wynik interakcji bojowych. 
 Gra wykorzystuje dynamiczny system celowania, który uwzględnia różne elementy, takie jak postawa żołnierza, biegłość w posługiwaniu się bronią, zasięg, 
-osłona i warunki środowiskowe, aby określić celność strzału. Każdy z tych elementów odgrywa znaczącą rolę w ogólnym obliczeniu trafienia w cel.
+osłona i warunki środowiskowe, aby określić precyzję strzału. Każdy z tych elementów odgrywa znaczącą rolę w ogólnym obliczeniu trafienia w cel.
 
 W przeciwieństwie do podobnej gry XCOM, gdzie celność jest zamodelowana za pomocą prostej szansy na trafienie, w grze Phoenix Point
 trajektoria każdego pocisku obliczana jest osobno. Podczas celowania widoczne są dwa okręgi: wewnętrzny, który reprezentuje miejsce,
-w którym znajdzie się 50\% pocisków oraz zewnętrzny, który reprezentuje maksymalny rozrzut broni. W tym przypadku im celniejsza broń, tym
+w którym znajdzie się 50\% pocisków oraz zewnętrzny, który reprezentuje maksymalny rozrzut broni. W tym przypadku im celniejsza broń tym
 okręgi będą mniejsze.
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{images/point}
 \caption{System celowania występujący w grze Phoenix Point.}
 \label{fig:acc}
 \end{figure}
+
+Ostatecznie system zaimplementowany w grze Phoenix Point okazuje się dużo bardziej realistyczny i pozwala na utrzymywanie ciągłej niepewności
+co do celności strzału, umożliwiając w ten sposób na strategiczne wyzwania, leżących u podstaw gier tego typu. 

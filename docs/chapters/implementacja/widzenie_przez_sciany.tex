@@ -9,7 +9,7 @@ Unity udostępniło nam kilka domyślnych kolejek renderowania, z których każd
 kieruje Unity, kiedy należy narysować obiekt na ekranie. Te wbudowane kolejki renderowania
 o nazwach Background, Geometry, AlphaTest, Transparent i Overlay nie zostały stworzone arbitralnie; w rzeczywistości służą one celowi, jakim jest ułatwienie nam życia podczas
 pisania shaderów i interakcji z rendererem czasu rzeczywistego."\cite{shaderscookbook}. Wykorzystując ten mechanizm
-możliwe jest uzyskanie efektu widzenia przez postać gracza poprzez horyzont.
+możliwe jest uzyskanie efektu widzenia przez postać gracza poprzez horyzont. Uzyskujemy przez to efekt podobny do tego zaimplementowanego w grze Dead by Daylight (por. \ref{chap:dbd}).
 
 Po naciśnięciu przycisku E następuje zagranie animacji opisanej wzorami 
 
@@ -27,13 +27,13 @@ Od podanych funkcji zależy przeźroczystość, jak i natężenie efektu Fresnel
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.25\textwidth]{images/g}
-    \caption{Wykres przedstawiający funkcję opisującą natężenie efektu w animacji markera}
+    \includegraphics[width=0.5\textwidth]{images/g}
+    \caption{Wykres przedstawiający funkcję opisującą natężenie efektu w animacji markera.}
 \end{figure}
 
 
 
-\begin{lstlisting}[language=C++, caption=Fragment shadera odpowiedzialny za animację]
+\begin{lstlisting}[language=C++, caption=Fragment shadera odpowiedzialny za animację.]
 fixed4 frag (v2f i) : SV_Target
 {
   float t =  6.2 * _Progress - 0.6;
@@ -47,3 +47,9 @@ fixed4 frag (v2f i) : SV_Target
   return color;
 }
 \end{lstlisting}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{images/shader}
+\caption{Zachowanie programu cieniującego w przypadku przysłaniania markera przez przeszkody.}
+\end{figure}
