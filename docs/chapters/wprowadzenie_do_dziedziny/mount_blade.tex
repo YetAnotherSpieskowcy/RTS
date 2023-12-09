@@ -1,15 +1,20 @@
 \section{Sterowanie jednostkami (Zofia Sosińska)}\label{chap:mb}
-Niektóre informacje są najlepiej spełniają swoja rolę, gdy pojawiają się tylko na chwilę. Zdarza się, że gracz potrzebuje przypomnienia
-o nich przez krótką chwilę podejmowania decyzji, a po niej nie ma potrzeby, aby grafika zajmowała cenne miejsce na ekranie, zasłaniając świat gry.
-Takie dane opisują sytuacje, gdy gracz wydaje komendę podwładnym jednostkom. Dzieje się to prawdopodobnie podczas bitwy, więc użytkownik musi skupić się
-na taktyce walki i nie chce być rozpraszany. Rozsądnym rozwiązaniem w tej sytuacji jest podpowiedzenie mu, gdy wydaje sam rozkaz, ale nieprzeszkadzanie zasłanianiem ekranu,
-gdy skupia się na innym aspekcie sytuacji.
+Gry z możliwością tworzenia drużyny muszą rozwiązć problem zachowania podwładnych. Program może udostępniać
+skomplikowaną sztuczną inteligencję dla wojowników, zawsze rozwiązujac konflikt w optymalny sposób, ale w tym przypadku 
+użytkownik staje się obserwatorem, a nie dowodzącym, co odciąży gracza. Innym podejściem może być zaprojektowanie podwładnych jako 
+marionetek bez własnej woli, które będą biernie czekać, aż do otrzymania rozkazu. Wtedy jednak gracz musi skupiać się na 
+każdym ruchu za równo swojej, jak i przeciwnej drużyny tak, aby w porę móc zareagować na wszystkie zmiany. Takie rozwiązanie 
+jest obciżążające dla użytkownika. Przy projektowaniu mechaniki sterowania jednostkami trzeba zachować balans pomiędzy 
+dodaniem i odjęciem użytkownikowi zadań, na kórych musi się skupić. Dla każdej gry ta proporcja może być inna, zależnie
+od unikalnego charakteru gry.
 
-Gra Mount\&Blade tureckiego studia TaleWorlds Entertainment, wydana przez Paradox Interactive rozwiązuje problem sterowania jednostkami w zbalansowany sposób.
-Poprzez cyfry 0-4 wybiera grupę, do której się odnosi np. łuczników. Po naciśnięciu jednego z przycisków, z boku ekranu pojawia się lista dostępnych komend. Przez 
-klawisze F1-F11 wydaje konkretny rozkaz np. odwrót. Sztuczna inteligencja postaci zajmuje się już samym wykonaniem czynności. Gracz nie martwi się,
-czy jednostki znajdą optymalną drogę, będą celować w przeciwników, czy z nimi walczyć.
-
+Przy projektowaniu gry Mount\&Blade studio TaleWorlds Entertainment zdecydowało się zaimplementować mechanikę sterowania jednostkami tak, aby 
+dodać do walki element strategii.Gracz bezpośredniokieruje jedynie główną postacią. Podczas walki reszcie może wydawać rozkazy. Poprzez
+cyfry 0-4 wybiera grupę, do której się odnosi np. łuczników. Po naciśnięciu konkretnego przycisku, po lewej stronie ekranu pojawia się lista dostępnych komend.
+Następnie przez klawisze F1-F11 wydaje konkretny rozkaz np. odwrót. Lista znika, sztuczna inteligencja postaci zajmuje się już samym wykonaniem czynności. 
+Gracz nie martwi się, czy jednostki znajdą optymalną drogę, 
+będą celować w przeciwników, czy z nimi walczyć. Zachowany jest więc przyjemny balans pomiędzy podejmowaniem kluczowych decyzji,
+odciążeniem poprzez wprowadzenie sztucznej inteligencji.
 
 \begin{figure}[h!tbp]
     \centering
