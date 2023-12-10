@@ -21,6 +21,7 @@
 \makeatother
 
 \usepackage{xcolor}
+\usepackage{pdfpages}
 
 %New colors defined below
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -51,6 +52,7 @@
 \lstset{style=mystyle}
 % Część właściwa pracy
 \begin{document}
+\includepdf[pages=-,fitpaper]{}    % Title page, add pdf filename in brackets
 \include{chapters/0a_streszczenie}
 \include{chapters/0b_spis_tresci}
 \include{chapters/0c_wykaz_skrotow}
