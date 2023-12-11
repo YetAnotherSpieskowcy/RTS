@@ -9,6 +9,7 @@ public class MeleeAI : MonoBehaviour
     private EnemyAI ai;
     private AIAnimation anim;
     private Unit unit;
+    private PlayerStats stats;
     private bool attackAnimRunning;
     void Awake()
     {
@@ -20,6 +21,7 @@ public class MeleeAI : MonoBehaviour
     {
         ai.StoppingDistance = ai.Radius;
         attackAnimRunning = false;
+        stats = GameObject.Find("Player").GetComponent<PlayerStats>();
     }
     private float delay = 0;
     void Update()
@@ -37,12 +39,14 @@ public class MeleeAI : MonoBehaviour
                         ai.Target(null);
                         return;
                     }
-                    unit.Hit(1);
+                    unit.Hit(this.unit.IsFriendly ? stats.leadership : 1);
 
                     if (anim != null)
                     {
                         anim.Attack();
                     }
+                    if (this.unit.IsFriendly)
+                        stats.leadershipExpirience += .5f;
                     Debug.Log("Hit");
                 }
                 delay = 0.0f;

@@ -6,9 +6,11 @@ public class CombatController
 {
     private float distance;
 
+    private PlayerStats stats;
     public CombatController()
     {
         distance = 2f;
+        stats = GameObject.Find("Player").GetComponent<PlayerStats>();
     }
 
     public void CheckAttack(Vector3 position, Vector3 direction)
@@ -25,7 +27,9 @@ public class CombatController
                 {
                     return;
                 }
-                unit.Hit(10);
+
+                unit.Hit(stats.strength);
+                stats.strengthExpirience += .6f;
             }
             else
             {
