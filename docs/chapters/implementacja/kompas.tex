@@ -44,7 +44,7 @@ To jest przeliczane na pozycję na kompasie i jeśli obiekt znajduje się w polu
     \end{lstlisting}
 \FloatBarrier
 Problem lokalizacji stron świata pojawił się, gdy nieprawidłowo wyświetlały się symbole po użyciu najprostszego rozwiązania. Na przykład dla Północy było to
-pobranie wartości od \texttt{Vector3.forward}, co jest skrótowym zapisem \texttt{Vector3(0, 0, 1)}. Lewy dolny róg mapy jest położony w punkcie (0, 0, 0), co oznacza, że wymagane
+pobranie wartości od \texttt{Vector3.forward}, co jest skrótowym zapisem \texttt{Vector3(0, 0, 1)}. Lewy dolny róg mapy jest położony w punkcie O, co oznacza, że wymagane
 jest przesunięcie, aby prawidłowo zasymulować strony świata. Północ i Południe  zostały przesunięte do połowy szerokości, a Wschód i Zachód - długości mapy. Każde z nich
 zostało oddalone o 60000 jednostek, co pozwala na wiarygodną symulację stron świata na kompasie.
 
