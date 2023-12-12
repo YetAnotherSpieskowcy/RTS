@@ -2,10 +2,10 @@
 
 Gracz w dowolnym momencie rozgrywki może przerwać grę i dokonać zapisu. Wykonuje to
 za pomocą skrótu klawiszowego F8. Powoduje to zapisanie na dysk danych wszystkich obiektów posiadających
-komponent "Saveable". Strukturę serlializowanych danych reprezentuje plik proto \ref{proto}.
+komponent \verb|Saveable|. Strukturę serlializowanych danych reprezentuje plik proto \ref{proto}.
 \lstinputlisting[caption=Plik .proto reprezentujący strukturę zapisu stanu gry, label=proto]{images/game_save.proto}
 
-Powstały po zapisie plik jest przechowywany na dysku w lokalizacji zdefiniowanej przez stałą \verb|Environment.SpecialFolder.MyDocuments| w formie binarnej (rys. \ref{save}).
+Powstały po zapisie plik jest przechowywany na dysku w lokalizacji zdefiniowanej przez stałą \verb|Environment.SpecialFolder.MyDocuments| w formie binarnej.
 W tym przypadku zapamiętywane są jedynie dane, które zmieniają się w trakcie rozgrywki, takie jak położenie gracza, przeciwników, itd. 
 Zawartość statyczna taka jak krzywizna terenu i flora występująca na mapie nie jest zapisywana, a jej wczytywanie jest rozwiązywane
 w trackie ładowania sceny przez Unity Runtime.
