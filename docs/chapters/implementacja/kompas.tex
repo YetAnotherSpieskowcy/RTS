@@ -1,9 +1,8 @@
-
 \section{Zasady działania kompasu (Zofia Sosińska)}\label{chap:naw_impl}
 
 Projekt kompasu jest na tyle prosty, aby nie przytłoczyć gracza nadmierną liczbą bodźców. Składa się z horyzontalnego, jednolitego paska,
- na którym wyświetlane są najważniejsze informacje o otoczeniu, symbol ośmiokąta, wskazujący na przestrzeń znajdującą się centralnie przed bohaterem
-  oraz z bocznych pasków, wyróżniających końce narzędzia.
+na którym wyświetlane są najważniejsze informacje o otoczeniu, symbol ośmiokąta, wskazujący na przestrzeń znajdującą się centralnie przed bohaterem
+oraz z bocznych pasków, wyróżniających końce narzędzia.
 
 \begin{figure}[htbp]
     \centering
@@ -54,7 +53,7 @@ zostało oddalone o 60000 jednostek, co pozwala na wiarygodną symulację stron 
     \caption{Rozmieszczenie zasymulowanych stron świata.}\label{fig:world_sides}
 \end{figure}
 \FloatBarrier
-Wykrycie wrogich jednostek znajduje się w funkcji Start. Każdemu obiektowi jest przypisywany symbol czerwonego miecza i w zależności od położenia wroga, obrazek wyświetlany jest odpowiednio na kompasie.
+Wykrycie wrogich jednostek znajduje się w funkcji \texttt{Start()}. Każdemu obiektowi jest przypisywany symbol czerwonego miecza i w zależności od położenia wroga, obrazek wyświetlany jest odpowiednio na kompasie.
 \begin{lstlisting}[language=C++, caption=Fragment kodu odpowiedzialny za połączenie wrogich obiektów na mapie z symbolami wyświetlonymi na kompasie.]
     void SetPositionOfEnemies()
     {
