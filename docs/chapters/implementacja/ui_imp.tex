@@ -1,7 +1,8 @@
 \section{Interfejs Użytkownika (Zofia Sosińska)}\label{chap:ui_imp}
 Interfejs użytkownika, jako uporządkowany i przejrzysty obraz wiedzy i możliwych opcji granej postaci odciąża użytkownika
-aplikacji, zdejmując z niego przymus pamiętania dokładnie każdej pojawiającej się informacji. Umililiśmy i uprościliśmy 
-rozgrywkę, przedstawiając suche dane w postaci przyjemnych dla oka obrazów, wyszczególniając to, co jest najważniejsze.
+aplikacji, zdejmując z niego przymus pamiętania dokładnie każdej pojawiającej się informacji. Zabieg estetyczny, jakim jest
+przedstawienie suchych danych w postaci prostych obrazów, wyszczególniając to, co jest najważniejsze, sprawia, 
+że rozgrywka staje się dla użytkownika prostsza, a co za za tym idzie - przyjemniejsza.
 
 Tak jak zaprojektowano, UI udostępnia interfejs podstawowy z zawsze widocznymi elementami oraz dynamicznie pojawiające się okna, wywoływane za pomocą konkretnych klawiszy.
 Wszystkie łączy surowy i prosty przewodni motyw graficzny, wykorzystujący także różnorodne obrazy dla urozmaicenia. Przy implementacji ważne także było, aby UI zabierał
@@ -32,14 +33,7 @@ dodając minutę w grze co 5 sekund upływające w realnym świecie. Na kompasie
 zależnie od ich pozycji, położenia gracza i strony, w którą główna postać patrzy. Fundusze rosną po wykonaniu zadania i otrzymaniu zapłaty oraz maleją, gdy opłacamy
 najemników, czy płacimy za budowle. Liczba posiadanych surowców zwiększa się, po zebraniu ich z ziemi, za to zmniejsza, gdy za ich pomocą budujemy budynek.  
 Pasek zdrowia zmienia swoją wartość, gdy dostaniemy obrażenia, jednocześnie ukazując początkową, maksymalną wartość. Ikona zadania do wykonania ukazuje symbol 
-czerwonego wykrzyknika, gdy gracz ma jakieś aktywne, nieskończone zadanie, co ukazano na rysunku \ref{fig:wyq}.
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/ui/wykrzyknik_quest.png}
-    \caption{Implementacja ikony zadania do wykonania, gdy użytkownik ma jakieś nieskończone zlecenia.
-    }\label{fig:wyq}
-\end{figure}
-\FloatBarrier
+czerwonego wykrzyknika, gdy gracz ma jakieś aktywne, nieskończone zadanie.
 
 \subsection{Menu stawiania budynków}
 Typowa mechanika gier typu RTS, czyli budowanie budynków, ma specjalnie przygotowany interfejs, wyświetlany po wciśnięciu klawisza "B". 
