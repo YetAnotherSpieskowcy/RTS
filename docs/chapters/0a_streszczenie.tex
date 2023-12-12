@@ -1,39 +1,43 @@
 \chapter*{Streszczenie}
 \addcontentsline{toc}{chapter}{Streszczenie}
-Tematem pracy inżynierskiej jest realizacja gry z gatunku strategii czasu rzeczywistego osadzonej w realiach historycznych
-wybranej epoki. Niniejsza praca zawiera opis przykładowych rozwiązań zastosowanych w niektórych grach dostępnych na rynku
+Celem pracy inżynierskiej jest realizacja prototypowej gry będącej hybrydą gatunków strategii czasu rzeczywistego oraz
+komputerowych gier fabularnych, osadzonej w realiach historycznych
+wybranej epoki. Niniejsza praca zawiera opis przykładowych rozwiązań zastosowanych w wybranych grach dostępnych na rynku
 oraz projekt i implementację wytwarzanego programu. Praca skupia się na przedstawieniu zaimplementowanych mechanik oraz
 sposobie oddania realiów, w których osadzona jest fabuła opracowanej gry.
 
 Do przygotowania prototypu gry wykorzystano silnik Unity oraz udostępniane przez niego narzędzia. Za ich pomocą
 przygotowano podstawowe mechanizmy, typowe dla gier strategii czasu rzeczywistego i komputerowych gier fabularnych oraz przykładowe zadania tworzące
 fabułę gry. Utworzony prototyp pozwala na dalsze rozwijanie świata gry poprzez dodawanie nowych zadań oraz elementów
-rozgrywki. Zagadnienia implementacyjne zostały opisane w rozdziale "Implementacja", a efekt finalny w podrozdziale "Przebieg rozgrywki".
+rozgrywki.
 
-Podstawowym celem projektu jest przygotowanie gry, która w jak najdokładniejszy sposób oddawałaby realia wybranej epoki.
-Zdecydowaliśmy się na osadzenie fabuły we wczesnym średniowieczu. Główną inspiracją stała się kultura Celtów, którzy w
-tamtych czasach zamieszkiwali tereny współczesnej Irlandii. W ramach projektu przede wszystkim skupiono się na
-opracowaniu sposobu nawigacji w grze oraz zachowania przeciwników, stosujących broń oraz słownictwo charakterystyczne
-dla realiów historycznych tej epoki. W rozdziale "Projekt" została przedstawiona wizja autorów na poszczególne elementy gry.
+W celu przygotowania się do pracy nad prototypem gry, przeprowadzono przegląd wybranych gatunków gier komputerowych oraz
+mechanik stosowanych w grach. Niniejsza praca zawiera opis działania poszczególnych mechanizmów na podstawie przykładów
+z gier dostępnych na rynku oraz przedstawienie ich wpływu na rozgrywkę. Przedstawione rozwiązania stanowią inspirację dla wytwarzanej gry.
 
-W celu przygotowania się do projektu i implementacji gry, przeprowadzono przegląd wybranych mechanik w grach dostępnych
-na rynku. Niniejsza praca zawiera opis ich działania na podstawie przykładów z istniejących gier oraz sposobu, w jaki
-wpływają na ich rozgrywkę. Przedstawione rozwiązania stanowią inspirację dla wytwarzanej gry.
+W ramach projektu opracowano prototyp gry osadzonej w realiach historycznych wczesnego średniowiecza. W grze zostały
+zawarte mechanizmy zarządzania przyjaznymi jednostkami, budowania budowli oraz sztuczna inteligencja przeciwników, czyli
+mechaniki typowe dla gier RTS. Dodatkowo gra udostępnia prosty kontroler postaci, system rozwoju postaci oraz mechanizm
+interakcji z postaciami niezależnymi, które to są charakterystyczne dla gier cRPG.
 
-Praca została przygotowana przez trzech współautorów. Bartosz Strzelecki był odpowiedzialny za punkty \ref{ss:rts},
+Praca została zrealizowana przez trzech współautorów. Bartosz Strzelecki był odpowiedzialny za przygotowanie systemu
+dialogów, sztucznej inteligencji przeciwników, mechanizmu widzenia przez przeszkody oraz zapisu i odczytu stanu gry.
+Jest autorem podrozdziałów: \ref{ss:rts},
 \ref{s:ai_wpr}, \ref{chap:dialogi}, \ref{chap:dbd}, \ref{s:cel}, \ref{ss:navmesh}, \ref{ss:protobuf}, \ref{s:org},
 \ref{s:dial_proj}, \ref{s:ai_proj}, \ref{s:wid_proj}, \ref{s:dia_impl}, \ref{s:ai_impl}, \ref{s:wid_impl}, \ref{s:wpr_progres}, \ref{s:proj_progres}, \ref{s:impl_progres} i
-\ref{s:save_impl}. Jest również współautorem podpunktów \ref{ss:comp}, \ref{s:rozgrywka} oraz \ref{s:dalsze}. Bogna Lew
-odpowiadała za punkty \ref{ss:rpg}, \ref{s:budowanie}, \ref{s:walka}, \ref{s:fabula}, \ref{s:silniki}, \ref{s:silniki},
-\ref{ss:tTool}, \ref{ss:so}, \ref{s:swiat}, \ref{s:por_proj}, \ref{s:build_proj}, \ref{s:por_impl}, \ref{s:bud_impl} i
-\ref{s:efekty} oraz współtworzyła \ref{chap:introduction}, \ref{ss:comp}, \ref{s:wymagania} oraz \ref{s:rozgrywka}.
-Zofia Sosińska była odpowiedzialna za pracę nad punktami \ref{ss:tbs}, \ref{c:elem_ui}, \ref{chap:mb},
+\ref{s:save_impl}. Jest również współautorem podpunktów \ref{ss:comp}, \ref{s:rozgrywka} oraz \ref{s:dalsze}.
+Bogna Lew odpowiadała za modelowanie świata gry oraz implementację mechanizmu budowania i sterowania postacią. Jest autorką
+podrozdziałów \ref{ss:rpg}, \ref{s:budowanie}, \ref{s:walka}, \ref{s:fabula}, \ref{s:silniki}, \ref{s:silniki},
+\ref{ss:tTool}, \ref{ss:so}, \ref{s:swiat}, \ref{s:wymagania}, \ref{s:por_proj}, \ref{s:build_proj}, \ref{s:por_impl}, \ref{s:bud_impl} i
+\ref{s:efekty} oraz współtworzyła \ref{chap:introduction}, \ref{ss:comp}, oraz \ref{s:rozgrywka}.
+Zofia Sosińska była odpowiedzialna za przygotowanie interfejsu użytkownika wraz z mechanizmem interakcji z graczem. Jest
+autorką podrozdziałów \ref{ss:tbs}, \ref{c:elem_ui}, \ref{chap:mb},
 \ref{chap:menu_main}, \ref{chap:ui}, \ref{chap:naw}, \ref{chap:sjpzgp}, \ref{chap:menu_main_impl}, \ref{chap:ui_imp},
-\ref{chap:naw_impl} oraz \ref{s:opinia}. Współtworzyła również punkty \ref{chap:introduction}, \ref{s:wymagania} i \ref{s:dalsze}.
+\ref{chap:naw_impl} oraz \ref{s:opinia}. Współtworzyła również punkty \ref{chap:introduction} i \ref{s:dalsze}.
 
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}  
-The topic of the enginnering thesis is a prototype of real-time strategy game set in historical reality of selected era.
+The aim of the enginnering thesis is a prototype of real-time strategy game set in historical reality of selected era.
 This work contains a description of sample solutions used in selected games available on the market
 and the design and a overview of the implementation of the produced program. The work focuses on the presentation 
 of the implemented mechanics as well as
