@@ -21,15 +21,15 @@ mechaniki typowe dla gier RTS. Dodatkowo gra udostępnia prosty kontroler postac
 interakcji z postaciami niezależnymi, które to są charakterystyczne dla gier cRPG.
 
 Praca została zrealizowana przez trzech współautorów. Bartosz Strzelecki był odpowiedzialny za przygotowanie systemu
-dialogów, sztucznej inteligencji przeciwników, mechanizmu widzenia przez przeszkody oraz zapisu i odczytu stanu gry.
+dialogów, sztucznej inteligencji postaci niezależnych, mechanizmu widzenia przez przeszkody oraz zapisu i odczytu stanu gry.
 Jest autorem podrozdziałów: \ref{ss:rts},
 \ref{s:ai_wpr}, \ref{chap:dialogi}, \ref{chap:dbd}, \ref{s:cel}, \ref{ss:navmesh}, \ref{ss:protobuf}, \ref{s:org},
-\ref{s:dial_proj}, \ref{s:ai_proj}, \ref{s:wid_proj}, \ref{s:dia_impl}, \ref{s:ai_impl}, \ref{s:wid_impl}, \ref{s:wpr_progres}, \ref{s:proj_progres}, \ref{s:impl_progres} i
-\ref{s:save_impl}. Jest również współautorem podpunktów \ref{ss:comp}, \ref{s:rozgrywka} oraz \ref{s:dalsze}.
-Bogna Lew odpowiadała za modelowanie świata gry oraz implementację mechanizmu budowania i sterowania postacią. Jest autorką
+\ref{s:dial_proj}, \ref{s:ai_proj}, \ref{s:proj_progres}, \ref{s:wid_proj}, \ref{s:dia_impl}, \ref{s:ai_impl}, \ref{s:wid_impl}, \ref{s:impl_progres} i
+\ref{s:save_impl}. Jest również współautorem podpunktów \ref{ss:comp}, \ref{s:wpr_progres}, \ref{s:rozgrywka} oraz \ref{s:dalsze}.
+Bogna Lew odpowiadała za modelowanie terenu gry oraz implementację mechanizmu budowania i sterowania postacią. Jest autorką
 podrozdziałów \ref{ss:rpg}, \ref{s:budowanie}, \ref{s:walka}, \ref{s:fabula}, \ref{s:silniki}, \ref{s:silniki},
 \ref{ss:tTool}, \ref{ss:so}, \ref{s:swiat}, \ref{s:wymagania}, \ref{s:por_proj}, \ref{s:build_proj}, \ref{s:por_impl}, \ref{s:bud_impl} i
-\ref{s:efekty} oraz współtworzyła \ref{chap:introduction}, \ref{ss:comp}, oraz \ref{s:rozgrywka}.
+\ref{s:efekty} oraz współtworzyła \ref{chap:introduction}, \ref{ss:comp}, \ref{s:wpr_progres}, oraz \ref{s:rozgrywka}.
 Zofia Sosińska była odpowiedzialna za przygotowanie interfejsu użytkownika wraz z mechanizmem interakcji z graczem. Jest
 autorką podrozdziałów \ref{ss:tbs}, \ref{c:elem_ui}, \ref{chap:mb},
 \ref{chap:menu_main}, \ref{chap:ui}, \ref{chap:naw}, \ref{chap:sjpzgp}, \ref{chap:menu_main_impl}, \ref{chap:ui_imp},
@@ -47,25 +47,26 @@ The Unity engine and the tools it provides were used to prepare a prototype of t
 Employing these tools, basic mechanics typical of real-time strategy games and computer role-playing games were prepared,
 as well as sample tasks forming the games's plot. The devised prototype allows for 
 further development of the game environment by adding new activities and gameplay elements.
-The implementation matters are described in the 'Implementation' chapter, and the results in the 'Gameplay Course' subsection.
-
-The fundamental goal of the project is to develop a game that would reflect the reality of the selected era as accurately as possible.
-The main inspiration came from the culture of Celts, who at that time inhabited the territory of modern day Ireland.
-The project primarily focused on
-developing the means of navigation in the game and the behavior of opponents, using weaponry and vocabulary characteristic to the
-historical realities of this era. The 'Project' chapter presents the authors' vision for the various elements of the game.
 
 In preparation for the design and implementation of the game, a review of selected mechanics in games available
 on the market were conducted. This paper describes how they work using examples from existing games and how
 they affect their gameplay. The solutions presented provide inspiration for the developed game.
 
-Diploma was prepared by three coauthors. Bartosz Strzelecki was responsible for sections \ref{ss:rts},
+
+
+Diploma was carried by three coauthors. Bartosz Strzelecki was responsible for preparing dialog system, artificial
+intelligence of the non-playable characters,
+
+He is the author of sections \ref{ss:rts},
 \ref{s:ai_wpr}, \ref{chap:dialogi}, \ref{chap:dbd}, \ref{s:cel}, \ref{ss:navmesh}, \ref{ss:protobuf}, \ref{s:org},
-\ref{s:dial_proj}, \ref{s:ai_proj}, \ref{s:wid_proj}, \ref{s:dia_impl}, \ref{s:ai_impl}, \ref{s:wid_impl}, \ref{s:wpr_progres}, \ref{s:proj_progres}, \ref{s:impl_progres} and
-\ref{s:save_impl}. He also coauthored \ref{ss:comp}, \ref{s:rozgrywka} and \ref{s:dalsze}. Bogna Lew
-was responsible for \ref{ss:rpg}, \ref{s:budowanie}, \ref{s:walka}, \ref{s:fabula}, \ref{s:silniki}, \ref{s:silniki},
-\ref{ss:tTool}, \ref{ss:so}, \ref{s:swiat}, \ref{s:por_proj}, \ref{s:build_proj}, \ref{s:por_impl}, \ref{s:bud_impl} and
-\ref{s:efekty} and coauthored \ref{chap:introduction}, \ref{ss:comp}, \ref{s:wymagania} and \ref{s:rozgrywka}.
-Zofia Sosińska was responsible for preparing sections \ref{ss:tbs}, \ref{c:elem_ui}, \ref{chap:mb},
+\ref{s:dial_proj}, \ref{s:ai_proj}, \ref{s:proj_progres}, \ref{s:wid_proj}, \ref{s:dia_impl}, \ref{s:ai_impl}, \ref{s:wid_impl}, \ref{s:impl_progres} and
+\ref{s:save_impl}. He also coauthored \ref{ss:comp}, \ref{s:wpr_progres}, \ref{s:rozgrywka} and \ref{s:dalsze}. Bogna Lew
+was responsible for
+
+\ref{ss:rpg}, \ref{s:budowanie}, \ref{s:walka}, \ref{s:fabula}, \ref{s:silniki}, \ref{s:silniki},
+\ref{ss:tTool}, \ref{ss:so}, \ref{s:swiat}, \ref{s:wymagania}, \ref{s:por_proj}, \ref{s:build_proj}, \ref{s:por_impl}, \ref{s:bud_impl} and
+\ref{s:efekty} and coauthored \ref{chap:introduction}, \ref{ss:comp}, \ref{s:wpr_progres} and \ref{s:rozgrywka}.
+Zofia Sosińska was responsible for preparing user interface with a
+sections \ref{ss:tbs}, \ref{c:elem_ui}, \ref{chap:mb},
 \ref{chap:menu_main}, \ref{chap:ui}, \ref{chap:naw}, \ref{chap:sjpzgp}, \ref{chap:menu_main_impl}, \ref{chap:ui_imp},
-\ref{chap:naw_impl} and  \ref{s:opinia}. She also coauthored sections \ref{chap:introduction}, \ref{s:wymagania} and \ref{s:dalsze}.
+\ref{chap:naw_impl} and  \ref{s:opinia}. She also coauthored sections \ref{chap:introduction} and \ref{s:dalsze}.
