@@ -32,9 +32,9 @@ wysyłając sygnał, że dana sytuacja nastąpiła. Druga metoda natomiast poleg
 w zadanym kierunku i sprawdzeniu, czy z czymś się zderzył.
 
 Wyzwalacz został zastosowany do wykrywania kolizji z innymi obiektami na mapie takimi jak postacie, czy elementy
-scenerii niebędące terenem. W tym celu wykorzystano metody \textit{OnTriggerEnter()} i \textit{OnTriggerExit()}, które są wywoływane
+scenerii niebędące terenem. W tym celu wykorzystano metody \texttt{OnTriggerEnter()} i \texttt{OnTriggerExit()}, które są wywoływane
 odpowiednio gdy, dany obiekt znalazł się w obszarze kolizji innego elementu, bądź go opuścił. Każda z nich odpowiednio
-zmienia poprzez inkrementację bądź dekrementację licznika kolizji obiektu. Jeżeli jego wartość jest różna od zera, tzn.
+zmienia poprzez zwiększenie bądź zmniejszenie wartości licznika kolizji obiektu. Jeżeli jego wartość jest różna od zera, tzn.
 obiekt z czymś koliduje, to umiejscowienie jest uznawane za niepoprawne.
 
 Drugi z mechanizmów został wykorzystany do sprawdzenia nachylenia podłoża. Efekt został osiągnięty poprzez rzucenie
