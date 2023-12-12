@@ -1,39 +1,43 @@
 \chapter*{Streszczenie}
-\addcontentsline{toc}{chapter}{Streszczenie}
-Tematem pracy inżynierskiej jest realizacja gry z gatunku strategii czasu rzeczywistego osadzonej w realiach historycznych
-wybranej epoki. Niniejsza praca zawiera opis przykładowych rozwiązań zastosowanych w niektórych grach dostępnych na rynku
+% \addcontentsline{toc}{chapter}{Streszczenie}
+Celem pracy inżynierskiej jest realizacja prototypowej gry będącej hybrydą gatunków strategii czasu rzeczywistego oraz
+komputerowych gier fabularnych, osadzonej w realiach historycznych
+wybranej epoki. Niniejsza praca zawiera opis przykładowych rozwiązań zastosowanych w wybranych grach dostępnych na rynku
 oraz projekt i implementację wytwarzanego programu. Praca skupia się na przedstawieniu zaimplementowanych mechanik oraz
 sposobie oddania realiów, w których osadzona jest fabuła opracowanej gry.
 
 Do przygotowania prototypu gry wykorzystano silnik Unity oraz udostępniane przez niego narzędzia. Za ich pomocą
 przygotowano podstawowe mechanizmy, typowe dla gier strategii czasu rzeczywistego i komputerowych gier fabularnych oraz przykładowe zadania tworzące
 fabułę gry. Utworzony prototyp pozwala na dalsze rozwijanie świata gry poprzez dodawanie nowych zadań oraz elementów
-rozgrywki. Zagadnienia implementacyjne zostały opisane w rozdziale "Implementacja", a efekt finalny w podrozdziale "Przebieg rozgrywki".
+rozgrywki.
 
-Podstawowym celem projektu jest przygotowanie gry, która w jak najdokładniejszy sposób oddawałaby realia wybranej epoki.
-Zdecydowaliśmy się na osadzenie fabuły we wczesnym średniowieczu. Główną inspiracją stała się kultura Celtów, którzy w
-tamtych czasach zamieszkiwali tereny współczesnej Irlandii. W ramach projektu przede wszystkim skupiono się na
-opracowaniu sposobu nawigacji w grze oraz zachowania przeciwników, stosujących broń oraz słownictwo charakterystyczne
-dla realiów historycznych tej epoki. W rozdziale "Projekt" została przedstawiona wizja autorów na poszczególne elementy gry.
+W celu przygotowania się do pracy nad prototypem gry, przeprowadzono przegląd wybranych gatunków gier komputerowych oraz
+mechanik stosowanych w grach. Niniejsza praca zawiera opis działania poszczególnych mechanizmów na podstawie przykładów
+z gier dostępnych na rynku oraz przedstawienie ich wpływu na rozgrywkę. Przedstawione rozwiązania stanowią inspirację dla wytwarzanej gry.
 
-W celu przygotowania się do projektu i implementacji gry, przeprowadzono przegląd wybranych mechanik w grach dostępnych
-na rynku. Niniejsza praca zawiera opis ich działania na podstawie przykładów z istniejących gier oraz sposobu, w jaki
-wpływają na ich rozgrywkę. Przedstawione rozwiązania stanowią inspirację dla wytwarzanej gry.
+W ramach projektu opracowano prototyp gry osadzonej w realiach historycznych wczesnego średniowiecza. W grze zostały
+zawarte mechanizmy zarządzania przyjaznymi jednostkami, budowania budowli oraz sztuczna inteligencja przeciwników, czyli
+mechaniki typowe dla gier RTS. Dodatkowo gra udostępnia prosty kontroler postaci, system rozwoju postaci oraz mechanizm
+interakcji z postaciami niezależnymi, które to są charakterystyczne dla gier cRPG.
 
-Praca została przygotowana przez trzech współautorów. Bartosz Strzelecki był odpowiedzialny za punkty \ref{ss:rts},
-\ref{s:ai_wpr}, \ref{chap:dialogi}, \ref{chap:dbd}, \ref{s:cel}, \ref{ss:navmesh}, \ref{ss:protobuf}, \ref{s:org},
-\ref{s:dial_proj}, \ref{s:ai_proj}, \ref{s:wid_proj}, \ref{s:dia_impl}, \ref{s:ai_impl}, \ref{s:wid_impl}, \ref{s:wpr_progres}, \ref{s:proj_progres}, \ref{s:impl_progres} i
-\ref{s:save_impl}. Jest również współautorem podpunktów \ref{ss:comp}, \ref{s:rozgrywka} oraz \ref{s:dalsze}. Bogna Lew
-odpowiadała za punkty \ref{ss:rpg}, \ref{s:budowanie}, \ref{s:walka}, \ref{s:fabula}, \ref{s:silniki}, \ref{s:silniki},
-\ref{ss:tTool}, \ref{ss:so}, \ref{s:swiat}, \ref{s:por_proj}, \ref{s:build_proj}, \ref{s:por_impl}, \ref{s:bud_impl} i
-\ref{s:efekty} oraz współtworzyła \ref{chap:introduction}, \ref{ss:comp}, \ref{s:wymagania} oraz \ref{s:rozgrywka}.
-Zofia Sosińska była odpowiedzialna za pracę nad punktami \ref{ss:tbs}, \ref{c:elem_ui}, \ref{chap:mb},
+Praca została zrealizowana przez trzech współautorów. Bartosz Strzelecki był odpowiedzialny za przygotowanie systemu
+dialogów, sztucznej inteligencji postaci niezależnych, mechanizmu widzenia przez przeszkody oraz zapisu i odczytu stanu gry.
+Jest autorem podrozdziałów: \ref{ss:rts},
+\ref{s:ai_wpr}, \ref{chap:dialogi}, \ref{chap:dbd}, \ref{s:cel}, \ref{ss:navmesh}, \ref{ss:protobuf}, \ref{s:org}, \ref{s:proj_progres},
+\ref{s:dial_proj}, \ref{s:ai_proj}, \ref{s:wid_proj}, \ref{s:dia_impl}, \ref{s:ai_impl}, \ref{s:wid_impl}, \ref{s:impl_progres} i
+\ref{s:save_impl}. Jest również współautorem podpunktów \ref{ss:comp}, \ref{s:wpr_progres}, \ref{s:rozgrywka} oraz \ref{s:dalsze}.
+Bogna Lew odpowiadała za modelowanie terenu gry oraz implementację mechanizmu budowania i kontrolera postaci. Jest autorką
+podrozdziałów \ref{ss:rpg}, \ref{s:budowanie}, \ref{s:walka}, \ref{s:fabula}, \ref{s:silniki}, \ref{s:silniki},
+\ref{ss:tTool}, \ref{ss:so}, \ref{s:swiat}, \ref{s:wymagania}, \ref{s:por_proj}, \ref{s:build_proj}, \ref{s:por_impl}, \ref{s:bud_impl} i
+\ref{s:efekty} oraz współtworzyła \ref{chap:introduction}, \ref{ss:comp}, \ref{s:wpr_progres}, oraz \ref{s:rozgrywka}.
+Zofia Sosińska była odpowiedzialna za przygotowanie interfejsu użytkownika wraz z mechanizmem przetwarzania interakcji z użytkownikiem. Jest
+autorką podrozdziałów \ref{ss:tbs}, \ref{c:elem_ui}, \ref{chap:mb},
 \ref{chap:menu_main}, \ref{chap:ui}, \ref{chap:naw}, \ref{chap:sjpzgp}, \ref{chap:menu_main_impl}, \ref{chap:ui_imp},
-\ref{chap:naw_impl} oraz \ref{s:opinia}. Współtworzyła również punkty \ref{chap:introduction}, \ref{s:wymagania} i \ref{s:dalsze}.
+\ref{chap:naw_impl} oraz \ref{s:opinia}. Współtworzyła również punkty \ref{chap:introduction} i \ref{s:dalsze}.
 
 \chapter*{Abstract}
-\addcontentsline{toc}{chapter}{Abstract}  
-The topic of the enginnering thesis is a prototype of real-time strategy game set in historical reality of selected era.
+% \addcontentsline{toc}{chapter}{Abstract}
+The purpose of the enginnering thesis is a prototype of real-time strategy game set in historical reality of selected era.
 This work contains a description of sample solutions used in selected games available on the market
 and the design and a overview of the implementation of the produced program. The work focuses on the presentation 
 of the implemented mechanics as well as
@@ -43,25 +47,27 @@ The Unity engine and the tools it provides were used to prepare a prototype of t
 Employing these tools, basic mechanics typical of real-time strategy games and computer role-playing games were prepared,
 as well as sample tasks forming the games's plot. The devised prototype allows for 
 further development of the game environment by adding new activities and gameplay elements.
-The implementation matters are described in the 'Implementation' chapter, and the results in the 'Gameplay Course' subsection.
-
-The fundamental goal of the project is to develop a game that would reflect the reality of the selected era as accurately as possible.
-The main inspiration came from the culture of Celts, who at that time inhabited the territory of modern day Ireland.
-The project primarily focused on
-developing the means of navigation in the game and the behavior of opponents, using weaponry and vocabulary characteristic to the
-historical realities of this era. The 'Project' chapter presents the authors' vision for the various elements of the game.
 
 In preparation for the design and implementation of the game, a review of selected mechanics in games available
 on the market were conducted. This paper describes how they work using examples from existing games and how
 they affect their gameplay. The solutions presented provide inspiration for the developed game.
 
-Diploma was prepared by three coauthors. Bartosz Strzelecki was responsible for sections \ref{ss:rts},
-\ref{s:ai_wpr}, \ref{chap:dialogi}, \ref{chap:dbd}, \ref{s:cel}, \ref{ss:navmesh}, \ref{ss:protobuf}, \ref{s:org},
-\ref{s:dial_proj}, \ref{s:ai_proj}, \ref{s:wid_proj}, \ref{s:dia_impl}, \ref{s:ai_impl}, \ref{s:wid_impl}, \ref{s:wpr_progres}, \ref{s:proj_progres}, \ref{s:impl_progres} and
-\ref{s:save_impl}. He also coauthored \ref{ss:comp}, \ref{s:rozgrywka} and \ref{s:dalsze}. Bogna Lew
-was responsible for \ref{ss:rpg}, \ref{s:budowanie}, \ref{s:walka}, \ref{s:fabula}, \ref{s:silniki}, \ref{s:silniki},
-\ref{ss:tTool}, \ref{ss:so}, \ref{s:swiat}, \ref{s:por_proj}, \ref{s:build_proj}, \ref{s:por_impl}, \ref{s:bud_impl} and
-\ref{s:efekty} and coauthored \ref{chap:introduction}, \ref{ss:comp}, \ref{s:wymagania} and \ref{s:rozgrywka}.
-Zofia Sosińska was responsible for preparing sections \ref{ss:tbs}, \ref{c:elem_ui}, \ref{chap:mb},
+Within the project, a prototype game set in the historical realities of the early Middle Ages was developed. The game
+included mechanics of managing friendly units, building objects and artificial intelligence of the opponents, which are
+typical mechanics of RTS games. Additionally, the game facilitates simple character controller, character development
+system and a mechanic of interactiong with non-playable characters, which are representative for cRPG games.
+
+Diploma was carried out by three coauthors. Bartosz Strzelecki was responsible for preparing dialog system, artificial
+intelligence of the non-playable characters, vision through objects mechanic as well as saving and loading state of a game.
+He is the author of sections \ref{ss:rts},
+\ref{s:ai_wpr}, \ref{chap:dialogi}, \ref{chap:dbd}, \ref{s:cel}, \ref{ss:navmesh}, \ref{ss:protobuf}, \ref{s:org}, \ref{s:proj_progres},
+\ref{s:dial_proj}, \ref{s:ai_proj}, \ref{s:wid_proj}, \ref{s:dia_impl}, \ref{s:ai_impl}, \ref{s:wid_impl}, \ref{s:impl_progres} and
+\ref{s:save_impl}. He also coauthored \ref{ss:comp}, \ref{s:wpr_progres}, \ref{s:rozgrywka} and \ref{s:dalsze}. Bogna Lew
+was responsible for modeling of the game's world as well as implementation of build mechanic and character controller. She
+is the author of sections \ref{ss:rpg}, \ref{s:budowanie}, \ref{s:walka}, \ref{s:fabula}, \ref{s:silniki}, \ref{s:silniki},
+\ref{ss:tTool}, \ref{ss:so}, \ref{s:swiat}, \ref{s:wymagania}, \ref{s:por_proj}, \ref{s:build_proj}, \ref{s:por_impl}, \ref{s:bud_impl} and
+\ref{s:efekty} and coauthored \ref{chap:introduction}, \ref{ss:comp}, \ref{s:wpr_progres} and \ref{s:rozgrywka}.
+Zofia Sosińska was responsible for preparing user interface with a system for resolving user input. She is the author of
+sections \ref{ss:tbs}, \ref{c:elem_ui}, \ref{chap:mb},
 \ref{chap:menu_main}, \ref{chap:ui}, \ref{chap:naw}, \ref{chap:sjpzgp}, \ref{chap:menu_main_impl}, \ref{chap:ui_imp},
-\ref{chap:naw_impl} and  \ref{s:opinia}. She also coauthored sections \ref{chap:introduction}, \ref{s:wymagania} and \ref{s:dalsze}.
+\ref{chap:naw_impl} and  \ref{s:opinia}. She also coauthored sections \ref{chap:introduction} and \ref{s:dalsze}.
