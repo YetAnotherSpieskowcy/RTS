@@ -1,6 +1,6 @@
 \section{Sztuczna inteligencja (Bartosz Strzelecki)}\label{s:ai_impl}
-Nawigacja przeciwników została zrealizowana poprzez wbudowany w silnik Unity system NavMesh. Pozwala nam on na łatwe wyznaczenie powierzchni, po której mogą poruszać
-się postacie niekontrolowane przez gracza oraz realizuję zadanie wyznaczania ścieżki dla tych postaci.
+Nawigacja przeciwników została zrealizowana poprzez wbudowany w silnik Unity system \texttt{NavMesh}. Pozwala on na łatwe wyznaczenie powierzchni, po której mogą poruszać
+się postacie niekontrolowane przez gracza oraz realizuje zadanie wyznaczania ścieżki dla tych postaci.
 
 \begin{figure}[h]
 \centering
@@ -11,8 +11,8 @@ się postacie niekontrolowane przez gracza oraz realizuję zadanie wyznaczania �
 \FloatBarrier
 
 Przeciwnicy są kontrolowani poprzez jeden obiekt przydzielający cele każdemu przypisanemu wrogowi. W normalnym trybie wrogowie poruszają się w sposób losowy
-w obrębie wyznaczonej przestrzeni (biały okrąg). Kiedy przyjazne jednostki znajdą się w wystarczającej odległości (czerwony okrąg), przeciwnicy obiorą sobie za cel jedną z nich.
-Po opuszczeniu przez drużynę gracza wyznaczonego obszaru (żółty okrąg) wrogowie wracają do poruszania się w sposób losowy w obrębie białego okręgu.
+w obrębie wyznaczonej przestrzeni (biały okrąg na rys. \ref{fig:regions}). Kiedy przyjazne jednostki znajdą się w wystarczającej odległości (czerwony okrąg na rys. \ref{fig:regions}), przeciwnicy obiorą sobie za cel jedną z nich.
+Po opuszczeniu przez drużynę gracza wyznaczonego obszaru (żółty okrąg na rys. \ref{fig:regions}) wrogowie wracają do poruszania się w sposób losowy w obrębie białego okręgu.
 
 
 \begin{figure}[h]

@@ -1,6 +1,6 @@
 \section{Mechanizm budowania (Bogna Lew)}\label{s:bud_impl}
 
-Opracowany mechanizm umożliwia graczowi na przełączenie się w tryb budowania poprzez naciśnięcie klawisza "B", który od razu
+Opracowany mechanizm umożliwia graczowi na przełączenie się w tryb budowania poprzez naciśnięcie klawisza \texttt{B}, który od razu
 wyświetli podgląd bazowego obiektu. Widok budynku przemieszcza się przed postacią oraz odpowiednio obraca się razem z
 nią. Efekt poruszania się podglądu został uzyskany za pomocą poniższego wzoru:
 \begin{equation}
@@ -12,10 +12,10 @@ z = r \times cos(\alpha)
 \end{equation}
 
 gdzie $x$, $y$ i $z$ to współrzędne odpowiednio względem osi X, Y i Z, $r$ to odległość środka obiektu od postaci
-gracza, natomiast $\alpha$ to kąt o jaki jest on obrócony względem osi y.
+gracza, natomiast $\alpha$ to kąt o jaki jest on obrócony względem osi Y.
 
 Podgląd budynku będzie widoczny do czasu, aż gracz go umieści naciskając prawy przycisk myszy bądź wychodząc z trybu
-edycji naciskając klawisz Escape. Jeżeli widok budowli znajduje się w poprawnym do umieszczenia miejscu to jest on
+edycji naciskając klawisz \texttt{Escape}. Jeżeli widok budowli znajduje się w poprawnym do umieszczenia miejscu to jest on
 podświetlany na zielono, w przeciwnym razie - na czerwono. Wybudowanie powoduje przywrócenie bazowych kolorów obiektu
 oraz włącza wykrywanie kolizji z nim, dzięki czemu budynek poprawnie oddziałuje z otaczającym go środowiskiem.
 
@@ -31,8 +31,8 @@ brutalnego zatrzymywania go. Oznacza to, że może on przeniknąć przez inny el
 wysyłając sygnał, że dana sytuacja nastąpiła. Druga metoda natomiast polega na wypuszczeniu promienia o pewnej długości
 w zadanym kierunku i sprawdzeniu, czy z czymś się zderzył.
 
-Wyzwalacz został zastosowany do wykrywania kolizji z innymi obiektami na mapie takimi jak postacie, czy elementy
-scenerii niebędące terenem. W tym celu wykorzystano metody \texttt{OnTriggerEnter()} i \texttt{OnTriggerExit()}, które są wywoływane
+Wyzwalacz został zastosowany do wykrywania kolizji z innymi obiektami na mapie, takimi jak postacie, czy elementy
+scenerii niebędące terenem. W tym celu wykorzystano metody \verb|OnTriggerEnter()| i \verb|OnTriggerExit()|, które są wywoływane
 odpowiednio gdy, dany obiekt znalazł się w obszarze kolizji innego elementu, bądź go opuścił. Każda z nich odpowiednio
 zmienia poprzez zwiększenie bądź zmniejszenie wartości licznika kolizji obiektu. Jeżeli jego wartość jest różna od zera, tzn.
 obiekt z czymś koliduje, to umiejscowienie jest uznawane za niepoprawne.
@@ -52,7 +52,7 @@ jest poprawne.
 Dodatkowo metodę rzucania promienia wykorzystano do wykrycia kolizji z drzewami. Obiekty te są traktowane przez silnik
 jako część terenu, przez co metoda wykorzystująca wyzwalacz pomija je. Dlatego w celu wykrywania kolizji z nimi
 zdecydowano się na rzucenie dwóch grup promieni biegnących w głąb obiektu z naprzeciwległych krawędzi prostopadłych do
-osi y. Każdy z promieni biegnie w połowie wysokości obiektu i sięga przeciwnej ściany. Tak skomplikowany układ ma na
+osi Y. Każdy z promieni biegnie w połowie wysokości obiektu i sięga przeciwnej ściany. Tak skomplikowany układ ma na
 celu zapewnienie poprawności wykrywania kolizji w przypadku, gdy początki promieni znajdują się wewnątrz kolidującego
 obiektu. Jeśli którykolwiek z nich zderzy się z drzewem, to wybrane miejsce jest uznawane za niepoprawne.
 

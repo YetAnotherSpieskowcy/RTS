@@ -1,17 +1,17 @@
 \section{Mechanizm budowania (Bogna Lew)}\label{s:build_proj}
-Inspiracją do implementacji tego mechanizmu jest gra Warhammer 40,000: Dawn of War (por. \ref{s:budowanie}). Do pożądanych
-efektów, które ten tytuł zapewnia, są walidacja terenu oraz wymuszanie poniesienia kosztów budowy. Dodatkowo
-wytwarzana gra będzie implementować proces budowania analogicznie jak w Warhammer 40,000: Dawn of War.
+Inspiracją do implementacji tego mechanizmu jest gra \textit{Warhammer 40,000: Dawn of War} (por. \ref{s:budowanie}). Do pożądanych
+efektów, które ten tytuł zapewnia, należą walidacja terenu oraz wymuszanie poniesienia kosztów budowy. Dodatkowo
+wytwarzana gra będzie implementować proces budowania analogicznie jak w \textit{Warhammer 40,000: Dawn of War}.
 
 Najważniejszym aspektem implementowanego mechanizmu będzie walidacja terenu. Zostanie ona uzyskana poprzez wyświetlenie
-podglądu budowli w trakcie umiejscawiania konstrukcji na mapie. Jeśli miejsce w którym gracz chce postawić budynek jest
-poprawne tzn. nie nachodzi na inne obiekty oraz teren jest odpowiedni to pokazywany widok jest podświetlany na zielono,
+podglądu budowli w trakcie umiejscawiania konstrukcji na mapie. Jeśli miejsce, w którym gracz chce postawić budynek jest
+poprawne tzn. nie nachodzi na inne obiekty oraz teren jest odpowiedni, to pokazywany widok jest podświetlany na zielono,
 w przeciwnym razie - na czerwono. Jest to efekt, który wytwarzana przez zespół gra będzie zawierać.
 
 Kolejnym pożądanym efektem jest konieczność poniesienia przez użytkownika kosztów
 wybudowania obiektu. W tym celu gra będzie monitorowała, czy gracz posiada wystarczającą ilość wymaganych zasobów, a w
-przypadku niespełnienia tych warunków - blokowała możliwość wybudowania.
+przypadku niespełnienia tych warunków - blokowała możliwość budowy wybranego obiektu.
 
 Dodatkowo budowa obiektu nie może być natychmiastowa, gdyż nie jest to zgodnie z rzeczywistością. Dlatego podobnie jak w
-grze Warhammer 40,000: Dawn of War każdy budynek będzie musiał zostać wybudowany przez dedykowaną do tego postać. Będzie
+grze \textit{Warhammer 40,000: Dawn of War} każdy budynek będzie musiał zostać wybudowany przez dedykowaną do tego postać. Będzie
 ona imitowała proces budowania i dopiero gdy ukończy to zadanie, dana budowla zacznie przynosić graczowi korzyści.

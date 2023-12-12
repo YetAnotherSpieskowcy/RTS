@@ -2,15 +2,15 @@
 W trakcie rozgrywki istotnym aspektem wpływającym na jakość jest mechanizm sterowania postacią. Z tą mechaniką gracz ma
 bezpośredni kontakt, ponieważ to właśnie za jej pomocą może eksplorować świat.
 
-Do implementacji tego mechanizmu zainspirowaliśmy się grą Skyrim (por. \ref{s:walka}). Postać jest sterowana za pomocą klawiszy “W”, “A”, “S”
-oraz “D”, natomiast jej rotacja oraz obrót kamery jest kontrolowany przez mysz. Dodatkowo gracz może wykonywać ataki
+Do implementacji tego mechanizmu zainspirowaliśmy się grą \textit{Skyrim} (por. \ref{s:walka}). Postać jest sterowana za pomocą klawiszy \texttt{W}, \texttt{A}, \texttt{S}
+oraz \texttt{D}, natomiast jej rotacja oraz obrót kamery jest kontrolowany przez mysz. Dodatkowo gracz może wykonywać ataki
 poprzez naciśnięcie lewego przycisku myszy.
 
 Pierwszy element kontrolera odpowiada za przemieszczanie się postaci. Do tego wykorzystuje komponent \texttt{Input Manager}, w
 którym zostały odwzorowane odpowiednie klawisze dla każdej z osi, wzdłuż której gracz może się przemieszczać. Na tej
 podstawie wyznaczane jest faktyczne przesunięcie postaci względem kierunku, w którym jest zwrócona oraz modyfikowane
 jest jej położenie. Dodatkowo ten komponent odpowiada za wyznaczenie prędkości, z jaką gracz się porusza. Domyślnie
-postać przemieszcza się tempem chodu, jednakże jeśli gracz przytrzyma lewy klawisz Shift, to zacznie się poruszać biegiem.
+postać przemieszcza się tempem chodu, jednakże jeśli gracz przytrzyma lewy klawisz \texttt{Shift}, to zacznie się poruszać biegiem.
 
 Ten element dodatkowo odpowiada za wykrywanie, czy gracz chce wykonać atak. Przekazuje on następnie tę informację do
 komponentu odpowiedzialnego za określenie powodzenia ataku oraz wywołanie odpowiedniego mechanizmu informowania
@@ -43,6 +43,6 @@ co znajduje się nad oraz tuż przed nim. Obrazują to rysunki \ref{fig:gora} or
 Ostatni komponent odpowiada za kontrolowanie przybliżania kamery. W tym celu w \texttt{Input Managerze} zostało odwzorowane kółko
 myszy. Zwrócona przez system wartość jest wykorzystywana do obliczenia odległości kamery od postaci przy zachowaniu
 ustalonych przez grę ograniczeń. Dodatkowo komponent dokonuje również automatycznego przybliżania, jeśli wskutek
-przemieszczania się postaci, pomiędzy nią a kamerą miałaby się znaleźć przeszkoda. Dzięki temu nie zostanie zasłonięty
+przemieszczania się postaci, pomiędzy nią, a kamerą miałaby się znaleźć przeszkoda. Dzięki temu nie zostanie zasłonięty
 widok tego co się dzieje wokół postaci. Odsunięcie się od przeszkody zaskutkuje oddaleniem kamery do poprzedniej
 odległości.

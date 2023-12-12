@@ -1,16 +1,16 @@
 \section{Widzenie przez horyzont (Bartosz Strzelecki)}\label{s:wid_impl}
 Efekt został osiągnięty poprzez zmodyfikowanie potoku renderowania w taki sposób, że w zależności od wartości w buforze głębi jest wykorzystywany inny shader.
-W tym przypadku, jeżeli sfera jest przysłonięta przez ścianę jest ona narysowana w przeciwnym wypadku jest uruchamiany pusty shader.
+W tym przypadku, jeżeli sfera jest przysłonięta przez ścianę, jest ona narysowana, a w przeciwnym wypadku jest uruchamiany pusty shader.
 "Unity domyślnie sortuje obiekty na podstawie odległości od kamery. Tak więc
 w miarę zbliżania się obiektu do kamery, będzie on rysowany nad wszystkimi obiektami znajdującymi się dalej od kamery.
 W większości przypadków sprawdza się to dobrze podczas tworzenia gier, ale
-znajdą się sytuacje, w których będziemy chcieli mieć większą kontrolę nad sortowaniem obiektów na scenie. Używając bloku Tags{} możemy kontrolować to sortowanie.
+znajdą się sytuacje, w których będziemy chcieli mieć większą kontrolę nad sortowaniem obiektów na scenie. Używając bloku \verb|Tags\{\}| możemy kontrolować to sortowanie.
 Unity udostępniło nam kilka domyślnych kolejek renderowania, z których każda ma unikalną wartość, którą
 kieruje Unity, kiedy należy narysować obiekt na ekranie. Te wbudowane kolejki renderowania
-nazywają się Background, Geometry, AlphaTest, Transparent i Overlay."\cite{shaderscookbook}. Wykorzystując ten mechanizm
-możliwe jest uzyskanie efektu widzenia przez postać gracza poprzez horyzont. Uzyskujemy przez to efekt podobny do tego zaimplementowanego w grze Dead by Daylight (por. \ref{chap:dbd}).
+nazywają się \verb|Background|, \verb|Geometry|, \verb|AlphaTest|, \verb|Transparent| i \verb|Overlay|." \cite{shaderscookbook}. Wykorzystując ten mechanizm
+możliwe jest uzyskanie efektu widzenia przez postać gracza poprzez horyzont. Uzyskujemy przez to efekt podobny do tego zaimplementowanego w grze \textit{Dead by Daylight} (por. \ref{chap:dbd}).
 
-Po naciśnięciu przycisku E następuje zagranie animacji opisanej wzorami 
+Po naciśnięciu przycisku \texttt{E} następuje zagranie animacji opisanej wzorami
 
 \begin{equation}
 w(t, offset) = 1.1 \times 2.1^{-\left(\frac{{\left(\sin(t) + 1 - 0.4 - \text{{offset}}\right)^2}}{{0.02}}\right)}
