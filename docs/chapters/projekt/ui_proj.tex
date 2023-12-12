@@ -2,27 +2,27 @@
 Projekt interfejsu użytkownika przewiduje tryb podstawowy z zawsze widocznymi elementami oraz dynamicznie pojawiające się okna, wywoływane za pomocą konkretnych klawiszy. 
  Zadaniem każdej składowej będzie odzwierciedlenie pewnego fragmentu aktualnego stanu wiedzy granej postaci z naciskiem na najpotrzebniejsze w danej chwili informacje. Przewidziane są:
  \begin{itemize}
-    \item menu stawiania budynków; 
-    \item menu wydawania komend;
-    \item menu zapisu;
-    \item informacja o możliwej interakcji;
-    \item dziennik z zadaniami;
+    \item menu stawiania budynków,
+    \item menu wydawania komend,
+    \item menu zapisu,
+    \item informacja o możliwej interakcji,
+    \item dziennik z zadaniami,
     \item ekran końca gry.
 \end{itemize}
 	
 \subsection{Interfejs podstawowy}
 Interfejs podstawowy przewiduje funkcje, takie jak pokazanie:
 \begin{itemize}
-    \item aktualnego czasu w grze, aby stworzyć iluzję upływającego czasu w świecie gry; 
-    \item surowców i funduszy, aby użytkownik nie był obarczony kalkulacjami przy każdym zakupie lub przypływie zasobów;
-    \item kompasu, aby ułatwić nawigację;
-    \item stan zdrowia gracza, aby zasygnalizować mu, czy przypadkiem nie rozsądniejsze będzie wycofanie się z potyczki;
+    \item aktualnego czasu w grze, aby stworzyć iluzję upływającego czasu w świecie gry,
+    \item surowców i funduszy, aby użytkownik nie był obarczony kalkulacjami przy każdym zakupie lub przypływie zasobów,
+    \item kompasu, aby ułatwić nawigację,
+    \item stan zdrowia gracza, aby zasygnalizować mu, czy przypadkiem nie rozsądniejsze będzie wycofanie się z potyczki,
     \item etap, na którym są przypisane graczowi zadania, aby przypomnieć mu, że na takowe się zgodził.
 \end{itemize}
-Inspiracją dla górnego paska z informacjami jest ten użyty w grze Warcraft 3 (por. \ref{c:elem_ui}). Prostota i surowość stylu będą współgrać z klimatem gry.
+Inspiracją dla górnego paska z informacjami jest ten użyty w grze \textit{Warcraft 3} (por. \ref{c:elem_ui}). Prostota i surowość stylu będą współgrać z klimatem gry.
 
 W naszej grze skupimy się jednak na tym, aby interfejs użytkownika zabierał jak najmniej miejsca. Dlatego też projekt zakłada, że poszczególne obiekty nie będą ze sobą połączone, a jedynie “dryfować” w przestrzeni.
-Jako ważny element tej części UI zawarty zostanie kompas, wzorowany na tym z gry The Elder Scrolls V: Skyrim (por. \ref{chap:skrm}).
+Jako ważny element tej części UI zawarty zostanie kompas, wzorowany na tym z gry \textit{The Elder Scrolls V: Skyrim} (por. \ref{chap:skrm}).
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/ui_proj_ogolne.jpg}
@@ -33,7 +33,7 @@ Jako ważny element tej części UI zawarty zostanie kompas, wzorowany na tym z 
 \subsection{Menu stawiania budynków}
 Menu stawiania budynków będzie obrazować wiedzę i spostrzeżenia głównej postaci przy budowaniu nowej budowli. Docelowym miejscem ukazania się informacji będzie 
 dół ekranu, aby interfejs nie zasłaniał użytkownikowi zbyt dużo przestrzeni. Graczowi ukaże się lista dostępnych budynków oraz odpowiednie komunikaty w wypadku, gdy 
-nie można będzie dokonać zakupu, czy postawienia. Inspiracją do przedstawienia tych informacji zostanie rozwiązanie gry Orcs must die! (por. \ref{c:elem_ui}).
+nie można będzie dokonać zakupu, czy postawienia. Inspiracją do przedstawienia tych informacji zostanie rozwiązanie gry \texttt{Orcs must die!} (por. \ref{c:elem_ui}).
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/ui_proj_budowanie.jpg}
@@ -45,7 +45,7 @@ nie można będzie dokonać zakupu, czy postawienia. Inspiracją do przedstawien
 \subsection{Menu wydawania komend}
 Po zdobyciu towarzyszy broni, kluczowe będzie udostępnienie mechaniki sterowania nimi. Zrealizowane to zostanie za pomocą menu wydawania komend.
 Projekt przewiduje wyświetlenie listy dostępnych komend i klawiszy, po których naciśnięciu, konkretna opcja zostanie wybrana. 
-Źródłem pomysłu jest interfejs zaprojektowany w grze Mount\&Blade (por. \ref{chap:mb}).
+Źródłem pomysłu jest interfejs zaprojektowany w grze \textit{Mount\&Blade} (por. \ref{chap:mb}).
 
 \begin{figure}[htbp]
     \centering
@@ -65,7 +65,7 @@ umiejscowioną na nim będzie nazwa pliku, aby gracz mógł później go odnale�
 \FloatBarrier
 
 \subsection{Informacja o możliwej interakcji}
-W programie przewidziane są postacie i przedmioty interaktywne. Aby zasygnalizowć mu zaistniałą możliwość podjęcia pewnej akcji, 
+W programie przewidziane są postacie i przedmioty interaktywne. Aby zasygnalizowć graczowi zaistniałą możliwość podjęcia pewnej akcji,
 gra powinna mu wyświetlić stosowny komunikat. Wybranie widocznego miejsca będzie istotne, ponieważ grafika zniknie,
 jak tylko interakcja przestanie być możliwa. Tudzież kluczowe będzie wybranie takiej lokalizacji, aby komunikat zwrócił uwagę gracza nawet, 
 jeśli wyświetlony będzie tylko przez krótką chwilę. Za najwłaściwsze umiejscowienie wybrano środek górnej części ekranu, zaraz

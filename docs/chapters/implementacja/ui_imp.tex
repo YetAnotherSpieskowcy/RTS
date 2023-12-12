@@ -12,10 +12,10 @@ jak najmniej miejsca, jednocześnie podając jak najwięcej przydatnych informac
 Interfejs podstawowy towarzyszy graczowi podczas całej rozgrywki. Skupia się on w górnej części ekranu. Jego zadaniem jest pomoc 
 użytkownikowi w ogólnym odnalezieniu się w świecie. W tym celu są mu ukazane następujące informacje:
 \begin{itemize}
-    \item aktualny czas w grze;
-    \item położenie gracza względem stron świata oraz wrogów ukazane na kompasie;
-    \item stan surowców i funduszy;
-    \item stan zdrowia gracza;
+    \item aktualny czas w grze,
+    \item położenie gracza względem stron świata oraz wrogów ukazane na kompasie,
+    \item stan surowców i funduszy,
+    \item stan zdrowia gracza,
     \item etap, na którym są przypisane graczowi zadania.
 \end{itemize}
 
@@ -36,11 +36,11 @@ Pasek zdrowia zmienia swoją wartość, gdy dostaniemy obrażenia, jednocześnie
 czerwonego wykrzyknika, gdy gracz ma jakieś aktywne, nieskończone zadanie.
 
 \subsection{Menu stawiania budynków}
-Typowa mechanika gier typu RTS, czyli budowanie budynków, ma specjalnie przygotowany interfejs, wyświetlany po wciśnięciu klawisza "B". 
+Typowa mechanika gier typu RTS, czyli budowanie budynków, ma specjalnie przygotowany interfejs, wyświetlany po wciśnięciu klawisza \texttt{B}.
 Ulokowany on został w dolnej części ekranu. Najważniejszym elementem menu stawiania budynków jest lista dostępnych budowli. Widnieją tam 
-obrazy ukazujące każdą z nich, a gracz ma wgląd w ich szczegóły poprzez zmianę aktywnej prawą i lewą strzałką. Wtedy wokół niej pokazują się także informacje dotyczące jej kupna,
+obrazy ukazujące każdą z nich, a gracz ma wgląd w ich szczegóły poprzez zmianę aktywnej opcji za pomocą prawej lub lewej strzałki. Wtedy wokół niej pokazują się także informacje dotyczące jej kupna,
 a po lewej stronie ekranu - informacja o ewentualnym nieprawidłowym umiejscowieniu. W wypadku, gdy zakup jest niemożliwy z powodu niewystarczającej liczby 
-surowców, pojawi się stosowny komunikat. Menu zamyka się za pomocą klawisza "Escape".
+surowców, pojawi się stosowny komunikat. Menu zamyka się za pomocą klawisza \texttt{Escape}.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/opis_ekementow_budowanie.png}
@@ -52,8 +52,8 @@ surowców, pojawi się stosowny komunikat. Menu zamyka się za pomocą klawisza 
 
 \subsection{Menu wydawania komend}
 Gra umożliwia graczowi wykupienie usług najemników, jeśli dysponuje odpowiednimi funduszami. Gdy są oni już pod dowództwem użytkownika, może on im rozkazywać za pomocą 
-menu wydawania komend. Po naciśnięciu klawisza "Q" pokazuje się lista dostępnych grup podwładnych, podzielonych według ich specjalizacji. Po wybraniu jednej z nich 
-wylistowane zostaną możliwe do rozkazania czynności. W obu przypadkach gracz ma także możliwość anulowania. 
+menu wydawania komend. Po naciśnięciu klawisza \texttt{Q} pokazuje się lista dostępnych grup podwładnych, podzielonych według ich specjalizacji. Po wybraniu jednej z nich
+wylistowane zostaną możliwe komendy do wydania. W obu przypadkach gracz ma także możliwość anulowania.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/opis_ekementow_mwnu_wyboru_komendy.png}
@@ -63,8 +63,8 @@ wylistowane zostaną możliwe do rozkazania czynności. W obu przypadkach gracz 
 
 \subsection{Menu zapisu}
 Po uznaniu przez gracza, że nie chce stracić aktualnego stanu gry, może go permanentnie zapisać w pamięci urządzenia, na którym włączony jest program. Po naciśnięciu 
-klawisza "Z" pojawia się menu zapisu. Gracz może odczytać z niego nazwę pliku, w którym zapisany zostanie stan gry. W menu znajduje się także informacja o tym, że 
-poprzez ponowne naciśnięcie klawisza "Z" potwierdzi on zapis. 
+klawisza \texttt{Z} pojawia się menu zapisu. Gracz może odczytać z niego nazwę pliku, w którym zapisany zostanie stan gry. W menu znajduje się także informacja o tym, że
+poprzez ponowne naciśnięcie klawisza \texttt{Z} potwierdzi on zapis.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/menu_zapisu.png}
@@ -74,8 +74,8 @@ poprzez ponowne naciśnięcie klawisza "Z" potwierdzi on zapis.
 
 \subsection{Informacja o możliwej interakcji}
 W świecie gry postać gracza nie jest odosobniona, co więcej może spotkać wiele różnorodnych osób, z którymi można porozmawiać. Interaktywni
-jednak nie są tylko ludzie, ale i surowce, które można zbierać. Jeśli możliwa jest interakcja,  wyświetlana jest informacja o takim stanie
- rzeczy. Zaraz pod kompasem pojawia się grafika instruująca, że po naciśnięciu klawisza "E" klawiatury, postać gracza wykona opisaną czynność.
+jednak są nie tylko ludzie, ale i surowce, które można zbierać. Jeśli możliwa jest interakcja,  wyświetlana jest informacja o takim stanie
+ rzeczy. Zaraz pod kompasem pojawia się grafika instruująca, że po naciśnięciu klawisza \texttt{E} klawiatury, postać gracza wykona opisaną czynność.
  \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/interakcja_rozmowa.png}
@@ -90,9 +90,9 @@ jednak nie są tylko ludzie, ale i surowce, które można zbierać. Jeśli możl
 
 \subsection{Dziennik z zadaniami}
 Niektóre postacie interaktywne mogą zlecić głównemu bohaterowi zadanie. Jeśli gracz się zgodzi, notatka o zadaniu zostaje zapisana w dzienniku. Można do niego zajrzeć
-wciskając klawisz "J". Graczowi ukaże się tytuł sygnalizujący główny cel zadania, streszczenie najważniejszych informacji oraz porada dotycząca mechanik gry np. 
+wciskając klawisz \texttt{J}. Graczowi ukaże się tytuł sygnalizujący główny cel zadania, streszczenie najważniejszych informacji oraz porada dotycząca mechanik gry np.
 "Wciśnij klawisz X, żeby stało się Y". To, że zadanie nie zostało jeszcze wykonane, sygnalizuje czerwony wykrzyknik w prawym, górnym rogu notatki. Gracz może 
-zamknąć dziennik poprzez ponowne naciśnięcie klawisza "J".
+zamknąć dziennik poprzez ponowne naciśnięcie klawisza \texttt{J}.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/journal_quest.png}
@@ -101,7 +101,7 @@ zamknąć dziennik poprzez ponowne naciśnięcie klawisza "J".
 \FloatBarrier
 
 \subsection{Ekran końca gry}
-Postać gracza ma określoną liczbę punktów życia, które może stracić podczas potyczek z przeciwnikami. Gdy spadną one do zera gra kończy się, a główny bohater umiera.
+Postać gracza ma określoną liczbę punktów życia, które może stracić podczas potyczek z przeciwnikami. Gdy spadną one do zera, gra kończy się, a główny bohater umiera.
 W takim wypadku graczowi pojawia się ekran końca gry, który informuje go o śmierci oraz o możliwości przejścia do menu głównego. Aby jeszcze bardziej uwypuklić zakończenie 
 rozgrywki, cały ekran zostaje przyciemniony.
 \begin{figure}[htbp]

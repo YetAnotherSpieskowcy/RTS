@@ -13,7 +13,7 @@ oraz z bocznych pasków, wyróżniających końce narzędzia.
 Ikony wyświetlane na kompasie przedstawiają najważniejsze informacje w polu widzenia gracza, czyli stronę świata, w kierunku której jest on zwrócony, oraz przeciwników.
 Poniżej przedstawiono kod odpowiedzialny za wyznaczenie pozycji symbolu na omawianym narzędziu. Wejściem jest komponent \texttt{RectTransform} symbolu przypisanego
 danemu obiektowi oraz jego położenie. Po obliczeniu wektora prowadzącego do uzyskania np. pozycji wroga, wyznaczany jest kąt, o jaki musi się obrócić.
-To jest przeliczane na pozycję na kompasie i jeśli obiekt znajduje się w polu widzenia postaci gracza to jest wyświetlany odpowiedni symbol.
+To jest przeliczane na pozycję na kompasie i jeśli obiekt znajduje się w polu widzenia postaci gracza, to jest wyświetlany odpowiedni symbol.
 
 \begin{figure}[htbp]
     \centering
@@ -43,7 +43,7 @@ To jest przeliczane na pozycję na kompasie i jeśli obiekt znajduje się w polu
     \end{lstlisting}
 \FloatBarrier
 Problem lokalizacji stron świata pojawił się, gdy nieprawidłowo wyświetlały się symbole po użyciu najprostszego rozwiązania. Na przykład dla Północy było to
-pobranie wartości od \texttt{Vector3.forward}, co jest skrótowym zapisem \texttt{Vector3(0, 0, 1)}. Lewy dolny róg mapy jest położony w początku układu współrzędnych, co oznacza, że wymagane
+pobranie wartości od \verb|Vector3.forward|, co jest skrótowym zapisem \verb|Vector3(0, 0, 1)|. Lewy dolny róg mapy jest położony w początku układu współrzędnych, co oznacza, że wymagane
 jest przesunięcie, aby prawidłowo zasymulować strony świata. Północ i Południe  zostały przesunięte do połowy szerokości, a Wschód i Zachód - długości mapy. Każde z nich
 zostało oddalone o 60000 jednostek, co pozwala na wiarygodną symulację stron świata na kompasie.
 
@@ -53,7 +53,7 @@ zostało oddalone o 60000 jednostek, co pozwala na wiarygodną symulację stron 
     \caption{Rozmieszczenie zasymulowanych stron świata.}\label{fig:world_sides}
 \end{figure}
 \FloatBarrier
-Wykrycie wrogich jednostek znajduje się w funkcji \texttt{Start()}. Każdemu obiektowi jest przypisywany symbol czerwonego miecza i w zależności od położenia wroga, obrazek wyświetlany jest odpowiednio na kompasie.
+Wykrycie wrogich jednostek znajduje się w metodzie \verb|Start()|. Każdemu obiektowi jest przypisywany symbol czerwonego miecza i w zależności od położenia wroga, obrazek wyświetlany jest odpowiednio na kompasie.
 \begin{lstlisting}[language=C++, caption=Fragment kodu odpowiedzialny za połączenie wrogich obiektów na mapie z symbolami wyświetlonymi na kompasie.]
     void SetPositionOfEnemies()
     {
