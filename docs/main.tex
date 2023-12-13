@@ -6,8 +6,10 @@
 \usepackage{listings}
 \usepackage{array}
 \usepackage{courier}
-\newcommand\PDFtitle{Tytuł pracy}
-\newcommand\PDFauthors{Imie Nazwisko}
+\usepackage{makecell}
+\usepackage{subfig}
+\newcommand\PDFtitle{Rozwój gry RTS}
+\newcommand\PDFauthors{Bartosz Strzelecki}
 \hypersetup{
   pdftitle={\PDFtitle},
   pdfauthor={\PDFauthors},
@@ -52,7 +54,7 @@
 \lstset{style=mystyle}
 % Część właściwa pracy
 \begin{document}
-% \includepdf[pages=-,fitpaper]{title.pdf}    % Title page, add pdf filename in brackets
+\includepdf[pages=-,fitpaper]{title.pdf}    % Title page, add pdf filename in brackets
 \include{chapters/0a_streszczenie}
 \include{chapters/0b_spis_tresci}
 \include{chapters/0c_wykaz_skrotow}

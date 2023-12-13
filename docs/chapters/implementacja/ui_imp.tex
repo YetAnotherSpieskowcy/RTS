@@ -21,7 +21,7 @@ użytkownikowi w ogólnym odnalezieniu się w świecie. W tym celu są mu ukazan
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/ui/naszpasek.png}
+    \includegraphics[width=1.0\textwidth]{images/ui/naszpasek.png}
     \caption{Implementacja paska z najważniejszymi informacjami o stanie gry: aktualnym czasie, posiadanych surowcach 
     i funduszach, położeniu i otoczeniu gracza, zdrowiu postaci oraz ikona sygnalizująca, czy użytkownik ma do wykonania jakieś zadanie.
     }\label{fig:naszpasek}
@@ -43,7 +43,7 @@ a po lewej stronie ekranu - informacja o ewentualnym nieprawidłowym umiejscowie
 surowców, pojawi się stosowny komunikat. Menu zamyka się za pomocą klawisza \texttt{Escape}.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/ui/opis_ekementow_budowanie.png}
+    \includegraphics[width=1.0\textwidth]{images/ui/opis_ekementow_budowanie.png}
     \caption{Implementacja menu stawiania budynków, na którym pokazane są możliwe do zbudowania budowle 
     i szczegółowe informacje o ich dostępności.
     }\label{fig:compass}
@@ -78,13 +78,10 @@ jednak są nie tylko ludzie, ale i surowce, które można zbierać. Jeśli możl
  rzeczy. Zaraz pod kompasem pojawia się grafika instruująca, że po naciśnięciu klawisza \texttt{E} klawiatury, postać gracza wykona opisaną czynność.
  \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/ui/interakcja_rozmowa.png}
-    \caption{Implementacja grafiki informującej o możliwości rozpoczęcia rozmowy.}\label{fig:rozmow}
-\end{figure}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.9\textwidth]{images/ui/interakcja_podnieś.png}
-    \caption{Implementacja grafiki informującej o możliwości podniesienia przedmiotu.}\label{fig:przedmio}
+    \subfloat[Implementacja grafiki informującej o możliwości rozpoczęcia rozmowy.]{\includegraphics[width=0.4\textwidth]{images/ui/interakcja_rozmowa.png}\label{fig:rozmow}}
+    \qquad
+    \subfloat[Implementacja grafiki informującej o możliwości podniesienia przedmiotu.]{\includegraphics[width=0.4\textwidth]{images/ui/interakcja_podnies.png}\label{fig:przedmio}}
+    \caption{Implementacja grafik informujących o możliwości podjęcia akcji.}
 \end{figure}
 \FloatBarrier
 
@@ -93,6 +90,9 @@ Niektóre postacie interaktywne mogą zlecić głównemu bohaterowi zadanie. Je�
 wciskając klawisz \texttt{J}. Graczowi ukaże się tytuł sygnalizujący główny cel zadania, streszczenie najważniejszych informacji oraz porada dotycząca mechanik gry np.
 "Wciśnij klawisz X, żeby stało się Y". To, że zadanie nie zostało jeszcze wykonane, sygnalizuje czerwony wykrzyknik w prawym, górnym rogu notatki. Gracz może 
 zamknąć dziennik poprzez ponowne naciśnięcie klawisza \texttt{J}.
+
+Funkcjonalność jednak nie została ukończona w zaplanowanym czasie i wymaga poprawek, aby działać w oczekiwany sposób w zadowalającym stopniu. Zdecydowano
+o niedołączaniu mechaniki do finalnego programu, zostawiając ją jako możliwy dodatek w przyszłym rozwoju gry.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ui/journal_quest.png}
@@ -106,7 +106,7 @@ W takim wypadku graczowi pojawia się ekran końca gry, który informuje go o ś
 rozgrywki, cały ekran zostaje przyciemniony.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/ui/endgame_screen.png}
+    \includegraphics[width=1.0\textwidth]{images/ui/endgame_screen.png}
     \caption{Implementacja menu zapisu.}\label{fig:end_sc}
 \end{figure}
 \FloatBarrier
