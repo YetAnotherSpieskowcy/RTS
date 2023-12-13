@@ -1,0 +1,80 @@
+Unity
+UNITY SOFTWARE LICENSE AGREEMENT 4.X
+https://unity.com/legal/eula
+https://unity.com
+
+Protocol Buffers
+BSD-3-Clause license
+https://licenses.nuget.org/BSD-3-Clause
+https://github.com/protocolbuffers/protobuf/
+
+Blacksmith
+Standard Unity Asset Store EULA
+https://unity.com/legal/as-terms
+https://assetstore.unity.com/packages/3d/environments/fantasy/blacksmith-46265
+
+DETAILED - Medieval Wells & Props
+Standard Unity Asset Store EULA
+https://unity.com/legal/as-terms
+https://assetstore.unity.com/packages/3d/environments/fantasy/detailed-medieval-wells-props-177037
+
+Awesome Free Scans - Wood Logs
+Standard Unity Asset Store EULA
+https://unity.com/legal/as-terms
+https://assetstore.unity.com/packages/3d/props/exterior/awesome-free-scans-wood-logs-216756
+
+FREE - Modular Character - Fantasy RPG Human Male
+Standard Unity Asset Store EULA
+https://unity.com/legal/as-terms
+https://assetstore.unity.com/packages/3d/characters/humanoids/humans/free-modular-character-fantasy-rpg-human-male-228952
+
+Pixel Art Icon Pack - RPG
+Standard Unity Asset Store EULA
+https://unity.com/legal/as-terms
+https://assetstore.unity.com/packages/2d/gui/icons/pixel-art-icon-pack-rpg-158343
+
+Dialogue Editor
+Standard Unity Asset Store EULA
+https://unity.com/legal/as-terms
+https://assetstore.unity.com/packages/tools/utilities/dialogue-editor-168329
+
+
+Free UI build package
+???
+???
+???
+
+Gardening Tools Pack - 26 PBR objects
+Standard Unity Asset Store EULA
+https://unity.com/legal/as-terms
+https://assetstore.unity.com/packages/3d/props/tools/gardening-tools-pack-26-pbr-objects-183477
+
+3D The Blacksmith's House
+Standard Unity Asset Store EULA
+https://unity.com/legal/as-terms
+https://assetstore.unity.com/packages/3d/environments/fantasy/3d-the-blacksmith-s-house-252972
+
+IVT_LowPoly_Weapon
+???
+???
+???
+
+Medieval houses
+???
+???
+???
+
+White Rabbit
+Standard Unity Asset Store EULA
+https://unity.com/legal/as-terms
+https://assetstore.unity.com/packages/3d/characters/animals/white-rabbit-138709
+
+Rock package
+Standard Unity Asset Store EULA
+https://unity.com/legal/as-terms
+https://assetstore.unity.com/packages/3d/props/exterior/rock-package-118182
+
+System.Runtime.CompilerServices.Unsafe
+MIT License
+https://licenses.nuget.org/MIT
+https://www.nuget.org/packages/System.Runtime.CompilerServices.Unsafe/
