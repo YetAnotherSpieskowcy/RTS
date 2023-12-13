@@ -27,7 +27,7 @@ public class BuildMechanismMediator
         action = Action.AVAILABLE;
         buildingId = 0;
         buildings = new BuildingsList();
-        storage = new Storage(10, 0, 0);
+        storage = new Storage(1000, 1000, 1000);
     }
     public void SetComment(string com)
     {

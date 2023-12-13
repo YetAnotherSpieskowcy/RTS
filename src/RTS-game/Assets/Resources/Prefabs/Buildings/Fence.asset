@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b9ac5dd4d978ce4c947973c4b5b8d45, type: 3}
-  m_Name: Blacksmith
+  m_Name: Fence
   m_EditorClassIdentifier: 
-  name: 
-  width: 1
+  name: Fence
+  width: 2.7
   height: 1
-  length: 1
-  money: 200
-  wood: 100
-  stone: 100
-  prefab: {fileID: 1016665575689383219, guid: 65a3e3f056a51954dbeda8d1598b500b, type: 3}
-  bts: {fileID: 2800000, guid: 68cfcdc18cd1b1d47ae54fdc2cfe8ed3, type: 3}
+  length: 0.2
+  money: 50
+  wood: 30
+  stone: 25
+  prefab: {fileID: 6466003539228276115, guid: 770017da22b82fc4f94020afdf272cfa, type: 3}
+  bts: {fileID: 2800000, guid: 4e7be4279ac377941bada66815528149, type: 3}
