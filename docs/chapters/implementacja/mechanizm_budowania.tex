@@ -21,9 +21,10 @@ oraz włącza wykrywanie kolizji z nim, dzięki czemu budynek poprawnie oddział
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/implementacja/mechanizm_budowania/poprawne.png}
+    \includegraphics[width=1\textwidth]{images/implementacja/mechanizm_budowania/poprawne.png}
     \caption{Przykład podglądu w poprawnym umiejscowieniu.}
 \end{figure}
+\FloatBarrier
 
 Do weryfikacji poprawności umiejscowienia budynku wykorzystano mechanizmy wyzwalacza (ang. \textit{trigger}) oraz rzucania
 promienia (ang. \textit{raycasting}). Pierwszy z nich polega na wykrywaniu czy obiekt znalazł się w obszarze kolizji bez
@@ -45,9 +46,10 @@ jest poprawne.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/implementacja/mechanizm_budowania/niepoprawne.png}
+    \includegraphics[width=1\textwidth]{images/implementacja/mechanizm_budowania/niepoprawne.png}
     \caption{Przykład podglądu w niepoprawnym umiejscowieniu.}
 \end{figure}
+\FloatBarrier
 
 Dodatkowo metodę rzucania promienia wykorzystano do wykrycia kolizji z drzewami. Obiekty te są traktowane przez silnik
 jako część terenu, przez co metoda wykorzystująca wyzwalacz pomija je. Dlatego w celu wykrywania kolizji z nimi
@@ -58,12 +60,13 @@ obiektu. Jeśli którykolwiek z nich zderzy się z drzewem, to wybrane miejsce j
 
 \begin{figure}[h!]
    \centering
-   \includegraphics[width=.8\textwidth]{images/implementacja/mechanizm_budowania/gizmos_drzewo_2.png}
+   \includegraphics[width=1\textwidth]{images/implementacja/mechanizm_budowania/gizmos_drzewo_2.png}
    \caption{Widok z góry na siatkę promieni służących do wykrywania kolizji z drzewami.}
 \end{figure}
+\FloatBarrier
 \begin{figure}[h!]
    \centering
-   \includegraphics[width=.8\textwidth]{images/implementacja/mechanizm_budowania/gizmos_drzewo_1.png}
+   \includegraphics[width=1\textwidth]{images/implementacja/mechanizm_budowania/gizmos_drzewo_1.png}
    \caption{Widok z boku na siatkę promieni służących do wykrywania kolizji z drzewami.}
 \end{figure}
 \FloatBarrier
