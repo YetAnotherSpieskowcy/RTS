@@ -29,6 +29,8 @@ public class MeleeAI : MonoBehaviour
         if (!unit.IsAlive()) return;
         if (ai.target != null && ai.IsStopped && Vector3.Distance(ai.target.position, transform.position) <= ai.Radius)
         {
+            if (this.unit.IsFriendly && ai.target.tag == "Player")
+                return;
             if (!attackAnimRunning && delay > hitRate)
             {
                 Unit unit = ai.target.GetComponentInParent<Unit>();

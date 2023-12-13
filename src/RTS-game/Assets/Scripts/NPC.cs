@@ -22,7 +22,14 @@ public class NPC : MonoBehaviour
     }
     public void SetPersistantFlag(string flag, bool value)
     {
-        flags.Add(flag);
+        if (!value)
+        {
+            flags.Remove(flag);
+        }
+        else
+        {
+            flags.Add(flag);
+        }
     }
     public void SetPersistantFlag(string flag)
     {
