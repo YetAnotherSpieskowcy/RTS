@@ -7038,7 +7038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &551622722
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7393,12 +7393,12 @@ PrefabInstance:
     - target: {fileID: 7292658344771522932, guid: f5b41ba4c79702547a89de7544b80656,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3733.68
+      value: 3415.4
       objectReference: {fileID: 0}
     - target: {fileID: 7292658344771522932, guid: f5b41ba4c79702547a89de7544b80656,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.35
+      value: 20.43
       objectReference: {fileID: 0}
     - target: {fileID: 7292658344771522932, guid: f5b41ba4c79702547a89de7544b80656,
         type: 3}
@@ -10270,6 +10270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ed9d3abc4c826919764d9fbb8476c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ui: {fileID: 551622721}
+  text: {fileID: 2023323967}
 --- !u!1 &819967144
 GameObject:
   m_ObjectHideFlags: 0
@@ -12872,6 +12874,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 722162954942423584, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: team
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110342412885192188, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
+        type: 3}
+      propertyPath: m_Speed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6420527732339907077, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
         type: 3}
       propertyPath: m_Name
@@ -15444,6 +15456,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f382173c96d65b5b7877360b9bd0a2ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  strength: 1
+  strengthExpirience: 0
+  leadership: 1
+  leadershipExpirience: 0
+  charisma: 1
+  charismaExpirience: 0
+  modal: {fileID: 817862535}
 --- !u!1 &1123258003
 GameObject:
   m_ObjectHideFlags: 0
@@ -15746,7 +15765,7 @@ Transform:
   m_GameObject: {fileID: 1163883107}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3733.54, y: 43.02, z: 1927.35}
+  m_LocalPosition: {x: 3415.26, y: 20.36, z: 1927.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24460,6 +24479,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 722162954942423584, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: team
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110342412885192188, guid: 37e02184e4d90c842b380e2214da1919,
+        type: 3}
+      propertyPath: m_Speed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6420527732339907077, guid: 37e02184e4d90c842b380e2214da1919,
         type: 3}
       propertyPath: m_Name

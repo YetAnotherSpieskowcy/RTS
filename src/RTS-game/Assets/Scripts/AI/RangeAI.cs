@@ -40,6 +40,8 @@ public class RangeAI : MonoBehaviour
     {
         if (ai.target != null && Vector3.Distance(transform.position, ai.target.position) > meleeDistance)
         {
+            if (GetComponent<Unit>().IsFriendly && ai.target.tag == "Player")
+                return;
             ai.StoppingDistance = rangeDistance;
             if (!shootAnimRunning && ai.IsStopped && delay > fireRate)
             {
@@ -57,7 +59,7 @@ public class RangeAI : MonoBehaviour
                 delay += Time.deltaTime;
             }
         }
-        else //TODO if has MeleeAI else flee
+        else
         {
             ai.StoppingDistance = ai.Radius;
         }
