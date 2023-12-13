@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18029143, g: 0.22572419, b: 0.30693057, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4690,7 +4690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677745771901032, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2672.6929
+      value: 3280.3
       objectReference: {fileID: 0}
     - target: {fileID: 4677745771901032, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4698,7 +4698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677745771901032, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2442.9153
+      value: 2064.1
       objectReference: {fileID: 0}
     - target: {fileID: 4677745771901032, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7393,7 +7393,7 @@ PrefabInstance:
     - target: {fileID: 7292658344771522932, guid: f5b41ba4c79702547a89de7544b80656,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3415.4
+      value: 3560.4
       objectReference: {fileID: 0}
     - target: {fileID: 7292658344771522932, guid: f5b41ba4c79702547a89de7544b80656,
         type: 3}
@@ -7403,7 +7403,7 @@ PrefabInstance:
     - target: {fileID: 7292658344771522932, guid: f5b41ba4c79702547a89de7544b80656,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1926.93
+      value: 2089.9
       objectReference: {fileID: 0}
     - target: {fileID: 7292658344771522932, guid: f5b41ba4c79702547a89de7544b80656,
         type: 3}
@@ -8936,7 +8936,7 @@ GameObject:
   - component: {fileID: 731163481}
   m_Layer: 0
   m_Name: Enemy (1)
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10694,7 +10694,7 @@ GameObject:
   - component: {fileID: 878658411}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12877,7 +12877,7 @@ PrefabInstance:
     - target: {fileID: 722162954942423584, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
         type: 3}
       propertyPath: team
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1110342412885192188, guid: 06bb8ff70e5e2b74c9fe41ee9cce9b59,
         type: 3}
@@ -15765,7 +15765,7 @@ Transform:
   m_GameObject: {fileID: 1163883107}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3415.26, y: 20.36, z: 1927.35}
+  m_LocalPosition: {x: 3566.4, y: 20.36, z: 2094.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24482,7 +24482,7 @@ PrefabInstance:
     - target: {fileID: 722162954942423584, guid: 37e02184e4d90c842b380e2214da1919,
         type: 3}
       propertyPath: team
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1110342412885192188, guid: 37e02184e4d90c842b380e2214da1919,
         type: 3}
