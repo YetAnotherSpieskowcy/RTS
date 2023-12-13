@@ -19,7 +19,6 @@ public class UnitDispatcher : MonoBehaviour
 
         foreach (Unit unit in GameObject.FindObjectsOfType(typeof(Unit)))
         {
-            // TODO Limit range of player commands
             if (unit.IsFriendly && unit.IsAlive())
             {
                 friendlyUnitCache.Add(unit);
@@ -149,7 +148,6 @@ public class UnitDispatcher : MonoBehaviour
         if (Input.GetKeyDown(InputSettings.UnitSelectionMenuItem5))
         {
             Debug.Log("Retreat");
-            Debug.Log("Not implemented");
             selectedUnits.Clear();
             commandController.SetAllInvisible();
             combatMediator.SetState(CombatModeState.ENDING);
